@@ -1,0 +1,17 @@
+---
+- name: install backend compute node
+  hosts: compute
+  remote_user: root
+  roles: 
+    - { role: init_repo}
+    - { role: chrony } 
+    - { role: docker }
+
+- name: install compute node 
+  hosts: compute
+  remote_user: root
+  roles: 
+    - { role: qemu }
+    - { role: nova-compute }
+    - { role: openvswitch_dpdk } 
+    - { role: neutron-agents }

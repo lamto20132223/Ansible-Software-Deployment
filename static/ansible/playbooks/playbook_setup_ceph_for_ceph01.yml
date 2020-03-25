@@ -1,0 +1,7 @@
+---
+- name: install ceph on ceph01
+  hosts: 'ceph01'
+  remote_user: root
+  gather_facts: no
+  roles:
+    - { role: ceph }

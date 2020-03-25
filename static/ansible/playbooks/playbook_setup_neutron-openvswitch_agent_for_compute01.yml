@@ -1,0 +1,7 @@
+---
+- name: install neutron-openvswitch_agent on compute01
+  hosts: 'compute01'
+  remote_user: root
+  gather_facts: no
+  roles:
+    - { role: neutron-openvswitch_agent }

@@ -1,0 +1,31 @@
+
+---
+- name: restart_cinder_api
+  docker_container:
+    name: cinder-api
+    image: '{{ docker_image.cinder_scheduler }}'
+    state: started
+    restart: yes
+
+- name: restart_cinder_scheduler
+  docker_container:
+    name: cinder_scheduler
+    image: '{{ docker_image.cinder_scheduler }}' 
+    state: started
+    restart: yes
+
+- name: stop_cinder
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - cinder-api
+    - cinder_scheduler
+
+- name: remove_cinder
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - cinder-api
+    - cinder_scheduler

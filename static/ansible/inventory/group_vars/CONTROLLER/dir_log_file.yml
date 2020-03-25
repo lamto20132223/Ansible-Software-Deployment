@@ -1,0 +1,18 @@
+---
+#Debug
+glance_logging_debug: false
+keystone_logging_debug: true
+nova_logging_debug: false
+neutron_logging_debug: false
+cinder_logging_debug: false
+
+#DOCKER_DIR
+VAR_LOG_DIR: /u01/docker/docker_log
+VAR_LIB_DOCKER: /home/root/var/lib/docker
+
+#LOG_DIR
+glance_log_file: /var/log/glance/glance-api.log
+nova_log_file: /var/log/nova
+cinder_log_file: /var/log/cinder
+volumes_dir: /var/lib/cinder/volumes 
+

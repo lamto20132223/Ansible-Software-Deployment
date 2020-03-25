@@ -1,0 +1,6 @@
+[compute]
+172.16.29.194 ansible_ssh_user=root  ansible_ssh_pass="123456@Epc"
+#compute02 ansible_ssh_user=root ansible_ssh_pass="123456@Epc"
+#compute03 ansible_ssh_user=root ansible_ssh_pass="123456@Epc"
+
+

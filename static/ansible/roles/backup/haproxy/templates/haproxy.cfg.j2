@@ -1,0 +1,50 @@
+global
+
+    log /dev/log        local0
+    log /dev/log        local1 notice
+
+    chroot      /var/lib/haproxy
+    pidfile     /var/run/haproxy.pid
+    maxconn     10000
+    user        haproxy
+    group       haproxy
+    daemon
+    stats socket /var/lib/haproxy/stats
+
+defaults
+    mode                    http
+    log                     global
+    option                  httplog
+    #option http-server-close
+    option forwardfor
+    option                  redispatch
+    retries                 3
+    timeout http-request    10s
+    timeout queue           1m
+    timeout connect         10s
+    timeout client          1m
+    timeout server          1m
+    #timeout http-keep-alive 10s
+    timeout check           10s
+    maxconn                 10000
+
+
+listen stats
+  bind {{ VIP_PUBLIC }}:{{ HAPROXY_STATS_PORT }}
+  mode http
+  stats enable
+  stats uri /
+  stats refresh 15s
+  stats realm Haproxy\ Stats
+  stats auth {{ HAPROXY_STATS_USER }}:{{ HAPROXY_STATS_PASS }}
+
+{% for service in Haproxy_Config  %}
+listen {{ service.service_name }}
+  bind {{ VIP_PUBLIC }}:{{ service.port }}
+  {{ service.option }}
+{% for node in groups['controller']  %}
+  server {{ node }} {{ host_info.ip[node] }}:{{service.port}} {{ service.config}}
+{% endfor %}
+{% endfor %}
+
+

@@ -1,0 +1,6 @@
+---
+- name: restart openstack-service
+  service: name=openstack-service state=restarted
+
+- name: reload openstack-nova-compute
+  service: name=openstack-service state=reloaded

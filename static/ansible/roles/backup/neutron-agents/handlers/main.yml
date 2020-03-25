@@ -1,0 +1,40 @@
+---
+- name: restart_ovs_agent
+  docker_container:
+    name: ovs_agent
+    image: '{{ docker_image.neutron_dpdk }}'
+    state: started
+    restart: yes
+
+- name: restart_dhcp_agent
+  docker_container:
+    name: dhcp_agent 
+    image: '{{ docker_image.neutron_dpdk }}'
+    state: started
+    restart: yes
+
+- name: restart_metadata_agent
+  docker_container:
+    name: metadata_agent
+    image: '{{ docker_image.neutron_dpdk }}'
+    state: started
+    restart: yes
+
+- name: stop_neutron_agent
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - ovs_agent
+    - dhcp_agent
+    - metadata_agent
+
+- name: remove_neutron_agent
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - ovs_agent
+    - dhcp_agent
+    - metadata_agent
+    

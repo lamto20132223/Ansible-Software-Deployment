@@ -1,0 +1,102 @@
+config.json
+
+{
+	"VIP": "172.16.29.49",
+	"NTP_NETWORK":"172.16.29.0/25",
+	"network_interface":"eno1",
+	"Master_node": "master_node_id",
+	"openstack_password":{
+		"ops_user_demo": {
+			"user_name":"demo",
+			"password":"GfvDCTgUVLYsotdmjCiK6tIRATsgjSTp"
+		},
+		"ops_user_glance": {
+			"user_name":"glance",
+			"password":"JBNpfryKwey6kcsditbd77LptDWEiZfD"
+		},
+		"ops_user_cinder": {
+			"user_name":"cinder",
+			"password":"tdy0llhzHk2DnQbQcuXZ5KV4EUobdY3o"
+		},
+		"ops_user_nova": {
+			"user_name":"nova",
+			"password":"CVVW5ThnUFuAXFCF3OLk1gj6atg9NB5m"
+		},
+		"ops_user_placement": {
+			"user_name":"placement",
+			"password":"sQWRKWbkbB3RcmMT4aXe2lntXOIubGvj"
+		},
+		"ops_user_swift": {
+			"user_name":"swift",
+			"password":"MqWRKWbkbB3RcmMT4aXe2lntXOIubGvJ"
+		},
+		"ops_user_neutron": {
+			"user_name":"neutron",
+			"password":"ATqCSRFyZs28lOUHdAmzSxtSN7jht2bL"
+		}
+	},
+
+
+	"mysql_password":{
+		"db_user_glance": {
+			"user_name":"glance",
+			"password":"kFUVAMyZgUgcD8lSG9aA8kH2HPmo7fP0"
+		},
+		"db_user_cinder": {
+			"user_name":"cinder",
+			"password":"4EOFRtdnyvflTmI4OFEkllULddfdor0w"
+		},
+		"db_user_keystone": {
+			"user_name":"keystone",
+			"password":"iVVWSMqdfXfuDGuzKIk7u1OwSXoeTokI"
+		},
+		"db_user_nova": {
+			"user_name":"nova",
+			"password":"tDYYivjrHo749yokhU7utc2GLlJezi14"
+		},
+		"db_user_neutron": {
+			"user_name":"neutron",
+			"password":"CiH7J2U88DhWNECBYQH7A5Okyu3F4uRe"
+		}
+
+	},
+
+	"neutron-network-type":["flat","vlan","sriov"],
+	"neutron-bridge-mapping":["eno1:br-mpbn","eno2:br-dcn"],
+	"neutron-network-vlan-range":{"start":600,"end":650},
+	"log_folder":"/var/log/",
+	"docker_share":"/usr/share/docker/",
+	"docker-lib":"/var/lib/docker",
+	"service_port":{
+	  "keystone": 5000,
+	  "glance_api": 9292,
+	  "glance_registry": 9191,
+	  "nova_api": 8774,
+	  "nova_placement_api": 8778,
+	  "nova_metadata": 8775,
+	  "nova_novncproxy": 6080,
+	  "neutron_server": 9696,
+	  "horizon": 80,
+	  "cinder_api": 8776,
+	  "masakari_api": 15868
+	},
+
+	"percona_xtra_db":{
+		"SQL_WSREP_CLUSTER_NAME": "pxc-cluster",
+		"SQL_ROOT_PASSWD": "Vttek@123",
+		"SQL_SST_USER": "sstuser",
+		"SQL_SST_PASSWD": "fPWOWrsMGLaBaP74iK57XoOyJy8aAEew",
+		"SQL_MAX_CONNECT_ERRORS": 10,
+		"SQL_MAX_ALLOWED_PACKET": 10,
+		"wsrep_cluster_address": "gcomm://172.16.29.193,172.16.29.194,172.16.29.195"
+	},
+	"nova":{
+		"use_vcpu_pin_set": true,
+		"nova_backend_ceph": true,
+		"glance_backend_ceph": true,
+		"cinder_backend_ceph": true,
+		"resume_guest_state_on_host_boot":true,
+		"osapi_compute_unique_server_name_scope":true
+	}
+
+}

@@ -1,0 +1,9 @@
+---
+wsrep_cluster_name: pxc-cluster
+wsrep_sst_user: sstuser 
+wsrep_sst_password: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew
+
+innodb_locks_unsafe_for_binlog: 1
+innodb_autoinc_lock_mode: 2
+# Using default innodb_buffer_pool_size since memory is below 32G
+innodb_buffer_pool_size: 128M

@@ -1,0 +1,6 @@
+---
+vm_memory_high_watermark: 0.4
+vm_memory_high_watermark_paging_ratio: 0.5
+memory_monitor_interval: 2500
+disk_free_limit: "2GB"
+cluster_partition_handling: pause_minority

@@ -1,0 +1,4 @@
+[all]
+172.16.29.193 ansible_ssh_user=root ansible_ssh_pass=123456@Epc
+172.16.29.194 ansible_ssh_user=root ansible_ssh_pass=123456@Epc
+172.16.29.195 ansible_ssh_user=root ansible_ssh_pass=123456@Epc

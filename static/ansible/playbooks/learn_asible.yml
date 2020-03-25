@@ -1,0 +1,21 @@
+- hosts: localhost
+  vars:
+    fruits:
+      - oranges
+      - lemons
+
+  vars_files:
+      - /etc/ansible/group_vars/all/global.yml
+  tasks:
+    - assert:
+        that: >-
+          'apples' in fruits
+        msg: you have no apples
+      register: assert_failse
+    - debug:
+        msg: '{{ assert_failse }}'
+
+    - assert:
+        that: >-
+          'lemons' in fruits
+        msg: you have no lemons

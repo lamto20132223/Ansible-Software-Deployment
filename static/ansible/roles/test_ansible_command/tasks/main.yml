@@ -1,0 +1,29 @@
+---
+
+- name: test_ansible_command
+  command: '{{ item }}'
+  with_items:
+    - 'cp /home/lamtv10/test /home/lamtv10/testxxx'
+    - touch /home/{{target}} 
+    - echo '{{ group_name }}'
+
+  tags:
+    - install
+ #   - docker stop glance-registry
+ #   - docker rm glance-api
+ #   - docker rm glance-registry
+
+
+
+  
+# - name: test_ansible_command2
+#   command: '{{ item }}'
+#   args:
+#     excutable: /bin/bash
+#   with_items:
+#     - echo "lamtv1019022020" > /home/test_ansible_command2
+#   tags:
+#     - install
+#  #   - docker stop glance-registry
+#  #   - docker rm glance-api
+#  #   - docker rm glance-registry

@@ -1,0 +1,16 @@
+127.0.0.1       localhost
+
+172.16.29.199	os-controller
+172.16.29.199	controller
+172.16.29.193	docker-registry
+172.16.30.193	controller01
+172.16.30.194	controller02
+172.16.30.195	controller03
+
+172.16.30.196   compute01
+172.16.30.197   compute02
+172.16.30.198	compute03
+
+172.16.29.193   repository
+
+

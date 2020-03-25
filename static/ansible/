@@ -1,0 +1,107 @@
+  UNIT                                                                                         LOAD   ACTIVE SUB       DESCRIPTION
+  proc-sys-fs-binfmt_misc.automount                                                            loaded active running   Arbitrary Executable File Formats File System Automount Point
+  sys-devices-pci0000:00-0000:00:10.0-host32-target32:0:0-32:0:0:0-block-sda-sda1.device       loaded active plugged   Virtual_disk 1
+  sys-devices-pci0000:00-0000:00:10.0-host32-target32:0:0-32:0:0:0-block-sda-sda2.device       loaded active plugged   Virtual_disk 2
+  sys-devices-pci0000:00-0000:00:10.0-host32-target32:0:0-32:0:0:0-block-sda.device            loaded active plugged   Virtual_disk
+  sys-devices-pci0000:00-0000:00:10.0-host32-target32:0:1-32:0:1:0-block-sdb-sdb1.device       loaded active plugged   Virtual_disk 1
+  sys-devices-pci0000:00-0000:00:10.0-host32-target32:0:1-32:0:1:0-block-sdb.device            loaded active plugged   Virtual_disk
+  sys-devices-pci0000:00-0000:00:11.0-0000:02:02.0-ata4-host3-target3:0:0-3:0:0:0-block-sr0.device loaded active plugged   VMware_Virtual_SATA_CDRW_Drive
+  sys-devices-pci0000:00-0000:00:15.0-0000:03:00.0-net-ens160.device                           loaded active plugged   VMXNET3 Ethernet Controller
+  sys-devices-platform-serial8250-tty-ttyS0.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS0
+  sys-devices-platform-serial8250-tty-ttyS1.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS1
+  sys-devices-platform-serial8250-tty-ttyS10.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS10
+  sys-devices-platform-serial8250-tty-ttyS11.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS11
+  sys-devices-platform-serial8250-tty-ttyS12.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS12
+  sys-devices-platform-serial8250-tty-ttyS13.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS13
+  sys-devices-platform-serial8250-tty-ttyS14.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS14
+  sys-devices-platform-serial8250-tty-ttyS15.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS15
+  sys-devices-platform-serial8250-tty-ttyS16.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS16
+  sys-devices-platform-serial8250-tty-ttyS17.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS17
+  sys-devices-platform-serial8250-tty-ttyS18.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS18
+  sys-devices-platform-serial8250-tty-ttyS19.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS19
+  sys-devices-platform-serial8250-tty-ttyS2.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS2
+  sys-devices-platform-serial8250-tty-ttyS20.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS20
+  sys-devices-platform-serial8250-tty-ttyS21.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS21
+  sys-devices-platform-serial8250-tty-ttyS22.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS22
+  sys-devices-platform-serial8250-tty-ttyS23.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS23
+  sys-devices-platform-serial8250-tty-ttyS24.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS24
+  sys-devices-platform-serial8250-tty-ttyS25.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS25
+  sys-devices-platform-serial8250-tty-ttyS26.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS26
+  sys-devices-platform-serial8250-tty-ttyS27.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS27
+  sys-devices-platform-serial8250-tty-ttyS28.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS28
+  sys-devices-platform-serial8250-tty-ttyS29.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS29
+  sys-devices-platform-serial8250-tty-ttyS3.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS3
+  sys-devices-platform-serial8250-tty-ttyS30.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS30
+  sys-devices-platform-serial8250-tty-ttyS31.device                                            loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS31
+  sys-devices-platform-serial8250-tty-ttyS4.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS4
+  sys-devices-platform-serial8250-tty-ttyS5.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS5
+  sys-devices-platform-serial8250-tty-ttyS6.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS6
+  sys-devices-platform-serial8250-tty-ttyS7.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS7
+  sys-devices-platform-serial8250-tty-ttyS8.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS8
+  sys-devices-platform-serial8250-tty-ttyS9.device                                             loaded active plugged   /sys/devices/platform/serial8250/tty/ttyS9
+  sys-devices-virtual-block-dm\x2d0.device                                                     loaded active plugged   /sys/devices/virtual/block/dm-0
+  sys-devices-virtual-misc-rfkill.device                                                       loaded active plugged   /sys/devices/virtual/misc/rfkill
+  sys-devices-virtual-tty-ttyprintk.device                                                     loaded active plugged   /sys/devices/virtual/tty/ttyprintk
+  sys-module-fuse.device                                                                       loaded active plugged   /sys/module/fuse
+  sys-subsystem-net-devices-ens160.device                                                      loaded active plugged   VMXNET3 Ethernet Controller
+  -.mount                                                                                      loaded active mounted   /
+  data.mount                                                                                   loaded active mounted   /data
+  dev-hugepages.mount                                                                          loaded active mounted   Huge Pages File System
+  dev-mqueue.mount                                                                             loaded active mounted   POSIX Message Queue File System
+  home-vttek-tsclient.mount                                                                    loaded active mounted   /home/vttek/tsclient
+  proc-sys-fs-binfmt_misc.mount                                                                loaded active mounted   Arbitrary Executable File Formats File System
+  run-user-1001-gvfs.mount                                                                     loaded active mounted   /run/user/1001/gvfs
+  run-user-1001.mount                                                                          loaded active mounted   /run/user/1001
+  run-vmblock\x2dfuse.mount                                                                    loaded active mounted   VMware vmblock fuse mount
+  sys-fs-fuse-connections.mount                                                                loaded active mounted   FUSE Control File System
+  sys-kernel-debug.mount                                                                       loaded active mounted   Debug File System
+  acpid.path                                                                                   loaded active running   ACPI Events Check
+  cups.path                                                                                    loaded active running   CUPS Scheduler
+  systemd-ask-password-plymouth.path                                                           loaded active waiting   Forward Password Requests to Plymouth Directory Watch
+  systemd-ask-password-wall.path                                                               loaded active waiting   Forward Password Requests to Wall Directory Watch
+  systemd-networkd-resolvconf-update.path                                                      loaded active waiting   Trigger resolvconf update for networkd DNS
+  init.scope                                                                                   loaded active running   System and Service Manager
+  session-c2.scope                                                                             loaded active running   Session c2 of user vttek
+  session-c22.scope                                                                            loaded active abandoned Session c22 of user vttek
+  accounts-daemon.service                                                                      loaded active running   Accounts Service
+  acpid.service                                                                                loaded active running   ACPI event daemon
+  apparmor.service                                                                             loaded active exited    LSB: AppArmor initialization
+  apport.service                                                                               loaded active exited    LSB: automatic crash report generation
+  avahi-daemon.service                                                                         loaded active running   Avahi mDNS/DNS-SD Stack
+  avahi-dnsconfd.service                                                                       loaded active running   Avahi DNS Configuration Daemon
+  binfmt-support.service                                                                       loaded active exited    Enable support for additional executable binary formats
+  console-setup.service                                                                        loaded active exited    Set console font and keymap
+  cpufrequtils.service                                                                         loaded active exited    LSB: set CPUFreq kernel parameters
+  cron.service                                                                                 loaded active running   Regular background program processing daemon
+  cups-browsed.service                                                                         loaded active running   Make remote CUPS printers available locally
+  cups.service                                                                                 loaded active running   CUPS Scheduler
+  dbus.service                                                                                 loaded active running   D-Bus System Message Bus
+  getty@tty1.service                                                                           loaded active running   Getty on tty1
+  grub-common.service                                                                          loaded active exited    LSB: Record successful boot for GRUB
+  hddtemp.service                                                                              loaded active exited    LSB: disk temperature monitoring daemon
+  irqbalance.service                                                                           loaded active running   LSB: daemon to balance interrupts for SMP systems
+  keyboard-setup.service                                                                       loaded active exited    Set console keymap
+  kmod-static-nodes.service                                                                    loaded active exited    Create list of required static device nodes for the current kernel
+  lightdm.service                                                                              loaded active running   Light Display Manager
+  lm-sensors.service                                                                           loaded active exited    Initialize hardware monitoring sensors
+  loadcpufreq.service                                                                          loaded active exited    LSB: Load kernel modules needed to enable cpufreq scaling
+  lvm2-lvmetad.service                                                                         loaded active running   LVM2 metadata daemon
+  lvm2-monitor.service                                                                         loaded active exited    Monitoring of LVM2 mirrors, snapshots etc. using dmeventd or progress polling
+[0;1;31m●[0m [0;1;31mnetworking.service                                                                          [0m loaded [0;1;31mfailed failed   [0m Raise network interfaces
+  NetworkManager-wait-online.service                                                           loaded active exited    Network Manager Wait Online
+  NetworkManager.service                                                                       loaded active running   Network Manager
+  nmbd.service                                                                                 loaded active running   LSB: start Samba NetBIOS nameserver (nmbd)
+  ntp.service                                                                                  loaded active running   LSB: Start NTP daemon
+  ondemand.service                                                                             loaded active exited    LSB: Set the CPU Frequency Scaling governor to "ondemand"
+  open-vm-tools.service                                                                        loaded active running   Service for virtual machines hosted on VMware
+  polkitd.service                                                                              loaded active running   Authenticate and Authorize Users to Run Privileged Tasks
+  rc-local.service                                                                             loaded active exited    /etc/rc.local Compatibility
+  resolvconf.service                                                                           loaded active exited    Nameserver information manager
+  rsyslog.service                                                                              loaded active running   System Logging Service
+  rtkit-daemon.service                                                                         loaded active running   RealtimeKit Scheduling Policy Service
+  samba-ad-dc.service                                                                          loaded active exited    LSB: start Samba daemons for the AD DC
+  setvtrgb.service                                                                             loaded active exited    Set console scheme
+[0;1;31m●[0m [0;1;31msmartd.service                                                                              [0m loaded [0;1;31mfailed failed   [0m Self Monitoring and Reporting Technology (SMART) Daemon
+  smbd.service                                                                                 loaded active running   LSB: start Samba SMB/CIFS daemon (smbd)
+  snapd.service                                                                                loaded active running   Snappy daemon
+  speech-di

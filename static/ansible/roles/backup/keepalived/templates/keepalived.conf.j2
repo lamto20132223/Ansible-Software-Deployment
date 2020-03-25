@@ -1,0 +1,50 @@
+global_defs {
+   router_id {{ router_id }}
+   enable_script_security
+   script_user root
+}
+
+vrrp_script check_haproxy {
+   script "pkill -0 haproxy"
+   interval 2
+   weight 2
+}
+
+vrrp_script check_ping {
+   script "timeout 2 ping -c 3 -i 0.5 {{ host_info.ip[host_name] }}"
+        interval 3
+        rise 2
+}
+
+vrrp_sync_group VG_1 {
+   group {
+      PRIVATE_V1
+   }
+}
+
+vrrp_instance PRIVATE_V1 {
+   state BACKUP
+   priority {{ KEEPALIVED_PRIORS[host_name] }}
+   advert_int 1
+   preempt
+   garp_master_delay 0
+   dont_track_primary
+
+   interface {{ VIP_PRIVATE_INF }}
+
+   virtual_router_id {{ ROUTER_ID }}
+   virtual_ipaddress {
+       {{ VIP_PUBLIC }}
+   }
+
+
+   track_interface {
+      {{ VIP_PRIVATE_INF }}
+    }
+
+   track_script {
+       check_haproxy
+       check_ping
+   }
+
+}

@@ -1,0 +1,38 @@
+---
+- name: restart_nova
+  docker_container:
+    name: '{{ item }}'
+    image: '{{ docker_image.nova }}' 
+    state: started
+    restart: yes
+  with_items: 
+    - nova-api
+    - nova-consoleauth
+    - nova-scheduler
+    - nova-conductor
+    - nova-novncproxy
+    - nova-placement-api
+
+- name: stop_nova
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - nova-api
+    - nova-consoleauth
+    - nova-scheduler
+    - nova-conductor
+    - nova-novncproxy
+    - nova-placement-api
+
+- name: remove_nova
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - nova-api
+    - nova-consoleauth
+    - nova-scheduler
+    - nova-conductor
+    - nova-novncproxy
+    - nova-placement-api

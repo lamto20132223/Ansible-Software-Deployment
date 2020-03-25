@@ -1,0 +1,7 @@
+---
+- name: install nova-api on controller
+  hosts: 'controller'
+  remote_user: root
+  gather_facts: no
+  roles:
+    - { role: nova-api }

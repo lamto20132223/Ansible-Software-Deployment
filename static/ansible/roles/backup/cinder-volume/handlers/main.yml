@@ -1,0 +1,22 @@
+
+---
+- name: restart_cinder_volume
+  docker_container:
+    name: cinder-api
+    image: '{{ docker_image.cinder_volume }}'
+    state: started
+    restart: yes
+
+- name: stop_cinder_volume
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - cinder_volume
+
+- name: remove_cinder_volume
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - cinder_volume

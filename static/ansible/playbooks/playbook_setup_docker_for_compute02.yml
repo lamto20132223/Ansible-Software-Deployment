@@ -1,0 +1,7 @@
+---
+- name: install docker on compute02
+  hosts: 'compute02'
+  remote_user: root
+  gather_facts: no
+  roles:
+    - { role: docker }

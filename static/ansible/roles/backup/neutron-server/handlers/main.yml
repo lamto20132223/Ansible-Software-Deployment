@@ -1,0 +1,22 @@
+---
+- name: restart_neutron_server
+  docker_container:
+    name: neutron-server
+    image: '{{ docker_image.neutron }}'
+    state: started
+    restart: yes
+
+- name: stop_neutron_server
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - neutron-server
+
+- name: remove_neutron_server
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - neutron-server
+    

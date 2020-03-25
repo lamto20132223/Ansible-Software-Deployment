@@ -1,0 +1,7 @@
+CREATE DATABASE {{ db_keystone_name }};
+GRANT ALL PRIVILEGES ON {{ db_keystone_name }}.* TO '{{ db_user_keystone }}'@'localhost'  IDENTIFIED BY "{{ DB_KEYSTONE_PASS }}";
+GRANT ALL PRIVILEGES ON {{ db_keystone_name }}.* TO '{{ db_user_keystone }}'@'%'  IDENTIFIED BY "{{ DB_KEYSTONE_PASS }}";
+
+set global max_connections = 5000;
+# show variables like "max_connections";
+

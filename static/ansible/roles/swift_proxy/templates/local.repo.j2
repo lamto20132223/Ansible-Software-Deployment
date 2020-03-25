@@ -1,0 +1,57 @@
+[centos76]
+name=centos76
+baseurl=http://repository:8080/centos
+enabled=1
+gpgcheck=0
+
+[docker]
+name=docker
+baseurl=http://repository:8080/docker.centos.7.x86_64
+enabled=1
+gpgcheck=0
+
+[epel7server]
+name=epel7server
+baseurl=http://repository:8080/epel7server
+enabled=1
+gpgcheck=0
+
+[percona-release-x86_64]
+name = Percona-Release YUM repository - x86_64
+baseurl = http://repository:8080/percona.release.7Server.RPMS.x86_64
+enabled = 1
+gpgcheck = 0
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
+
+[percona-release-noarch]
+name = Percona-Release YUM repository - noarch
+baseurl = http://repository:8080/percona.release.7Server.RPMS.noarch
+enabled = 1
+gpgcheck = 0
+gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-Percona
+
+[rdo-qemu-ev]
+name=RDO CentOS-7 - QEMU EV
+baseurl=http://repository:8080/centos.7.virt.x86_64.kvm-common/
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Virtualization-RDO
+
+[openstack-queens]
+name=OpenStack Queens Repository
+baseurl=http://repository:8080/centos.7.cloud.x86_64.openstack-queens/
+gpgcheck=0
+enabled=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-SIG-Cloud
+
+[openstack-queens-testing]
+name=OpenStack Queens Testing
+baseurl=http://repository:8080/buildlogs.centos.7.cloud.x86_64.openstack-queens/
+gpgcheck=0
+enabled=1
+
+[rhel77]
+name=rhel77
+baseurl=http://repository:8080/rhel77
+enabled=1
+gpgcheck=0

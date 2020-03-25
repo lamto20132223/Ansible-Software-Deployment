@@ -1,0 +1,4 @@
+CREATE DATABASE {{ db_glance_name }};
+GRANT ALL PRIVILEGES ON {{ db_glance_name }}.* TO '{{ db_user_glance }}'@'localhost'  IDENTIFIED BY "{{ DB_GLANCE_PASS }}";
+GRANT ALL PRIVILEGES ON {{ db_glance_name }}.* TO '{{ db_user_glance }}'@'%'  IDENTIFIED BY "{{ DB_GLANCE_PASS }}";
+

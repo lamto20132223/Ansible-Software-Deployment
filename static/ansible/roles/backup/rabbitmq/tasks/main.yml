@@ -1,0 +1,81 @@
+---
+
+- name: remove
+  command: '{{ item }}'
+  with_items:
+    - yum remove -y rabbitmq-server
+    - rm -rf /var/lib/rabbitmq/
+    - rm -rf /etc/rabbitmq/
+
+
+
+- name: yum install -y rabbitmq
+  yum:
+    name:
+      - rabbitmq-server
+    state: latest
+
+- name: systemctl start rabbitmq 
+  systemd:
+    name: rabbitmq-server
+    state: started
+
+- name: systemctl stop rabbitmq 
+  systemd:
+    name: rabbitmq-server
+    state: stopped
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+
+#- name: cp rabbitmq.config
+#  template:
+#    src: rabbitmq.config.j2 
+#    dest: '/etc/rabbitmq/rabbitmq.config'
+#    owner: root
+#    group: root
+#    mode: '0644'
+#    backup: yes
+
+- name: fetch /var/lib/rabbitmq/.erlang.cookie
+  fetch:
+    src: /var/lib/rabbitmq/.erlang.cookie
+    dest: /etc/ansible/fetch_file
+    mode: 400
+    fail_on_missing: yes 
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+
+- name: copy /var/lib/rabbitmq/.erlang.cookie
+  copy:
+    src: '/etc/ansible/fetch_file/{{first_controller}}/var/lib/rabbitmq/.erlang.cookie'
+    dest: /var/lib/rabbitmq/.erlang.cookie
+    mode: 400
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+
+- name: chown
+  command: '{{ item }}'
+  with_items:
+    - chmod 400  /var/lib/rabbitmq/.erlang.cookie
+
+- name: systemctl start rabbitmq 
+  systemd:
+    name: rabbitmq-server
+    state: started
+
+- name: Join Rabbitmq Cluster
+  command: '{{ item }}'
+  with_items:
+    - rabbitmqctl stop_app
+    - rabbitmqctl join_cluster  rabbit@{{ first_controller }}
+# rabbitmqctl join_cluster  rabbit@controller01
+
+    - rabbitmqctl start_app
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+
+
+- name: Create Rabbitmq User 
+  command: '{{ item }}'
+  with_items:
+    - rabbitmqctl set_policy ha-all '.*' '{"ha-mode" ':' "all"}'
+    - rabbitmqctl delete_user guest
+    - rabbitmqctl add_user openstack Y2g8AiB6DjwpvQRKqdU7mXcolwPHNQUT
+    - rabbitmqctl set_permissions openstack ".*" ".*" ".*"
+  ignore_errors: yes

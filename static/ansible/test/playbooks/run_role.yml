@@ -1,0 +1,12 @@
+---
+- name: install backend first node 
+  hosts: '{{ host_n }}'
+  remote_user: root
+  roles: 
+    - { role: '{{ role_n }}'}
+  vars:
+    role_n: '{{ role_name }}'
+    host_n: '{{ host_name }}'
+  
+# ansible-playbook run_role.yml -e "host_name=os-controller role_name=docker"
+

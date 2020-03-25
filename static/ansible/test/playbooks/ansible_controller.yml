@@ -1,0 +1,52 @@
+---
+- name: install backend first node 
+  hosts: os-controller
+  remote_user: root
+  roles: 
+    - { role: init_repo}
+    - { role: chrony } 
+    - { role: rabbitmq}
+    - { role: memcached}
+    - { role: percona_xtra_db_cluster}
+    - { role: keepalived }
+    - { role: haproxy }
+    - { role: docker }
+
+- name: install backend backup node 
+  hosts: bk-controller
+  remote_user: root
+  roles: 
+    - { role: init_repo}
+    - { role: chrony } 
+    - { role: rabbitmq}
+    - { role: memcached}
+    - { role: percona_xtra_db_cluster}
+    - { role: keepalived }
+    - { role: haproxy }
+    - { role: docker }
+
+- name: install controller first node 
+  hosts: os-controller
+  remote_user: root
+  roles: 
+    - { role: keystone }
+    - { role: glance } 
+    - { role: nova-api }
+    - { role: neutron-server }
+    - { role: horizon }
+    - { role: cinder-api }
+    - { role: cinder-volume }
+#    - { role: swift_proxy }
+
+- name: install controller backup node 
+  hosts: bk-controller
+  remote_user: root
+  roles: 
+    - { role: keystone }
+    - { role: glance } 
+    - { role: nova-api }
+    - { role: neutron-server }
+    - { role: horizon }
+    - { role: cinder-api }
+    - { role: cinder-volume }
+#    - { role: swift_proxy }

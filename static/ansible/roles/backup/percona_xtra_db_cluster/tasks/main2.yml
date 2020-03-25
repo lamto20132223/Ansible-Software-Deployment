@@ -1,0 +1,32 @@
+---
+- name: remove
+  command: '{{ item }}'
+  with_items:
+    - rm -rf   /usr/share/docker/mysql/mysql-data/*
+    - mkdir  -p  /usr/share/docker/mysql/mysql-data/
+    - mkdir -p /u01/docker/docker_log/mysql/
+    - chown -R 1011:1010 /usr/share/docker/mysql/mysql-data/
+    - chown -R 1011:1010 /u01/docker/docker_log/mysql/
+
+- name: cp wsrep.cnf
+  template:
+    src: wsrep.cnf.j2
+    dest: '/usr/share/docker/mysql/mysql/percona-xtradb-cluster.conf.d/wsrep.cnf'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: install on first_controller
+  command: '{{ item }}'
+  with_items:
+    - docker run  -d  --network=host --privileged -v /u01/docker/docker_log/mysql:/var/log/      -v /usr/share/docker/:/usr/share/docker/    -u mysql -e PXC_START='BOOTSTRAP'   -e SQL_SST_USER="sstuser" -e SQL_SST_PASSWD="fPWOWrsMGLaBaP74iK57XoOyJy8aAEew"  docker-registry:4000/mysqlp_v20:q
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+
+
+- name: install on second_controller
+  command: '{{ item }}'
+  with_items:
+    - docker run  -d  --network=host --privileged -v /u01/docker/docker_log/mysql:/var/log/    -v /usr/share/docker/:/usr/share/docker/    -u mysql -e PXC_START='INIT_MYSQL_CLUSTER'   -e SQL_SST_USER="sstuser" -e SQL_SST_PASSWD="fPWOWrsMGLaBaP74iK57XoOyJy8aAEew"  docker-registry:4000/mysqlp_v20:q
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+

@@ -1,0 +1,21 @@
+---
+- name: restart_keystone
+  docker_container:
+    name: keystone 
+    image: '{{ docker_image.keystone }}' 
+    state: started
+    restart: yes
+
+- name: stop_keystone
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - keystone
+    
+- name: remove_keystone
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - keystone

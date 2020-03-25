@@ -1,0 +1,3 @@
+CREATE DATABASE {{ db_neutron_name }};
+GRANT ALL PRIVILEGES ON {{ db_neutron_name }}.* TO '{{ db_user_neutron }}'@'localhost' IDENTIFIED BY "{{ DB_NEUTRON_PASS }}";
+GRANT ALL PRIVILEGES ON {{ db_neutron_name }}.* TO '{{ db_user_neutron }}'@'%' IDENTIFIED BY "{{ DB_NEUTRON_PASS }}";

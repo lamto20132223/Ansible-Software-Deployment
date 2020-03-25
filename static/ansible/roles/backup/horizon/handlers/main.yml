@@ -1,0 +1,21 @@
+---
+- name: restart_horizon
+  docker_container:
+    name: horizon
+    image: '{{ docker_image.horizon }}' 
+    state: started
+    restart: yes
+
+- name: stop_horizon
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - horizon
+
+- name: remove_horizon
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - horizon

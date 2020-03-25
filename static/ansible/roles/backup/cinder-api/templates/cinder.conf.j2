@@ -1,0 +1,69 @@
+[DEFAULT]
+debug = {{ glance_logging_debug }}
+rootwrap_config = /etc/cinder/rootwrap.conf
+api_paste_confg = /etc/cinder/api-paste.ini
+iscsi_helper = tgtadm
+volume_name_template = volume-%s
+volume_group = {{ volume_group }} 
+verbose = True
+auth_strategy = keystone
+state_path = /var/lib/cinder
+lock_path = /var/lock/cinder
+volumes_dir = /var/lib/cinder/volumes
+rpc_backend = rabbit
+my_ip = {{ host_info.ip[host_name] }}
+
+{% if cinder_backend_ceph | bool %}
+enabled_backends = ceph
+{% else %}
+enabled_backends = lvm
+{% endif %}
+
+glance_api_servers = http://{{ CONTROLLER_HOST }}:{{ services_port.glance_api }}
+allow_availability_zone_fallback = True
+glance_api_version = 2
+allowed_direct_url_schemes = cinder
+transport_url = {{ transport_url }}
+log_dir = {{ cinder_log_file }}
+
+[database]
+connection = mysql+pymysql://{{ db_user_cinder }}:{{ DB_CINDER_PASS }}@{{ CONTROLLER_HOST }}/{{ db_cinder_name }}
+
+[keystone_authtoken]
+auth_uri  = {{ keystone_auth_url }}
+auth_url = {{ keystone_auth_url }}
+
+auth_type = password
+project_domain_name = {{ project_domain_name }}
+user_domain_name = {{ user_domain_name }}
+project_name = service
+username = {{ ops_user_cinder }}
+password = {{ OPS_CINDER_PASS }}
+#service_token_roles_required  = true
+memcached_servers = {{ memcached_servers }}
+
+[oslo_concurrency]
+lock_path = /var/lib/cinder/tmp
+
+{% if cinder_backend_ceph | bool %}
+[ceph]
+volume_driver = cinder.volume.drivers.rbd.RBDDriver
+rbd_pool = {{ rbd_pool }}
+rbd_ceph_conf = {{ rbd_ceph_conf }}
+rbd_flatten_volume_from_snapshot = false
+rbd_max_clone_depth = {{ rbd_max_clone_depth }}
+rbd_store_chunk_size = {{ rbd_store_chunk_size }}
+rados_connect_timeout = {{ rados_connect_timeout }}
+glance_api_version ={{ glance_api_version }}
+rbd_user = {{ rbd_user }}
+rbd_secret_uuid = {{ rbd_secret_uuid }}
+#quannt24 test replication
+#replication_device = backend_id:secondary, conf:/etc/ceph/secondary.conf, user:volumes, pool:volumes
+{% else %}
+[lvm]
+volume_driver = cinder.volume.drivers.lvm.LVMVolumeDriver
+volume_group =  {{ volume_group }} 
+iscsi_protocol = iscsi
+iscsi_helper = lioadm
+{% endif %}
+

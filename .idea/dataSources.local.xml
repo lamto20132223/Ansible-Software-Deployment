@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="@viettel" uuid="5f8a8980-148a-46ce-8e76-e76c9b36a83e">
+      <database-info product="MySQL" version="5.7.27-30-57-log" jdbc-version="4.2" driver-name="MySQL Connector/J" driver-version="mysql-connector-java-8.0.19 (Revision: a0ca826f5cdf51a98356fdfb1bf251eb042f80bf)">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>lamtv10</user-name>
+      <introspection-schemas>*:auto_lamtv10</introspection-schemas>
+    </data-source>
+  </component>
+</project>

@@ -1,0 +1,1 @@
+{"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname controller_03: Name or service not known\r\n", "unreachable": true}

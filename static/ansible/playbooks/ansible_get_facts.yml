@@ -1,0 +1,15 @@
+- name: gather_facts
+  hosts: '{{target}}'
+#  vars_files:
+#    - /etc/ansible/group_vars/all/global.yml
+#    - /etc/ansible/group_vars/all/common.yml
+  remote_user: root
+  tasks:
+
+  - name: lamtv10
+    setup:
+      fact_path: '/home/vttek/lamtv10/etc/ansible/facts/'
+    tags:
+      - download
+  tags:
+    - download

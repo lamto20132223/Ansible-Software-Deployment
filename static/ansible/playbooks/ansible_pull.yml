@@ -1,0 +1,23 @@
+---
+- name: pull config from Over_cloud to Under_cloud
+  hosts: '{{target}}'
+  vars_files:
+    - /etc/ansible/group_vars/all/global.yml
+    - /etc/ansible/group_vars/all/common.yml 
+  remote_user: root 
+  gather_facts: no 
+  tasks:
+    - name: fetch '{{file_to_fetch}}'
+      fetch:
+        src: '{{file_to_fetch}}'
+        dest: /etc/ansible/fetch_file
+        mode: 400
+        fail_on_missing: yes
+      tags:
+      - config
+ 
+
+
+
+
+

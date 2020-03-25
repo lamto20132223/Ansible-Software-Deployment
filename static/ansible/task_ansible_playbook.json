@@ -1,0 +1,7 @@
+task_ansible_playbook.json
+
+Input: role_name + service_name+Hub_name + Specific_config
+Output: 
+Validate function +
+ Danh sách các task trong playbook tương đương với 1 setup_task
+ danh sách các task nhỏ trong từng role trong play book tương đương với các changes 
