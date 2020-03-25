@@ -1,7 +1,478 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="" />
+    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/controllers/assign_role/routes.py" afterPath="$PROJECT_DIR$/controllers/assign_role/routes.py" />
+      <change beforePath="$PROJECT_DIR$/global_assets/const.py" afterPath="$PROJECT_DIR$/global_assets/const.py" />
+      <change beforePath="$PROJECT_DIR$/libs/flask.py" afterPath="$PROJECT_DIR$/libs/flask.py" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/templates/chrony_client.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/templates/chrony_server.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/chrony/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/templates/ceph.client.volumes.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/templates/cinder.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/templates/cinder.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/templates/notify" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/templates/ceph.client.volumes.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/templates/cinder.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/templates/cinder.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/cinder-volume/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/files/container-selinux-2.107-3.el7.noarch.rpm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/templates/daemon.json.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/docker/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/glance-api.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/glance-registry.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/glance.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/glance/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/templates/etc_sysctl.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/templates/haproxy.cfg.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/haproxy/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/templates/apache2_conf_enabled_openstack_dashboard.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/templates/openstack_dashboard_local_setting.py.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/horizon/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/templates/keepalived.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keepalived/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/credential_key_0.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/credential_key_1.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/fernet_key_0.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/fernet_key_1.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/keystone.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/keystone.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/templates/open.rc.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/keystone/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/templates/memcached.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/memcached/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/dhcp_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/metadata_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/neutron.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/neutron.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-agents/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/dhcp_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/metadata_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/neutron.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/neutron.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/neutron-server/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/templates/nova.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/templates/open.rc.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/nova-compute/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/tasks/main2.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/templates/wsrep.cnf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/percona_xtra_db_cluster/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/tasks/main2.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/templates/rabbitmq.config.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/rabbitmq/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/backup/test_ansible_command/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/ceph/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/chrony/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/cinder-volume/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/docker/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/elasticsearch/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/fluentd/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/glance-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/haproxy/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/horizon/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keepalived/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/keystone/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/kibana/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/memcached/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-dhcp_agent/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-metadata_agent/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-openvswitch_agent/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-server/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/neutron-sriov_agent/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/nova-compute/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openday_light/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/openvswitch_dpdk/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/percona_xtra_db_cluster/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/prometheus/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/qemu/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/rabbitmq/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/swift_proxy/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/roles/test_ansible_command/vars/main.yml" afterPath="" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,7 +482,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Project23022020$mp_thread.coverage" NAME="mp_thread Coverage Results" MODIFIED="1582600632991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1585127277361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1585135813910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project23022020$runner.coverage" NAME="runner Coverage Results" MODIFIED="1585015863695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/ansible" />
     <SUITE FILE_PATH="coverage/Project23022020$learn_thread.coverage" NAME="learn_thread Coverage Results" MODIFIED="1582529326450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1584960636122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -52,26 +523,50 @@
     </expand>
     <select />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="assets.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="1710">
+                    <caret line="140" column="50" lean-forward="false" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
+                    <folding>
+                      <element signature="e#0#70#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="432">
+                    <caret line="215" column="29" lean-forward="false" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+                    <folding>
+                      <element signature="e#0#101#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6786">
-              <caret line="389" column="34" lean-forward="false" selection-start-line="389" selection-start-column="34" selection-end-line="389" selection-end-column="34" />
-              <folding>
-                <element signature="e#0#101#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="const.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="const.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/global_assets/const.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-              <folding />
+            <state relative-caret-position="342">
+              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+              <folding>
+                <element signature="e#1121#1130#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -99,8 +594,18 @@
       <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/configs/conf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="479">
+              <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flask.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/libs/flask.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="417" column="4" lean-forward="false" selection-start-line="417" selection-start-column="4" selection-end-line="417" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -136,19 +641,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2430">
-              <caret line="145" column="36" lean-forward="false" selection-start-line="145" selection-start-column="36" selection-end-line="145" selection-end-column="36" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tasks" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tasks" pinned="false" current-in-tab="true">
         <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
@@ -168,7 +661,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>from</find>
       <find>/root/anaconda2/bin/</find>
       <find>hosts</find>
       <find>models.to_json</find>
@@ -198,7 +690,11 @@
       <find>yaml</find>
       <find>yml</find>
       <find>test_code6</find>
+      <find>file</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -249,11 +745,11 @@
         <option value="$PROJECT_DIR$/controllers/discovery_node_test/routes.py" />
         <option value="$PROJECT_DIR$/tests/curl_t.py" />
         <option value="$PROJECT_DIR$/libs/ansible/runner.py" />
-        <option value="$PROJECT_DIR$/global_assets/const.py" />
-        <option value="$PROJECT_DIR$/libs/flask.py" />
         <option value="$PROJECT_DIR$/controllers/assign_role/assets.py" />
         <option value="$PROJECT_DIR$/tests/drop_table.sql" />
+        <option value="$PROJECT_DIR$/libs/flask.py" />
         <option value="$PROJECT_DIR$/controllers/assign_role/routes.py" />
+        <option value="$PROJECT_DIR$/global_assets/const.py" />
       </list>
     </option>
   </component>
@@ -291,6 +787,9 @@
       </profile-state>
     </entry>
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -306,6 +805,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -332,12 +832,6 @@
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="discovery_node_test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
               <item name="global_assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -359,6 +853,12 @@
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -375,7 +875,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -539,20 +1038,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="454" y="193" width="1926" height="1036" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40834248" sideWeight="0.15104167" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.467618" sideWeight="0.8489583" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.46754676" sideWeight="0.8489583" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18890075" sideWeight="0.5049396" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19103523" sideWeight="0.50055003" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13180363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18890075" sideWeight="0.49506038" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19103523" sideWeight="0.49944994" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -595,13 +1095,6 @@
     <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1582448942841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/controllers/management_file_config/old_routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/gen_template/routes.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
@@ -814,13 +1307,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/flask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2990">
-          <caret line="416" column="28" lean-forward="true" selection-start-line="416" selection-start-column="28" selection-end-line="416" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.service_infos">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -842,62 +1328,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2430">
           <caret line="145" column="36" lean-forward="false" selection-start-line="145" selection-start-column="36" selection-end-line="145" selection-end-column="36" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6786">
-          <caret line="389" column="34" lean-forward="false" selection-start-line="389" selection-start-column="34" selection-end-line="389" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -921,7 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1620">
           <caret line="90" column="2" lean-forward="false" selection-start-line="90" selection-start-column="2" selection-end-line="90" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -937,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="107" lean-forward="false" selection-start-line="0" selection-start-column="107" selection-end-line="0" selection-end-column="107" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,17 +1379,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="522">
           <caret line="29" column="2" lean-forward="false" selection-start-line="29" selection-start-column="2" selection-end-line="29" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="63" column="17" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="17" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -964,16 +1387,93 @@
         <state relative-caret-position="695">
           <caret line="128" column="31" lean-forward="true" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
           <folding>
-            <element signature="e#388#397#0" expanded="true" />
+            <element signature="e#388#397#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/flask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="417" column="4" lean-forward="false" selection-start-line="417" selection-start-column="4" selection-end-line="417" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="30" column="65" lean-forward="false" selection-start-line="30" selection-start-column="65" selection-end-line="30" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1710">
+          <caret line="140" column="50" lean-forward="false" selection-start-line="140" selection-start-column="50" selection-end-line="140" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/roles/keystone/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/global_assets/const.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
+        <state relative-caret-position="342">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <element signature="e#1121#1130#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="215" column="29" lean-forward="false" selection-start-line="215" selection-start-column="29" selection-end-line="215" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#101#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

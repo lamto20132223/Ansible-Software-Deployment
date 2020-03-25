@@ -391,31 +391,31 @@ It gives you get_or_404()instead of get() and find_or_404() instead of find() Co
 cat /home/lamtv10/anaconda2/envs/viettel/conda-meta/history | grep '# cmd' | cut -d" " -f3-
 
 
-conda create -n viettel python=2.7
-conda install -c anaconda numpy
-conda install -c anaconda flask
-conda install -c anaconda pymysql
-conda install -c conda-forge flask-restplus
-conda install -c conda-forge ansible
-conda install -c anaconda configparser
-conda install -c anaconda sqlalchemy
-conda install -c conda-forge flask-sqlalchemy
-conda install -c conda-forge flask-migrate
-conda install -c anaconda flask-login
-conda install -c conda-forge pytest
-conda install -c conda-forge flask-wtf
-conda install -c conda-forge packaging
-conda install -c conda-forge fabric
-conda install -c anaconda redis
-conda install -c anaconda redis-py
-conda install PyYAML
-conda install pyOpenSSL
-conda install flake8
-conda install -c conda-forge flask-marshmallow
-conda install -c conda-forge marshmallow-sqlalchemy
-pip install ansible==2.7.4
-pip install Werkzeug==0.16.1
-conda install oyaml
+RUN conda create -n viettel python=2.7
+RUN conda install -c anaconda numpy
+RUN conda install -c anaconda flask
+RUN conda install -c anaconda pymysql
+RUN conda install -c conda-forge flask-restplus
+RUN conda install -c conda-forge ansible
+RUN conda install -c anaconda configparser
+RUN conda install -c anaconda sqlalchemy
+RUN conda install -c conda-forge flask-sqlalchemy
+RUN conda install -c conda-forge flask-migrate
+RUN conda install -c anaconda flask-login
+RUN conda install -c conda-forge pytest
+RUN conda install -c conda-forge flask-wtf
+RUN conda install -c conda-forge packaging
+RUN conda install -c conda-forge fabric
+RUN conda install -c anaconda redis
+RUN conda install -c anaconda redis-py
+RUN conda install PyYAML
+RUN conda install pyOpenSSL
+RUN conda install flake8
+RUN conda install -c conda-forge flask-marshmallow
+RUN conda install -c conda-forge marshmallow-sqlalchemy
+RUN pip install ansible==2.7.4
+RUN pip install Werkzeug==0.16.1
+RUN conda install oyaml
 
 
 

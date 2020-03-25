@@ -30,8 +30,11 @@ project_urls ={
              },
 
 
+import os
+import sys
 
-inventory_dir = '/home/vttek/.ansible/inventory'
-playbook_dir = '/home/vttek/.ansible/playbooks'
-facts_dir = '/home/vttek/.ansible/facts'
-role_dir = '/home/vttek/.ansible/roles'
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+inventory_dir = ROOT_DIR +  '/static/ansible/inventory'
+playbook_dir = ROOT_DIR +  '/static/ansible/playbooks'
+facts_dir = ROOT_DIR +  '/static/ansible/facts'
+role_dir = ROOT_DIR +  '/static/ansible/playbooks/roles'

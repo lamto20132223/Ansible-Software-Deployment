@@ -265,7 +265,10 @@ def test_code_create_task_for_service():
     return {"response: ": "OK"}
 
 
-
+@mod.route('/roles/test_code7', methods=['POST', 'GET'])
+def test_code_create_task_for_service7():
+    ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+    return {"response: ": ROOT_DIR+CONST.inventory_dir}
 
 
 
