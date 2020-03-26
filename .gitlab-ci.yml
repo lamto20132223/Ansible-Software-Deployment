@@ -1,0 +1,22 @@
+before_script:
+  - docker info
+stages:
+  - build
+  - test
+build_image_stage:
+  stage: build
+  tags:
+    - shell_run_docker
+  script:
+    - docker login -u lamtv10 -p S4YugcbJfZetD551pwJa registry.ocs.com
+    - docker build  -t test_image_lamtv10:v2 .
+    - docker tag test_image_lamtv10:v2 registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:v2
+    - docker push registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:v2
+
+run_image_stage:
+  stage: test
+  tags:
+    - shell_run_test
+  script:
+    - docker pull registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:v2
+    - docker run -d --network=host  registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:v2

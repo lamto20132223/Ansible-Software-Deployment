@@ -627,3 +627,6 @@ git clone ssh://git@172.16.29.193:2222/lamtv10/software_deployment.git
 
 
 ansible all  -i /root/app/static/ansible/inventory/new_node -m setup  --tree  /root/app/static/ansible/facts
+
+
+docker run --rm -t -i -v /home/srv/gitlab-runner/config:/etc/gitlab-runner   -v /etc/hosts:/etc/hosts  -v  /etc/ssl/certs/ca-bundle.crt:/etc/ssl/certs/ca-certificates.crt  gitlab/gitlab-runner register
