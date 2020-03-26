@@ -1,68 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/controllers/assign_role/assets.py" afterPath="$PROJECT_DIR$/controllers/assign_role/assets.py" />
-      <change beforePath="$PROJECT_DIR$/controllers/assign_role/routes.py" afterPath="$PROJECT_DIR$/controllers/assign_role/routes.py" />
-      <change beforePath="$PROJECT_DIR$/controllers/discovery_node_test/assets.py" afterPath="$PROJECT_DIR$/controllers/discovery_node_test/assets.py" />
-      <change beforePath="$PROJECT_DIR$/controllers/discovery_node_test/routes.py" afterPath="$PROJECT_DIR$/controllers/discovery_node_test/routes.py" />
-      <change beforePath="$PROJECT_DIR$/libs/DROP_DATABASE_V2.py" afterPath="$PROJECT_DIR$/libs/DROP_DATABASE_V2.py" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/config.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/facts/172.16.29.23" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/facts/172.16.29.27" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/facts/172.16.29.41" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/facts/172.16.29.43" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/inventory/new_node" afterPath="$PROJECT_DIR$/static/ansible/inventory/new_node" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_ceph_for_ceph01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_chrony_for_ceph01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_chrony_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_chrony_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_chrony_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_cinder-api_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_cinder-volume_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_docker_for_ceph01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_docker_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_docker_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_docker_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_glance-api_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_haproxy_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_horizon_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_init_repo_for_ceph01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_init_repo_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_init_repo_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_init_repo_for_controller.retry" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_init_repo_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_keepalived_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_keystone_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_memcached_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-dhcp_agent_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-dhcp_agent_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-metadata_agent_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-metadata_agent_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-openvswitch_agent_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-openvswitch_agent_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-server_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-sriov_agent_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_neutron-sriov_agent_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_nova-api_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_nova-compute_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_nova-compute_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_openvswitch_dpdk_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_openvswitch_dpdk_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_percona_xtra_db_cluster_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_qemu_for_compute01.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_qemu_for_compute02.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_rabbitmq_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_service_name_for_host_name.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/playbook_setup_swift_proxy_for_controller.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/role_service.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/service_task.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/task_ansible_playbook.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/validate.json" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/tests/curl_t.py" afterPath="$PROJECT_DIR$/tests/curl_t.py" />
-    </list>
+    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,10 +95,28 @@
         </state>
       </content>
     </window>
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/.gitignore">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="0">
+                    <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="curl_t.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="curl_t.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/curl_t.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="545">
@@ -201,21 +158,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="assets.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="assets.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="node_role2.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/node_role2.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+            <state relative-caret-position="281">
+              <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -370,9 +317,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-3" />
-    <option name="y" value="22" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="2079" />
+    <option name="y" value="147" />
     <option name="width" value="1254" />
     <option name="height" value="599" />
   </component>
@@ -602,7 +549,7 @@
     <option name="totallyTimeSpent" value="1605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-3" y="22" width="1926" height="1036" extended-state="7" />
+    <frame x="1917" y="-2" width="1926" height="1084" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -611,12 +558,12 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39956093" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.6633663" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.6635319" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13180363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32976446" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.33663365" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.33646813" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -655,13 +602,6 @@
     <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1582448942841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.node_infos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.node_roles">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1031,8 +971,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="25" selection-end-line="78" selection-end-column="25" />
+        <state relative-caret-position="281">
+          <caret line="62" column="0" lean-forward="true" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
