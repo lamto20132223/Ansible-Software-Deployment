@@ -63,11 +63,20 @@ def discover_hosts_v1():
     # load_node_info_to_database(facts_dir)
     return {"inven":inventory_data}
 
+@mod.route('/hosts/discover_hosts_v2', methods=['POST']) #################################### ERROR #######################
+def discover_hosts():
+    inventory_dir = CONST.inventory_dir+'/new_node'
+    facts_dir = CONST.facts_dir
+    get_facts_local(inventory_dir, facts_dir)
+    load_node_info_to_database(facts_dir)
+    return redirect('/api/v1/hosts/')
+
+
 @mod.route('/hosts/discover_hosts', methods=['POST']) #################################### ERROR #######################
 def discover_hosts():
     inventory_dir = CONST.inventory_dir+'/new_node'
     facts_dir = CONST.facts_dir
-    get_facts(inventory_dir, facts_dir)
+    get_facts_local(inventory_dir, facts_dir)
     load_node_info_to_database(facts_dir)
     return redirect('/api/v1/hosts/')
 

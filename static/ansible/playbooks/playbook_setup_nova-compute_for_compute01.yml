@@ -1,7 +1,0 @@
----
-- name: install nova-compute on compute01
-  hosts: 'compute01'
-  remote_user: root
-  gather_facts: no
-  roles:
-    - { role: nova-compute }

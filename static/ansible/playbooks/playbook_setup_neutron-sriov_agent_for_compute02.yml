@@ -1,7 +1,0 @@
----
-- name: install neutron-sriov_agent on compute02
-  hosts: 'compute02'
-  remote_user: root
-  gather_facts: no
-  roles:
-    - { role: neutron-sriov_agent }

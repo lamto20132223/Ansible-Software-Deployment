@@ -1,7 +1,0 @@
----
-- name: install init_repo on controller
-  hosts: 'controller'
-  remote_user: root
-  gather_facts: no
-  roles:
-    - { role: init_repo }

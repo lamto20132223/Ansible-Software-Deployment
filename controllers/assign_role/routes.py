@@ -106,7 +106,7 @@ def add_host_to_role():
     return make_response({"ok":"ok"})
 
 
-@mod.route('/roles/test_code', methods=['POST', 'GET'])
+@mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
 def add_all_deployment():
     nodes = session.query(models.Node).all()
     for node in nodes:
@@ -116,7 +116,7 @@ def add_all_deployment():
     session.commit()
     return "OK"
 
-@mod.route('/roles/test_code2', methods=['POST', 'GET'])
+@mod.route('/roles/test_create_service_setup', methods=['POST', 'GET'])
 def test_code_create_service_setup():
     with open('static/role_service.json') as role_data_file:
         role_data = json.load(role_data_file)
@@ -142,7 +142,7 @@ def test_code_create_service_setup():
 
 
 
-@mod.route('/roles/test_code3', methods=['POST', 'GET'])
+@mod.route('/roles/test_create_ansible_inventory_with_role', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p1():
     with open('static/role_service.json') as role_data_file:
         role_data = json.load(role_data_file)
@@ -163,7 +163,7 @@ def test_code_create_ansible_playbook_p1():
     f = open(CONST.inventory_dir+'/new_node', "r")
     return f.read()
 
-@mod.route('/roles/test_code4', methods=['POST', 'GET'])
+@mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p2():
 
     # host_name='host_name'
@@ -183,7 +183,7 @@ def test_code_create_ansible_playbook_p2():
             ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
             playbook_temp = os.path.join(ROOT_DIR, 'global_assets/playbook_temp.yml')
             new_playbook = CONST.playbook_dir+'/'+'playbook_setup_'+ service_name + '_for_'+host_name + '.yml'
-            os.system('cp '+ str(playbook_temp) + ' '+new_playbook )
+            os.system('\cp '+ str(playbook_temp) + ' '+new_playbook )
             os.system('sed -i "s|SERVICE_NAME|'+service_name+'|g" '+ str(new_playbook))
             os.system('sed -i "s|HOST_NAME|'+host_name+'|g" '+ str(new_playbook))
             os.system('sed -i "s|ROLE_NAME|'+role_name+'|g" '+ str(new_playbook))
@@ -213,7 +213,7 @@ def test_code_create_ansible_playbook_p2():
 
 
 
-@mod.route('/roles/test_code5', methods=['POST', 'GET'])
+@mod.route('/roles/test_run_first_ansble_playbook', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p3():
 
 
@@ -238,7 +238,7 @@ def test_code_create_ansible_playbook_p3():
 
 
 #
-@mod.route('/roles/test_code6', methods=['POST', 'GET'])
+@mod.route('/roles/test_create_task', methods=['POST', 'GET'])
 def test_code_create_task_for_service():
 
 
@@ -410,3 +410,46 @@ class ClassTask(Resource):
 # @mod.route('/tasks/update_task', method=['POST'])
 # def update_task_info():
 #
+
+
+
+@mod.route('/clean_data', methods=['GET', 'POST'])
+def clean_all_data():
+    if request.args.get('table') is not None:
+        table = request.args.get('table')
+        if table =='nodes':
+            db.session.query(models.Node).delete()
+        elif table =='deployments':
+            db.session.query(models.Deployment).delete()
+        elif table =='node_infos':
+            db.session.query(models.Node_info).delete()
+        elif table =='node_roles':
+            db.session.query(models.Node_role).delete()
+        elif table =='service_setups':
+            db.session.query(models.Service_setup).delete()
+        elif table =='tasks':
+            db.session.query(models.Task).delete()
+        elif table =='changes':
+            db.session.query(models.Change).delete()
+        elif table =='disk_resources':
+            db.session.query(models.Disk_resource).delete()
+        elif table =='interface_resources':
+            db.session.query(models.Interface_resource).delete()
+        db.session.commit()
+        return {"response":"YOU DELETE " + table}
+    else:
+        try:
+            db.session.query(models.Change).delete()
+            db.session.query(models.Task).delete()
+            db.session.query(models.Service_setup).delete()
+            db.session.query(models.Deployment).delete()
+            db.session.query(models.Disk_resource).delete()
+            db.session.query(models.Interface_resource).delete()
+            db.session.query(models.Node_info).delete()
+            db.session.query(models.Node_role).delete()
+            db.session.query(models.Node).delete()
+            db.session.commit()
+        except:
+            db.session.rollback()
+
+    return {"response: " : "LOOK GOOD YOU'VE DELETED ALL"}

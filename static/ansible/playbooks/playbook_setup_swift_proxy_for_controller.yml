@@ -1,7 +1,0 @@
----
-- name: install swift_proxy on controller
-  hosts: 'controller'
-  remote_user: root
-  gather_facts: no
-  roles:
-    - { role: swift_proxy }

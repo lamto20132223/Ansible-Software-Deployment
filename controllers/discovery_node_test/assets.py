@@ -4,7 +4,7 @@ import  models
 import os
 import json
 
-def get_facts(ansible_inventory_dir, ansible_facts_dir):
+def get_facts_local(ansible_inventory_dir, ansible_facts_dir):
     list_nodes = session.query(models.Node).all()
     os.system(' rm -rf ' + ansible_inventory_dir)
     file_new_node = open(ansible_inventory_dir,"a")
@@ -32,8 +32,34 @@ def get_facts(ansible_inventory_dir, ansible_facts_dir):
     #stats = runner.run()
 
 
+def get_facts(ansible_inventory_dir, ansible_facts_dir):
+    list_nodes = session.query(models.Node).all()
+    os.system(' rm -rf ' + ansible_inventory_dir)
+    file_new_node = open(ansible_inventory_dir,"a")
+    file_new_node.write('[all]')
+    file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write('['+str(node.node_display_name)+']' )
+        file_new_node.write("\n")
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write("\n")
+    file_new_node.close()
 
 
+
+
+
+    os.system('ansible all  -i '+  ansible_inventory_dir + ' -m setup  --tree ' + ansible_facts_dir)
+    #print(get_facts(inventory_dir,facts_dir))
+    #runner = ansible.Runner('ansible_get_facts.yml', 'new_node',
+    #                          {'extra_vars': {'target': "all", 'facts_dir': facts_dir}, 'tags': ["download"]}, None, False, None,
+    #                          None, None)
+    #stats = runner.run()
+    f = open(ansible_inventory_dir, "r")
+    return f.read()
 
 def load_node_info_to_database(ansible_facts_dir):
     nodes=session.query(models.Node).all()
@@ -42,7 +68,7 @@ def load_node_info_to_database(ansible_facts_dir):
         node.updated_at=datetime.now()
         node.node_type="oenstack"
         status="udate_info_to_database"
-        with open(ansible_facts_dir+ str(node.management_ip)) as data_node:
+        with open(ansible_facts_dir+ '/'+str(node.management_ip)) as data_node:
             node_data = json.load(data_node)
             ansible_facts=node_data['ansible_facts']
             #print(node_data)

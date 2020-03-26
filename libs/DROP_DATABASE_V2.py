@@ -604,6 +604,26 @@ test:
 
 
 
+
+
+grep "^[^#;]" smb.conf
+
 UyPTCZKHqauD2PqxJHHh
 
 oj7a969sX3-xJfnKs18K
+
+
+
+
+docker build -t conda_centos_ansible_flask_app:v12 -f Dockerfile . 
+
+docker run  -d  --name mysql --network=host --privileged -v /u01/docker/docker_log/mysql:/var/log/      -v /usr/share/docker/:/usr/share/docker/    -u mysql -e PXC_START='BOOTSTRAP'   -e SQL_SST_USER="sstuser" -e SQL_SST_PASSWD="fPWOWrsMGLaBaP74iK57XoOyJy8aAEew"  docker-registry:4000/mysqlp_v20:q
+
+docker run -d --network=host  conda_centos_ansible_flask_app:v12
+
+
+git clone ssh://git@172.16.29.193:2222/lamtv10/software_deployment.git 
+
+
+
+ansible all  -i /root/app/static/ansible/inventory/new_node -m setup  --tree  /root/app/static/ansible/facts

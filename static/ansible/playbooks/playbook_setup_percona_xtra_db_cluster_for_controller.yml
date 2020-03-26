@@ -1,7 +1,0 @@
----
-- name: install percona_xtra_db_cluster on controller
-  hosts: 'controller'
-  remote_user: root
-  gather_facts: no
-  roles:
-    - { role: percona_xtra_db_cluster }
