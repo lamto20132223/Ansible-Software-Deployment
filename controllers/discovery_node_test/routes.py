@@ -64,7 +64,7 @@ def discover_hosts_v1():
     return {"inven":inventory_data}
 
 @mod.route('/hosts/discover_hosts_v2', methods=['POST']) #################################### ERROR #######################
-def discover_hosts():
+def discover_hosts_v2():
     inventory_dir = CONST.inventory_dir+'/new_node'
     facts_dir = CONST.facts_dir
     get_facts_local(inventory_dir, facts_dir)
