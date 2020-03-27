@@ -1,6 +1,6 @@
-default:
-    variables:
-      GIT_STRATEGY: clone
+
+variables:
+  GIT_STRATEGY: clone
 before_script:
   - docker info
 stages:
