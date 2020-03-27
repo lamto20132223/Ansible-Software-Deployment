@@ -1,5 +1,5 @@
 *.pyc
 **.pyc
-
+.idea/*
 /static/ansible/facts/*
 /static/ansible/playbooks/playbook_setup*
