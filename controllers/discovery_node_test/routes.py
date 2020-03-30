@@ -78,7 +78,7 @@ def discover_hosts():
     facts_dir = CONST.facts_dir
     get_facts(inventory_dir, facts_dir)
     load_node_info_to_database(facts_dir)
-    return redirect('/api/v1/hosts/')
+    return {"response:" "host ok, check in /api/v1/hosts"}
 
 @mod.route('/hosts/host_info', methods=['GET']) ############################### UNDONE ##################
 def get_host_info():
