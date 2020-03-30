@@ -1,21 +1,26 @@
 ---
 
+
+- include: stuff.yml msg="test_ansible_command"
 - name: test_ansible_command
   command: '{{ item }}'
   with_items:
     - 'cp /home/lamtv10/test /home/lamtv10/testxxx'
-    - touch /home/{{target}} 
-    - echo '{{ group_name }}'
-
+    - touch /home/target
+    - echo 'group_name'
+#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
   tags:
     - install
+  register: infos
+  ignore_errors: yes
+- include:  stuff.yml msg="{{ infos }}"
  #   - docker stop glance-registry
  #   - docker rm glance-api
  #   - docker rm glance-registry
 
 
 
-  
+
 # - name: test_ansible_command2
 #   command: '{{ item }}'
 #   args:

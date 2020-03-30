@@ -76,7 +76,7 @@ def discover_hosts_v2():
 def discover_hosts():
     inventory_dir = CONST.inventory_dir+'/new_node'
     facts_dir = CONST.facts_dir
-    get_facts_local(inventory_dir, facts_dir)
+    get_facts(inventory_dir, facts_dir)
     load_node_info_to_database(facts_dir)
     return redirect('/api/v1/hosts/')
 

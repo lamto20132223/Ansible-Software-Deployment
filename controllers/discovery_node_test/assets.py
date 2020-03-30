@@ -70,24 +70,24 @@ def load_node_info_to_database(ansible_facts_dir):
         status="udate_info_to_database"
         with open(ansible_facts_dir+ '/'+str(node.management_ip)) as data_node:
             node_data = json.load(data_node)
-            ansible_facts=node_data['ansible_facts']
+            ansible_facts=node_data.get('ansible_facts')
             #print(node_data)
-            node_name = ansible_facts['ansible_hostname']
-            memory_mb = ansible_facts['ansible_memtotal_mb']
-            memory_mb_free=ansible_facts['ansible_memfree_mb']
+            node_name = ansible_facts.get('ansible_hostname')
+            memory_mb = ansible_facts.get('ansible_memtotal_mb')
+            memory_mb_free=ansible_facts.get('ansible_memfree_mb')
             numa_topology=None
             metrics= None
-            processor_core=ansible_facts['ansible_processor_cores']
-            processor_count=ansible_facts['ansible_processor_count']
-            processor_threads_per_core=ansible_facts['ansible_processor_threads_per_core']
-            processor_vcpu=ansible_facts['ansible_processor_vcpus']
-            os_family=ansible_facts['ansible_os_family']
-            pkg_mgr=ansible_facts['ansible_pkg_mgr']
-            os_version=ansible_facts['ansible_distribution_version']
-            default_ipv4=ansible_facts['ansible_default_ipv4']['address']
-            default_broadcast=ansible_facts['ansible_default_ipv4']['broadcast']
-            default_gateway=ansible_facts['ansible_default_ipv4']['gateway']
-            default_interface_id=ansible_facts['ansible_default_ipv4']['interface']
+            processor_core=ansible_facts.get('ansible_processor_cores')
+            processor_count=ansible_facts.get('ansible_processor_count')
+            processor_threads_per_core=ansible_facts.get('ansible_processor_threads_per_core')
+            processor_vcpu=ansible_facts.get('ansible_processor_vcpus')
+            os_family=ansible_facts.get('ansible_os_family')
+            pkg_mgr=ansible_facts.get('ansible_pkg_mgr')
+            os_version=ansible_facts.get('ansible_distribution_version')
+            default_ipv4=ansible_facts.get('ansible_default_ipv4').get('address')
+            default_broadcast=ansible_facts.get('ansible_default_ipv4').get('broadcast')
+            default_gateway=ansible_facts.get('ansible_default_ipv4').get('gateway')
+            default_interface_id=ansible_facts.get('ansible_default_ipv4').get('interface')
 
             node_info=models.Node_info(node_name=node_name,memory_mb=memory_mb,memory_mb_free=memory_mb_free,numa_topology=numa_topology,metrics=metrics,processor_core=processor_core,processor_count=processor_count,processor_threads_per_core=processor_threads_per_core, processor_vcpu=processor_vcpu,os_family=os_family, pkg_mgr=pkg_mgr,os_version=os_version,default_ipv4=default_ipv4,default_broadcast=default_broadcast,default_gateway=default_gateway,default_interface_id=default_interface_id)
             interface_resources=[]
@@ -107,7 +107,7 @@ def load_node_info_to_database(ansible_facts_dir):
                     pciid=interface_info.get('pciid')
                     phc_index=interface_info.get('phc_index')
                     type_interface=interface_info.get('type_interface')
-                    if device_name==ansible_facts['ansible_default_ipv4']['interface']:
+                    if device_name==ansible_facts.get('ansible_default_ipv4').get('interface'):
                         is_default_ip='True'
                     else:
                         is_default_ip='False'
@@ -119,7 +119,7 @@ def load_node_info_to_database(ansible_facts_dir):
             disk_resources=[]
             for device in ansible_facts['ansible_devices']:
                 if "sd" in device:
-                    device_data=ansible_facts['ansible_devices'][str(device)]
+                    device_data=ansible_facts.get('ansible_devices').get(str(device))
                     device_name=device
                     size = int(float(device_data.get('size')[0:-2].replace(" ", "")))
                     model = device_data.get('model')
