@@ -8,7 +8,7 @@ from sqlalchemy import and_,or_
 from assets import *
 import sys
 import oyaml as yaml
-
+from sqlalchemy.exc import IntegrityError
 import libs.ansible.runner as runner
 from flask_restplus import Api, Resource
 
@@ -440,6 +440,7 @@ def clean_all_data():
     else:
         try:
             db.session.query(models.Change).delete()
+            print("????")
             db.session.query(models.Task).delete()
             db.session.query(models.Service_setup).delete()
             db.session.query(models.Deployment).delete()
@@ -449,7 +450,8 @@ def clean_all_data():
             db.session.query(models.Node_role).delete()
             db.session.query(models.Node).delete()
             db.session.commit()
-        except:
-            db.session.rollback()
+        except IntegrityError:
+            # db.session.rollback()
+            print("Unexpected error:", sys.exc_info()[0])
 
-    return {"response: " : "LOOK GOOD YOU'VE DELETED ALL"}
+        return {"response: " : "LOOK GOOD YOU'VE DELETED ALL"}

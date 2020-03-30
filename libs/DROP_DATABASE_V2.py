@@ -630,3 +630,12 @@ ansible all  -i /root/app/static/ansible/inventory/new_node -m setup  --tree  /r
 
 
 docker run --rm -t -i -v /home/srv/gitlab-runner/config:/etc/gitlab-runner   -v /etc/hosts:/etc/hosts  -v  /etc/ssl/certs/ca-bundle.crt:/etc/ssl/certs/ca-certificates.crt  gitlab/gitlab-runner register
+
+
+
+CREATE USER 'lamtv10'@'localhost' IDENTIFIED BY 'lamtv10';
+CREATE USER 'lamtv10'@'%' IDENTIFIED BY 'lamtv10';
+
+GRANT ALL ON *.* TO 'lamtv10'@'localhost';
+GRANT ALL ON *.* TO 'lamtv10'@'%';
+flush privileges;

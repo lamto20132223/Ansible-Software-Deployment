@@ -71,7 +71,7 @@ CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`nodes` (
   CONSTRAINT `fk_nodes_hardware_infos1`
     FOREIGN KEY (`node_info_id` )
     REFERENCES `auto_lamtv10`.`node_infos` (`node_info_id` )
-    ON DELETE NO ACTION
+    ON DELETE CASCADE
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_nodes_deployments1`
     FOREIGN KEY (`deployment_id` )

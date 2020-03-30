@@ -23,7 +23,7 @@ class Node_info(Node_Base):
 
     interface_resources=relationship("Interface_resource", back_populates="node_info")
     disk_resources = relationship("Disk_resource", back_populates="node_info")
-    node = relationship("Node", uselist=False, back_populates="node_info")
+    node = relationship("Node", uselist=False, back_populates="node_info", cascade="all,delete")
 
 
 

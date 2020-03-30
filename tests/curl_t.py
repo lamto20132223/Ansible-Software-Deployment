@@ -31,7 +31,7 @@ def discover_hosts():
     os.system('curl -X POST "http://127.0.0.1:4321/api/v1/hosts/discover_hosts_v1" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
 
-    os.system('curl -X POST "http://127.0.0.1:4321/api/v1/hosts/discover_hosts" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    os.system('curl -X POST "http://127.0.0.1:4321/api/v1/hosts/discover_hosts_v2" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
 
 
@@ -86,8 +86,13 @@ def insert_test_data():
 #{"management_ip":"172.16.29.41", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute02"}
 #{"management_ip":"172.16.29.43", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"ceph"}
 
+def delete_data():
+    os.system(
+        'curl -X POST "http://127.0.0.1:4321/api/v1/clean_data" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+
 if __name__ == "__main__":
-    add_host()
+    #delete_data()
+    #add_host()
     #discover_hosts()
-    # add_host_to_role()
-    # insert_test_data()
+    #add_host_to_role()
+    insert_test_data()
