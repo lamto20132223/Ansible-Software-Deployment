@@ -87,7 +87,7 @@ def insert_test_data():
 #{"management_ip":"172.16.29.43", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"ceph"}
 
 if __name__ == "__main__":
-    #add_host()
+    add_host()
     #discover_hosts()
-    add_host_to_role()
-    insert_test_data()
+    # add_host_to_role()
+    # insert_test_data()
