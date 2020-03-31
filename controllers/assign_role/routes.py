@@ -407,9 +407,15 @@ class ClassTask(Resource):
         }
 
 
-# @mod.route('/tasks/update_task', method=['POST'])
-# def update_task_info():
-#
+@mod.route('/tasks/update_task', methods=['POST'])
+def update_task_info():
+    if not request.json:
+        abort(400)
+    node_ip = request.json.get('node_ip')
+    task_name = request.json.get('task_name')
+    print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name)
+
+
 
 
 
@@ -455,3 +461,57 @@ def clean_all_data():
             print("Unexpected error:", sys.exc_info()[0])
 
         return {"response: " : "LOOK GOOD YOU'VE DELETED ALL"}
+
+
+@mod.route('/get_data', methods=['GET', 'POST'])
+def get_all_data():
+    if request.args.get('table') is not None:
+        table = request.args.get('table')
+        if table =='nodes':
+            res = db.session.query(models.Node).all()
+            return jsonify(models.to_json(res, 'Node', True)), 200
+        elif table =='deployments':
+            res = db.session.query(models.Deployment).all()
+            return jsonify(models.to_json(res, 'Deployment', True)), 200
+        elif table =='node_infos':
+            res = db.session.query(models.Node_info).all()
+            return jsonify(models.to_json(res, 'Node_info', True)), 200
+        elif table =='node_roles':
+            res = db.session.query(models.Node_role).all()
+            return jsonify(models.to_json(res, 'Node_role', True)), 200
+        elif table =='service_setups':
+            res = db.session.query(models.Service_setup).all()
+            return jsonify(models.to_json(res, 'Service_setup', True)), 200
+        elif table =='tasks':
+            res = db.session.query(models.Task).all()
+            return jsonify(models.to_json(res, 'Task', True)), 200
+        elif table =='changes':
+            res = db.session.query(models.Change).all()
+            return jsonify(models.to_json(res, 'Change', True)), 200
+        elif table =='disk_resources':
+            res = db.session.query(models.Disk_resource).all()
+            return jsonify(models.to_json(res, 'Disk_resource', True)), 200
+        elif table =='interface_resources':
+            res = db.session.query(models.Interface_resource).all()
+            return jsonify(models.to_json(res, 'Interface_resource', True)), 200
+        #db.session.commit()
+        else:
+            return {"response":"YOU SELECT WRONG " + table}
+    else:
+            # try:
+            #     db.session.query(models.Change).delete()
+            #     print("????")
+            #     db.session.query(models.Task).delete()
+            #     db.session.query(models.Service_setup).delete()
+            #     db.session.query(models.Deployment).delete()
+            #     db.session.query(models.Disk_resource).delete()
+            #     db.session.query(models.Interface_resource).delete()
+            #     db.session.query(models.Node_info).delete()
+            #     db.session.query(models.Node_role).delete()
+            #     db.session.query(models.Node).delete()
+            #     db.session.commit()
+            # except IntegrityError:
+            #     # db.session.rollback()
+            #     print("Unexpected error:", sys.exc_info()[0])
+
+        return {"response: " : "Please insert table "}
