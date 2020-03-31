@@ -1,4 +1,3 @@
-
 variables:
   GIT_STRATEGY: clone
 before_script:
@@ -23,6 +22,6 @@ run_image_stage:
   tags:
     - shell_run_test
   script:
-    - docker ps -q --filter "name=lamtv10_software" | grep -q . && docker stop lamtv10_software && docker rm -fv lamtv10_software
+    - docker ps -a -q --filter "name=lamtv10_software" | grep -q . && docker stop lamtv10_software && docker rm -fv lamtv10_software
     - docker pull registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
     - docker run -d --network=host --name lamtv10_software registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
