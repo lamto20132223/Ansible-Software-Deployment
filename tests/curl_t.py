@@ -14,7 +14,9 @@ import time
 
 ##***************** add_host ************************
 
-
+def send_task_info():
+    os.system(
+        'curl -X POST "http://127.0.0.1:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
 
 def add_host():
     os.system('curl -X POST "http://127.0.0.1:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
@@ -95,4 +97,6 @@ if __name__ == "__main__":
     #add_host()
     #discover_hosts()
     #add_host_to_role()
-    insert_test_data()
+    #insert_test_data()
+
+    send_task_info()

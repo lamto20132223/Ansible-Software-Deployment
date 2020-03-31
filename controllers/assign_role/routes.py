@@ -407,9 +407,16 @@ class ClassTask(Resource):
         }
 
 
-# @mod.route('/tasks/update_task', method=['POST'])
-# def update_task_info():
-#
+
+@mod.route('/tasks/update_task', methods=['POST'])
+def update_task_info():
+    if not request.json:
+        abort(400)
+    node_ip = request.json.get('node_ip')
+    task_name = request.json.get('task_name')
+    print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name)
+    return {"res": "OK "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name} ,200
+
 
 
 
