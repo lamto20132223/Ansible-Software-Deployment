@@ -12,6 +12,7 @@ build_image_stage:
     - shell_run_docker
   script:
     - docker login -u lamtv10 -p S4YugcbJfZetD551pwJa registry.ocs.com
+    - docker push base_sfd_lamtv10
     - docker build  -t test_image_lamtv10:$CI_COMMIT_SHA .
     - docker tag test_image_lamtv10:$CI_COMMIT_SHA registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
     - docker push registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
