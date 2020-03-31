@@ -494,9 +494,10 @@ def get_all_data():
         elif table =='interface_resources':
             res = db.session.query(models.Interface_resource).all()
             return jsonify(models.to_json(res, 'Interface_resource', True)), 200
-        #db.session.commit()
+
         else:
             return {"response":"YOU SELECT WRONG " + table}
+        db.session.commit()
     else:
             # try:
             #     db.session.query(models.Change).delete()
