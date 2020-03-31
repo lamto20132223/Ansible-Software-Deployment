@@ -9,18 +9,18 @@ stages:
 build_image_stage:
   stage: build
   tags:
-    - shell_run_docker
+    - docker_dev
   script:
     - docker login -u lamtv10 -p S4YugcbJfZetD551pwJa registry.ocs.com
-    - docker build  -t test_image_lamtv10:$CI_COMMIT_SHA .
-    - docker tag test_image_lamtv10:$CI_COMMIT_SHA registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
-    - docker push registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
+    - docker build  -t dev_image_lamtv10:$CI_COMMIT_SHA .
+    - docker tag dev_image_lamtv10:$CI_COMMIT_SHA registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
+    - docker push registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
 
 run_image_stage:
   stage: test
   tags:
-    - shell_run_test
+    - docker_dev
   script:
     - docker ps -q --filter "name=lamtv10_software" | grep -q . && docker stop lamtv10_software && docker rm -fv lamtv10_software
-    - docker pull registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
-    - docker run -d --network=host --name lamtv10_software registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
+    - docker pull registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
+    - docker run -d --network=host --name lamtv10_software registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
