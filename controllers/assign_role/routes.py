@@ -11,7 +11,7 @@ import oyaml as yaml
 from sqlalchemy.exc import IntegrityError
 import libs.ansible.runner as runner
 from flask_restplus import Api, Resource
-
+import json
 
 
 Runner = runner.Runner
@@ -420,11 +420,14 @@ def update_task_info():
 
 
     print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + str(info) + " status" + str(status))
+
+
+
     #return {"res": "OK "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
     task = session.query(models.Task).filter(and_(models.Task.task_display_name==str(task_name),  models.Task.service_setup.has(models.Service_setup.deployment.has(models.Deployment.node.has(models.Node.management_ip==str(node_ip))))  )).first()
     if task is not None:
         task.status=status
-        task.log = info
+        task.log = json.dumps(json.loads(info))
         session.add(task)
         session.commit()
         return jsonify(models.to_json(task, 'Task', False)) , 200
