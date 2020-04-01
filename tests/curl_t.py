@@ -16,7 +16,7 @@ import time
 
 def send_task_info():
     os.system(
-        'curl -X POST "http://127.0.0.1:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
+        'curl -X POST "http://0.0.0.0:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
 
 def add_host():
     os.system('curl -X POST "http://127.0.0.1:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
