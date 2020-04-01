@@ -28,6 +28,7 @@ class Config:
 
 
     CONF = {"database": {"connection": "mysql+pymysql://lamtv10:lamtv10@172.16.29.196/auto_lamtv10"}}
+    SQLALCHEMY_ENGINE_OPTIONS = {"pool_size": 20, "max_overflow":0}
     #db_engine = db.create_engine(CONF["database"]["connection"])
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         CONF["database"]["connection"]
