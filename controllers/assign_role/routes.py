@@ -12,7 +12,7 @@ from sqlalchemy.exc import IntegrityError
 import libs.ansible.runner as runner
 from flask_restplus import Api, Resource
 import json
-
+import ast
 
 Runner = runner.Runner
 
@@ -415,7 +415,7 @@ def update_task_info():
         abort(400)
     node_ip = request.json.get('node_ip')
     task_name = request.json.get('task_name').encode('utf-8')
-    info = request.json.get('info')
+    info = request.json.get('info').encode('utf-8')
     status = request.json.get('status')
 
 
@@ -427,7 +427,11 @@ def update_task_info():
     task = session.query(models.Task).filter(and_(models.Task.task_display_name==str(task_name),  models.Task.service_setup.has(models.Service_setup.deployment.has(models.Deployment.node.has(models.Node.management_ip==str(node_ip))))  )).first()
     if task is not None:
         task.status=status
-        task.log = json.dumps(json.loads(info))
+
+        print(info)
+        x = ast.literal_eval(info)
+
+        task.log = json.dumps(ast.literal_eval(info))
         session.add(task)
         session.commit()
         return jsonify(models.to_json(task, 'Task', False)) , 200
