@@ -128,7 +128,7 @@ if __name__ == "__main__":
 
     @app.route("/hello")
     def home():
-        return "Hello World! si dung"
+        return "Hello World! "
 
 
     @app.route('/index')
