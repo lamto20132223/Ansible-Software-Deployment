@@ -475,16 +475,17 @@ def update_task_info():
             task.result = "DONE"
             task.finished_at = datetime.now()
         task.log =json.dumps(info.get('results'))
-        for index, change_info in enumerate(info.get('results'), start=1):
-            change_status = "OK" if change_info.get('failed') is False else "FAILED"
-            change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-            task_status = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_status
-            finished_at = datetime.now() if change_info.get('failed') is False else None
-            change_type = json.dumps(change_info)
-            change_type = change_type[:250] + (change_type[250:] and '..')
-            file_config_id = -1
-            change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
-            task.changes.append(change)
+        if info.get('results') is not None:
+            for index, change_info in enumerate(info.get('results'), start=1):
+                change_status = "OK" if change_info.get('failed') is False else "FAILED"
+                change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
+                task_status = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_status
+                finished_at = datetime.now() if change_info.get('failed') is False else None
+                change_type = json.dumps(change_info)
+                change_type = change_type[:250] + (change_type[250:] and '..')
+                file_config_id = -1
+                change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
+                task.changes.append(change)
 
 
         if info.get('status') is not None:
