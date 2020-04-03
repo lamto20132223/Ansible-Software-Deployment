@@ -419,7 +419,7 @@ def update_task_info():
         abort(400)
     node_ip = request.json.get('node_ip')
     task_name = request.json.get('task_name').encode('utf-8')
-    status = request.json.get('status')
+    task_type = request.json.get('task_type')
     info = request.json.get('info')
     logging.debug("TYPE INFO: " + str(type(info)))
     if type(info) is unicode:
@@ -429,6 +429,8 @@ def update_task_info():
     logging.debug("?????????????? " + str(type(info)))
     if type(info) is not  dict:
         info = ast.literal_eval(info)
+
+
 
     logging.debug("TYPE INFO: " + str(type(info)))
 
@@ -448,8 +450,20 @@ def update_task_info():
 
 
     if task is not None:
-        task.status=status
-        task.log = json.dumps(info)
+        task.task_type=task_type
+        if info.get('failed') is True:
+            task.result="FAILED"
+        else:
+            task.result = "DONE"
+            task.finished_at = datetime.now()
+        task.log =json.dumps(info.get('results'))
+        for index, change_info in enumerate(info.get('results'), start=1):
+            change_status = "OK" if change_info.get('failed') is False else "FAILED"
+            change_log = " stdout = " +  info.get("stdout") +"|| stderr = " + info.get("stderr")
+            finished_at = datetime.now() if change_info.get('failed') is False else None
+            change = models.Change(created_at=datetime.now(), change_type=json.dumps(change_info), status=change_status , change_log=change_log, finished_at=finished_at)
+            task.changes.append(change)
+
         session.add(task)
         session.commit()
         return jsonify(models.to_json(task, 'Task', False)) , 200
