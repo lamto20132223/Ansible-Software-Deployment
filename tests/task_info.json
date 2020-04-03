@@ -1,0 +1,1 @@
+{"node_ip":"172.16.29.23", "task_name":"init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config","info":"{'msg' : 'm OK'}" , "status": "abcdef"}

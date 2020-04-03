@@ -622,7 +622,7 @@ docker run  -d  --name mysql --network=host --privileged -v /u01/docker/docker_l
 docker run -d --network=host  conda_centos_ansible_flask_app:v12
 
 
-git clone ssh://git@172.16.29.193:2222/lamtv10/software_deployment.git 
+
 
 
 
@@ -639,3 +639,6 @@ CREATE USER 'lamtv10'@'%' IDENTIFIED BY 'lamtv10';
 GRANT ALL ON *.* TO 'lamtv10'@'localhost';
 GRANT ALL ON *.* TO 'lamtv10'@'%';
 flush privileges;
+
+
+git clone ssh://git@172.16.29.193:2222/lamtv10/software_deployment.git 

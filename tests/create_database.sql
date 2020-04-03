@@ -206,7 +206,7 @@ CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`changes` (
   `task_id` INT(11) NULL ,
   `change_index` INT NULL ,
   `file_config_id` VARCHAR(255) NULL ,
-  `file_config_file_id` INT(11) NOT NULL ,
+  `file_config_file_id` INT(11) ,
   PRIMARY KEY (`change_id`) ,
   CONSTRAINT `fk_changes_tasks1`
     FOREIGN KEY (`task_id` )

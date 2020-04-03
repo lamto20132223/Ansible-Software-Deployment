@@ -1,0 +1,26 @@
+[2020-04-03 09:45:33.586] [ INFO    ] [_internal:_log:122] 93011  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-03 09:45:33.587] [ INFO    ] [_internal:_log:122] 93011  * Restarting with stat
+[2020-04-03 09:45:35.280] [ WARNING ] [_internal:_log:122] 93037  * Debugger is active!
+[2020-04-03 09:45:35.281] [ INFO    ] [_internal:_log:122] 93037  * Debugger PIN: 507-280-042
+[2020-04-03 09:46:40.094] [ INFO    ] [_internal:_log:122] 94377  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-03 09:46:40.095] [ INFO    ] [_internal:_log:122] 94377  * Restarting with stat
+[2020-04-03 09:46:41.390] [ WARNING ] [_internal:_log:122] 94417  * Debugger is active!
+[2020-04-03 09:46:41.390] [ INFO    ] [_internal:_log:122] 94417  * Debugger PIN: 507-280-042
+[2020-04-03 09:46:57.812] [ INFO    ] [_internal:_log:122] 94417  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-03 09:46:57.930] [ INFO    ] [_internal:_log:122] 94377  * Restarting with stat
+[2020-04-03 09:46:59.489] [ WARNING ] [_internal:_log:122] 94796  * Debugger is active!
+[2020-04-03 09:46:59.489] [ INFO    ] [_internal:_log:122] 94796  * Debugger PIN: 507-280-042
+[2020-04-03 09:47:54.842] [ INFO    ] [_internal:_log:122] 94796  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-03 09:47:54.961] [ INFO    ] [_internal:_log:122] 94377  * Restarting with stat
+[2020-04-03 09:47:56.441] [ WARNING ] [_internal:_log:122] 95953  * Debugger is active!
+[2020-04-03 09:47:56.442] [ INFO    ] [_internal:_log:122] 95953  * Debugger PIN: 507-280-042
+[2020-04-03 09:48:14.945] [ INFO    ] [_internal:_log:122] 95953  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-03 09:48:15.067] [ INFO    ] [_internal:_log:122] 94377  * Restarting with stat
+[2020-04-03 09:48:16.578] [ WARNING ] [_internal:_log:122] 96375  * Debugger is active!
+[2020-04-03 09:48:16.578] [ INFO    ] [_internal:_log:122] 96375  * Debugger PIN: 507-280-042
+[2020-04-03 09:48:32.657] [ INFO    ] [_internal:_log:122] 96715  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-03 09:48:32.658] [ INFO    ] [_internal:_log:122] 96715  * Restarting with stat
+[2020-04-03 09:48:34.045] [ WARNING ] [_internal:_log:122] 96750  * Debugger is active!
+[2020-04-03 09:48:34.045] [ INFO    ] [_internal:_log:122] 96750  * Debugger PIN: 507-280-042
+[2020-04-03 09:49:35.322] [ DEBUG   ] [routes:update_task_info:432] 96750 TYPE INFO: <type 'str'>
+[2020-04-03 09:49:35.366] [ INFO    ] [_internal:_log:122] 96750 127.0.0.1 - - [03/Apr/2020 09:49:35] "POST /api/v1/tasks/update_task HTTP/1.1" 200 -
