@@ -13,6 +13,10 @@ import libs.ansible.runner as runner
 from flask_restplus import Api, Resource
 import json
 import ast
+import logging
+
+LOGGER = logging.getLogger(__name__)
+
 
 Runner = runner.Runner
 
@@ -47,7 +51,7 @@ def get_all_roles():
 
 
     res =    {
-        "namcht":"chtnam",
+
         "list_roles": list_roles,
         "data":result
     }
@@ -425,6 +429,8 @@ def update_task_info():
 
     #return {"res": "OK "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
     task = session.query(models.Task).filter(and_(models.Task.task_display_name==str(task_name),  models.Task.service_setup.has(models.Service_setup.deployment.has(models.Deployment.node.has(models.Node.management_ip==str(node_ip))))  )).first()
+    logging.debug("TYPE INFO: " + str(type(info)))
+    print("TYPE INFO: " + str(type(info)))
     if task is not None:
         task.status=status
 

@@ -9,6 +9,13 @@ import json
 
 import importlib
 from flask_restplus import Api, Resource, fields
+import logging
+import logging.config
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+log_config_dir = os.path.join(ROOT_DIR, 'configs/logging.conf')
+logging.config.fileConfig(log_config_dir, disable_existing_loggers=False)
+
+
 app = Flask(__name__)
 api=Api(app)
 
@@ -144,7 +151,7 @@ if __name__ == "__main__":
         print(nodes[0].__dict__)
 
         return {'result' : str(nodes)}, 201
-
+    app.logger.addHandler(logging.handlers)
     app.run(debug=True,host="0.0.0.0", port=4321)
 
     @app.teardown_appcontext
