@@ -16,7 +16,11 @@ app.config.from_object(Config)
 
 lamtv10="tovanlam"
 
-
+import logging
+import logging.config
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+log_config_dir = os.path.join(ROOT_DIR, 'configs/logging.conf')
+logging.config.fileConfig(log_config_dir, disable_existing_loggers=False)
 
 # def connect_database():
 db = SQLAlchemy(app)
