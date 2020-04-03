@@ -1,3 +1,14 @@
 ---
-- name: echo {{ msg }}
+- name: echo {{  }}
   command: echo {{ msg }}
+- name: POST {{ node_ip }} and {{ task_name }}
+  uri:
+    url:
+    method: POST
+    body_format: form-urlencoded
+    body:
+      name: your_username
+      password: your_password
+      enter: Sign in
+    status_code: 302
+  register: login

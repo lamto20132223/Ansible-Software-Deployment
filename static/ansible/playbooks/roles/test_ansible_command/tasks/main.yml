@@ -1,19 +1,18 @@
 ---
-
-
-- include: stuff.yml msg="test_ansible_command"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
 - name: test_ansible_command
   command: '{{ item }}'
   with_items:
-    - 'cp /home/lamtv10/test /home/lamtv10/testxxx'
+    - echo "{{ inventory_hostname }}     "
     - touch /home/target
+    - cp /home/lamtv10/lkt /home/lamtv10/
     - echo 'group_name'
 #    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
   tags:
     - install
   register: infos
   ignore_errors: yes
-- include:  stuff.yml msg="{{ infos }}"
+- include:  extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config" info={{ infos  }}  task_type="End Setup"
  #   - docker stop glance-registry
  #   - docker rm glance-api
  #   - docker rm glance-registry

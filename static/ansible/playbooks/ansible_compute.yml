@@ -8,32 +8,18 @@
     #- { role: docker }
 
 - name: install com node 
-  hosts: 'compute'
+  hosts: 'all'
 #  vars_files:
 #    - /etc/ansible/group_vars/all/global.yml
 #    - /etc/ansible/group_vars/all/common.yml
   remote_user: root
   gather_facts: no
-  roles: 
+  roles:
     #- { role: qemu }
     #- { role: nova-compute }
-    #- { role: openvswitch_dpdk } 
+    #- { role: openvswitch_dpdk }
     - { role: test_ansible_command }
 #    - { role: swift_proxy}
-  tags:
-    - in
-- name: install com node 
-  hosts: 'compute_type_1'
-#  vars_files:
-#    - /etc/ansible/group_vars/all/global.yml
-#    - /etc/ansible/group_vars/all/common.yml
-  remote_user: root
-  gather_facts: no
-  roles: 
-    #- { role: qemu }
-    #- { role: nova-compute }
-    #- { role: openvswitch_dpdk } 
-    - { role: test_ansible_command }
-#    - { role: swift_proxy}
-  tags:
-    - in
+
+
+# ansible-playbook ansible_compute.yml  -i new_node
