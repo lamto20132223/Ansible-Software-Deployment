@@ -432,6 +432,10 @@ def update_task_info():
 
     logging.debug("TYPE INFO: " + str(type(info)))
 
+    logging.debug("INFO.failed: " + str(info.get('failed')))
+    logging.debug("INFO.results: " + str(info.get('results')))
+    logging.debug("INFO.stderr: " + str(info.get('stderr')))
+    logging.debug("INFO.stdout: " + str(info.get('stdout')))
 
 
 
