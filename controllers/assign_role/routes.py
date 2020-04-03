@@ -441,7 +441,7 @@ def update_task_info():
 
 
 
-    print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + str(info) + " status" + str(status))
+    #print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + str(info) + " status" + str(status))
 
 
 
