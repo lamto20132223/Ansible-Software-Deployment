@@ -459,7 +459,7 @@ def update_task_info():
         task.log =json.dumps(info.get('results'))
         for index, change_info in enumerate(info.get('results'), start=1):
             change_status = "OK" if change_info.get('failed') is False else "FAILED"
-            change_log = " stdout = " +  info.get("stdout") +"|| stderr = " + info.get("stderr")
+            change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
             finished_at = datetime.now() if change_info.get('failed') is False else None
             change = models.Change(created_at=datetime.now(), change_type=json.dumps(change_info), status=change_status , change_log=change_log, finished_at=finished_at)
             task.changes.append(change)
