@@ -422,11 +422,12 @@ def update_task_info():
     status = request.json.get('status')
     info = request.json.get('info')
     logging.debug("TYPE INFO: " + str(type(info)))
-    if type(info) == 'unicode':
+    if type(info) is unicode:
         info = info.encode('utf-8')
 
+
     logging.debug("?????????????? " + str(type(info)))
-    if type(info) != 'dict':
+    if type(info) is not  dict:
         info = ast.literal_eval(info)
 
     logging.debug("TYPE INFO: " + str(type(info)))
