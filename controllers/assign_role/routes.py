@@ -463,7 +463,8 @@ def update_task_info():
             finished_at = datetime.now() if change_info.get('failed') is False else None
             change_type = json.dumps(change_info)
             change_type = change_type[:250] + (change_type[250:] and '..')
-            change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at)
+            file_config_id = -1
+            change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
             task.changes.append(change)
 
         session.add(task)
