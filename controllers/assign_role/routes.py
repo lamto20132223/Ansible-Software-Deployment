@@ -419,6 +419,7 @@ def update_task_info():
         abort(400)
     node_ip = request.json.get('node_ip')
     task_name = request.json.get('task_name').encode('utf-8')
+    logging.debug("TYPE INFO: " + str(type(request.json.get('info'))))
     info = request.json.get('info').encode('utf-8')
     status = request.json.get('status')
 
