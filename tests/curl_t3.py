@@ -30,10 +30,10 @@ def add_host():
 
 ##***************************** discover_hosts *********************************************
 def discover_hosts():
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_hosts_v1" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
-    time.sleep(5)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_hosts_v1" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    # time.sleep(5)
 
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_hosts_v2" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_hosts" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
 
 
@@ -95,8 +95,8 @@ def delete_data():
 if __name__ == "__main__":
     #delete_data()
     #add_host()
-    discover_hosts()
-    #add_host_to_role()
+    # discover_hosts()
+    # add_host_to_role()
     #insert_test_data()
 
-    #send_task_info()
+    send_task_info()

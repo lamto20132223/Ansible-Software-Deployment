@@ -22,6 +22,7 @@ Runner = runner.Runner
 
 
 
+
 mod = Blueprint('assign_role', __name__,
                         template_folder='templates')
 mod_v1 =Api(mod, version='1.0', title='Todo API',
@@ -45,6 +46,7 @@ def get_all_roles():
             node = session.query(models.Node).filter_by(node_id=node_role.node_id).first()
             result[role].append(models.to_json(node, 'Node', False))
 
+    session.commit()
 
     #print(role_data.keys())
 
@@ -411,7 +413,22 @@ class ClassTask(Resource):
             "status": "INCOMMMING"
         }
 
+@mod.route('/changes/<string:change_id>', methods=['GET'])
+def get_change(change_id):
+    change = session.query(models.Change).filter_by(change_id=change_id).first()
+    if change is None:
+        return abort(400)
+    return jsonify(models.to_json(change, 'Change', False))
 
+
+@mod.route('/tasks/<string:task_id>/changes', methods=['GET'])
+def get_all_changes(task_id):
+    task = session.query(models.Task).filter_by(task_id=task_id).first()
+
+    if task is None:
+        return abort(400)
+    changes = task.changes
+    return jsonify(models.to_json(changes, 'Change', True))
 
 @mod.route('/tasks/update_task', methods=['POST'])
 def update_task_info():
