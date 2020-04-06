@@ -11,6 +11,9 @@ class Service_setup(Node_Base):
     setup_index=Column(db.Integer)
     is_validated_success=Column(db.String(255))
     validated_status=Column(db.String(255))
+    enable=Column(db.String(255))
+    status=Column(db.String(255))
+
     deployment_id=Column(db.Integer , db.ForeignKey('deployments.deployment_id'))
     deployment = relationship("Deployment")
     tasks = relationship("Task", back_populates="service_setup")

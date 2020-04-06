@@ -117,7 +117,7 @@ def add_host_to_role():
 def add_all_deployment():
     nodes = session.query(models.Node).all()
     for node in nodes:
-        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN PROCESSING", name = "deployement " + str(node.management_ip) )
+        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN QUEUE", name = "deployement " + str(node.management_ip) )
         node.deployment = deployment
         session.add(node)
     session.commit()
@@ -135,7 +135,7 @@ def test_code_create_service_setup():
         for role in roles:
             list_services = role_data[role]['list_service']
             for service in list_services:
-                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],service_info="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
+                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],enable="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
                 deployment.service_setups.append(service_setup)
 
 
@@ -258,6 +258,7 @@ def test_code_create_task_for_service():
         for service in service_setups:
 
             list_tasks = load_yml_file(CONST.role_dir+'/' + service.service_name+'/tasks/main.yml')
+            list_tasks = [task for task in list_tasks if task.get('include') is None]
 
             for index,task  in enumerate(list_tasks,start=1):
                 print(task)

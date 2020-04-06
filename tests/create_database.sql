@@ -121,6 +121,8 @@ CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`service_setups` (
   `service_setup_id` VARCHAR(255) NOT NULL ,
   `service_type` VARCHAR(255) NULL ,
   `service_name` VARCHAR(255) NULL ,
+  `enable` VARCHAR(255) NULL ,
+  `status` VARCHAR(255) NULL ,
   `service_info` TEXT NULL ,
   `service_lib` TEXT NULL ,
   `service_config_folder` TEXT NULL ,

@@ -70,3 +70,25 @@ def get_change_info():
 
     return "INCOMMING"
 
+
+
+# - GET / api / v1 / installation / node_info
+#
+#
+# - GET / api / v1 / installation / service_info?node_id =
+#
+#
+# - GET / api / v1 / installation / task_info?service_id =
+#
+#
+# - GET / api / v1 / installation / change_info?task_id =
+# /api/v1/installation/current ==> node service task
+#
+# /api/v1/installation/start
+#
+# /api/v1/installation/runtask
+#
+# /api/v1/installation/undo
+# /api/v1/installation/pause
+# /api/v1/installation/skip
+#
