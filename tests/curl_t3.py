@@ -94,9 +94,9 @@ def delete_data():
 
 if __name__ == "__main__":
     #delete_data()
-    #add_host()
-    # discover_hosts()
-    # add_host_to_role()
+    add_host()
+    #discover_hosts()
+    #add_host_to_role()
     #insert_test_data()
 
-    send_task_info()
+    #send_task_info()
