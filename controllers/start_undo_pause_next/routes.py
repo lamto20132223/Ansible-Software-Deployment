@@ -140,19 +140,19 @@ def update_task_info():
 
 
     if task is not None:
-        task_status = "Done"
         task.task_type=task_type
         if info.get('failed') is True:
-            task.result="FAILED"
+            task.status = "FAILED"
         else:
-            task.result = "DONE"
+            task.status = "DONE"
             task.finished_at = datetime.now()
         task.log =json.dumps(info.get('results'))
         if info.get('results') is not None:
+            task_result = "SUCCEED "
             for index, change_info in enumerate(info.get('results'), start=1):
                 change_status = "OK" if change_info.get('failed') is False else "FAILED"
                 change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-                task_status = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_status
+                task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
                 finished_at = datetime.now() if change_info.get('failed') is False else None
                 change_type = json.dumps(change_info)
                 change_type = change_type[:250] + (change_type[250:] and '..')
@@ -160,13 +160,19 @@ def update_task_info():
                 change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
                 task.changes.append(change)
 
+            task.result = task_result
+            if "ERROR" in task_result:
+                task.service_setup.status = "ERROR"
+                task.service_setup.deployment.status = "ERROR"
+            else:
+                task.service_setup.status = "INPROCESSING"
+                task.service_setup.deployment.status = "INPROCESSING"
 
         if info.get('status') is not None:
             task.status = info.get('status')
-        else:
-            task.status = task_status
-
-
+            task.result = 'UNDONE'
+            task.service_setup.status="INPROCESSING"
+            task.service_setup.deployment.status="INPROCESSING"
 
         session.add(task)
         session.commit()
@@ -174,4 +180,4 @@ def update_task_info():
 
     else :
         session.commit()
-        return {"res": "Error "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
+        return {"res": "Error Task Not Found"+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200

@@ -303,8 +303,8 @@ def get_all_deployments_v2():
     return redirect('/api/v1/hosts/deployments')
 
 
-@mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
-def get_all_service_setups(deployment_id):
+@mod.route('/deployments/<string:deployment_id>', methods=['GET'])
+def get_deployment_by_id(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
 
 
