@@ -158,6 +158,7 @@ def update_task_info():
     task.log =json.dumps(info.get('results'))
     if info.get('results') is not None:
         task_result = "SUCCEED "
+        task.changes.clear()
         for index, change_info in enumerate(info.get('results'), start=1):
             change_status = "OK" if change_info.get('failed') is False else "FAILED"
             change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
