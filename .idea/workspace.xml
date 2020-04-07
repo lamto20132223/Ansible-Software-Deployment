@@ -1,9 +1,272 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="">
+    <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="update _ task _index">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/templates/chrony_client.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/templates/chrony_server.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/ceph.client.volumes.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/cinder.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/cinder.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/notify" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/ceph.client.volumes.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/cinder.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/cinder.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/files/container-selinux-2.107-3.el7.noarch.rpm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/templates/daemon.json.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance-api.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance-registry.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/templates/etc_sysctl.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/templates/haproxy.cfg.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/apache2_conf_enabled_openstack_dashboard.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/openstack_dashboard_local_setting.py.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/templates/keepalived.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/credential_key_0.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/credential_key_1.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/fernet_key_0.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/fernet_key_1.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/keystone.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/keystone.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/open.rc.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/templates/memcached.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/dhcp_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/metadata_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/neutron.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/neutron.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/dhcp_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/metadata_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/neutron.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/neutron.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/nova.sql.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/ceph.client.images.keyring.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/ceph.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/open.rc.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tasks/main2.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/templates/wsrep.cnf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tasks/main2.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/templates/rabbitmq.config.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/defaults/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/templates/nova.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/handlers/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/meta/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tasks/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/docker.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/local.repo.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/selinux.conf.j2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tests/inventory" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tests/test.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/tasks/main.yml" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/templates/docker.repo.j2" />
+      <change beforePath="$PROJECT_DIR$/tests/node_role1.json" afterPath="$PROJECT_DIR$/tests/node_role1.json" />
+      <change beforePath="$PROJECT_DIR$/tests/node_role2.json" afterPath="$PROJECT_DIR$/tests/node_role2.json" />
+      <change beforePath="$PROJECT_DIR$/tests/node_role3.json" afterPath="$PROJECT_DIR$/tests/node_role3.json" />
+      <change beforePath="$PROJECT_DIR$/tests/node_role4.json" afterPath="$PROJECT_DIR$/tests/node_role4.json" />
     </list>
+    <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,17 +275,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Project23022020$curl_t2.coverage" NAME="curl_t2 Coverage Results" MODIFIED="1585910329946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1585557076038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1584960636122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project23022020$curl_t.coverage" NAME="curl_t Coverage Results" MODIFIED="1585882708452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project23022020$app_dev.coverage" NAME="app_dev Coverage Results" MODIFIED="1585882620830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$routes.coverage" NAME="routes Coverage Results" MODIFIED="1582686275060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers/discovery_node_test" />
+    <SUITE FILE_PATH="coverage/Project23022020$const.coverage" NAME="const Coverage Results" MODIFIED="1585038406636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/global_assets" />
     <SUITE FILE_PATH="coverage/Project23022020$mp_thread.coverage" NAME="mp_thread Coverage Results" MODIFIED="1582600632991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1585217067398" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$test.coverage" NAME="test Coverage Results" MODIFIED="1585887778513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project23022020$testyml.coverage" NAME="testyml Coverage Results" MODIFIED="1585912671545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$runner.coverage" NAME="runner Coverage Results" MODIFIED="1585015863695" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/libs/ansible" />
     <SUITE FILE_PATH="coverage/Project23022020$learn_thread.coverage" NAME="learn_thread Coverage Results" MODIFIED="1582529326450" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1584960636122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$multiprocessing.coverage" NAME="multiprocessing Coverage Results" MODIFIED="1582543549802" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$curl_t.coverage" NAME="curl_t Coverage Results" MODIFIED="1585198040529" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$learn_multi_thread.coverage" NAME="learn_multi_thread Coverage Results" MODIFIED="1582529922327" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$routes.coverage" NAME="routes Coverage Results" MODIFIED="1582686275060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers/discovery_node_test" />
+    <SUITE FILE_PATH="coverage/Project23022020$curl_t3.coverage" NAME="curl_t3 Coverage Results" MODIFIED="1586156964918" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$process_test.coverage" NAME="process_test Coverage Results" MODIFIED="1582614935525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$const.coverage" NAME="const Coverage Results" MODIFIED="1585038406636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/global_assets" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -58,24 +326,12 @@
     <window id="1">
       <content type="file-editors">
         <state>
-          <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-            <file leaf-file-name="assets.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="468">
-                    <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-                    <folding>
-                      <element signature="e#0#70#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
+          <leaf>
+            <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="612">
-                    <caret line="58" column="63" lean-forward="true" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+                  <state relative-caret-position="740">
+                    <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
                     <folding>
                       <element signature="e#0#101#0" expanded="true" />
                     </folding>
@@ -86,18 +342,8 @@
             <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="472">
-                    <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="assets.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="307">
-                    <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
+                  <state relative-caret-position="941">
+                    <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -110,33 +356,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app.py">
+      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+            <state relative-caret-position="2736">
+              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#101#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start.sh" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/start.sh">
+      <file leaf-file-name="curl_t2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/tests/curl_t2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+            <state relative-caret-position="415">
+              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/__init__.py">
+      <file leaf-file-name="deployments" pinned="false" current-in-tab="false">
+        <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.deployments">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tasks" pinned="false" current-in-tab="false">
+        <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="curl_t3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/curl_t3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="231">
+              <caret line="92" column="160" lean-forward="false" selection-start-line="92" selection-start-column="160" selection-end-line="92" selection-end-column="160" />
               <folding />
             </state>
           </provider>
@@ -145,68 +409,48 @@
       <file leaf-file-name="DROP_DATABASE_V2.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/libs/DROP_DATABASE_V2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="526">
-              <caret line="624" column="0" lean-forward="false" selection-start-line="624" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
+            <state relative-caret-position="377">
+              <caret line="630" column="0" lean-forward="false" selection-start-line="630" selection-start-column="0" selection-end-line="630" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/admin/routes.py">
+      <file leaf-file-name="node_role3.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/node_role3.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="flask.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/flask.py">
+      <file leaf-file-name="node_role4.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/node_role4.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="398" column="20" lean-forward="true" selection-start-line="398" selection-start-column="20" selection-end-line="398" selection-end-column="20" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="export_db_to__file_config.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/export_db_to__file_config.py">
+      <file leaf-file-name="node_role1.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/node_role1.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/example/routes.py">
+      <file leaf-file-name="node_role2.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/node_role2.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Dockerfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitlab-ci.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitlab-ci.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+            <state relative-caret-position="0">
+              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -223,63 +467,50 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>method</find>
-      <find>request</find>
-      <find>request.args</find>
-      <find>get_service_setups</find>
-      <find>assign_role</find>
-      <find>file_config_id</find>
-      <find>update_file</find>
-      <find>add</find>
-      <find>rol</find>
-      <find>dir</find>
-      <find>json</find>
-      <find>keys</find>
-      <find>ansible_fact</find>
-      <find>CONST</find>
-      <find>service_setu</find>
-      <find>get_service</find>
-      <find>role</find>
-      <find>yaml</find>
-      <find>yml</find>
-      <find>test_code6</find>
-      <find>file</find>
-      <find>mydb</find>
-      <find>CONSTR</find>
-      <find>cp</find>
-      <find>inventory</find>
-      <find>fact</find>
       <find>playbook_dir</find>
       <find>fk_node_role</find>
-      <find>playboo</find>
       <find>playbook</find>
+      <find>127.0.0.1</find>
+      <find>playboo</find>
+      <find>ON DE</find>
+      <find>db.session.query</find>
+      <find>update_task</find>
+      <find>jsonify</find>
+      <find>load</find>
+      <find>R</find>
+      <find>ims</find>
+      <find>ROOT</find>
+      <find>ast.literal_eval</find>
+      <find>if</find>
+      <find>print</find>
+      <find>task</find>
+      <find>changes</find>
+      <find>query</find>
+      <find>change</find>
+      <find>ROOT_DIR +  '/static/ansible/inventory'</find>
+      <find>for</find>
+      <find>ansible_facts_dir</find>
+      <find>status</find>
+      <find>SERVICE_SE</find>
+      <find>load_node_info_to_database</find>
+      <find>deployment</find>
+      <find>get_deployment</find>
+      <find>get_deployment_by_id</find>
+      <find>task_name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/5f8a8980-148a-46ce-8e76-e76c9b36a83e/console_2.sql" />
-        <option value="$PROJECT_DIR$/controllers/assign_role_test/assets.py" />
-        <option value="$PROJECT_DIR$/libs/DROP_DATABASE_V2.py" />
-        <option value="$PROJECT_DIR$/controllers/discovery_node_test/old_routes.py" />
-        <option value="$PROJECT_DIR$/controllers/discovery_node_test/__init__.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role_test/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role_test/routes_bk.py" />
-        <option value="$PROJECT_DIR$/controllers/example/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/insert_specific_config/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/replace_controller/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/gen_template/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/scallingup_scallingdown/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/get_recommend/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/management_file_config/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/change_password/routes.py" />
-        <option value="$PROJECT_DIR$/static/role_service.json" />
-        <option value="$PROJECT_DIR$/tests/nodes.json" />
-        <option value="$PROJECT_DIR$/tests/node_role.json" />
         <option value="$PROJECT_DIR$/assets/const.json" />
         <option value="$PROJECT_DIR$/assets/__init__.py" />
         <option value="$PROJECT_DIR$/assets/const.py" />
@@ -292,26 +523,45 @@
         <option value="$PROJECT_DIR$/tests/nodes2.json" />
         <option value="$PROJECT_DIR$/tests/nodes3.json" />
         <option value="$PROJECT_DIR$/tests/nodes4.json" />
-        <option value="$PROJECT_DIR$/tests/nodes1.json" />
         <option value="$PROJECT_DIR$/global_assets/const.py" />
+        <option value="$PROJECT_DIR$/controllers/assign_role/assets.py" />
+        <option value="$PROJECT_DIR$/controllers/admin/routes.py" />
+        <option value="$PROJECT_DIR$/libs/export_db_to__file_config.py" />
+        <option value="$PROJECT_DIR$/libs/flask.py" />
+        <option value="$PROJECT_DIR$/start.sh" />
+        <option value="$PROJECT_DIR$/models/node_info.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/stuff.yml" />
+        <option value="$PROJECT_DIR$/.gitlab-ci.yml" />
+        <option value="$PROJECT_DIR$/tests/task_info.json" />
+        <option value="$PROJECT_DIR$/controllers/assign_role/__init__.py" />
+        <option value="$PROJECT_DIR$/configs/logging.conf" />
+        <option value="$PROJECT_DIR$/app_dev.py" />
+        <option value="$PROJECT_DIR$/libs/DROP_DATABASE_V2.py" />
+        <option value="$PROJECT_DIR$/tests/test.py" />
+        <option value="$PROJECT_DIR$/tests/curl_t.py" />
+        <option value="$PROJECT_DIR$/configs/conf_dev.py" />
+        <option value="$PROJECT_DIR$/app.py" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/configs/conf_app.py" />
         <option value="$PROJECT_DIR$/tests/node_role1.json" />
         <option value="$PROJECT_DIR$/tests/node_role2.json" />
         <option value="$PROJECT_DIR$/tests/node_role3.json" />
         <option value="$PROJECT_DIR$/tests/node_role4.json" />
+        <option value="$PROJECT_DIR$/tests/curl_t2.py" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/ansible_compute.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/extends/stuff.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/tests/main.yml" />
+        <option value="$PROJECT_DIR$/tests/testyml.py" />
         <option value="$PROJECT_DIR$/tests/create_database.sql" />
-        <option value="$PROJECT_DIR$/tests/curl_t.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role/assets.py" />
-        <option value="$PROJECT_DIR$/controllers/discovery_node_test/assets.py" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/models/service_setup.py" />
         <option value="$PROJECT_DIR$/controllers/discovery_node_test/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/admin/routes.py" />
-        <option value="$PROJECT_DIR$/libs/export_db_to__file_config.py" />
-        <option value="$PROJECT_DIR$/libs/flask.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/.gitlab-ci.yml" />
-        <option value="$PROJECT_DIR$/start.sh" />
+        <option value="$PROJECT_DIR$/controllers/discovery_node_test/assets.py" />
+        <option value="$PROJECT_DIR$/tests/nodes1.json" />
+        <option value="$PROJECT_DIR$/tests/curl_t3.py" />
+        <option value="$PROJECT_DIR$/controllers/assign_role/routes.py" />
+        <option value="$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py" />
       </list>
     </option>
   </component>
@@ -321,11 +571,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1917" />
-    <option name="y" value="-2" />
-    <option name="width" value="1926" />
-    <option name="height" value="1084" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="57" />
+    <option name="y" value="53" />
+    <option name="width" value="1920" />
+    <option name="height" value="1032" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -368,13 +618,65 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="configs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="assign_role" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="discovery_node_test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="start_undo_pause_next" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="global_assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
@@ -389,6 +691,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,7 +699,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
@@ -419,27 +722,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.app">
-    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project23022020" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.curl_t3">
+    <configuration name="app_dev" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -451,33 +735,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="const" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/global_assets" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/global_assets/const.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app_dev.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="curl_t" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="curl_t2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -490,45 +755,83 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/curl_t.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/curl_t2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="runner" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="curl_t3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/libs/ansible" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/libs/ansible/runner.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/curl_t3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project23022020" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
+    <configuration name="testyml" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project23022020" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/testyml.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.app" />
-      <item index="1" class="java.lang.String" itemvalue="Python.curl_t" />
-      <item index="2" class="java.lang.String" itemvalue="Python.runner" />
-      <item index="3" class="java.lang.String" itemvalue="Python.app (1)" />
-      <item index="4" class="java.lang.String" itemvalue="Python.const" />
+      <item index="0" class="java.lang.String" itemvalue="Python.curl_t2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.app_dev" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.curl_t3" />
+      <item index="4" class="java.lang.String" itemvalue="Python.testyml" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.app" />
-        <item index="1" class="java.lang.String" itemvalue="Python.curl_t" />
-        <item index="2" class="java.lang.String" itemvalue="Python.const" />
-        <item index="3" class="java.lang.String" itemvalue="Python.runner" />
-        <item index="4" class="java.lang.String" itemvalue="Python.app (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.curl_t3" />
+        <item index="1" class="java.lang.String" itemvalue="Python.testyml" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.app_dev" />
+        <item index="4" class="java.lang.String" itemvalue="Python.curl_t2" />
       </list>
     </recent_temporary>
   </component>
@@ -547,65 +850,380 @@
       <updated>1582447585588</updated>
       <workItem from="1582447592520" duration="1605000" />
     </task>
-    <task id="LOCAL-00001" summary="Default Changelist">
-      <created>1585283995015</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
+    <task id="LOCAL-00006" summary="Default Changelist">
+      <created>1585302893580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1585283995015</updated>
+      <updated>1585302893580</updated>
     </task>
-    <task id="LOCAL-00002" summary="update ignore idea">
-      <created>1585284250563</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
+    <task id="LOCAL-00007" summary="Update 30032020">
+      <created>1585533783111</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1585284250563</updated>
+      <updated>1585533783111</updated>
     </task>
-    <task id="LOCAL-00003" summary="update ignore idea">
-      <created>1585284535329</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
+    <task id="LOCAL-00008" summary="update session db close">
+      <created>1585536123664</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1585284535329</updated>
+      <updated>1585536123664</updated>
     </task>
-    <task id="LOCAL-00004" summary="Default Changelist">
-      <created>1585295130653</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
+    <task id="LOCAL-00009" summary="Update clean database">
+      <created>1585560562385</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1585295130653</updated>
+      <updated>1585560562385</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00010" summary="Update discover host">
+      <created>1585564354899</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585564354900</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Test _dev _env">
+      <created>1585620889052</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1585620889053</updated>
+    </task>
+    <task id="LOCAL-00012" summary="test_docker_push">
+      <created>1585621907992</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1585621907992</updated>
+    </task>
+    <task id="LOCAL-00013" summary="docker push">
+      <created>1585622733796</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1585622733796</updated>
+    </task>
+    <task id="LOCAL-00014" summary="docker file for dev">
+      <created>1585622904731</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1585622904731</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Update _ get _data">
+      <created>1585623630928</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1585623630928</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Default Changelist">
+      <created>1585624410448</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1585624410448</updated>
+    </task>
+    <task id="LOCAL-00017" summary="update  task_info v1">
+      <created>1585626455519</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585626455519</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Default Changelist">
+      <created>1585645432155</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1585645432155</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update _test_info_01042020_v1">
+      <created>1585725474664</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1585725474664</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Default Changelist">
+      <created>1585727932281</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1585727932281</updated>
+    </task>
+    <task id="LOCAL-00021" summary="update_pool_size, max_over_flow">
+      <created>1585728601188</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1585728601188</updated>
+    </task>
+    <task id="LOCAL-00022" summary="update pool size , max overflow">
+      <created>1585728818219</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1585728818219</updated>
+    </task>
+    <task id="LOCAL-00023" summary="01042">
+      <created>1585734545249</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1585734545249</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Default Changelist">
+      <created>1585737349913</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1585737349913</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Insert Logging p1">
+      <created>1585882251459</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1585882251459</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Default Changelist">
+      <created>1585882777804</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1585882777804</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Default Changelist">
+      <created>1585883324091</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1585883324091</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Default Changelist">
+      <created>1585883483434</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1585883483434</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Default Changelist">
+      <created>1585884199758</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1585884199758</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Default Changelist">
+      <created>1585884529596</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1585884529596</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Default Changelist">
+      <created>1585885029155</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1585885029155</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Default Changelist">
+      <created>1585888019367</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1585888019367</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Default Changelist">
+      <created>1585888336936</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1585888336936</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Default Changelist">
+      <created>1585888517886</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1585888517886</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Default Changelist">
+      <created>1585888804532</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1585888804532</updated>
+    </task>
+    <task id="LOCAL-00036" summary="pool_size = 0">
+      <created>1585896504546</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1585896504546</updated>
+    </task>
+    <task id="LOCAL-00037" summary="pool_size=200">
+      <created>1585896780110</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1585896780110</updated>
+    </task>
+    <task id="LOCAL-00038" summary="pool_size=200">
+      <created>1585896866680</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1585896866680</updated>
+    </task>
+    <task id="LOCAL-00039" summary="sidung">
+      <created>1585897041221</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1585897041221</updated>
+    </task>
+    <task id="LOCAL-00040" summary="update_clean">
+      <created>1585897173697</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1585897173697</updated>
+    </task>
+    <task id="LOCAL-00041" summary="pool_size=0">
+      <created>1585897422104</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1585897422104</updated>
+    </task>
+    <task id="LOCAL-00042" summary="pool_size=0">
+      <created>1585903610028</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1585903610028</updated>
+    </task>
+    <task id="LOCAL-00043" summary="pool_size=0">
+      <created>1585904414838</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1585904414838</updated>
+    </task>
+    <task id="LOCAL-00044" summary="pool_size=0">
+      <created>1585907887955</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1585907887955</updated>
+    </task>
+    <task id="LOCAL-00045" summary="finish Merge">
+      <created>1585909148119</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1585909148119</updated>
+    </task>
+    <task id="LOCAL-00046" summary="update ansible command">
+      <created>1585910883036</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1585910883036</updated>
+    </task>
+    <task id="LOCAL-00047" summary="update_task">
+      <created>1585912733910</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1585912733910</updated>
+    </task>
+    <task id="LOCAL-00048" summary="update_database_service_setup">
+      <created>1586147792000</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1586147792000</updated>
+    </task>
+    <task id="LOCAL-00049" summary="update _ ansible _fact error case">
+      <created>1586156476207</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1586156476207</updated>
+    </task>
+    <task id="LOCAL-00050" summary="update _ ansible _fact error case">
+      <created>1586171439125</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1586171439127</updated>
+    </task>
+    <task id="LOCAL-00051" summary="07042020 _ Update task Info">
+      <created>1586229823263</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1586229823263</updated>
+    </task>
+    <task id="LOCAL-00052" summary="update task info remove info in post command">
+      <created>1586230462107</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1586230462107</updated>
+    </task>
+    <task id="LOCAL-00053" summary="update _ task _index">
+      <created>1586250057601</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1586250057601</updated>
+    </task>
+    <task id="LOCAL-00054" summary="update _ task _index and serive_name">
+      <created>1586251617205</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1586251617205</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1917" y="-2" width="1926" height="1084" extended-state="6" />
+    <frame x="57" y="53" width="1920" height="1032" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40834248" sideWeight="0.15104167" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="true" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.49834985" sideWeight="0.8489583" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2904911" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3985849" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.66126657" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3839384" sideWeight="0.49519745" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31133112" sideWeight="0.62113124" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3635359" sideWeight="0.5048026" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3876698" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2248394" sideWeight="0.7170139" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13180363" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3291536" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13222697" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19316968" sideWeight="0.33873343" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2248394" sideWeight="0.2829861" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44334432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.49583334" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -642,9 +1260,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update ignore idea" />
+    <MESSAGE value="test_docker_push" />
+    <MESSAGE value="docker push" />
+    <MESSAGE value="docker file for dev" />
+    <MESSAGE value="Update _ get _data" />
+    <MESSAGE value="update  task_info v1" />
+    <MESSAGE value="update _test_info_01042020_v1" />
+    <MESSAGE value="update_pool_size, max_over_flow" />
+    <MESSAGE value="update pool size , max overflow" />
+    <MESSAGE value="01042" />
+    <MESSAGE value="Insert Logging p1" />
     <MESSAGE value="Default Changelist" />
-    <option name="LAST_COMMIT_MESSAGE" value="Default Changelist" />
+    <MESSAGE value="pool_size = 0" />
+    <MESSAGE value="pool_size=200" />
+    <MESSAGE value="sidung" />
+    <MESSAGE value="update_clean" />
+    <MESSAGE value="pool_size=0" />
+    <MESSAGE value="finish Merge" />
+    <MESSAGE value="update ansible command" />
+    <MESSAGE value="update_task" />
+    <MESSAGE value="update_database_service_setup" />
+    <MESSAGE value="update _ ansible _fact error case" />
+    <MESSAGE value="07042020 _ Update task Info" />
+    <MESSAGE value="update task info remove info in post command" />
+    <MESSAGE value="update _ task _index" />
+    <MESSAGE value="update _ task _index and serive_name" />
+    <option name="LAST_COMMIT_MESSAGE" value="update _ task _index and serive_name" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -654,12 +1295,27 @@
           <line>95</line>
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/controllers/assign_role/routes.py</url>
-          <line>20</line>
-          <option name="timeStamp" value="2" />
+          <url>file://$PROJECT_DIR$/tests/curl_t.py</url>
+          <line>51</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/curl_t.py</url>
+          <line>55</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/curl_t.py</url>
+          <line>63</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/testyml.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="5" />
+      <option name="time" value="17" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -667,34 +1323,65 @@
     <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1582448942841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.service_infos">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/models/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/configs/log.json">
+    <entry file="file://$PROJECT_DIR$/models/change.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
+        <state relative-caret-position="360">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/node_info.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/correlate_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-151">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/nodes.json">
+    <entry file="file://$PROJECT_DIR$/libs/create_node_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="107" lean-forward="false" selection-start-line="0" selection-start-column="107" selection-end-line="0" selection-end-column="107" />
+        <state relative-caret-position="1469">
+          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/ansible/runner.py">
+    <entry file="file://$USER_HOME$/anaconda2/envs/viettel/lib/python2.7/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="128" column="31" lean-forward="true" selection-start-line="128" selection-start-column="31" selection-end-line="128" selection-end-column="31" />
-          <folding>
-            <element signature="e#388#397#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="452">
+          <caret line="1949" column="0" lean-forward="false" selection-start-line="1949" selection-start-column="0" selection-end-line="1949" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/assign_role/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/logs/ims.log" />
+    <entry file="file://$PROJECT_DIR$/tests/task_info.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="0" column="146" lean-forward="false" selection-start-line="0" selection-start-column="146" selection-end-line="0" selection-end-column="146" />
         </state>
       </provider>
     </entry>
@@ -705,15 +1392,179 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/ansible/roles/keystone/tasks/main.yml" />
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.disk_resources">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/configs/log.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="64" lean-forward="true" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
+    <entry file="file://$PROJECT_DIR$/logs/lamtv10.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="31" column="150" lean-forward="false" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/common_funtion.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/libs/export_db_to__file_config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/logging.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/ansible_compute.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+          <folding>
+            <marker date="1585911632730" expanded="true" signature="203:204" ph="all" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/extends/stuff.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/curl_t.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="27" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf_dev.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/configs/conf_app.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitlab-ci.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="887">
+          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#70#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/testyml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.disk_resources">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
@@ -727,54 +1578,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/drop_table.sql">
+    <entry file="file://$PROJECT_DIR$/models/service_setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/deployment.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="72" lean-forward="true" selection-start-line="14" selection-start-column="72" selection-end-line="14" selection-end-column="72" />
+        <state relative-caret-position="450">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/drop_database.sql">
+    <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes_bk.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="504">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#101#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global_assets/const.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.nodes">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="143" column="27" lean-forward="false" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/nodes4.json">
+    <entry file="file://$PROJECT_DIR$/tests/create_database.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="109" lean-forward="true" selection-start-line="0" selection-start-column="109" selection-end-line="0" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/nodes3.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="112" lean-forward="false" selection-start-line="0" selection-start-column="112" selection-end-line="0" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/nodes2.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="112" lean-forward="false" selection-start-line="0" selection-start-column="112" selection-end-line="0" selection-end-column="112" />
+        <state relative-caret-position="494">
+          <caret line="130" column="39" lean-forward="true" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -782,25 +1623,15 @@
     <entry file="file://$PROJECT_DIR$/tests/nodes1.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="74" lean-forward="false" selection-start-line="0" selection-start-column="74" selection-end-line="0" selection-end-column="74" />
+          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/global_assets/const.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="666">
-          <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
-          <folding>
-            <element signature="e#1121#1130#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/node_role1.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="26" lean-forward="false" selection-start-line="0" selection-start-column="26" selection-end-line="0" selection-end-column="26" />
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -808,7 +1639,7 @@
     <entry file="file://$PROJECT_DIR$/tests/node_role2.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -816,7 +1647,7 @@
     <entry file="file://$PROJECT_DIR$/tests/node_role3.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="false" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -824,40 +1655,39 @@
     <entry file="file://$PROJECT_DIR$/tests/node_role4.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="31" lean-forward="false" selection-start-line="0" selection-start-column="31" selection-end-line="0" selection-end-column="31" />
+          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/node_role.json">
+    <entry file="file://$PROJECT_DIR$/tests/curl_t3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="36" lean-forward="false" selection-start-line="0" selection-start-column="36" selection-end-line="0" selection-end-column="36" />
+        <state relative-caret-position="231">
+          <caret line="92" column="160" lean-forward="false" selection-start-line="92" selection-start-column="160" selection-end-line="92" selection-end-column="160" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/role_service.json">
+    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="81" column="7" lean-forward="false" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+        <state relative-caret-position="941">
+          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/node.py">
+    <entry file="file://$PROJECT_DIR$/libs/DROP_DATABASE_V2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="28" lean-forward="false" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="377">
+          <caret line="630" column="0" lean-forward="false" selection-start-line="630" selection-start-column="0" selection-end-line="630" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/create_database.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="406" column="22" lean-forward="false" selection-start-line="406" selection-start-column="22" selection-end-line="406" selection-end-column="22" />
-          <folding />
+    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -868,206 +1698,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
+    <entry file="file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="44" column="53" lean-forward="false" selection-start-line="44" selection-start-column="53" selection-end-line="44" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/curl_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="53" column="40" lean-forward="false" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="35" column="25" lean-forward="false" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="33" column="42" lean-forward="false" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/main/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/test_api/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="66" column="44" lean-forward="true" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#83#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/replace_controller/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="2736">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
           <folding>
             <element signature="e#0#101#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/example/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="58" column="63" lean-forward="true" selection-start-line="58" selection-start-column="63" selection-end-line="58" selection-end-column="63" />
+        <state relative-caret-position="740">
+          <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
           <folding>
             <element signature="e#0#101#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/anaconda2/envs/viettel/lib/python2.7/site-packages/flask/app.py">
+    <entry file="file://$PROJECT_DIR$/tests/curl_t2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="1282" column="0" lean-forward="false" selection-start-line="1282" selection-start-column="0" selection-end-line="1282" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
+        <state relative-caret-position="415">
           <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/DROP_DATABASE_V2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="624" column="0" lean-forward="false" selection-start-line="624" selection-start-column="0" selection-end-line="625" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/admin/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="15" column="32" lean-forward="true" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/export_db_to__file_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="29" column="39" lean-forward="true" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/flask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="398" column="20" lean-forward="true" selection-start-line="398" selection-start-column="20" selection-end-line="398" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitlab-ci.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="33" column="13" lean-forward="true" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="14" lean-forward="true" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
           <folding />
         </state>
       </provider>

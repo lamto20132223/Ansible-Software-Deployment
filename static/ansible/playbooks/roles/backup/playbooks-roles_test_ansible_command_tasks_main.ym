@@ -1,0 +1,33 @@
+---
+- include: extends/before.yml task_index=1
+- name: init_repo
+  command: '{{ item }}'
+  with_items:
+    - echo "{{ inventory_hostname }}     "
+    - touch /home/target
+#    - cp /home/lamtv10/lkt /home/lamtv10/
+    - echo 'group_name'
+#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
+  tags:
+    - install
+  register: infos
+  ignore_errors: yes
+- include:  extends/after.yml task_index=1 info={{ infos  }}
+ #   - docker stop glance-registry
+ #   - docker rm glance-api
+ #   - docker rm glance-registry
+
+
+
+
+# - name: test_ansible_command2
+#   command: '{{ item }}'
+#   args:
+#     excutable: /bin/bash
+#   with_items:
+#     - echo "lamtv1019022020" > /home/test_ansible_command2
+#   tags:
+#     - install
+#  #   - docker stop glance-registry
+#  #   - docker rm glance-api
+#  #   - docker rm glance-registry

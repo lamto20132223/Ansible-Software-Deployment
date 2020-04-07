@@ -1,0 +1,9 @@
+---
+- name: POST "{{ inventory_hostname }}" and {{ task_index }}  and "{{ service_name }}"
+  uri:
+    url: http://172.16.29.194:4321/api/v1/tasks/update_task
+    method: POST
+    body_format: json
+    body: {"node_ip":"{{ inventory_hostname }}","task_index":"{{ task_index }}" , "info":"{{ info }}", "service_name":"{{ service_name }}" }
+    return_content: yes
+
