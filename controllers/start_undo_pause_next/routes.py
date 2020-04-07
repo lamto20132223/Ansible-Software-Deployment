@@ -109,20 +109,34 @@ def update_task_info():
         abort(400)
     node_ip = request.json.get('node_ip')
     task_name = request.json.get('task_name').encode('utf-8')
-    task_type = request.json.get('task_type')
+    task = session.query(models.Task).filter(and_(models.Task.task_display_name == str(task_name),
+                                                  models.Task.service_setup.has(models.Service_setup.deployment.has(
+                                                      models.Deployment.node.has(
+                                                          models.Node.management_ip == str(node_ip)))))).first()
+
+    if task is None:
+        session.commit()
+        return {"res": "Error Task Not Found" + 'node_ip: ' + str(
+            node_ip) + ' task_name: ' + task_name }, 200
+
     info = request.json.get('info')
+    if info is None:
+        task.status = 'INPROCESSING'
+        task.result = 'UNDONE'
+        task.service_setup.status="INPROCESSING"
+        task.service_setup.deployment.status="INPROCESSING"
+        session.add(task)
+        session.commit()
+        return jsonify(models.to_json(task, 'Task', False)) , 200
+
+
     logging.debug("TYPE INFO: " + str(type(info)))
     if type(info) is unicode:
         info = info.encode('utf-8')
-
-
-    logging.debug("?????????????? " + str(type(info)))
     if type(info) is not  dict:
         info = ast.literal_eval(info)
 
 
-
-    logging.debug("TYPE INFO: " + str(type(info)))
 
     logging.debug("INFO.failed: " + str(info.get('failed')))
     logging.debug("INFO.results: " + str(info.get('results')))
@@ -131,53 +145,37 @@ def update_task_info():
 
 
 
-    #print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + str(info) + " status" + str(status))
+    if info.get('failed') is True:
+        task.status = "FAILED"
+    else:
+        task.status = "DONE"
+        task.finished_at = datetime.now()
+    task.log =json.dumps(info.get('results'))
+    if info.get('results') is not None:
+        task_result = "SUCCEED "
+        for index, change_info in enumerate(info.get('results'), start=1):
+            change_status = "OK" if change_info.get('failed') is False else "FAILED"
+            change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
+            task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
+            finished_at = datetime.now() if change_info.get('failed') is False else None
+            change_type = json.dumps(change_info)
+            change_type = change_type[:250] + (change_type[250:] and '..')
+            file_config_id = -1
+            change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
+            task.changes.append(change)
 
-
-
-    #return {"res": "OK "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
-    task = session.query(models.Task).filter(and_(models.Task.task_display_name==str(task_name),  models.Task.service_setup.has(models.Service_setup.deployment.has(models.Deployment.node.has(models.Node.management_ip==str(node_ip))))  )).first()
-
-
-    if task is not None:
-        task.task_type=task_type
-        if info.get('failed') is True:
-            task.status = "FAILED"
+        task.result = task_result
+        if "ERROR" in task_result:
+            task.service_setup.status = "FAILED"
+            task.service_setup.deployment.status = "FAILED"
         else:
-            task.status = "DONE"
-            task.finished_at = datetime.now()
-        task.log =json.dumps(info.get('results'))
-        if info.get('results') is not None:
-            task_result = "SUCCEED "
-            for index, change_info in enumerate(info.get('results'), start=1):
-                change_status = "OK" if change_info.get('failed') is False else "FAILED"
-                change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-                task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
-                finished_at = datetime.now() if change_info.get('failed') is False else None
-                change_type = json.dumps(change_info)
-                change_type = change_type[:250] + (change_type[250:] and '..')
-                file_config_id = -1
-                change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
-                task.changes.append(change)
+            task.service_setup.status = "INPROCESSING"
+            task.service_setup.deployment.status = "INPROCESSING"
 
-            task.result = task_result
-            if "ERROR" in task_result:
-                task.service_setup.status = "ERROR"
-                task.service_setup.deployment.status = "ERROR"
-            else:
-                task.service_setup.status = "INPROCESSING"
-                task.service_setup.deployment.status = "INPROCESSING"
 
-        if info.get('status') is not None:
-            task.status = info.get('status')
-            task.result = 'UNDONE'
-            task.service_setup.status="INPROCESSING"
-            task.service_setup.deployment.status="INPROCESSING"
+    session.add(task)
+    session.commit()
+    return jsonify(models.to_json(task, 'Task', False)) , 200
 
-        session.add(task)
-        session.commit()
-        return jsonify(models.to_json(task, 'Task', False)) , 200
 
-    else :
-        session.commit()
-        return {"res": "Error Task Not Found"+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
+
