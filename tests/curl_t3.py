@@ -60,8 +60,6 @@ def insert_test_data():
 
     os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/test_create_ansible_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/test_run_first_ansble_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
-    time.sleep(5)
 
 
 
@@ -92,11 +90,18 @@ def delete_data():
     os.system(
         'curl -X POST "http://172.16.29.194:4321/api/v1/clean_data" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
 
+
+def run_one_task():
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/test_run_first_ansble_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    time.sleep(5)
+
+
 if __name__ == "__main__":
     #delete_data()
-    add_host()
+    #add_host()
     #discover_hosts()
     #add_host_to_role()
     #insert_test_data()
 
     #send_task_info()
+    run_one_task()

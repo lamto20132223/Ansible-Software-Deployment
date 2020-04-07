@@ -8,6 +8,7 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
   tags:
     - install
 - include:  extends/after.yml task_index=1 info={{ infos  }}
@@ -18,6 +19,7 @@
   command: '{{ item }}'
   with_items:
     - sudo setenforce 0
+  register: infos 
   tags:
     - install
   ignore_errors: yes
@@ -30,6 +32,7 @@
     name: iptables
     enabled: no
     masked: no
+  register: infos 
   tags:
     - install
   ignore_errors: yes
@@ -42,6 +45,7 @@
     name: firewalld
     enabled: no
     masked: no
+  register: infos 
   tags:
     - install
   ignore_errors: yes
@@ -57,6 +61,7 @@
 #    - cp /home/lamtv10/lkt /home/lamtv10/    
     - echo 'group_name'
 #    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
+  register: infos 
   tags:
     - install
   register: infos
@@ -73,6 +78,7 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
   tags:
     - install
 - include:  extends/after.yml task_index=6 info={{ infos  }}
@@ -87,6 +93,7 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
   tags:
     - install
 - include:  extends/after.yml task_index=7 info={{ infos  }}
