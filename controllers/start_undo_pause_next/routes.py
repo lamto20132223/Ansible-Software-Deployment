@@ -108,8 +108,11 @@ def update_task_info():
     if not request.json:
         abort(400)
     node_ip = request.json.get('node_ip')
-    task_name = request.json.get('task_name').encode('utf-8')
-    task = session.query(models.Task).filter(and_(models.Task.task_display_name == str(task_name),
+    task_index = request.json.get('task_index')
+
+    logging.debug("TYPE INDEX: " + str(type(task_index)))
+
+    task = session.query(models.Task).filter(and_(str(models.Task.task_index) == str(task_index),
                                                   models.Task.service_setup.has(models.Service_setup.deployment.has(
                                                       models.Deployment.node.has(
                                                           models.Node.management_ip == str(node_ip)))))).first()
@@ -117,7 +120,9 @@ def update_task_info():
     if task is None:
         session.commit()
         return {"res": "Error Task Not Found" + 'node_ip: ' + str(
-            node_ip) + ' task_name: ' + task_name }, 200
+            node_ip) + ' task_index: ' + task_index }, 200
+
+
 
     info = request.json.get('info')
     if info is None:
@@ -169,13 +174,14 @@ def update_task_info():
             task.service_setup.status = "FAILED"
             task.service_setup.deployment.status = "FAILED"
         else:
-            task.service_setup.status = "INPROCESSING"
+            task.service_setup.status = "DONE" if  task.task_index == len(task.service_setup.tasks) else "INPROCESSING"
             task.service_setup.deployment.status = "INPROCESSING"
 
 
     session.add(task)
     session.commit()
     return jsonify(models.to_json(task, 'Task', False)) , 200
+
 
 
 
