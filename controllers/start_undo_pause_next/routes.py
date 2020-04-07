@@ -108,19 +108,19 @@ def update_task_info():
     if not request.json:
         abort(400)
     node_ip = request.json.get('node_ip')
-    task_index = request.json.get('task_index')
-
+    task_index = int(request.json.get('task_index').encode('utf-8'))
+    service_name = request.json.get('service_name').encode('utf-8')
     logging.debug("TYPE INDEX: " + str(type(task_index)))
 
-    task = session.query(models.Task).filter(and_(str(models.Task.task_index) == str(task_index),
+    task = session.query(models.Task).filter(and_(models.Task.task_index == task_index, models.Task.service_setup.has(models.Service_setup.service_name == str(service_name)),
                                                   models.Task.service_setup.has(models.Service_setup.deployment.has(
                                                       models.Deployment.node.has(
-                                                          models.Node.management_ip == str(node_ip)))))).first()
+                                                          models.Node.management_ip == str(node_ip))))) ).first()
 
     if task is None:
         session.commit()
         return {"res": "Error Task Not Found" + 'node_ip: ' + str(
-            node_ip) + ' task_index: ' + task_index }, 200
+            node_ip) + ' service_name: ' + str(service_name)+ ' task_index: ' + str(task_index) }, 200
 
 
 
