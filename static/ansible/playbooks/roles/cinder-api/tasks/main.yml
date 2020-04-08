@@ -9,8 +9,7 @@
     mode: '0644'
     backup: yes
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '1' ]
 - include:  extends/after.yml task_index=1 info={{ infos  }}
 
 
@@ -20,8 +19,7 @@
   with_items:
     - sudo setenforce 0
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '2' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=2 info={{ infos  }}
 
@@ -33,8 +31,7 @@
     enabled: no
     masked: no
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '3' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=3 info={{ infos  }}
 
@@ -46,8 +43,7 @@
     enabled: no
     masked: no
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '4' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=4 info={{ infos  }}
 
@@ -62,8 +58,7 @@
     - echo 'group_name'
 #    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '5' ]
   register: infos
   ignore_errors: yes
 - include:  extends/after.yml task_index=5 info={{ infos  }}
@@ -79,8 +74,7 @@
     mode: '0644'
     backup: yes
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '6' ]
 - include:  extends/after.yml task_index=6 info={{ infos  }}
 
 
@@ -94,7 +88,6 @@
     mode: '0644'
     backup: yes
   register: infos 
-  tags:
-    - install
+  tags: [ 'install', '7' ]
 - include:  extends/after.yml task_index=7 info={{ infos  }}
 

@@ -220,29 +220,6 @@ def test_code_create_ansible_playbook_p2():
 
 
 
-@mod.route('/roles/test_run_first_ansble_playbook', methods=['POST', 'GET'])
-def test_code_create_ansible_playbook_p3():
-
-
-    node = session.query(models.Node).first()
-    service_setups= get_service_setups_from_deployment(node.deployment)
-
-    service = service_setups[0]
-
-
-
-    runner = Runner('playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', 'new_node',
-                    {'extra_vars': {'target': 'target'}, 'tags': []}, None, False,
-                    None, None, None)
-
-    # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
-
-    print(runner.variable_manager)
-
-    log_run = runner.run()
-    print(log_run)
-    return str(log_run)
-
 
 #
 @mod.route('/roles/test_create_task', methods=['POST', 'GET'])
