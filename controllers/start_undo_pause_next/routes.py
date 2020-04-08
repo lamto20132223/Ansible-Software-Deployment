@@ -36,11 +36,10 @@ def test_code_create_ansible_playbook_p3():
 
     service = service_setups[0]
 
+    runner = Runner(playbook='playbook_setup_' + service.service_name + '_for_' + node.node_display_name + '.yml',
+                    inventory='new_node', run_data={'extra_vars': {'target': 'target'}, 'tags': []},
+                    start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
 
-
-    runner = Runner('playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', 'new_node',
-                    {'extra_vars': {'target': 'target'}, 'tags': []}, None, False,
-                    None, None, None)
 
     # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
@@ -130,6 +129,36 @@ def get_change_info():
 #
 
 
+
+@mod.route('/installation/runtask', methods=['POST'])
+def run_specific_task():
+    if not request.json:
+        abort(400)
+    else:
+        task_id = request.json.get('task_id')
+        method = request.json.get('method')
+
+    task = session.query(models.Task).filter_by(task_id=task_id).first()
+
+    if task is None :
+        return abort(400)
+    service = task.service_setup
+    node = service.deployment.node
+
+    if method == "Install":
+
+
+        runner = Runner(playbook='playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': [str(task.task_index)]}, start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
+
+        # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
+
+        print(runner.variable_manager)
+
+        log_run = runner.run()
+        print(log_run)
+        return str(log_run)
+    else :
+        return {"res":"INCOMMING"}
 
 
 @mod.route('/tasks/update_task', methods=['POST'])
