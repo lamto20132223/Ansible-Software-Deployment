@@ -9,7 +9,7 @@ import oyaml as yaml
 from sqlalchemy import and_,or_
 from assets import *
 import logging
-import libs.ansible.runner as runner
+from libs.ansible.runner import Runner
 from flask_restplus import Api, Resource
 import json
 import ast

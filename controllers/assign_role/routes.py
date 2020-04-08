@@ -9,7 +9,7 @@ from assets import *
 import sys
 import oyaml as yaml
 from sqlalchemy.exc import IntegrityError
-import libs.ansible.runner as runner
+import libs.ansible.runner.Runner as Runner
 from flask_restplus import Api, Resource
 import json
 import ast
@@ -18,7 +18,6 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 
-Runner = runner.Runner
 
 
 

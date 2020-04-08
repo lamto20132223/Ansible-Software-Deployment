@@ -95,13 +95,18 @@ def run_one_task():
     os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/test_run_first_ansble_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
 
+def run_task_id(task_id):
+
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\"task_id\":\"'+str(task_id)+'\",\"method\":\"Install\" }"')
+    time.sleep(5)
 
 if __name__ == "__main__":
     #delete_data()
-    add_host()
-    discover_hosts()
-    add_host_to_role()
-    insert_test_data()
+    # add_host()
+    # discover_hosts()
+    # add_host_to_role()
+    # insert_test_data()
 
     #send_task_info()
     #run_one_task()
+    run_task_id(1)
