@@ -1,5 +1,5 @@
 ---
-- include: extends/before.yml task_index=1
+- include: extends/before.yml task_index=01
 - name: 1.cp selinux.conf.j2 /etc/selinux/config
   template:
     src: selinux.conf.j2
