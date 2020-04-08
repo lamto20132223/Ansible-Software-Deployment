@@ -22,4 +22,4 @@ run_image_stage:
   script:
     - docker ps -a -q --filter "name=lamtv10_software" | grep -q . && docker stop lamtv10_software && docker rm -fv lamtv10_software
     - docker pull registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
-    - docker run -d --network=host --name lamtv10_software registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA
+    - docker run -d --network=host --name lamtv10_software -v /home/lamtv10/software_deployment/data/playbooks:/root/app/static/ansible/playbooks -v /home/lamtv10/software_deployment/data/inventory:/root/app/static/ansible/inventory  registry.ocs.com/lamtv10/software_deployment/dev_image_lamtv10:$CI_COMMIT_SHA

@@ -101,7 +101,7 @@ if __name__ == "__main__":
     #add_host()
     #discover_hosts()
     #add_host_to_role()
-    #insert_test_data()
+    insert_test_data()
 
     #send_task_info()
-    run_one_task()
+    #run_one_task()
