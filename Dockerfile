@@ -5,4 +5,4 @@ WORKDIR /root/app
 RUN  bash ./copy.sh
 
 #CMD cd /root/app && python app_dev.py
-CMD ["start.sh"]
+CMD bash ./start.sh
