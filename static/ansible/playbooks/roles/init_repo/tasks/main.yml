@@ -90,16 +90,13 @@
 
 - include: extends/before.yml task_index=7
   tags: [ 'install', '7' ]
-- name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
-  template:
-    src: docker.repo.j2
-    dest: /etc/yum.repos.d/docker.repo
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  register: infos 
-  tags: [ 'install', '7' ]
+- name: yum install -y python-openstackclient
+  yum:
+    name:
+      - python-openstackclient
+    state: latest
 - include:  extends/after.yml task_index=7 info={{ infos  }}
   tags: [ 'install', '7' ]
+
+
 
