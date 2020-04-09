@@ -6,4 +6,4 @@ pwd
 \cp -r /root/app/bk/inventory/* /root/app/static/ansible/inventory/
 
 
-python app_dev.py
+python app.py

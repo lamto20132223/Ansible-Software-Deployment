@@ -107,18 +107,4 @@ def run_task_id(task_id):
     time.sleep(5)
 
 if __name__ == "__main__":
-    #delete_data()
-    # add_host()
-    # discover_hosts()
-    # add_host_to_role()
-    # insert_test_data()
-
-    #send_task_info()
-    #run_one_task(
-    # )
-    # run_task_id(1)
-    # run_task_id(2)
-    # run_task_id(3)
-    #run_task_id(4)
-    # run_task_id(5)
     run_task_id(5)
