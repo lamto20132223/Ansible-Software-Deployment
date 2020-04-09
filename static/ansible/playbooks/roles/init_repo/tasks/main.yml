@@ -95,6 +95,8 @@
     name:
       - python-openstackclient
     state: latest
+  register: infos 
+  tags: [ 'install', '7' ]
 - include:  extends/after.yml task_index=7 info={{ infos  }}
   tags: [ 'install', '7' ]
 
