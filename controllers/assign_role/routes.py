@@ -181,7 +181,7 @@ def test_code_create_ansible_playbook_p1():
     file_new_node.close()
 
     f = open(CONST.inventory_dir+'/new_node', "r")
-    return  {"respone":"Done Create Ansible Inventory", "inventory":str(f)} ,202
+    return  {"respone":"Done Create Ansible Inventory", "inventory":str(f.read())} ,202
 
 @mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p2():
