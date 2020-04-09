@@ -200,7 +200,7 @@ def update_task_info():
         info = ast.literal_eval(info)
 
 
-
+    logging.debug("INFO: " + json.dumps(info))
     logging.debug("INFO.failed: " + str(info.get('failed')))
     logging.debug("INFO.results: " + str(info.get('results')))
     logging.debug("INFO.stderr: " + str(info.get('stderr')))

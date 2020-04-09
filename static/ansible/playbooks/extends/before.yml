@@ -1,5 +1,5 @@
 ---
-- name: POST "{{ inventory_hostname }}" and {{ task_index }}  and {{ service_name }}
+- name: POST BEFORE "{{ inventory_hostname }}" and {{ task_index }}  and {{ service_name }}
   uri:
     url: http://172.16.29.194:4321/api/v1/tasks/update_task
     method: POST
