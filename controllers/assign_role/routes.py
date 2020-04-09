@@ -123,7 +123,7 @@ def add_host_to_role():
         node.node_roles.append(node_role)
     session.add(node)
     session.commit()
-    return {"respone":"Done Add Node to Role", "node_info":jsonify(models.to_json(node, 'Node', False))} ,202
+    return {"respone":"Done Add Node to Role", "node_info":models.to_json(node, 'Node', False)} ,202
 
 
 @mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
