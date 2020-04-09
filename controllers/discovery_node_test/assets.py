@@ -64,6 +64,7 @@ def get_facts(ansible_inventory_dir, ansible_facts_dir):
 def load_node_info_to_database(ansible_facts_dir):
     nodes=session.query(models.Node).all()
 
+    res={"succeed" : 0, "error":0}
     for node in nodes:
         node.updated_at=datetime.now()
         node.node_type="oenstack"
@@ -140,9 +141,11 @@ def load_node_info_to_database(ansible_facts_dir):
                 node_info.disk_resources=disk_resources
                 node.node_info=node_info
                 node.status = "success access node info"
+                res['succeed']+=1
             else :
                 node.status = json.dumps(node_data)
-
+                res['error']+=1
             session.add(node)
             session.commit()
+    return res
 
