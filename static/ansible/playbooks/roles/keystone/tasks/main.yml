@@ -1,5 +1,6 @@
 ---
 - include: extends/before.yml task_index=1
+  tags: [ 'install', '1' ]
 - name: 1.cp selinux.conf.j2 /etc/selinux/config
   template:
     src: selinux.conf.j2
@@ -11,9 +12,10 @@
   register: infos 
   tags: [ 'install', '1' ]
 - include:  extends/after.yml task_index=1 info={{ infos  }}
-
+  tags: [ 'install', '1' ]
 
 - include: extends/before.yml task_index=2
+  tags: [ 'install', '2' ]
 - name: 2.stop selinux
   command: '{{ item }}'
   with_items:
@@ -22,9 +24,10 @@
   tags: [ 'install', '2' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=2 info={{ infos  }}
-
+  tags: [ 'install', '2' ]
 
 - include: extends/before.yml task_index=3
+  tags: [ 'install', '3' ]
 - name: 3.systemctl stop iptables
   systemd:
     name: iptables
@@ -34,9 +37,11 @@
   tags: [ 'install', '3' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=3 info={{ infos  }}
+  tags: [ 'install', '3' ]
 
 
 - include: extends/before.yml task_index=4
+  tags: [ 'install', '4' ]
 - name: 4.systemctl stop firewalld
   systemd:
     name: firewalld
@@ -46,9 +51,11 @@
   tags: [ 'install', '4' ]
   ignore_errors: yes
 - include:  extends/after.yml task_index=4 info={{ infos  }}
+  tags: [ 'install', '4' ]
 
 
 - include: extends/before.yml task_index=5
+  tags: [ 'install', '5' ]
 - name: 5.test_ansible_command
   command: '{{ item }}'
   with_items:
@@ -62,9 +69,11 @@
   register: infos
   ignore_errors: yes
 - include:  extends/after.yml task_index=5 info={{ infos  }}
+  tags: [ 'install', '5' ]
 
 
 - include: extends/before.yml task_index=6
+  tags: [ 'install', '6' ]
 - name: 6.cp local.repo.j2 /etc/yum.repos.d/local.repo
   template:
     src: local.repo.j2
@@ -76,9 +85,11 @@
   register: infos 
   tags: [ 'install', '6' ]
 - include:  extends/after.yml task_index=6 info={{ infos  }}
+  tags: [ 'install', '6' ]
 
 
 - include: extends/before.yml task_index=7
+  tags: [ 'install', '7' ]
 - name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
   template:
     src: docker.repo.j2
@@ -90,4 +101,5 @@
   register: infos 
   tags: [ 'install', '7' ]
 - include:  extends/after.yml task_index=7 info={{ infos  }}
+  tags: [ 'install', '7' ]
 

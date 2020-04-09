@@ -6,4 +6,4 @@
     body_format: json
     body: {"node_ip":"{{ inventory_hostname }}","task_index":"{{ task_index }}", "service_name":"{{ service_name }}" }
     return_content: yes
-  tags: [ 'install', '{{ task_index }}' ]
+
