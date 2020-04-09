@@ -21,9 +21,9 @@ def add_host():
         abort(400)
     else:
         data = request.json
-    old_nodes = session.query(models.Node).filter_by(management_ip=data.get('management_ip')).all()
+    old_nodes = session.query(models.Node).filter(or_(models.Node.management_ip==data.get('management_ip'), models.Node.node_display_name==data.get('node_display_name'))).all()
     if len(old_nodes) != 0:
-        return {"status":"Node da ton tai"}
+        return {"status":"Node da ton tai"}, 226
 
     node = models.Node(created_at=datetime.now(), updated_at=datetime.now(), deleted_at=None, management_ip=data.get('management_ip', ""),ssh_user=data.get('ssh_user',""), ssh_password=data.get('ssh_password',  ""), status="set_ip", node_display_name=data.get('node_display_name', ''))
 
@@ -77,8 +77,8 @@ def discover_hosts():
     inventory_dir = CONST.inventory_dir+'/new_node'
     facts_dir = CONST.facts_dir
     get_facts(inventory_dir, facts_dir)
-    load_node_info_to_database(facts_dir)
-    return {"response:" :"host ok, check in /api/v1/hosts"}
+    res = load_node_info_to_database(facts_dir)
+    return {"response" :'Discover host sucessfully. Check Result in /api/v1/hosts', "result":res}, 200
 
 @mod.route('/hosts/host_info', methods=['GET']) ############################### UNDONE ##################
 def get_host_info():

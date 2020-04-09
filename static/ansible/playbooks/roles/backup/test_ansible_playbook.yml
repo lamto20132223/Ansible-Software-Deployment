@@ -1,0 +1,22 @@
+---
+#- name: install backend compute node
+#  hosts: compute
+#  remote_user: root
+#  roles: 
+    #- { role: init_repo}
+    #- { role: chrony } 
+    #- { role: docker }
+
+- name: install com node 
+  hosts: 'all'
+#  vars_files:
+#    - /etc/ansible/group_vars/all/global.yml
+#    - /etc/ansible/group_vars/all/common.yml
+  remote_user: root
+  gather_facts: no
+  roles: 
+    #- { role: qemu }
+    #- { role: nova-compute }
+    #- { role: openvswitch_dpdk } 
+    - { role: test_ansible_command }
+#    - { role: swift_proxy}

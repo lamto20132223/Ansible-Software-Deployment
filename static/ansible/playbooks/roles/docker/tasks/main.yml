@@ -1,5 +1,7 @@
 ---
-- name: docker_task_1 = cp selinux.conf.j2 /etc/selinux/config
+- include: extends/before.yml task_index=1
+  tags: [ 'install', '1' ]
+- name: 1.cp selinux.conf.j2 /etc/selinux/config
   template:
     src: selinux.conf.j2
     dest: /etc/selinux/config
@@ -7,28 +9,72 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
+  tags: [ 'install', '1' ]
+- include:  extends/after.yml task_index=1 info={{ infos  }}
+  tags: [ 'install', '1' ]
 
-- name: docker_task_1 = stop selinux
+- include: extends/before.yml task_index=2
+  tags: [ 'install', '2' ]
+- name: 2.stop selinux
   command: '{{ item }}'
   with_items:
     - sudo setenforce 0
+  register: infos 
+  tags: [ 'install', '2' ]
   ignore_errors: yes
+- include:  extends/after.yml task_index=2 info={{ infos  }}
+  tags: [ 'install', '2' ]
 
-- name: docker_task_1 = systemctl stop iptables
+- include: extends/before.yml task_index=3
+  tags: [ 'install', '3' ]
+- name: 3.systemctl stop iptables
   systemd:
     name: iptables
     enabled: no
     masked: no
+  register: infos 
+  tags: [ 'install', '3' ]
   ignore_errors: yes
+- include:  extends/after.yml task_index=3 info={{ infos  }}
+  tags: [ 'install', '3' ]
 
-- name: docker_task_2 = systemctl stop firewalld
+
+- include: extends/before.yml task_index=4
+  tags: [ 'install', '4' ]
+- name: 4.systemctl stop firewalld
   systemd:
     name: firewalld
     enabled: no
     masked: no
+  register: infos 
+  tags: [ 'install', '4' ]
   ignore_errors: yes
+- include:  extends/after.yml task_index=4 info={{ infos  }}
+  tags: [ 'install', '4' ]
 
-- name: docker_task_3 = cp local.repo.j2 /etc/yum.repos.d/local.repo
+
+- include: extends/before.yml task_index=5
+  tags: [ 'install', '5' ]
+- name: 5.test_ansible_command
+  command: '{{ item }}'
+  with_items:
+    - echo "{{ inventory_hostname }}     "
+    - touch /home/"{{ service_name }}"
+#    - cp /home/lamtv10/lkt /home/lamtv10/    
+    - echo 'group_name'
+#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
+  register: infos 
+  tags: [ 'install', '5' ]
+  register: infos
+  ignore_errors: yes
+- include:  extends/after.yml task_index=5 info={{ infos  }}
+  tags: [ 'install', '5' ]
+
+
+- include: extends/before.yml task_index=6
+  tags: [ 'install', '6' ]
+- name: 6.cp local.repo.j2 /etc/yum.repos.d/local.repo
   template:
     src: local.repo.j2
     dest: /etc/yum.repos.d/local.repo
@@ -36,9 +82,15 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
+  tags: [ 'install', '6' ]
+- include:  extends/after.yml task_index=6 info={{ infos  }}
+  tags: [ 'install', '6' ]
 
 
-- name: docker_task_4 = cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+- include: extends/before.yml task_index=7
+  tags: [ 'install', '7' ]
+- name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
   template:
     src: docker.repo.j2
     dest: /etc/yum.repos.d/docker.repo
@@ -46,15 +98,8 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos 
+  tags: [ 'install', '7' ]
+- include:  extends/after.yml task_index=7 info={{ infos  }}
+  tags: [ 'install', '7' ]
 
-- name: docker_task_5 = refresh repo
-  command: '{{ item }}'
-  with_items:
-    - yum clean all
-    - yum repolist
-
-- name: docker_task_6 = yum install -y python-openstackclient
-  yum:
-    name:
-      - python-openstackclient
-    state: latest

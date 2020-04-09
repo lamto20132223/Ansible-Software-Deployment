@@ -9,7 +9,7 @@ from assets import *
 import sys
 import oyaml as yaml
 from sqlalchemy.exc import IntegrityError
-import libs.ansible.runner as runner
+from libs.ansible.runner import Runner
 from flask_restplus import Api, Resource
 import json
 import ast
@@ -18,7 +18,6 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 
-Runner = runner.Runner
 
 
 
@@ -104,24 +103,38 @@ def add_host_to_role():
         roles = request.json.get('roles')
 
     node = session.query(models.Node).filter_by(node_id=node_id).first()
+    if node is None:
+        return {"response": "Node is not exist"}, 226
+
+    if roles is None:
+        return {"response": "Require Role"}, 226
+
+    with open('static/role_service.json') as role_data_file:
+        role_data = json.load(role_data_file)
+
+        list_roles = role_data.keys()
+        for role in roles:
+            if role not in list_roles:
+                return {"response": "Error Information Role with name" + role + " is not invalid"}, 226
+
 
     for role in roles:
         node_role = models.Node_role(role_name=role)
         node.node_roles.append(node_role)
     session.add(node)
     session.commit()
-    return make_response({"ok":"ok"})
+    return {"respone":"Done Add Node to Role", "node_info":jsonify(models.to_json(node, 'Node', False))} ,202
 
 
 @mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
 def add_all_deployment():
     nodes = session.query(models.Node).all()
     for node in nodes:
-        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN PROCESSING", name = "deployement " + str(node.management_ip) )
+        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN QUEUE", name = "deployement " + str(node.management_ip) )
         node.deployment = deployment
         session.add(node)
     session.commit()
-    return "OK"
+    return {"respone":"Done Add Deployment to Database"} ,202
 
 @mod.route('/roles/test_create_service_setup', methods=['POST', 'GET'])
 def test_code_create_service_setup():
@@ -135,14 +148,14 @@ def test_code_create_service_setup():
         for role in roles:
             list_services = role_data[role]['list_service']
             for service in list_services:
-                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],service_info="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
+                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],enable="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
                 deployment.service_setups.append(service_setup)
 
 
 
         session.add(node)
     session.commit()
-    return "OK"
+    return  {"respone":"Done Add Service Setup to Database"} ,202
 
 
 
@@ -168,7 +181,7 @@ def test_code_create_ansible_playbook_p1():
     file_new_node.close()
 
     f = open(CONST.inventory_dir+'/new_node', "r")
-    return f.read()
+    return  {"respone":"Done Create Ansible Inventory", "inventory":str(f)} ,202
 
 @mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p2():
@@ -180,6 +193,7 @@ def test_code_create_ansible_playbook_p2():
 ############# NEN PHAN BIET SERVICE_NAME VA ROLE_NAME
 #######################
     list_nodes = session.query(models.Node).all()
+    list_playbooks = []
     for node in list_nodes:
         host_name = node.node_display_name
         deployment = node.deployment
@@ -194,6 +208,8 @@ def test_code_create_ansible_playbook_p2():
             os.system('sed -i "s|SERVICE_NAME|'+service_name+'|g" '+ str(new_playbook))
             os.system('sed -i "s|HOST_NAME|'+host_name+'|g" '+ str(new_playbook))
             os.system('sed -i "s|ROLE_NAME|'+role_name+'|g" '+ str(new_playbook))
+            list_playbooks.append('playbook_setup_'+ service_name + '_for_'+host_name + '.yml')
+
     #host=
 
 
@@ -215,33 +231,10 @@ def test_code_create_ansible_playbook_p2():
     #
     #     session.add(node)
     # session.commit()
-    return "OK"
+    return {"respone":"Done Create Ansible Playbooks", "List Playbooks":list_playbooks} ,202
 
 
 
-
-@mod.route('/roles/test_run_first_ansble_playbook', methods=['POST', 'GET'])
-def test_code_create_ansible_playbook_p3():
-
-
-    node = session.query(models.Node).first()
-    service_setups= get_service_setups_from_deployment(node.deployment)
-
-    service = service_setups[0]
-
-
-
-    runner = Runner('playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', 'new_node',
-                    {'extra_vars': {'target': 'target'}, 'tags': []}, None, False,
-                    None, None, None)
-
-    # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
-
-    print(runner.variable_manager)
-
-    log_run = runner.run()
-    print(log_run)
-    return str(log_run)
 
 
 #
@@ -258,6 +251,7 @@ def test_code_create_task_for_service():
         for service in service_setups:
 
             list_tasks = load_yml_file(CONST.role_dir+'/' + service.service_name+'/tasks/main.yml')
+            list_tasks = [task for task in list_tasks if task.get('include') is None]
 
             for index,task  in enumerate(list_tasks,start=1):
                 print(task)
@@ -269,13 +263,13 @@ def test_code_create_task_for_service():
 
         session.add(node)
     session.commit()
-    return {"response: ": "OK"}
+    return {"respone": "Done Create Tasks in Database. Check in /api/v1/tasks"}, 202
 
 
 @mod.route('/roles/test_code7', methods=['POST', 'GET'])
 def test_code_create_task_for_service7():
     ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
-    return {"response: ": ROOT_DIR+CONST.inventory_dir}
+    return {"response: ": ROOT_DIR+CONST.inventory_dir},200
 
 
 
@@ -285,28 +279,41 @@ def test_code_create_task_for_service7():
 @mod.route('/hosts/deployments', methods=['GET'])
 def get_all_deployments():
     deployments = session.query(models.Deployment).all()
-    return {"response": models.to_json(deployments, 'Deployment', True)}
+    session.commit()
+    return {"response": models.to_json(deployments, 'Deployment', True)},200
 
 
 
 @mod.route('/hosts/<string:host_id>/deployments', methods=['GET'])
 def get_deployment(host_id):
     node = session.query(models.Node).filter_by(node_id=host_id).first()
+    session.commit()
 
 
-
-    return {"response": models.to_json(node.deployment, 'Deployment', False)}
+    return {"response": models.to_json(node.deployment, 'Deployment', False)},200
 
 @mod.route('/deployments', methods=['GET'])
 def get_all_deployments_v2():
     return redirect('/api/v1/hosts/deployments')
 
 
+@mod.route('/deployments/<string:deployment_id>', methods=['GET'])
+def get_deployment_by_id(deployment_id):
+    deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+    session.commit()
+    if deployment is None:
+        abort(400)
+
+    return {"response":  models.to_json(deployment, 'Deployment', False)} , 200
+
 @mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
 def get_all_service_setups(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
-
+    if deployment is None:
+        abort(400)
     service_setups=get_service_setups_from_deployment(deployment)
+    session.commit()
+
     return {"response":  models.to_json(service_setups, 'Service_setup', True)}
 
 @mod.route('/service_setups/', methods=['GET'])
@@ -314,6 +321,8 @@ def get_service_setup():
     if not (request.args.get('deployment_id') or request.args.get('service_name')):
         abort(400)
     service_setup = session.query(models.Service_setup).filter_by(deployment_id=request.args.get('deployment_id'),service_name =  request.args.get('service_name')).first()
+    if service_setup is None:
+        abort(400)
     return {"response":  models.to_json(service_setup, 'Service_setup', False)}
 
 
@@ -342,12 +351,14 @@ def get_all_playbooks(deployment_id):
     if not (request.args.get('service_setup_id')):
 
         deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+        if deployment is None:
+            abort(400)
         node =deployment.node
         service_setups = get_service_setups_from_deployment(deployment)
         list_playbook = []
         for service in service_setups:
             list_playbook.append('playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml')
-
+        session.commit()
         return {"response: ":list_playbook}
 
     else :
@@ -363,14 +374,15 @@ def get_all_playbooks(deployment_id):
 @mod.route('/service_setups/<string:service_setup_id>', methods=['GET'])
 def get_service(service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
-
-
+    if service_setup is None:
+        abort(400)
+    session.commit()
     return jsonify(models.to_json(service_setup,'Service_setup',False)) ,201
 @mod.route('/service_setups/<string:service_setup_id>/tasks', methods=['GET'])
 def get_all_tasks_with_service_setups(service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
     tasks = service_setup.tasks
-
+    session.commit()
     return jsonify(models.to_json(tasks,'Task',True)) ,201
 
 
@@ -396,7 +408,7 @@ def get_all_tasks():
             node_data["list_services"].append({'service_name':service_name, 'list_tasks': list_tasks})
 
         result.append(node_data)
-
+    session.commit()
     return {"response: " : result}
 
 
@@ -406,7 +418,7 @@ class ClassTask(Resource):
         task = session.query(models.Task).filter_by(task_id=task_id).first()
         if task is None:
             return abort(400)
-
+        session.commit()
         return jsonify(models.to_json(task, 'Task', False))
     def post(self, task_id):
         return {
@@ -428,80 +440,9 @@ def get_all_changes(task_id):
     if task is None:
         return abort(400)
     changes = task.changes
+    session.commit()
     return jsonify(models.to_json(changes, 'Change', True))
 
-@mod.route('/tasks/update_task', methods=['POST'])
-def update_task_info():
-    if not request.json:
-        abort(400)
-    node_ip = request.json.get('node_ip')
-    task_name = request.json.get('task_name').encode('utf-8')
-    task_type = request.json.get('task_type')
-    info = request.json.get('info')
-    logging.debug("TYPE INFO: " + str(type(info)))
-    if type(info) is unicode:
-        info = info.encode('utf-8')
-
-
-    logging.debug("?????????????? " + str(type(info)))
-    if type(info) is not  dict:
-        info = ast.literal_eval(info)
-
-
-
-    logging.debug("TYPE INFO: " + str(type(info)))
-
-    logging.debug("INFO.failed: " + str(info.get('failed')))
-    logging.debug("INFO.results: " + str(info.get('results')))
-    logging.debug("INFO.stderr: " + str(info.get('stderr')))
-    logging.debug("INFO.stdout: " + str(info.get('stdout')))
-
-
-
-    #print('node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + str(info) + " status" + str(status))
-
-
-
-    #return {"res": "OK "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
-    task = session.query(models.Task).filter(and_(models.Task.task_display_name==str(task_name),  models.Task.service_setup.has(models.Service_setup.deployment.has(models.Deployment.node.has(models.Node.management_ip==str(node_ip))))  )).first()
-
-
-    if task is not None:
-        task_status = "Done"
-        task.task_type=task_type
-        if info.get('failed') is True:
-            task.result="FAILED"
-        else:
-            task.result = "DONE"
-            task.finished_at = datetime.now()
-        task.log =json.dumps(info.get('results'))
-        if info.get('results') is not None:
-            for index, change_info in enumerate(info.get('results'), start=1):
-                change_status = "OK" if change_info.get('failed') is False else "FAILED"
-                change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-                task_status = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_status
-                finished_at = datetime.now() if change_info.get('failed') is False else None
-                change_type = json.dumps(change_info)
-                change_type = change_type[:250] + (change_type[250:] and '..')
-                file_config_id = -1
-                change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
-                task.changes.append(change)
-
-
-        if info.get('status') is not None:
-            task.status = info.get('status')
-        else:
-            task.status = task_status
-
-
-
-        session.add(task)
-        session.commit()
-        return jsonify(models.to_json(task, 'Task', False)) , 200
-
-    else :
-        session.commit()
-        return {"res": "Error "+ 'node_ip: ' + str(node_ip) + ' task_name: ' + task_name + ' info: ' + info} ,200
 
 
 

@@ -1,0 +1,95 @@
+---
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config
+  template:
+    src: selinux.conf.j2
+    dest: /etc/selinux/config
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config
+  template:
+    src: selinux.conf.j2
+    dest: /etc/selinux/config
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_2 = stop selinux
+  command: '{{ item }}'
+  with_items:
+    - sudo setenforce 0
+  ignore_errors: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_3 = systemctl stop iptables
+  systemd:
+    name: iptables
+    enabled: no
+    masked: no
+  ignore_errors: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_4 = systemctl stop firewalld
+  systemd:
+    name: firewalld
+    enabled: no
+    masked: no
+  ignore_errors: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_5 = cp local.repo.j2 /etc/yum.repos.d/local.repo
+  template:
+    src: local.repo.j2
+    dest: /etc/yum.repos.d/local.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_6 = cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+  template:
+    src: docker.repo.j2
+    dest: /etc/yum.repos.d/docker.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_7 = refresh repo
+  command: '{{ item }}'
+  with_items:
+    - yum clean all
+    - yum repolist
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: init_repo_task_8 = yum install -y python-openstackclient
+  yum:
+    name:
+      - python-openstackclient
+    state: latest
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"
+
+- name: test_ansible_command
+  command: '{{ item }}'
+  with_items:
+    - echo '{{ group_name }}'
+- include: extends/stuff.yml node_ip="{{ inventory_hostname }}"  task_name="init_repo_task_1 = cp selinux.conf.j2 /etc/selinux/config"  info="{'status':'Ready to Setup'}" task_type="Starting Setup"

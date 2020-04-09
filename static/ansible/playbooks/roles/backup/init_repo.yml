@@ -1,0 +1,93 @@
+---
+- include: extends/before.yml task_index=1
+- name: 1.cp selinux.conf.j2 /etc/selinux/config
+  template:
+    src: selinux.conf.j2
+    dest: /etc/selinux/config
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  tags:
+    - install
+- include:  extends/after.yml task_index=1 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=2
+- name: 2.stop selinux
+  command: '{{ item }}'
+  with_items:
+    - sudo setenforce 0
+  tags:
+    - install
+  ignore_errors: yes
+- include:  extends/after.yml task_index=2 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=3
+- name: 3.systemctl stop iptables
+  systemd:
+    name: iptables
+    enabled: no
+    masked: no
+  tags:
+    - install
+  ignore_errors: yes
+- include:  extends/after.yml task_index=3 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=4
+- name: 4.systemctl stop firewalld
+  systemd:
+    name: firewalld
+    enabled: no
+    masked: no
+  tags:
+    - install
+  ignore_errors: yes
+- include:  extends/after.yml task_index=4 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=5
+- name: 5.test_ansible_command
+  command: '{{ item }}'
+  with_items:
+    - echo "{{ inventory_hostname }}     "
+    - touch /home/"{{ service_name }}"
+#    - cp /home/lamtv10/lkt /home/lamtv10/    
+    - echo 'group_name'
+#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
+  tags:
+    - install
+  register: infos
+  ignore_errors: yes
+- include:  extends/after.yml task_index=5 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=6
+- name: 6.cp local.repo.j2 /etc/yum.repos.d/local.repo
+  template:
+    src: local.repo.j2
+    dest: /etc/yum.repos.d/local.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  tags:
+    - install
+- include:  extends/after.yml task_index=6 info={{ infos  }}
+
+
+- include: extends/before.yml task_index=7
+- name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+  template:
+    src: docker.repo.j2
+    dest: /etc/yum.repos.d/docker.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  tags:
+    - install
+- include:  extends/after.yml task_index=7 info={{ infos  }}
+
