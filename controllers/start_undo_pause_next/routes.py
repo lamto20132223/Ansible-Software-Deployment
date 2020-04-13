@@ -200,7 +200,7 @@ def update_task_info():
         info = ast.literal_eval(info)
 
 
-    logging.debug("INFO: " + json.dumps(info))
+
     logging.debug("INFO.failed: " + str(info.get('failed')))
     logging.debug("INFO.results: " + str(info.get('results')))
     logging.debug("INFO.stderr: " + str(info.get('stderr')))
@@ -210,37 +210,63 @@ def update_task_info():
 
     if info.get('failed') is True:
         task.status = "FAILED"
+        task.service_setup.status = "FAILED"
+        task.service_setup.deployment.status = "FAILED"
     else:
         task.status = "DONE"
+        task.service_setup.status = "DONE" if task.task_index == len(task.service_setup.tasks) else "INPROCESSING"
+        task.service_setup.deployment.status = "INPROCESSING"
         task.finished_at = datetime.now()
-    task.log =json.dumps(info.get('results'))
-    if info.get('results') is not None:
-        task_result = "SUCCEED "
-        task.changes[:] = []
-        for index, change_info in enumerate(info.get('results'), start=1):
-            change_status = "OK" if change_info.get('failed') is False else "FAILED"
-            change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-            task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
-            finished_at = datetime.now() if change_info.get('failed') is False else None
-            change_type = json.dumps(change_info)
-            change_type = change_type[:250] + (change_type[250:] and '..')
+
+    if 'command' in task.task_type:
+        task.log =json.dumps(info.get('results'))
+        if info.get('results') is not None:
+            task_result = "SUCCEED "
+            task.changes.clear()
+            for index, change_info in enumerate(info.get('results'), start=1):
+                change_status = "OK" if change_info.get('failed') is False else "FAILED"
+                change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
+                task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
+                finished_at = datetime.now() if change_info.get('failed') is False else None
+                change_type = json.dumps(change_info)
+                change_type = change_type[:250] + (change_type[250:] and '..')
+                file_config_id = -1
+                change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
+                task.changes.append(change)
+
+            task.result = task_result
+
+
+    if 'template' in task.task_type:
+        if info.get('changed') == True:
+            task.result = "SUCCEED CHANGE FILE: "+info.get('dest')
+            task.log = "dest: "+  info.get('dest') + '|| backup: ' + info.get('backup_file')
+            task.changes.clear()
             file_config_id = -1
-            change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
+            change = models.Change(created_at=datetime.now(), change_type='template', status='OK',
+                                   change_log=task.log, finished_at=datetime.now(), file_config_id=file_config_id)
             task.changes.append(change)
-
-        task.result = task_result
-        if "ERROR" in task_result:
-            task.service_setup.status = "FAILED"
-            task.service_setup.deployment.status = "FAILED"
-        else:
-            task.service_setup.status = "DONE" if  task.task_index == len(task.service_setup.tasks) else "INPROCESSING"
-            task.service_setup.deployment.status = "INPROCESSING"
-
-
+        else :
+            if info.get('failed') == False:
+                task.result = "DONE NOTHING CHANGED: " + info.get('dest')
+            else :
+                task.result = "FAILED TO CHANGE FILE " + str(info.get('msg'))
+                task.log = json.dumps(info)
+    if 'systemd' in task.task_type:
+        if info.get('changed') == True:
+            task.result = "SUCCEED SYSTEMD SERVICE: " + info.get('name')
+            task.log = "service: " + info.get('name') + '|| state: ' + info.get('state') + '|| enable: ' + info.get('enable')
+            task.changes.clear()
+            file_config_id = -1
+            change = models.Change(created_at=datetime.now(), change_type='service', status='OK',
+                                   change_log=task.log, finished_at=datetime.now(), file_config_id=file_config_id)
+            task.changes.append(change)
+        else :
+            if info.get('failed') == False:
+                task.result = "DONE NOTHING CHANGED: " + info.get('name')
+            else :
+                task.result = "FAILED TO CHANGE SERVICE " + str(info.get('msg'))
+                task.log = json.dumps(info)
     session.add(task)
     session.commit()
     return jsonify(models.to_json(task, 'Task', False)) , 200
-
-
-
-

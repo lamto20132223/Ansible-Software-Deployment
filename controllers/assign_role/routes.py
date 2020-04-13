@@ -241,7 +241,6 @@ def test_code_create_ansible_playbook_p2():
 @mod.route('/roles/test_create_task', methods=['POST', 'GET'])
 def test_code_create_task_for_service():
 
-
     list_nodes = session.query(models.Node).all()
     for node in list_nodes:
         print(node.node_display_name)
@@ -251,14 +250,23 @@ def test_code_create_task_for_service():
         for service in service_setups:
 
             list_tasks = load_yml_file(CONST.role_dir+'/' + service.service_name+'/tasks/main.yml')
-            list_tasks = [task for task in list_tasks if task.get('include') is None]
 
-            for index,task  in enumerate(list_tasks,start=1):
-                print(task)
-                print(task.get('name'))
-                setup_data = str(json.dumps(task))
-                setup_data = setup_data[:250] + (setup_data[250:] and '..')
-                task_data = models.Task(created_at=datetime.now(), task_display_name= task.get('name'), setup_data=setup_data,task_type=str(task.keys()[1:]), task_index= index)
+            list_task_info =[]
+            for task in list_tasks:
+                task_info = {}
+                task_info['name'] = task.get('name')
+                for command in task.get('block'):
+                    if command.get('include') is None:
+                        setup_data= str(json.dumps(command))
+                        task_info['setup_data'] = setup_data[:250] + (setup_data[250:] and '..')
+                        task_info['task_type'] = command.keys()
+                        if 'register' in task_info['task_type']: task_info['task_type'].remove('register')
+                list_task_info.append(task_info)
+
+
+            for index,task  in enumerate(list_task_info,start=1):
+
+                task_data = models.Task(created_at=datetime.now(), task_display_name= task.get('name'), setup_data=task.get('setup_data'),task_type=str(task.get('task_type')), task_index= index)
                 service.tasks.append(task_data)
 
         session.add(node)
