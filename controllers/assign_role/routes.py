@@ -115,6 +115,7 @@ def add_host_to_role():
         list_roles = role_data.keys()
         for role in roles:
             if role not in list_roles:
+
                 return {"response": "Error Information Role with name" + role + " is not invalid"}, 226
 
 
@@ -123,7 +124,7 @@ def add_host_to_role():
         node.node_roles.append(node_role)
     session.add(node)
     session.commit()
-    return {"respone":"Done Add Node to Role", "node_info":jsonify(models.to_json(node, 'Node', False))} ,202
+    return {"respone":"Done Add Node to Role", "node_info":models.to_json(node, 'Node', False)} ,202
 
 
 @mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
@@ -181,7 +182,8 @@ def test_code_create_ansible_playbook_p1():
     file_new_node.close()
 
     f = open(CONST.inventory_dir+'/new_node', "r")
-    return  {"respone":"Done Create Ansible Inventory", "inventory":str(f)} ,202
+    return {"respone": "Done Create Ansible Inventory", "inventory": str(f.read())}, 202
+
 
 @mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
 def test_code_create_ansible_playbook_p2():
