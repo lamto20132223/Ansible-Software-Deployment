@@ -222,7 +222,7 @@ def update_task_info():
         task.log =json.dumps(info.get('results'))
         if info.get('results') is not None:
             task_result = "SUCCEED "
-            task.changes.clear()
+            task.changes[:] = []
             for index, change_info in enumerate(info.get('results'), start=1):
                 change_status = "OK" if change_info.get('failed') is False else "FAILED"
                 change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
@@ -241,7 +241,7 @@ def update_task_info():
         if info.get('changed') == True:
             task.result = "SUCCEED CHANGE FILE: "+info.get('dest')
             task.log = "dest: "+  info.get('dest') + '|| backup: ' + info.get('backup_file')
-            task.changes.clear()
+            task.changes[:] = []
             file_config_id = -1
             change = models.Change(created_at=datetime.now(), change_type='template', status='OK',
                                    change_log=task.log, finished_at=datetime.now(), file_config_id=file_config_id)
@@ -256,7 +256,7 @@ def update_task_info():
         if info.get('changed') == True:
             task.result = "SUCCEED SYSTEMD SERVICE: " + info.get('name')
             task.log = "service: " + info.get('name') + '|| state: ' + info.get('state') + '|| enable: ' + info.get('enable')
-            task.changes.clear()
+            task.changes[:] = []
             file_config_id = -1
             change = models.Change(created_at=datetime.now(), change_type='service', status='OK',
                                    change_log=task.log, finished_at=datetime.now(), file_config_id=file_config_id)
