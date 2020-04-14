@@ -172,14 +172,16 @@ def skip_current_installation():
         current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
         current_task = current_task[0] if current_task is not None else None
         session.commit()
-    current_task.status="SKIPPED"
+    ### MAYBE ERROR IF NO TASK IS DONE
+
+    current_task.status=current_task.status + "_" +  "SKIPPED"
     next_task = session.query(models.Task).filter_by(service_setup_id=current_task.service_setup_id,task_index= current_task.task_index+1).first()
     if next_task is None:
         current_service_setup = current_task.service_setup
-        current_service_setup.status="SKIPPED"
+        current_service_setup.status=current_service_setup.status + "_"+"SKIPPED"
         next_service_setup = session.query(models.Service_setup).filter_by(deployment_id=current_service_setup.deployment_id,setup_index= current_service_setup.setup_index+1).first()
         if next_service_setup is None:
-            current_service_setup.deployment.status="SKIPPED"
+            current_service_setup.deployment.status=current_service_setup.deployment.status+"_"+"SKIPPED"
         else:
             ###ERROR
             next_task=[t for t in next_service_setup.tasks if t.task_index == 1][0]
@@ -252,7 +254,7 @@ def update_task_info():
         info = ast.literal_eval(info)
 
 
-
+    logging.debug("INFO: " + json.dumps(info))
     logging.debug("INFO.failed: " + str(info.get('failed')))
     logging.debug("INFO.results: " + str(info.get('results')))
     logging.debug("INFO.stderr: " + str(info.get('stderr')))
