@@ -431,6 +431,7 @@ class ClassTask(Resource):
         if task is None:
             return abort(400)
         session.commit()
+        session.remove()
         return jsonify(models.to_json(task, 'Task', False))
     def post(self, task_id):
         return {
