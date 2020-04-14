@@ -36,6 +36,12 @@ Node_Base = db.Model
 Column = db.Column
 relationship = db.relationship
 
+
+@app.teardown_appcontext
+def shutdown_session(exception=None):
+    session.remove()
+
+
 #
 #
 # migrate = Migrate(app, db)
@@ -154,7 +160,4 @@ if __name__ == "__main__":
     app.logger.addHandler(logging.handlers)
     app.run(debug=True,host="0.0.0.0", port=4321)
 
-    @app.teardown_appcontext
-    def shutdown_session(exception=None):
-        session.remove()
 

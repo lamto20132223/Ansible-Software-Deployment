@@ -1,0 +1,12 @@
+- name: 4.systemctl stop firewalld
+  block:
+    - include: extends/before.yml task_index=4
+    - systemd:
+        name: firewalld
+        enabled: no
+        masked: no
+      register: infos
+    - include:  extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+    - include:  extends/after_failse.yml task_index=4 info={{ infos  }}
+  tags: [ 'install', '4' ]

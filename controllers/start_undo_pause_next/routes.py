@@ -130,6 +130,41 @@ def get_change_info():
 
 
 
+
+
+@mod.route('/installation/run_service_setup', methods=['POST'])
+def run_specific_service_setup():
+    if not request.json:
+        abort(400)
+    else:
+        task_id = request.json.get('task_id')
+        method = request.json.get('method')
+
+    task = session.query(models.Task).filter_by(task_id=task_id).first()
+
+    if task is None :
+        return abort(400)
+    service = task.service_setup
+    node = service.deployment.node
+
+    if method == "Install":
+
+
+        runner = Runner(playbook='playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': [str(task.task_index)]}, start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
+
+        # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
+
+        print(runner.variable_manager)
+
+        log_run = runner.run()
+        print(log_run)
+        return str(log_run)
+    else :
+        return {"res":"INCOMMING"}
+
+
+
+
 @mod.route('/installation/runtask', methods=['POST'])
 def run_specific_task():
     if not request.json:
@@ -164,14 +199,14 @@ def run_specific_task():
 @mod.route('/api/v1/installation/skip', methods=['GET'])
 def skip_current_installation():
     current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
-    session.commit()
+
     if current_task is None:
         current_task = session.query(models.Task).filter_by(status='FAILED').first()
-        session.commit()
+
     if current_task is None:
         current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
         current_task = current_task[0] if current_task is not None else None
-        session.commit()
+
     ### MAYBE ERROR IF NO TASK IS DONE
 
     current_task.status=current_task.status + "_" +  "SKIPPED"
@@ -185,7 +220,8 @@ def skip_current_installation():
         else:
             ###ERROR
             next_task=[t for t in next_service_setup.tasks if t.task_index == 1][0]
-
+    session.add(current_task)
+    session.commit()
     return {" current_task": models.to_json(current_task,'Task',False)  ,
             " next_task": models.to_json(next_task, 'Task', False)}
 
