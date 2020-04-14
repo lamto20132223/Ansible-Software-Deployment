@@ -161,6 +161,57 @@ def run_specific_task():
         return {"res":"INCOMMING"}
 
 
+@mod.route('/api/v1/installation/skip', methods=['GET'])
+def skip_current_installation():
+    current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
+    session.commit()
+    if current_task is None:
+        current_task = session.query(models.Task).filter_by(status='FAILED').first()
+        session.commit()
+    if current_task is None:
+        current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
+        current_task = current_task[0] if current_task is not None else None
+        session.commit()
+    current_task.status="SKIPPED"
+    next_task = session.query(models.Task).filter_by(service_setup_id=current_task.service_setup_id,task_index= current_task.task_index+1).first()
+    if next_task is None:
+        current_service_setup = current_task.service_setup
+        current_service_setup.status="SKIPPED"
+        next_service_setup = session.query(models.Service_setup).filter_by(deployment_id=current_service_setup.deployment_id,setup_index= current_service_setup.setup_index+1).first()
+        if next_service_setup is None:
+            current_service_setup.deployment.status="SKIPPED"
+        else:
+            ###ERROR
+            next_task=[t for t in next_service_setup.tasks if t.task_index == 1][0]
+
+    return {" current_task": models.to_json(current_task,'Task',False)  ,
+            " next_task": models.to_json(next_task, 'Task', False)}
+
+
+
+@mod.route('/api/v1/installation/current', methods=['GET'])
+def get_current_installation_status():
+    current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
+    session.commit()
+    if current_task is None:
+        current_task = session.query(models.Task).filter_by(status='FAILED').first()
+        session.commit()
+    if current_task is None:
+        current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
+        current_task = current_task[0] if current_task is not None else None
+        session.commit()
+
+    current_service = current_task.service_setup
+    current_node = current_service.deployment.node
+
+    return {" current_task": models.to_json(current_task,'Task',False)  ,
+             "current_service":models.to_json(current_service,'Service_setup',False),
+             "current_node": models.to_json(current_node, 'Node', False),
+             } , 200
+
+
+
+
 @mod.route('/tasks/update_task', methods=['POST'])
 def update_task_info():
     if not request.json:

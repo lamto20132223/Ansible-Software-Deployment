@@ -131,8 +131,9 @@ def add_host_to_role():
 def add_all_deployment():
     nodes = session.query(models.Node).all()
     for node in nodes:
-        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN QUEUE", name = "deployement " + str(node.management_ip) )
-        node.deployment = deployment
+        if node.deployment is None:
+            deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN QUEUE", name = "deployement " + str(node.management_ip) )
+            node.deployment = deployment
         session.add(node)
     session.commit()
     return {"respone":"Done Add Deployment to Database"} ,202
