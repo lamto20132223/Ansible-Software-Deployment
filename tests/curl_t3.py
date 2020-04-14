@@ -117,8 +117,8 @@ if __name__ == "__main__":
     #run_one_task(
     # )
     #run_task_id(1)
-    run_task_id(2)
+#    run_task_id(2)
     run_task_id(3)
-    run_task_id(4)
-    run_task_id(5)
-    run_task_id(6)
+    # run_task_id(4)
+    # run_task_id(5)
+    # run_task_id(6)

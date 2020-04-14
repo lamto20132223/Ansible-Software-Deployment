@@ -216,6 +216,7 @@ def get_current_installation_status():
 def update_task_info():
     if not request.json:
         abort(400)
+    state= request.json.get('state')
     node_ip = request.json.get('node_ip')
     task_index = int(request.json.get('task_index').encode('utf-8'))
     service_name = request.json.get('service_name').encode('utf-8')
@@ -234,7 +235,7 @@ def update_task_info():
 
 
     info = request.json.get('info')
-    if info is None:
+    if state == "before_task" :
         task.status = 'INPROCESSING'
         task.result = 'UNDONE'
         task.service_setup.status="INPROCESSING"
@@ -257,14 +258,17 @@ def update_task_info():
     logging.debug("INFO.stderr: " + str(info.get('stderr')))
     logging.debug("INFO.stdout: " + str(info.get('stdout')))
 
-
-
-    if info.get('failed') is True:
+    if state == "after_task_failse":
         task.status = "FAILED"
         task.service_setup.status = "FAILED"
         task.service_setup.deployment.status = "FAILED"
-    else:
-        task.status = "DONE"
+
+    if state == "after_task_ok":
+        if info.get('failed') is True:
+            task.status = "FAILED_IGNORE"
+        else:
+            task.status = "DONE"
+
         task.service_setup.status = "DONE" if task.task_index == len(task.service_setup.tasks) else "INPROCESSING"
         task.service_setup.deployment.status = "INPROCESSING"
         task.finished_at = datetime.now()

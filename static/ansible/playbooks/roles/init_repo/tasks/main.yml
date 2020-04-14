@@ -37,9 +37,10 @@
         enabled: no
         masked: no
       register: infos
-    - include:  extends/after_ok.yml task_index=3 info={{ infos  }}
+      ignore_errors: yes
+    - include:  extends/after_ok.yml task_index=3 info={{ infos  }} 
   rescue:
-    - include:  extends/after_failse.yml task_index=3 info={{ infos  }}
+    - include:  extends/after_failse.yml task_index=3 info={{ infos  }} 
   tags: [ 'install', '3' ]
 
 
