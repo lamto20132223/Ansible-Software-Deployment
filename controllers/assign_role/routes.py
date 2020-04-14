@@ -431,8 +431,9 @@ class ClassTask(Resource):
         if task is None:
             return abort(400)
         session.commit()
+        res = jsonify(models.to_json(task, 'Task', False))
         session.remove()
-        return jsonify(models.to_json(task, 'Task', False))
+        return res
     def post(self, task_id):
         return {
             "status": "INCOMMMING"
