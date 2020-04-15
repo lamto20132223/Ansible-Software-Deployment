@@ -344,6 +344,16 @@ def get_deployment_by_id(deployment_id):
     return jsonify(models.to_json(deployment, 'Deployment', False)) , 200
 
 @mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
+def get_all_service_setups_v0(deployment_id):
+    deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+    if deployment is None:
+        abort(400)
+    service_setups=get_service_setups_from_deployment(deployment)
+    session.commit()
+
+    return {"response":  models.to_json(service_setups, 'Service_setup', True)}
+
+@mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
 def get_all_service_setups(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
     if deployment is None:
@@ -352,6 +362,8 @@ def get_all_service_setups(deployment_id):
     session.commit()
 
     return {"response":  models.to_json(service_setups, 'Service_setup', True)}
+
+
 
 @mod.route('/service_setups/', methods=['GET'])
 def get_service_setup():

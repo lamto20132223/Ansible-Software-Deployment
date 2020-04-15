@@ -225,7 +225,7 @@ def run_specific_task():
         return {"res":"INCOMMING"}
 
 
-@mod.route('/api/v1/installation/skip', methods=['GET'])
+@mod.route('/installation/skip', methods=['GET'])
 def skip_current_installation():
     current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
 
@@ -257,7 +257,7 @@ def skip_current_installation():
     return res
 
 
-@mod.route('/api/v1/installation/current', methods=['GET'])
+@mod.route('/installation/current', methods=['GET'])
 def get_current_installation_status():
     current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
 
@@ -265,8 +265,13 @@ def get_current_installation_status():
         current_task = session.query(models.Task).filter_by(status='FAILED').first()
 
     if current_task is None:
-        current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
-        current_task = current_task[0] if current_task is not None else None
+        current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc()).all()
+
+        if current_task is not None :
+
+            current_task = current_task[0] if len(current_task)>0 else None
+    if current_task is None:
+        return abort(404, "No Task was Run")
 
 
     current_service = current_task.service_setup
