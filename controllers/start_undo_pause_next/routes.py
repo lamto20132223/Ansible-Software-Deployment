@@ -148,17 +148,20 @@ def run_specific_service_setup():
 
     if service_setup_id is not None:
         service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
+        if service_setup is None:
+            return abort(400, "Cannot Find Service_setup with id: ", service_setup_id)
 
     else:
         if deployment_id is not None and setup_index is not None:
             service_setup = session.query(models.Service_setup).filter_by(setup_index=setup_index, deployment_id=deployment_id).first()
+            if service_setup is None:
+                return abort(400, "Cannot Find Service_setup with setup_index: ", setup_index, "deployment_id: ", deployment_id)
 
-    if service_setup is None:
-        return abort(400)
 
-    if start_at_task_id is None:
+    if start_at_task_id is not None:
         start_task = session.query(models.Task).filter_by(task_id=start_at_task_id).first()
-        start_task_name = start_task.task_display_name
+        if start_task is not None:
+            start_task_name = start_task.task_display_name
     else :
         start_task_name = None
 
