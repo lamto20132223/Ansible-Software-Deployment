@@ -178,9 +178,9 @@ def run_specific_service_setup():
 
         print(runner.variable_manager)
 
-        log_run = runner.run()
-        print(log_run)
-        return str(log_run)
+        stats_run = runner.run()
+        print(stats_run)
+        return {"stats":stats_run, "logs":runner.log}
     else :
         return {"res":"INCOMMING"}
 
@@ -217,10 +217,9 @@ def run_specific_task():
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
         print(runner.variable_manager)
-
-        log_run = runner.run()
-        print(log_run)
-        return str(log_run)
+        stats_run = runner.run()
+        print(stats_run)
+        return {"stats":stats_run, "logs":runner.log}
     else :
         return {"res":"INCOMMING"}
 

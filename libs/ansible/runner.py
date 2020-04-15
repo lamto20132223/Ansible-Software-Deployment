@@ -110,6 +110,9 @@ class Runner(object):
         # Set global verbosity
         self.display = Display()
         self.display.verbosity = self.options.verbosity
+
+        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0"}
+
         # Executor appears to have it's own
         # verbosity object/setting as well
         #playbook_executor.verbosity = self.options.verbosity
@@ -187,10 +190,14 @@ class Runner(object):
             success=run_success
         )
 
-
+        self.log['processed'] = stats.processed
+        self.log['failures'] = stats.failures
+        self.log['ok'] = stats.ok
+        self.log['dark'] = stats.dark
+        self.log['changed'] = stats.changed
+        self.log['skipped'] = stats.skipped
 
         return stats
-
 
 
 def print_stats(stats):
@@ -211,7 +218,6 @@ def print_stats(stats):
     # print(stats.rescued)
     # print("ignored: ")
     # print(stats.ignored)
-
 
 def get_stats(stats):
 #https://fossies.org/linux/ansible/lib/ansible/executor/stats.py
