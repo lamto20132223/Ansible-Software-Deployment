@@ -19,6 +19,16 @@ import logging
 LOGGER = logging.getLogger(__name__)
 
 
+def close_session(func):
+
+    def inner(*args, **kwargs):
+        print("I can decorate any function")
+        output=  func(*args, **kwargs)
+
+        print("I still can decorate any function")
+        #session.close()
+        return output
+    return inner
 
 
 
@@ -85,7 +95,7 @@ def get_role_info(role_id):
         node = session.query(models.Node).filter_by(node_id=node_role.node_id).first()
         role_node.append(models.to_json(node, 'Node', False))
 
-
+    session.close()
 
     return {
         "status" : "OK",
@@ -125,7 +135,9 @@ def add_host_to_role():
         node.node_roles.append(node_role)
     session.add(node)
     session.commit()
-    return {"respone":"Done Add Node to Role", "node_info":models.to_json(node, 'Node', False)} ,202
+    res = {"respone":"Done Add Node to Role", "node_info":models.to_json(node, 'Node', False)}
+    session.close()
+    return res,202
 
 
 @mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
@@ -137,6 +149,7 @@ def add_all_deployment():
             node.deployment = deployment
         session.add(node)
     session.commit()
+    session.close()
     return {"respone":"Done Add Deployment to Database"} ,202
 
 @mod.route('/roles/test_create_service_setup', methods=['POST', 'GET'])
@@ -158,6 +171,7 @@ def test_code_create_service_setup():
 
         session.add(node)
     session.commit()
+    session.close()
     return  {"respone":"Done Add Service Setup to Database"} ,202
 
 
@@ -275,6 +289,7 @@ def test_code_create_task_for_service():
 
         session.add(node)
     session.commit()
+    session.close()
     return {"respone": "Done Create Tasks in Database. Check in /api/v1/tasks"}, 202
 
 
@@ -423,17 +438,23 @@ def get_all_tasks():
     session.commit()
     return {"response: " : result}
 
-
+from random import random
 @mod_v1.route('/tasks/<string:task_id>', methods=['GET','POST'])
+
 class ClassTask(Resource):
     def get(self, task_id):
         task = session.query(models.Task).filter_by(task_id=task_id).first()
+
         if task is None:
             return abort(400)
+        # session.commit()
+        # res =
+        value = random()
+        task.status=str(value)
+        session.add(task)
         session.commit()
-        res = jsonify(models.to_json(task, 'Task', False))
-        session.remove()
-        return res
+
+        return jsonify(models.to_json(task, 'Task', False))
     def post(self, task_id):
         return {
             "status": "INCOMMMING"

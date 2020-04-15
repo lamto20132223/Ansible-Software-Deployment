@@ -37,9 +37,9 @@ Column = db.Column
 relationship = db.relationship
 
 
-@app.teardown_appcontext
-def shutdown_session(exception=None):
-    session.remove()
+# @app.teardown_appcontext
+# def shutdown_session(exception=None):
+#     session.remove()
 
 
 #

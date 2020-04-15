@@ -8,6 +8,7 @@ import sys
 import oyaml as yaml
 from sqlalchemy import and_,or_
 from assets import *
+from global_assets.common import *
 import logging
 from libs.ansible.runner import Runner
 from flask_restplus import Api, Resource
@@ -180,10 +181,17 @@ def run_specific_task():
     service = task.service_setup
     node = service.deployment.node
 
+    service_name = service.service_name
+    node_display_name = node.node_display_name
+    task_index = task.task_index
+    session.commit()
+    session.close()
+
     if method == "Install":
 
 
-        runner = Runner(playbook='playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': [str(task.task_index)]}, start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
+
+        runner = Runner(playbook='playbook_setup_'+ service_name + '_for_'+node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': [str(task_index)]}, start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
 
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
@@ -222,30 +230,33 @@ def skip_current_installation():
             next_task=[t for t in next_service_setup.tasks if t.task_index == 1][0]
     session.add(current_task)
     session.commit()
-    return {" current_task": models.to_json(current_task,'Task',False)  ,
+    res= {" current_task": models.to_json(current_task,'Task',False)  ,
             " next_task": models.to_json(next_task, 'Task', False)}
-
+    session.close()
+    return res
 
 
 @mod.route('/api/v1/installation/current', methods=['GET'])
 def get_current_installation_status():
     current_task = session.query(models.Task).filter_by(status='INPROCESSING').first()
-    session.commit()
+
     if current_task is None:
         current_task = session.query(models.Task).filter_by(status='FAILED').first()
-        session.commit()
+
     if current_task is None:
         current_task = session.query(models.Task).filter_by(status='DONE').order_by(models.Task.finished_at.desc())
         current_task = current_task[0] if current_task is not None else None
-        session.commit()
+
 
     current_service = current_task.service_setup
     current_node = current_service.deployment.node
-
-    return {" current_task": models.to_json(current_task,'Task',False)  ,
+    res = {" current_task": models.to_json(current_task,'Task',False)  ,
              "current_service":models.to_json(current_service,'Service_setup',False),
              "current_node": models.to_json(current_node, 'Node', False),
-             } , 200
+             }
+    session.commit()
+    session.close()
+    return res , 200
 
 
 
@@ -267,6 +278,7 @@ def update_task_info():
 
     if task is None:
         session.commit()
+        session.close()
         return {"res": "Error Task Not Found" + 'node_ip: ' + str(
             node_ip) + ' service_name: ' + str(service_name)+ ' task_index: ' + str(task_index) }, 200
 
@@ -279,8 +291,10 @@ def update_task_info():
         task.service_setup.status="INPROCESSING"
         task.service_setup.deployment.status="INPROCESSING"
         session.add(task)
+        res =  jsonify(models.to_json(task, 'Task', False))
         session.commit()
-        return jsonify(models.to_json(task, 'Task', False)) , 200
+        session.close()
+        return res, 200
 
 
     logging.debug("TYPE INFO: " + str(type(info)))
@@ -373,4 +387,6 @@ def update_task_info():
                 task.log = json.dumps(info)
     session.add(task)
     session.commit()
-    return jsonify(models.to_json(task, 'Task', False)) , 200
+    res = jsonify(models.to_json(task, 'Task', False))
+    session.close()
+    return  res, 200

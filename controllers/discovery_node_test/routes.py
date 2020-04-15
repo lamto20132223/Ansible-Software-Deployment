@@ -30,8 +30,10 @@ def add_host():
     session.add(node)
     session.commit()
     new_node = session.query(models.Node).filter_by(node_display_name=str(data.get('node_display_name', ''))).all()
+    res = jsonify(models.to_json(new_node, 'Node',True))
+    session.close()
     #print(models.to_json(new_node, 'Node',True))
-    return jsonify(models.to_json(new_node, 'Node',True)), 201
+    return res, 201
 
 @mod.route('/hosts', methods=['GET'])
 def get_hosts():
@@ -41,8 +43,9 @@ def get_hosts():
     ############UNDONE /api/v1/hosts?role=controller
 
     nodes = session.query(models.Node).all()
+    res = jsonify(models.to_json(nodes, 'Node', True))
     #print(models.to_json(nodes, 'Node', True))
-    return jsonify(models.to_json(nodes, 'Node', True)), 200
+    return res, 200
 
 @mod.route('/hosts/<string:host_id>', methods=['GET'])
 def get_host(host_id):
@@ -52,7 +55,8 @@ def get_host(host_id):
     if len(selected_node) ==0:
         return abort(404)
     else:
-        return jsonify(models.to_json(selected_node[0], 'Node', False)), 200
+        res =  jsonify(models.to_json(selected_node[0], 'Node', False))
+        return res , 200
 
 
 @mod.route('/hosts/discover_hosts_v1', methods=['POST']) #################################### ERROR #######################

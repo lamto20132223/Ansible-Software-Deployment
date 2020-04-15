@@ -147,5 +147,6 @@ def load_node_info_to_database(ansible_facts_dir):
                 res['error']+=1
             session.add(node)
             session.commit()
+            session.close()
     return res
 
