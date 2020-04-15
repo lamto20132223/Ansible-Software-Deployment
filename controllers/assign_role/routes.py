@@ -324,6 +324,16 @@ def get_all_deployments_v2():
     return redirect('/api/v1/hosts/deployments')
 
 
+@mod.route('/hosts/deployments/<string:deployment_id>', methods=['GET'])
+def get_deployment_by_id_v0(deployment_id):
+    deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+    session.commit()
+    if deployment is None:
+        abort(400)
+
+    return jsonify(models.to_json(deployment, 'Deployment', False)) , 200
+
+
 @mod.route('/deployments/<string:deployment_id>', methods=['GET'])
 def get_deployment_by_id(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
@@ -331,7 +341,7 @@ def get_deployment_by_id(deployment_id):
     if deployment is None:
         abort(400)
 
-    return {"response":  models.to_json(deployment, 'Deployment', False)} , 200
+    return jsonify(models.to_json(deployment, 'Deployment', False)) , 200
 
 @mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
 def get_all_service_setups(deployment_id):
@@ -349,12 +359,13 @@ def get_service_setup():
 
     if not (request.args.get('deployment_id') or request.args.get('service_name')):
         service_setup = session.query(models.Service_setup).all()
-        res = models.to_json(service_setup, 'Service_setup', True)
+        res = jsonify(models.to_json(service_setup, 'Service_setup', True))
         return res
     service_setup = session.query(models.Service_setup).filter_by(deployment_id=request.args.get('deployment_id'),service_name =  request.args.get('service_name')).first()
     if service_setup is None:
         abort(400)
-    res = models.to_json(service_setup, 'Service_setup', False)
+    res = jsonify(models.to_json(service_setup, 'Service_setup', False))
+
     return res
 
 
@@ -443,23 +454,30 @@ def get_all_tasks():
     session.commit()
     return {"response: " : result}
 
-from random import random
-@mod_v1.route('/tasks/<string:task_id>', methods=['GET','POST'])
+# from random import random
+@mod.route('/tasks/<string:task_id>', methods=['GET','POST'])
+def get_task_by_id(task_id):
+    task = session.query(models.Task).filter_by(task_id=task_id).first()
 
-class ClassTask(Resource):
-    def get(self, task_id):
-        task = session.query(models.Task).filter_by(task_id=task_id).first()
+    if task is None:
+        return abort(400)
 
-        if task is None:
-            return abort(400)
-        res = jsonify(models.to_json(task, 'Task', False))
-        session.commit()
-
-        return res , 200
-    def post(self, task_id):
-        return {
-            "status": "INCOMMMING"
-        }
+    session.commit()
+    return jsonify(models.to_json(task, 'Task', False)), 200
+# class ClassTask(Resource):
+#     def get(self, task_id):
+#         task = session.query(models.Task).filter_by(task_id=task_id).first()
+#
+#         if task is None:
+#             return abort(400)
+#
+#         session.commit()
+#
+#         return {'res':jsonify(models.to_json(task, 'Task', False))}, 200
+#     def post(self, task_id):
+#         return {
+#             "status": "INCOMMMING"
+#         }
 
 @mod.route('/changes/<string:change_id>', methods=['GET'])
 def get_change(change_id):
