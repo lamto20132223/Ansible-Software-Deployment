@@ -180,7 +180,7 @@ class Runner(object):
 
         for h in hosts:
             t = stats.summarize(h)
-            self.log["summarize"][h]=t
+            self.log["summarize"][str(h)]=t
             if t['unreachable'] > 0 or t['failures'] > 0:
                 run_success = False
 
