@@ -139,11 +139,21 @@ def run_specific_service_setup():
         abort(400)
     else:
         service_setup_id = request.json.get('service_setup_id')
+        deployment_id = request.json.get('deployment_id')
+        setup_index = request.json.get('setup_index')
         method = request.json.get('method')
         start_at_task_id = request.json.get('start_at_task_id')
 
-    service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
-    if service_setup is None :
+    service_setup = None
+
+    if service_setup_id is not None:
+        service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
+
+    else:
+        if deployment_id is not None and setup_index is not None:
+            service_setup = session.query(models.Service_setup).filter_by(setup_index=setup_index, deployment_id=deployment_id).first()
+
+    if service_setup is None:
         return abort(400)
 
     if start_at_task_id is None:
