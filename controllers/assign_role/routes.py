@@ -345,12 +345,17 @@ def get_all_service_setups(deployment_id):
 
 @mod.route('/service_setups/', methods=['GET'])
 def get_service_setup():
+
+
     if not (request.args.get('deployment_id') or request.args.get('service_name')):
-        abort(400)
+        service_setup = session.query(models.Service_setup).all()
+        res = models.to_json(service_setup, 'Service_setup', True)
+        return res
     service_setup = session.query(models.Service_setup).filter_by(deployment_id=request.args.get('deployment_id'),service_name =  request.args.get('service_name')).first()
     if service_setup is None:
         abort(400)
-    return {"response":  models.to_json(service_setup, 'Service_setup', False)}
+    res = models.to_json(service_setup, 'Service_setup', False)
+    return res
 
 
 
@@ -447,14 +452,10 @@ class ClassTask(Resource):
 
         if task is None:
             return abort(400)
-        # session.commit()
-        # res =
-        value = random()
-        task.status=str(value)
-        session.add(task)
+        res = jsonify(models.to_json(task, 'Task', False))
         session.commit()
 
-        return jsonify(models.to_json(task, 'Task', False))
+        return res , 200
     def post(self, task_id):
         return {
             "status": "INCOMMMING"
@@ -508,6 +509,7 @@ def clean_all_data():
         elif table =='interface_resources':
             db.session.query(models.Interface_resource).delete()
         db.session.commit()
+        db.session.close()
         return {"response":"YOU DELETE " + table}
     else:
         try:
@@ -528,6 +530,7 @@ def clean_all_data():
             db.session.commit()
             db.session.query(models.Node).delete()
             db.session.commit()
+            db.session.close()
         except IntegrityError:
             # db.session.rollback()
             print("Unexpected error:", sys.exc_info()[0])

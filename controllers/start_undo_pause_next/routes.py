@@ -138,20 +138,28 @@ def run_specific_service_setup():
     if not request.json:
         abort(400)
     else:
-        task_id = request.json.get('task_id')
+        service_setup_id = request.json.get('service_setup_id')
         method = request.json.get('method')
+        start_at_task_id = request.json.get('start_at_task_id')
 
-    task = session.query(models.Task).filter_by(task_id=task_id).first()
-
-    if task is None :
+    service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
+    if service_setup is None :
         return abort(400)
-    service = task.service_setup
-    node = service.deployment.node
 
+    if start_at_task_id is None:
+        start_task = session.query(models.Task).filter_by(task_id=start_at_task_id).first()
+        start_task_name = start_task.task_display_name
+    else :
+        start_task_name = None
+
+    deployment = service_setup.deployment
+    node = deployment.node
+    service_name =  service_setup.service_name
+    node_display_name = node.node_display_name
+    session.close()
     if method == "Install":
 
-
-        runner = Runner(playbook='playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': [str(task.task_index)]}, start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
+        runner = Runner(playbook='playbook_setup_'+ service_name + '_for_'+node_display_name + '.yml', inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': ['install']}, start_at_task=start_task_name, step=False, private_key_file=None, become_pass=None, verbosity=None)
 
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
