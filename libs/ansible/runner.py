@@ -111,7 +111,7 @@ class Runner(object):
         self.display = Display()
         self.display.verbosity = self.options.verbosity
 
-        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0"}
+        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0", 'summarize':""}
 
         # Executor appears to have it's own
         # verbosity object/setting as well
@@ -177,8 +177,10 @@ class Runner(object):
         # Test if success for record_logs
         run_success = True
         hosts = sorted(stats.processed.keys())
+
         for h in hosts:
             t = stats.summarize(h)
+            self.log["summarize"][h]=t
             if t['unreachable'] > 0 or t['failures'] > 0:
                 run_success = False
 

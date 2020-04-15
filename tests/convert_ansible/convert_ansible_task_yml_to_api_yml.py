@@ -48,7 +48,9 @@ if __name__ == "__main__":
         input_task.pop('name')
         output_task['block'].append(input_task)
         output_task['block'].append(OrderedDict([('include', 'extends/after_ok.yml task_index='+str(index)+' info={{ infos  }}')]))
-        output_task['rescue'] = [OrderedDict([('include', 'extends/after_failse.yml task_index='+str(index)+' info={{ infos  }}')])]
+        output_task['rescue'] =[]
+        output_task['rescue'].append(OrderedDict([('include', 'extends/after_failse.yml task_index='+str(index)+' info={{ infos  }}')]))
+        output_task['rescue'].append(OrderedDict([('fail', 'msg={{ infos  }}')]))
         output_task['tags']=['install',str(index)]
         list_output_tasks.append(output_task)
 
