@@ -180,7 +180,7 @@ def run_specific_service_setup():
 
         stats_run = runner.run()
         print(stats_run)
-        return {"stats":stats_run, "logs":runner.log}
+        return {"stats":str(stats_run), "logs":runner.log}
     else :
         return {"res":"INCOMMING"}
 
