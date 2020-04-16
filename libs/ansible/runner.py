@@ -16,6 +16,8 @@ from ansible.executor import playbook_executor
 
 from tempfile import NamedTemporaryFile
 from ansible.utils.display import Display
+
+
 import global_assets.const as CONST
 
 
@@ -178,9 +180,9 @@ class Runner(object):
         run_success = True
         hosts = sorted(stats.processed.keys())
 
-        for h in hosts:
+        for index,h in  enumerate(hosts,start=1):
             t = stats.summarize(h)
-            self.log["summarize"][str(h)]=t
+            self.log["summarize"][index]=[h,t]
             if t['unreachable'] > 0 or t['failures'] > 0:
                 run_success = False
 
