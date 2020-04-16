@@ -37,13 +37,14 @@ def convert_file(file_path):
     list_output_tasks = []
     for index, input_task in enumerate(list_input_tasks, start=1):
         input_task['register'] = 'infos'
-        zero_output_task =  OrderedDict()
-        zero_output_task['name'] = str(index) + "." + input_task['name']
-        zero_output_task['debug'] = 'msg=\'Starting ' + str(index) + "-------------------------------------------->\'"
+        name_output_task =  OrderedDict()
+        name_output_task['name'] = str(index) + "." + input_task['name']
+        name_output_task['debug'] = 'msg=\'Starting ' + str(index) + "-------------------------------------------->\'"
         input_task.pop('name')
 
         output_task = OrderedDict()
         output_task['block'] = []
+        output_task['block'].append(name_output_task)
         output_task['block'].append(OrderedDict([('include', 'extends/before.yml task_index='+str(index))]))
         output_task['block'].append(input_task)
         output_task['block'].append(OrderedDict([('include', 'extends/after_ok.yml task_index='+str(index)+' info={{ infos  }}')]))
@@ -51,7 +52,6 @@ def convert_file(file_path):
         output_task['rescue'].append(OrderedDict([('include', 'extends/after_failse.yml task_index='+str(index)+' info={{ infos  }}')]))
         output_task['rescue'].append(OrderedDict([('fail', 'msg={{ infos  }}')]))
         output_task['tags']=['install',str(index)]
-        list_output_tasks.append(zero_output_task)
         list_output_tasks.append(output_task)
 
 
@@ -66,7 +66,7 @@ if __name__ == "__main__":
     example_tasks = load_yml_file('./example.yml')[0]
     print(example_tasks)
 
-    convert_file('keepalived.yml')
+    convert_file('init_repo.yml')
 
 """
 \cp init_repo/tasks/main.yml ceph/tasks/main.yml

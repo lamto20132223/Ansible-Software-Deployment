@@ -346,40 +346,40 @@ def load_config_to_database():
 if __name__=="__main__":
 
 
-    CONF = {"database":{"connection":"mysql+pymysql://lamtv10:lamtv10@172.16.29.198/auto_lamtv10"}}
-    db_engine = db.create_engine(CONF["database"]["connection"])
-    Node_Base.metadata.create_all(db_engine)
-    db_connection = db_engine.connect()
+    # CONF = {"database":{"connection":"mysql+pymysql://lamtv10:lamtv10@172.16.29.198/auto_lamtv10"}}
+    # db_engine = db.create_engine(CONF["database"]["connection"])
+    # Node_Base.metadata.create_all(db_engine)
+    # db_connection = db_engine.connect()
 
 
-    #result = db_connection.execute("select * from nodes")
-    #print(result)
+    # #result = db_connection.execute("select * from nodes")
+    # #print(result)
 
-    #db_connection.execute(db_nodes.insert(), {"id: "})
+    # #db_connection.execute(db_nodes.insert(), {"id: "})
 
-    Session = sessionmaker()
-    Session.configure(bind=db_engine) 
-    session = Session()
-    #test_add_nodes()
-    #print("lamtv10")
-    #load_node_info_to_database()
-    #get_node_from_database()
-    #add_role_to_node()
-    #node_role = session.query(Node_role).filter_by(role_name="compute").delete()
+    # Session = sessionmaker()
+    # Session.configure(bind=db_engine) 
+    # session = Session()
+    # #test_add_nodes()
+    # #print("lamtv10")
+    # #load_node_info_to_database()
+    # #get_node_from_database()
+    # #add_role_to_node()
+    # #node_role = session.query(Node_role).filter_by(role_name="compute").delete()
     
-    #session.commit()
+    # #session.commit()
 
-    #add_deployment_to_node()
-    #load_from_template()
+    # #add_deployment_to_node()
+    # #load_from_template()
     
-    node = session.query(Node).filter_by(node_display_name='controller_01').first()
-    service_setups = print_service_setup(node)
+    # node = session.query(Node).filter_by(node_display_name='controller_01').first()
+    # service_setups = print_service_setup(node)
 
 
-    swift_proxy_service = session.query(Service_setup).filter(and_(Service_setup.service_name=="swift_proxy", Service_setup.deployment.has(Deployment.node.has(Node.management_ip=='172.16.29.193')) )).first()
+    # swift_proxy_service = session.query(Service_setup).filter(and_(Service_setup.service_name=="swift_proxy", Service_setup.deployment.has(Deployment.node.has(Node.management_ip=='172.16.29.193')) )).first()
 
-    print(swift_proxy_service)
-    tasks = swift_proxy_service.tasks
+    # print(swift_proxy_service)
+    # tasks = swift_proxy_service.tasks
     # for task in tasks:
     #     print(task)
     # for service_setup in service_setups:
