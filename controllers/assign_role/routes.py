@@ -270,16 +270,18 @@ def test_code_create_task_for_service():
             list_tasks = load_yml_file(CONST.role_dir+'/' + service.service_name+'/tasks/main.yml')
 
             list_task_info =[]
-            for task in list_tasks:
-                task_info = {}
-                task_info['name'] = task.get('name')
-                for command in task.get('block'):
-                    if command.get('include') is None:
-                        setup_data= str(json.dumps(command))
-                        task_info['setup_data'] = setup_data[:250] + (setup_data[250:] and '..')
-                        task_info['task_type'] = command.keys()
-                        if 'register' in task_info['task_type']: task_info['task_type'].remove('register')
-                list_task_info.append(task_info)
+            for index,task in enumerate(list_tasks, start=1):
+                if index%2==0:
+                    task_info = {}
+                    before_task = list_tasks[index-1]
+                    task_info['name'] = before_task.get('name')
+                    for command in task.get('block'):
+                        if command.get('include') is None:
+                            setup_data= str(json.dumps(command))
+                            task_info['setup_data'] = setup_data[:250] + (setup_data[250:] and '..')
+                            task_info['task_type'] = command.keys()
+                            if 'register' in task_info['task_type']: task_info['task_type'].remove('register')
+                    list_task_info.append(task_info)
 
 
             for index,task  in enumerate(list_task_info,start=1):

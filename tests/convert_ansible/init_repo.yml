@@ -7,30 +7,38 @@
     group: root
     mode: '0644'
     backup: yes
+  register: infos
 
 - name: stop selinux
   command: '{{ item }}'
   with_items:
     - sudo setenforce 0
-  ignore_errors: yes
+  register: infos
 
 - name: systemctl stop iptables
   systemd:
     name: iptables
     enabled: no
     masked: no
+  register: infos
   ignore_errors: yes
 
-- name: stop service firewalld
-  systemd:
-    name: firewalld
-    state: stopped
 - name: systemctl stop firewalld
   systemd:
     name: firewalld
     enabled: no
     masked: no
-  ignore_errors: yes
+  register: infos
+
+- name: test_ansible_command
+  command: '{{ item }}'
+  with_items:
+    - echo "{{ inventory_hostname }}     "
+    - touch /home/"{{ service_name }}"
+    - cp /home/lamtv10/lkt /home/lamtv10/
+    - echo 'group_name'
+#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
+  register: infos
 
 - name: cp local.repo.j2 /etc/yum.repos.d/local.repo
   template:
@@ -40,7 +48,7 @@
     group: root
     mode: '0644'
     backup: yes
-
+  register: infos
 
 - name: cp docker.repo.j2 /etc/yum.repos.d/docker.repo
   template:
@@ -50,17 +58,5 @@
     group: root
     mode: '0644'
     backup: yes
-
-- name: refresh repo
-  command: '{{ item }}'
-  with_items:
-    - yum clean all
-    - yum repolist
-
-- name: yum install -y python-openstackclient
-  yum:
-    name:
-      - python-openstackclient
-    state: latest
-
+  register: infos
 
