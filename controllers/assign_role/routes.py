@@ -270,8 +270,8 @@ def test_code_create_task_for_service():
             list_tasks = load_yml_file(CONST.role_dir+'/' + service.service_name+'/tasks/main.yml')
 
             list_task_info =[]
-            for index,task in enumerate(list_tasks, start=1):
-                if index%2==0:
+            for index,task in enumerate(list_tasks, start=0):
+                if index%2==1:
                     task_info = {}
                     before_task = list_tasks[index-1]
                     task_info['name'] = before_task.get('name')
