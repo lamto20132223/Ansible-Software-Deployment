@@ -118,7 +118,7 @@ CREATE INDEX `fk_interface_resources_node_infos1_idx` ON `auto_lamtv10`.`interfa
 -- Table `auto_lamtv10`.`service_setups`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`service_setups` (
-  `service_setup_id` INT(11) NOT NULL ,
+  `service_setup_id` INT(11) NOT NULL AUTO_INCREMENT,
   `service_type` VARCHAR(255) NULL ,
   `service_name` VARCHAR(255) NULL ,
   `enable` VARCHAR(255) NULL ,

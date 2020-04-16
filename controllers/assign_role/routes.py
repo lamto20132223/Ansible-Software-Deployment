@@ -443,9 +443,15 @@ def get_all_tasks_with_service_setups(service_setup_id):
     return jsonify(models.to_json(tasks,'Task',True)) ,201
 
 
-@mod.route('/service_setups/<string:service_setup_id>/tasks/task_id', methods=['GET', 'POST'])
-def get_task(service_setup_id):
-    return "INCOMMING"
+@mod.route('/service_setups/<string:service_setup_id>/<string:task_id>', methods=['GET'])
+def get_task(service_setup_id,task_id):
+    task = session.query(models.Task).filter_by(task_id=task_id, service_setup_id=service_setup_id).first()
+
+    if task is None:
+        return abort(400)
+
+    session.commit()
+    return jsonify(models.to_json(task, 'Task', False)), 200
 
 @mod.route('/tasks', methods=['GET'])
 def get_all_tasks():
