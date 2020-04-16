@@ -2,7 +2,7 @@ from models import db, Node_Base, Column, relationship, generate_uuid
 
 class Service_setup(Node_Base):
     __tablename__ = 'service_setups'
-    service_setup_id = Column(db.String(255),primary_key=True,default=generate_uuid)
+    service_setup_id = Column(db.Integer,primary_key=True,default=generate_uuid)
     service_type=Column(db.String(255))
     service_name= Column(db.String(255))
     service_info=Column(db.Text)
