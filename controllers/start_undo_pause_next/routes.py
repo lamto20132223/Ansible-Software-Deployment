@@ -129,8 +129,57 @@ def get_change_info():
 # /api/v1/installation/skip
 #
 
-
-
+#
+# @mod.route('/installation/run_deployment', methods=['POST'])
+# def run_specific_deployment():
+#     if not request.json:
+#         abort(400)
+#     else:
+#         deployment_id = request.json.get('deployment_id')
+#         setup_index = request.json.get('setup_index')
+#         method = request.json.get('method')
+#
+#
+#     if deployment_id is None:
+#         return abort(400)
+#
+#
+#     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+#     if deployment is None:
+#         return abort(400, "Cannot Find Deployment with id: ", deployment_id)
+#     if setup_index is None:
+#         setup_index = 1
+#
+#     service_setup = session.query(models.Service_setup).filter_by(setup_index=setup_index,deployment_id=deployment_id).first()
+#     if service_setup is None:
+#         return abort(400, "Cannot Find Service_setup with setup_index: ", setup_index, "deployment_id: ",deployment_id)
+#
+#
+#     start_task_name = None
+#
+#     deployment = service_setup.deployment
+#     node = deployment.node
+#     service_name = service_setup.service_name
+#     node_display_name = node.node_display_name
+#     session.close()
+#     if method == "Install":
+#
+#
+#
+#         runner = Runner(playbook='playbook_setup_' + service_name + '_for_' + node_display_name + '.yml',
+#                         inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': ['install']},
+#                         start_at_task=start_task_name, step=False, private_key_file=None, become_pass=None,
+#                         verbosity=None)
+#
+#         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
+#
+#         print(runner.variable_manager)
+#
+#         stats_run = runner.run()
+#         print(stats_run)
+#         return {"stats": str(stats_run), "logs": runner.log}
+#     else:
+#         return {"res": "INCOMMING"}
 
 
 @mod.route('/installation/run_service_setup', methods=['POST'])
@@ -164,7 +213,7 @@ def run_specific_service_setup():
             start_task_name = start_task.task_display_name
     else :
         start_task_name = None
-    logging.debug("start_task:" + start_task_name)
+
 
     deployment = service_setup.deployment
     node = deployment.node
