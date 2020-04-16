@@ -113,7 +113,7 @@ class Runner(object):
         self.display = Display()
         self.display.verbosity = self.options.verbosity
 
-        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0", 'summarize':""}
+        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0", 'summarize':{}}
 
         # Executor appears to have it's own
         # verbosity object/setting as well
