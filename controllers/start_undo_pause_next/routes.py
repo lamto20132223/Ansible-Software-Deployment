@@ -164,6 +164,7 @@ def run_specific_service_setup():
             start_task_name = start_task.task_display_name
     else :
         start_task_name = None
+    logging.debug("start_task:" + start_task_name)
 
     deployment = service_setup.deployment
     node = deployment.node
