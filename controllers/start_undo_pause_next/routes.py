@@ -11,7 +11,7 @@ from assets import *
 from global_assets.common import *
 import logging
 from libs.ansible.runner import Runner
-from flask_restplus import Api, Resource
+from flask_restplus import Api, Resource,Namespace
 import json
 import ast
 LOGGER = logging.getLogger(__name__)
@@ -21,9 +21,12 @@ from flask_restplus import Api, Resource
 mod = Blueprint('start_undo_pause_next', __name__,
                         template_folder='templates')
 
-mod_v1 =Api(mod, version='1.0', title='Todo API',
+mod_v1 =Api(mod, version='1.0', title='Todo ABVC API',
     description='A simple TODO API',
 )
+
+
+# https://github.com/noirbizarre/flask-restplus/issues/468
 
 
 
@@ -52,27 +55,6 @@ def test_code_create_ansible_playbook_p3():
 
 
 
-@mod_v1.route('/installation', methods=['GET','POST'])
-class Installation(Resource):
-
-    def get(self):
-        return "Danh sach node + status cai tren tung node"
-
-    def post(self):
-        action = request.args.get('action')
-        if not (request.args.get('action') ):
-            abort(400)
-
-        if action == "START":
-            return "START INSTALL"
-        if action == "UNDO":
-            return "BACK TO THE HOLE"
-        if action == "PAUSE":
-            return "WAITE FOR IT"
-        if action == "NEXT":
-            return "SKIP TO NEXT "
-
-        return "WRONG ACTION"
 
 
 @mod.route('/installation/node_info', methods=['GET'])

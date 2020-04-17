@@ -11,6 +11,7 @@ import importlib
 from flask_restplus import Api, Resource, fields
 import logging
 import logging.config
+
 ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
 log_config_dir = os.path.join(ROOT_DIR, 'configs/logging.conf')
 logging.config.fileConfig(log_config_dir, disable_existing_loggers=False)

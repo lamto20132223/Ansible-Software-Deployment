@@ -3,6 +3,7 @@ from jinja2 import TemplateNotFound
 from app import  db, session, Node_Base, Column, relationship, models, ansible
 from utils import ansible
 
+from flask_restplus import Api, Resource,Namespace
 
 books = [
     {'id': 0,
@@ -24,7 +25,7 @@ books = [
 
 
 mod = Blueprint('test_api', __name__,
-                        template_folder='templates')
+                        template_folder='templates',url_prefix='/cat_api')
 # admin_bp = Blueprint('admin_bp', __name__,
 #                      template_folder='templates',
 #                      static_folder='static')
@@ -67,3 +68,35 @@ def ansible1():
     return jsonify(ansible.get_stats(stats))
 
 
+cat_ns = Namespace('cat_ns')
+
+mod_v1 =Api(mod, version='1.0', title='Todo ABVC API',
+    description='A simple TODO API',
+)
+mod_v1.add_namespace(cat_ns)
+@mod_v1.route('/cat')
+class Cat(Resource):
+    def get(self):
+        return 'hello cat'
+
+@mod_v1.route('/installation', methods=['GET','POST'])
+class Installation(Resource):
+
+    def get(self):
+        return "Danh sach node + status cai tren tung node"
+
+    def post(self):
+        action = request.args.get('action')
+        if not (request.args.get('action') ):
+            abort(400)
+
+        if action == "START":
+            return "START INSTALL"
+        if action == "UNDO":
+            return "BACK TO THE HOLE"
+        if action == "PAUSE":
+            return "WAITE FOR IT"
+        if action == "NEXT":
+            return "SKIP TO NEXT "
+
+        return "WRONG ACTION"

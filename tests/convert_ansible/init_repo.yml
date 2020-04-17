@@ -1,62 +1,42 @@
 ---
-- name: cp selinux.conf.j2 /etc/selinux/config
-  template:
-    src: selinux.conf.j2
-    dest: /etc/selinux/config
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  register: infos
+- name: yum install -y devel
+  yum:
+    name:
+      - glib2-devel
+      - pixman-devel
+      - zlib-devel
+      - kernel-devel
+    state: latest
 
-- name: stop selinux
-  command: '{{ item }}'
+- name: copy qemu-2_12_0.tar.xz
+  copy:
+    src: '/etc/ansible/roles/qemu/files/qemu_2.12.0.tar.gz'
+    dest: '/usr/src/qemu_2.12.0.tar.gz'
+    mode: 400
+
+- name: unzip  qemu-2_12_0.tar.gz
+  shell: '{{ item }}'
   with_items:
-    - sudo setenforce 0
-  register: infos
+    - cd /usr/src/ && tar -xvf qemu_2.12.0.tar.gz
 
-- name: systemctl stop iptables
-  systemd:
-    name: iptables
-    enabled: no
-    masked: no
-  register: infos
-  ignore_errors: yes
 
-- name: systemctl stop firewalld
-  systemd:
-    name: firewalld
-    enabled: no
-    masked: no
-  register: infos
+- name: mkdir /usr/src/qemu-2.12.0/build
+  file:
+    path: '/usr/src/qemu-2.12.0/build'
+    state: directory
+    recurse: no
 
-- name: test_ansible_command
-  command: '{{ item }}'
+- name: build
+  shell: '{{ item }}'
   with_items:
-    - echo "{{ inventory_hostname }}     "
-    - touch /home/"{{ service_name }}"
-    - cp /home/lamtv10/lkt /home/lamtv10/
-    - echo 'group_name'
-#    - echo "{{ansible_nodename}} - {{ansible_distribution}}"
-  register: infos
+    - cd /usr/src/qemu-2.12.0/build && ../configure --prefix=/usr --sysconfdir=/etc --target-list=x86_64-softmmu --enable-debug --with-sdlabi=2.0 --docdir=/usr/share/doc/qemu-2.12.0
 
-- name: cp local.repo.j2 /etc/yum.repos.d/local.repo
-  template:
-    src: local.repo.j2
-    dest: /etc/yum.repos.d/local.repo
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  register: infos
+- name: install qemu-2.12.0
+  shell: '{{ item }}'
+  with_items:
+    - cd /usr/src/qemu-2.12.0/build && make -j4
+    - cd /usr/src/qemu-2.12.0/build && make install
 
-- name: cp docker.repo.j2 /etc/yum.repos.d/docker.repo
-  template:
-    src: docker.repo.j2
-    dest: /etc/yum.repos.d/docker.repo
-    owner: root
-    group: root
-    mode: '0644'
-    backup: yes
-  register: infos
+
+
 
