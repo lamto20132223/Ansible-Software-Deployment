@@ -14,6 +14,7 @@ from libs.ansible.runner import Runner
 from flask_restplus import Api, Resource
 import json
 import ast
+from collections import OrderedDict
 import logging
 
 LOGGER = logging.getLogger(__name__)
@@ -46,7 +47,7 @@ mod_v1 =Api(mod, version='1.0', title='Todo API',
 def get_all_roles():
     with open('static/role_service.json') as role_data_file:
         role_data = json.load(role_data_file)
-    result={}
+    result=OrderedDict()
     list_roles = role_data.keys()
     list_roles.sort()
     for role in list_roles:
@@ -60,14 +61,9 @@ def get_all_roles():
 
     #print(role_data.keys())
 
-
-
-    res =    {
-
-        "list_roles": list_roles,
-        "data":result
-    }
-
+    res = OrderedDict()
+    res["list_roles_and_configs"] = list_roles
+    res["data"] = result
 
     return res
 

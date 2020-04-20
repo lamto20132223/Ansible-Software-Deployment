@@ -39,3 +39,7 @@ def print_join(log1, log2):
 
 #curl -i -H "Content-Type: application/json" -X POST -d '{"title":"Read a book"}' http://localhost:5000/todo/api/v1.0/tasks
 #curl -X POST "http://172.16.29.193:9876/language" -H  "accept: application/json" -H  "Content-Type: application/json" -d "{  \"file\": \"docker.io/istio/sidecar_injector:1.4.4\"}"
+
+
+def get_secret_key():
+	return os.urandom(24)

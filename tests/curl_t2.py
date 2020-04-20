@@ -48,7 +48,6 @@ def add_host_to_role():
     time.sleep(5)
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role4.json')
     time.sleep(5)
-dadassdadddas
 
 def insert_test_data():
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/test_create_deployment" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')

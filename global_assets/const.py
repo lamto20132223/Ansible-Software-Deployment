@@ -38,3 +38,8 @@ inventory_dir = ROOT_DIR +  '/static/ansible/inventory'
 playbook_dir = ROOT_DIR +  '/static/ansible/playbooks'
 facts_dir = ROOT_DIR +  '/static/ansible/facts'
 role_dir = ROOT_DIR +  '/static/ansible/playbooks/roles'
+
+tools_dir = ROOT_DIR+ '/static/tools'
+ansible_group_vars_template_dir = ROOT_DIR + '/static/ansible/group_vars_template/group_vars_default_template/group_vars'
+ansible_group_vars_sf_dir =  ROOT_DIR + '/static/ansible/group_vars_template/group_vars_for_software_management/group_vars'
+ansible_group_vars_dir =ROOT_DIR + '/static/ansible/inventory/group_vars'

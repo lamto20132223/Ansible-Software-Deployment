@@ -4,7 +4,7 @@ import os
 #
 
 import time
-
+import requests
 ##task = [task for task in tasks if task['id'] == task_id]
 
 
@@ -92,6 +92,19 @@ def delete_data():
     os.system(
         'curl -X POST "http://127.0.0.1:4321/api/v1/clean_data" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
 
+
+
+def reset_group_var():
+
+    url = 'http://127.0.0.1:4321/tools/edit_ansible_group_vars'
+    payload = {'reset_ansible_group_vars': True, 'reset_all': True, 'role_name': 'CONTROLLER', 'file_name': 'dir_log_file.yml'}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+    time.sleep(5)
+
+
 if __name__ == "__main__":
     #delete_data()
     #add_host()
@@ -99,4 +112,5 @@ if __name__ == "__main__":
     #add_host_to_role()
     #insert_test_data()
 
-    send_task_info()
+    # send_task_info()
+    reset_group_var()
