@@ -69,6 +69,11 @@ class Specific_Configs(Resource):
 
 
 
+@mod.route('/configs', methods=['GET'])
+def submit_configsdasdad():
+
+    return render_template('form_bk.html')
+
 
 
 from flask_wtf import FlaskForm
