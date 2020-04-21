@@ -113,6 +113,10 @@ def add_host_to_role():
     if node is None:
         return {"response": "Node is not exist"}, 226
 
+    if node.node_info is None:
+        return {"response": "Node is not discover yet! "},404
+
+
     if roles is None:
         return {"response": "Require Role"}, 226
 
@@ -140,7 +144,7 @@ def add_host_to_role():
 def add_all_deployment():
     nodes = session.query(models.Node).all()
     for node in nodes:
-        if node.deployment is None:
+        if node.deployment is None and     node.node_roles > 0:
             deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,status="IN QUEUE", name = "deployement " + str(node.management_ip) )
             node.deployment = deployment
         session.add(node)
@@ -155,13 +159,14 @@ def test_code_create_service_setup():
     nodes = session.query(models.Node).all()
     for node in nodes:
         deployment = node.deployment
-        roles =[role.role_name for role in node.node_roles]
+        if deployment is not None:
+            roles =[role.role_name for role in node.node_roles]
 
-        for role in roles:
-            list_services = role_data[role]['list_service']
-            for service in list_services:
-                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],enable="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
-                deployment.service_setups.append(service_setup)
+            for role in roles:
+                list_services = role_data[role]['list_service']
+                for service in list_services:
+                    service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],enable="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
+                    deployment.service_setups.append(service_setup)
 
 
 
@@ -209,20 +214,21 @@ def test_code_create_ansible_playbook_p2():
     list_nodes = session.query(models.Node).all()
     list_playbooks = []
     for node in list_nodes:
-        host_name = node.node_display_name
-        deployment = node.deployment
-        list_services = deployment.service_setups
-        for service in list_services:
-            service_name = service.service_name
-            role_name = service.service_name
-            ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
-            playbook_temp = os.path.join(ROOT_DIR, 'global_assets/playbook_temp.yml')
-            new_playbook = CONST.playbook_dir+'/'+'playbook_setup_'+ service_name + '_for_'+host_name + '.yml'
-            os.system('\cp '+ str(playbook_temp) + ' '+new_playbook )
-            os.system('sed -i "s|SERVICE_NAME|'+service_name+'|g" '+ str(new_playbook))
-            os.system('sed -i "s|HOST_NAME|'+host_name+'|g" '+ str(new_playbook))
-            os.system('sed -i "s|ROLE_NAME|'+role_name+'|g" '+ str(new_playbook))
-            list_playbooks.append('playbook_setup_'+ service_name + '_for_'+host_name + '.yml')
+        if node.deployment is not None:
+            host_name = node.node_display_name
+            deployment = node.deployment
+            list_services = deployment.service_setups
+            for service in list_services:
+                service_name = service.service_name
+                role_name = service.service_name
+                ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+                playbook_temp = os.path.join(ROOT_DIR, 'global_assets/playbook_temp.yml')
+                new_playbook = CONST.playbook_dir+'/'+'playbook_setup_'+ service_name + '_for_'+host_name + '.yml'
+                os.system('\cp '+ str(playbook_temp) + ' '+new_playbook )
+                os.system('sed -i "s|SERVICE_NAME|'+service_name+'|g" '+ str(new_playbook))
+                os.system('sed -i "s|HOST_NAME|'+host_name+'|g" '+ str(new_playbook))
+                os.system('sed -i "s|ROLE_NAME|'+role_name+'|g" '+ str(new_playbook))
+                list_playbooks.append('playbook_setup_'+ service_name + '_for_'+host_name + '.yml')
 
     #host=
 

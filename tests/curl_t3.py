@@ -131,8 +131,8 @@ if __name__ == "__main__":
     #delete_data()
     add_host()
     discover_hosts()
-    add_host_to_role()
-    insert_test_data()
+    # add_host_to_role()
+    # insert_test_data()
 
 
     #send_task_info()
@@ -145,5 +145,5 @@ if __name__ == "__main__":
     # run_task_id(5)
     # run_task_id(6)
     # run_task_id(7)
-    run_service_setup(1,1)
+    #run_service_setup(1,1)
     #run_service_set_up_start_at_task(1,1,1)
