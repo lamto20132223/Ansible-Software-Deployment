@@ -37,7 +37,7 @@ def add_host():
 
 
 @mod.route('/hosts/update_host', methods=['POST'])
-def add_host():
+def update_host_ssh():
     if not request.json :
         abort(400)
     else:
