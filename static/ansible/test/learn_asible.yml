@@ -1,0 +1,18 @@
+- hosts: localhost
+  vars:
+    fruits:
+      - oranges
+      - lemons
+  tasks:
+    - assert:
+        that: >-
+          'apples' in fruits
+        msg: you have no apples
+      register: assert_failse
+    - debug:
+        msg: '{{ assert_failse }}'
+
+    - assert:
+        that: >-
+          'lemons' in fruits
+        msg: you have no lemons

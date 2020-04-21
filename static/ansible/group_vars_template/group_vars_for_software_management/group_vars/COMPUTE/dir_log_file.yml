@@ -1,0 +1,38 @@
+- name: DEFAULT
+  configs:
+  - key: nova_compute_logging_debug
+    ex_value: false
+    required: false
+    editable: true
+    need_edit: false
+    input_type: checkbox
+  - key: neutron_logging_debug
+    ex_value: false
+    required: false
+    editable: true
+    need_edit: false
+    input_type: checkbox
+  - key: nova_state_path
+    ex_value: /home/root/var/lib/nova
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova_log_file
+    ex_value: /var/log/nova
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: VAR_LOG_DIR
+    ex_value: /u01/docker/docker_log
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: VAR_LIB_DOCKER
+    ex_value: /home/root/var/lib/docker
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text

@@ -1,0 +1,208 @@
+- name: DEFAULT
+  configs:
+  - key: group_name
+    ex_value: CONTROLLER_NODE
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: SQL_WSREP_CLUSTER_NAME
+    ex_value: pxc-cluster
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: SQL_ROOT_PASSWD
+    ex_value: Vttek@123
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: SQL_SST_USER
+    ex_value: sstuser
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: SQL_SST_PASSWD
+    ex_value: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: wsrep_cluster_address
+    ex_value: gcomm://172.16.29.193,172.16.29.194,172.16.29.195
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: transport_url
+    ex_value: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{%
+      if not loop.last %},{% endif  %}{% endfor %}
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: memcached_servers
+    ex_value: '{% for node in groups[''controller''] %}{{node}}:11211{% if not loop.last
+      %},{% endif  %}{% endfor %}'
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: rbd_store_ceph_conf
+    ex_value: /etc/ceph/ceph.conf
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: glance_backend_ceph
+    ex_value: true
+    required: false
+    editable: true
+    need_edit: false
+    input_type: checkbox
+  - key: cinder_backend_ceph
+    ex_value: false
+    required: false
+    editable: true
+    need_edit: false
+    input_type: checkbox
+- name: services_port
+  configs:
+  - key: keystone
+    ex_value: 5000
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: glance_api
+    ex_value: 9292
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: glance_registry
+    ex_value: 9191
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: nova_api
+    ex_value: 8774
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: nova_placement_api
+    ex_value: 8778
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: nova_metadata
+    ex_value: 8775
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: nova_novncproxy
+    ex_value: 6080
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: neutron_server
+    ex_value: 9696
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: horizon
+    ex_value: 80
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: cinder_api
+    ex_value: 8776
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: masakari_api
+    ex_value: 15868
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+- name: CONFIG
+  configs:
+  - key: keystone
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: glance_api
+    ex_value: !!null 'null'
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: glance_registry
+    ex_value: !!null 'null'
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova_api
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova_placement_api
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova_metadata
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova_novncproxy
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: neutron_server
+    ex_value: !!null 'null'
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: horizon
+    ex_value: balance source|http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: cinder_api
+    ex_value: http-request del-header X-Forwarded-Proto
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: masakari_api
+    ex_value: timeout client 2m|timeout server 2m|balance  source|http-request del-header
+      X-Forwarded-Proto|http-request set-header X-Forwarded-Proto https if { ssl_fc
+      }|option  httpchk|option  httplog|option  httpclose
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text

@@ -1,0 +1,8 @@
+- name: DEFAULT
+  configs:
+  - key: group_name
+    ex_value: OPENSTACK_MANAGEMENT_NODE
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text

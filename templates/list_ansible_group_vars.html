@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List Ansible Group Vars</title>
+</head>
+<body>
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
+<div class="row" style=" display: flex;">
+<div class="column" style="
+  width: 35%;
+">
+    <ul>
+    {% for key in data.keys() %}
+        <li>
+        <h3>{{ key }}</h3>
+        <ul>
+        {% for  item in data[key]%}
+            <li><a href="/api/v1/hosts/{{ item['node_id'] }}"> link</a>
+            <p>node_display_name: {{ item['node_display_name'] }}</p>
+            <p>node_id: {{ item['node_id'] }}</p>
+            <p>management_ip: {{ item['management_ip'] }}</p>
+
+            </li>
+        {% endfor %}
+        </ul>
+        </li>
+    {% endfor %}
+
+    </ul>
+</div>
+<div class="column">
+    <ul>
+    {%  for group in list_group %}
+        <li>
+        <h3>{{ group['name'] }}</h3>
+        <ul>
+        {% for config in group['configs'] %}
+            <li>
+            <h4> {{ config['filename'] }} <a href="/tools/list_ansible_group_vars?download=yes&group={{ group['name'] }}&filename={{ config['filename'] }}">  download </a> </h4>
+            <p>file_path: {{ config['file_path'] }}</p>
+            <p>link_to_edit: <a href="{{ config['link_to_edit'] }}"> {{ config['link_to_edit'] }}</a></p>
+
+
+            </li>
+        {%  endfor %}
+
+        </ul>
+
+        </li>
+    {% endfor %}
+    </ul>
+</div>
+</div>
+
+</body>
+</html>

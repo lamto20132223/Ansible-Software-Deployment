@@ -1,0 +1,55 @@
+- name: cp selinux.conf.j2 /etc/selinux/config
+  template:
+    src: selinux.conf.j2
+    dest: /etc/selinux/config
+    owner: root
+    group: root
+    mode: '0644'
+    backup: true
+- name: stop selinux
+  command: '{{ item }}'
+  with_items:
+  - sudo setenforce 0
+  ignore_errors: true
+- name: systemctl stop iptables
+  systemd:
+    name: iptables
+    enabled: false
+    masked: false
+  ignore_errors: true
+- name: stop service firewalld
+  systemd:
+    name: firewalld
+    state: stopped
+- name: systemctl stop firewalld
+  systemd:
+    name: firewalld
+    enabled: false
+    masked: false
+  ignore_errors: true
+- name: cp local.repo.j2 /etc/yum.repos.d/local.repo
+  template:
+    src: local.repo.j2
+    dest: /etc/yum.repos.d/local.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: true
+- name: cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+  template:
+    src: docker.repo.j2
+    dest: /etc/yum.repos.d/docker.repo
+    owner: root
+    group: root
+    mode: '0644'
+    backup: true
+- name: refresh repo
+  command: '{{ item }}'
+  with_items:
+  - yum clean all
+  - yum repolist
+- name: yum install -y python-openstackclient
+  yum:
+    name:
+    - python-openstackclient
+    state: latest

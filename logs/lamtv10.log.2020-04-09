@@ -1,0 +1,34 @@
+[2020-04-13 17:35:43.194] [ INFO    ] [_internal:_log:122] 105777  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-13 17:35:43.195] [ INFO    ] [_internal:_log:122] 105777  * Restarting with stat
+[2020-04-13 17:35:46.631] [ WARNING ] [_internal:_log:122] 105907  * Debugger is active!
+[2020-04-13 17:35:46.633] [ INFO    ] [_internal:_log:122] 105907  * Debugger PIN: 507-280-042
+[2020-04-13 17:36:45.251] [ INFO    ] [_internal:_log:122] 105907 127.0.0.1 - - [13/Apr/2020 17:36:45] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 500 -
+[2020-04-13 17:38:02.614] [ INFO    ] [_internal:_log:122] 105907  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-13 17:38:02.736] [ INFO    ] [_internal:_log:122] 105777  * Restarting with stat
+[2020-04-13 17:38:07.453] [ WARNING ] [_internal:_log:122] 108721  * Debugger is active!
+[2020-04-13 17:38:07.453] [ INFO    ] [_internal:_log:122] 108721  * Debugger PIN: 507-280-042
+[2020-04-13 17:38:28.286] [ INFO    ] [_internal:_log:122] 108721 127.0.0.1 - - [13/Apr/2020 17:38:28] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 500 -
+[2020-04-13 17:38:46.706] [ INFO    ] [_internal:_log:122] 108721 127.0.0.1 - - [13/Apr/2020 17:38:46] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 500 -
+[2020-04-13 17:38:54.525] [ INFO    ] [_internal:_log:122] 109698  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-13 17:38:54.527] [ INFO    ] [_internal:_log:122] 109698  * Restarting with stat
+[2020-04-13 17:38:58.946] [ WARNING ] [_internal:_log:122] 109780  * Debugger is active!
+[2020-04-13 17:38:58.948] [ INFO    ] [_internal:_log:122] 109780  * Debugger PIN: 507-280-042
+[2020-04-13 17:39:23.984] [ INFO    ] [_internal:_log:122] 109780 127.0.0.1 - - [13/Apr/2020 17:39:23] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 500 -
+[2020-04-13 17:39:45.547] [ INFO    ] [_internal:_log:122] 110736  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-13 17:39:45.549] [ INFO    ] [_internal:_log:122] 110736  * Restarting with stat
+[2020-04-13 17:39:49.424] [ WARNING ] [_internal:_log:122] 110815  * Debugger is active!
+[2020-04-13 17:39:49.425] [ INFO    ] [_internal:_log:122] 110815  * Debugger PIN: 507-280-042
+[2020-04-13 17:39:54.718] [ INFO    ] [_internal:_log:122] 110815 127.0.0.1 - - [13/Apr/2020 17:39:54] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 500 -
+[2020-04-13 17:40:11.784] [ INFO    ] [_internal:_log:122] 110815  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-13 17:40:11.905] [ INFO    ] [_internal:_log:122] 110736  * Restarting with stat
+[2020-04-13 17:40:16.109] [ WARNING ] [_internal:_log:122] 111365  * Debugger is active!
+[2020-04-13 17:40:16.112] [ INFO    ] [_internal:_log:122] 111365  * Debugger PIN: 507-280-042
+[2020-04-13 17:41:39.837] [ INFO    ] [_internal:_log:122] 113059  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-13 17:41:39.839] [ INFO    ] [_internal:_log:122] 113059  * Restarting with stat
+[2020-04-13 17:41:44.048] [ WARNING ] [_internal:_log:122] 113153  * Debugger is active!
+[2020-04-13 17:41:44.050] [ INFO    ] [_internal:_log:122] 113153  * Debugger PIN: 507-280-042
+[2020-04-13 17:44:05.313] [ INFO    ] [_internal:_log:122] 116002  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-13 17:44:05.314] [ INFO    ] [_internal:_log:122] 116002  * Restarting with stat
+[2020-04-13 17:44:08.798] [ WARNING ] [_internal:_log:122] 116085  * Debugger is active!
+[2020-04-13 17:44:08.799] [ INFO    ] [_internal:_log:122] 116085  * Debugger PIN: 507-280-042
+[2020-04-13 17:45:01.289] [ INFO    ] [_internal:_log:122] 116085 127.0.0.1 - - [13/Apr/2020 17:45:01] "POST /api/v1/roles/add_host_to_role HTTP/1.1" 202 -

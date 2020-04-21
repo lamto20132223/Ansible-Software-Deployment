@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Danh sach tool hien co</title>
+</head>
+<body>
+    <h1>Danh sach cac tools hien co:</h1>
+
+    <ul id="navigation">
+    {% for item in list_tools %}
+        <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+group_name: CONTROLLER_NODE
+SQL_WSREP_CLUSTER_NAME: pxc-cluster
+SQL_ROOT_PASSWD: Vttek@123
+SQL_SST_USER: sstuser
+SQL_SST_PASSWD: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew
+wsrep_cluster_address: gcomm://172.16.29.193,172.16.29.194,172.16.29.197
+transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{%
+  if not loop.last %},{% endif  %}{% endfor %}
+memcached_servers: '{% for node in groups[''controller''] %}{{node}}:11211{% if not
+  loop.last %},{% endif  %}{% endfor %}'
+rbd_store_ceph_conf: /etc/ceph/ceph.conf
+glance_backend_ceph: false
+cinder_backend_ceph: true
+services_port:
+  keystone: 5000
+  glance_api: 9292
+  glance_registry: 9191
+  nova_api: 8774
+  nova_placement_api: 8778
+  nova_metadata: 8771
+  nova_novncproxy: 6082
+  neutron_server: 9698
+  horizon: 80
+  cinder_api: 8776
+  masakari_api: 15868
+CONFIG:
+  keystone: http-request del-header X-Forwarded-Proto
+  glance_api: None
+  glance_registry: None
+  nova_api: http-request del-header X-Forwarded-Proto
+  nova_placement_api: http-request del-header X-Forwarded-Proto
+  nova_metadata: http-request del-header X-Forwarded-Proto
+  nova_novncproxy: http-request del-header X-Forwarded-Proto
+  neutron_server: asd
+  horizon: balance source|http-request del-header X-Forwarded-Proto
+  cinder_api: http-request del-header X-Forwarded-Proto
+  masakari_api: timeout client 2m|timeout server 2m|balance  source|http-request del-header
+    X-Forwarded-Proto|http-request set-header X-Forwarded-Proto https if { ssl_fc
+    }|option  httpchk|option  httplog|option  httpclose

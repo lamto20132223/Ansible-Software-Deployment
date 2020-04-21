@@ -1,0 +1,274 @@
+[2020-04-15 10:55:14.715] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 10:55:17.575] [ WARNING ] [_internal:_log:122] 106629  * Debugger is active!
+[2020-04-15 10:55:17.593] [ INFO    ] [_internal:_log:122] 106629  * Debugger PIN: 507-280-042
+[2020-04-15 11:12:57.847] [ INFO    ] [_internal:_log:122] 106629  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:12:57.940] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 11:13:01.129] [ WARNING ] [_internal:_log:122] 128272  * Debugger is active!
+[2020-04-15 11:13:01.129] [ INFO    ] [_internal:_log:122] 128272  * Debugger PIN: 507-280-042
+[2020-04-15 11:13:23.753] [ INFO    ] [_internal:_log:122] 128272  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:13:23.909] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 11:13:25.197] [ WARNING ] [_internal:_log:122] 128798  * Debugger is active!
+[2020-04-15 11:13:25.198] [ INFO    ] [_internal:_log:122] 128798  * Debugger PIN: 507-280-042
+[2020-04-15 11:13:34.439] [ INFO    ] [_internal:_log:122] 128798  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:13:34.559] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 11:13:35.832] [ WARNING ] [_internal:_log:122] 129033  * Debugger is active!
+[2020-04-15 11:13:35.832] [ INFO    ] [_internal:_log:122] 129033  * Debugger PIN: 507-280-042
+[2020-04-15 11:13:43.016] [ INFO    ] [_internal:_log:122] 129033  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:13:43.116] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 11:13:44.577] [ WARNING ] [_internal:_log:122] 129209  * Debugger is active!
+[2020-04-15 11:13:44.578] [ INFO    ] [_internal:_log:122] 129209  * Debugger PIN: 507-280-042
+[2020-04-15 11:15:18.914] [ INFO    ] [_internal:_log:122] 129209  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:15:19.062] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 11:15:20.736] [ WARNING ] [_internal:_log:122] 374  * Debugger is active!
+[2020-04-15 11:15:20.737] [ INFO    ] [_internal:_log:122] 374  * Debugger PIN: 507-280-042
+[2020-04-15 11:16:09.918] [ INFO    ] [_internal:_log:122] 374  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 11:16:10.087] [ INFO    ] [_internal:_log:122] 78482  * Restarting with stat
+[2020-04-15 14:08:49.064] [ INFO    ] [_internal:_log:122] 79741  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:08:49.064] [ INFO    ] [_internal:_log:122] 79741  * Restarting with stat
+[2020-04-15 14:08:50.558] [ WARNING ] [_internal:_log:122] 79774  * Debugger is active!
+[2020-04-15 14:08:50.558] [ INFO    ] [_internal:_log:122] 79774  * Debugger PIN: 507-280-042
+[2020-04-15 14:08:57.573] [ INFO    ] [_internal:_log:122] 79774 127.0.0.1 - - [15/Apr/2020 14:08:57] "GET /api/v1/tasks/1 HTTP/1.1" 200 -
+[2020-04-15 14:09:42.782] [ INFO    ] [_internal:_log:122] 79774  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:09:42.902] [ INFO    ] [_internal:_log:122] 79741  * Restarting with stat
+[2020-04-15 14:09:44.843] [ WARNING ] [_internal:_log:122] 80884  * Debugger is active!
+[2020-04-15 14:09:44.844] [ INFO    ] [_internal:_log:122] 80884  * Debugger PIN: 507-280-042
+[2020-04-15 14:09:54.110] [ INFO    ] [_internal:_log:122] 81104  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:09:54.110] [ INFO    ] [_internal:_log:122] 81104  * Restarting with stat
+[2020-04-15 14:09:55.189] [ WARNING ] [_internal:_log:122] 81134  * Debugger is active!
+[2020-04-15 14:09:55.189] [ INFO    ] [_internal:_log:122] 81134  * Debugger PIN: 507-280-042
+[2020-04-15 14:09:57.967] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:57] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:09:58.067] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:58] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:09:58.082] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:58] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:09:58.092] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:58] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:09:58.231] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:58] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:09:58.281] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:09:58] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:11:20.675] [ INFO    ] [_internal:_log:122] 81134 127.0.0.1 - - [15/Apr/2020 14:11:20] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-15 14:11:31.592] [ INFO    ] [_internal:_log:122] 81134  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-15 14:11:31.737] [ INFO    ] [_internal:_log:122] 81104  * Restarting with stat
+[2020-04-15 14:11:33.770] [ WARNING ] [_internal:_log:122] 83124  * Debugger is active!
+[2020-04-15 14:11:33.771] [ INFO    ] [_internal:_log:122] 83124  * Debugger PIN: 507-280-042
+[2020-04-15 14:11:40.469] [ INFO    ] [_internal:_log:122] 83283  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:11:40.470] [ INFO    ] [_internal:_log:122] 83283  * Restarting with stat
+[2020-04-15 14:11:41.955] [ WARNING ] [_internal:_log:122] 83309  * Debugger is active!
+[2020-04-15 14:11:41.955] [ INFO    ] [_internal:_log:122] 83309  * Debugger PIN: 507-280-042
+[2020-04-15 14:11:52.414] [ INFO    ] [_internal:_log:122] 83309 127.0.0.1 - - [15/Apr/2020 14:11:52] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-15 14:11:53.688] [ INFO    ] [_internal:_log:122] 83309 127.0.0.1 - - [15/Apr/2020 14:11:53] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-15 14:12:26.006] [ INFO    ] [_internal:_log:122] 83309  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-15 14:12:26.181] [ INFO    ] [_internal:_log:122] 83283  * Restarting with stat
+[2020-04-15 14:12:27.715] [ WARNING ] [_internal:_log:122] 84265  * Debugger is active!
+[2020-04-15 14:12:27.716] [ INFO    ] [_internal:_log:122] 84265  * Debugger PIN: 507-280-042
+[2020-04-15 14:12:38.972] [ INFO    ] [_internal:_log:122] 84265  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-15 14:12:39.096] [ INFO    ] [_internal:_log:122] 83283  * Restarting with stat
+[2020-04-15 14:12:40.926] [ WARNING ] [_internal:_log:122] 84547  * Debugger is active!
+[2020-04-15 14:12:40.926] [ INFO    ] [_internal:_log:122] 84547  * Debugger PIN: 507-280-042
+[2020-04-15 14:12:46.154] [ INFO    ] [_internal:_log:122] 84670  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:12:46.155] [ INFO    ] [_internal:_log:122] 84670  * Restarting with stat
+[2020-04-15 14:12:47.776] [ WARNING ] [_internal:_log:122] 84699  * Debugger is active!
+[2020-04-15 14:12:47.776] [ INFO    ] [_internal:_log:122] 84699  * Debugger PIN: 507-280-042
+[2020-04-15 14:12:51.760] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:51] "GET /api/v1/hosts HTTP/1.1" 500 -
+[2020-04-15 14:12:51.833] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:51] "GET /api/v1/hosts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:12:51.837] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:51] "GET /api/v1/hosts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:12:51.844] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:51] "GET /api/v1/hosts?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:12:51.954] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:51] "GET /api/v1/hosts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:12:52.012] [ INFO    ] [_internal:_log:122] 84699 127.0.0.1 - - [15/Apr/2020 14:12:52] "GET /api/v1/hosts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:13:08.299] [ INFO    ] [_internal:_log:122] 84699  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-15 14:13:08.472] [ INFO    ] [_internal:_log:122] 84670  * Restarting with stat
+[2020-04-15 14:13:09.956] [ WARNING ] [_internal:_log:122] 85167  * Debugger is active!
+[2020-04-15 14:13:09.957] [ INFO    ] [_internal:_log:122] 85167  * Debugger PIN: 507-280-042
+[2020-04-15 14:13:15.604] [ INFO    ] [_internal:_log:122] 85167 127.0.0.1 - - [15/Apr/2020 14:13:15] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-15 14:13:46.654] [ INFO    ] [_internal:_log:122] 85167 127.0.0.1 - - [15/Apr/2020 14:13:46] "GET /api/v1/hosts/1 HTTP/1.1" 200 -
+[2020-04-15 14:14:02.507] [ INFO    ] [_internal:_log:122] 85167 127.0.0.1 - - [15/Apr/2020 14:14:02] "GET /api/v1/hosts/2 HTTP/1.1" 200 -
+[2020-04-15 14:15:26.348] [ INFO    ] [_internal:_log:122] 85167  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:15:26.504] [ INFO    ] [_internal:_log:122] 84670  * Restarting with stat
+[2020-04-15 14:15:27.948] [ WARNING ] [_internal:_log:122] 87963  * Debugger is active!
+[2020-04-15 14:15:27.948] [ INFO    ] [_internal:_log:122] 87963  * Debugger PIN: 507-280-042
+[2020-04-15 14:15:45.561] [ INFO    ] [_internal:_log:122] 88341  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:15:45.562] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:15:46.725] [ WARNING ] [_internal:_log:122] 88365  * Debugger is active!
+[2020-04-15 14:15:46.725] [ INFO    ] [_internal:_log:122] 88365  * Debugger PIN: 507-280-042
+[2020-04-15 14:15:51.349] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:15:51] "GET /api/v1/hosts/tasks/1 HTTP/1.1" 404 -
+[2020-04-15 14:15:55.393] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:15:55] "GET /api/v1/tasks/1 HTTP/1.1" 200 -
+[2020-04-15 14:16:43.822] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:43] "GET /api/v1/service_setups HTTP/1.1" 308 -
+[2020-04-15 14:16:44.131] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/ HTTP/1.1" 500 -
+[2020-04-15 14:16:44.215] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:16:44.218] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:16:44.219] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:16:44.366] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:16:44.440] [ INFO    ] [_internal:_log:122] 88365 127.0.0.1 - - [15/Apr/2020 14:16:44] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:17:51.688] [ INFO    ] [_internal:_log:122] 88365  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:17:51.837] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:17:53.772] [ WARNING ] [_internal:_log:122] 90958  * Debugger is active!
+[2020-04-15 14:17:53.773] [ INFO    ] [_internal:_log:122] 90958  * Debugger PIN: 507-280-042
+[2020-04-15 14:17:54.145] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/ HTTP/1.1" 500 -
+[2020-04-15 14:17:54.228] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:17:54.232] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:17:54.237] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:17:54.334] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:17:54.348] [ INFO    ] [_internal:_log:122] 90958 127.0.0.1 - - [15/Apr/2020 14:17:54] "GET /api/v1/service_setups/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:18:37.887] [ INFO    ] [_internal:_log:122] 90958  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:18:38.023] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:18:39.721] [ WARNING ] [_internal:_log:122] 91897  * Debugger is active!
+[2020-04-15 14:18:39.722] [ INFO    ] [_internal:_log:122] 91897  * Debugger PIN: 507-280-042
+[2020-04-15 14:18:40.205] [ INFO    ] [_internal:_log:122] 91897 127.0.0.1 - - [15/Apr/2020 14:18:40] "GET /api/v1/service_setups/ HTTP/1.1" 200 -
+[2020-04-15 14:18:43.421] [ INFO    ] [_internal:_log:122] 91897 127.0.0.1 - - [15/Apr/2020 14:18:43] "GET /api/v1/service_setups/ HTTP/1.1" 200 -
+[2020-04-15 14:19:30.431] [ INFO    ] [_internal:_log:122] 91897 127.0.0.1 - - [15/Apr/2020 14:19:30] "GET /api/v1/service_setups/53d13451-8457-4979-a613-06d5f30bb6e4 HTTP/1.1" 201 -
+[2020-04-15 14:20:17.181] [ INFO    ] [_internal:_log:122] 91897  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:20:17.302] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:20:19.000] [ WARNING ] [_internal:_log:122] 93935  * Debugger is active!
+[2020-04-15 14:20:19.001] [ INFO    ] [_internal:_log:122] 93935  * Debugger PIN: 507-280-042
+[2020-04-15 14:20:19.153] [ INFO    ] [_internal:_log:122] 93935 127.0.0.1 - - [15/Apr/2020 14:20:19] "GET /api/v1/service_setups/53d13451-8457-4979-a613-06d5f30bb6e4 HTTP/1.1" 200 -
+[2020-04-15 14:20:20.444] [ INFO    ] [_internal:_log:122] 93935 127.0.0.1 - - [15/Apr/2020 14:20:20] "GET /api/v1/service_setups/53d13451-8457-4979-a613-06d5f30bb6e4 HTTP/1.1" 200 -
+[2020-04-15 14:20:27.287] [ INFO    ] [_internal:_log:122] 93935  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:20:27.414] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:20:28.713] [ WARNING ] [_internal:_log:122] 94155  * Debugger is active!
+[2020-04-15 14:20:28.714] [ INFO    ] [_internal:_log:122] 94155  * Debugger PIN: 507-280-042
+[2020-04-15 14:20:30.837] [ INFO    ] [_internal:_log:122] 94155 127.0.0.1 - - [15/Apr/2020 14:20:30] "GET /api/v1/service_setups/53d13451-8457-4979-a613-06d5f30bb6e HTTP/1.1" 400 -
+[2020-04-15 14:20:34.519] [ INFO    ] [_internal:_log:122] 94155 127.0.0.1 - - [15/Apr/2020 14:20:34] "GET /api/v1/service_setups/53d13451-8457-4979-a613-06d5f30bb6e4 HTTP/1.1" 201 -
+[2020-04-15 14:20:40.925] [ INFO    ] [_internal:_log:122] 94155 127.0.0.1 - - [15/Apr/2020 14:20:40] "GET /api/v1/tasks/1 HTTP/1.1" 200 -
+[2020-04-15 14:20:55.535] [ INFO    ] [_internal:_log:122] 94155  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:20:55.653] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:20:56.953] [ WARNING ] [_internal:_log:122] 94748  * Debugger is active!
+[2020-04-15 14:20:56.954] [ INFO    ] [_internal:_log:122] 94748  * Debugger PIN: 507-280-042
+[2020-04-15 14:20:57.176] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:20:57.293] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:20:57.327] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:20:57.329] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:20:57.461] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:20:57.479] [ INFO    ] [_internal:_log:122] 94748 127.0.0.1 - - [15/Apr/2020 14:20:57] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:21:15.573] [ INFO    ] [_internal:_log:122] 94748  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:21:15.750] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:21:17.340] [ WARNING ] [_internal:_log:122] 95174  * Debugger is active!
+[2020-04-15 14:21:17.341] [ INFO    ] [_internal:_log:122] 95174  * Debugger PIN: 507-280-042
+[2020-04-15 14:21:19.431] [ INFO    ] [_internal:_log:122] 95174  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:21:19.553] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:21:21.136] [ WARNING ] [_internal:_log:122] 95259  * Debugger is active!
+[2020-04-15 14:21:21.137] [ INFO    ] [_internal:_log:122] 95259  * Debugger PIN: 507-280-042
+[2020-04-15 14:21:24.856] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:24] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:21:24.951] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:24] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:21:24.962] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:24] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:21:24.975] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:24] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:21:25.178] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:25] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:21:26.432] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:26] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:21:26.489] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:26] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:21:26.497] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:26] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:21:26.504] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:26] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:21:26.730] [ INFO    ] [_internal:_log:122] 95259 127.0.0.1 - - [15/Apr/2020 14:21:26] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:21:45.936] [ INFO    ] [_internal:_log:122] 95259  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:21:46.111] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:21:47.516] [ WARNING ] [_internal:_log:122] 95818  * Debugger is active!
+[2020-04-15 14:21:47.516] [ INFO    ] [_internal:_log:122] 95818  * Debugger PIN: 507-280-042
+[2020-04-15 14:21:47.713] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:47] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:21:47.757] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:47] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:21:47.768] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:47] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:21:47.771] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:47] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:21:47.949] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:47] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:21:49.065] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:49] "GET /api/v1/tasks/1 HTTP/1.1" 500 -
+[2020-04-15 14:21:49.131] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:49] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 14:21:49.139] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:49] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 14:21:49.144] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:49] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 14:21:49.458] [ INFO    ] [_internal:_log:122] 95818 127.0.0.1 - - [15/Apr/2020 14:21:49] "GET /api/v1/tasks/1?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 14:22:42.007] [ INFO    ] [_internal:_log:122] 95818  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:22:42.136] [ INFO    ] [_internal:_log:122] 88341  * Restarting with stat
+[2020-04-15 14:23:39.483] [ INFO    ] [_internal:_log:122] 98122  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:23:39.483] [ INFO    ] [_internal:_log:122] 98122  * Restarting with stat
+[2020-04-15 14:23:40.929] [ WARNING ] [_internal:_log:122] 98150  * Debugger is active!
+[2020-04-15 14:23:40.930] [ INFO    ] [_internal:_log:122] 98150  * Debugger PIN: 507-280-042
+[2020-04-15 14:23:43.635] [ INFO    ] [_internal:_log:122] 98150 127.0.0.1 - - [15/Apr/2020 14:23:43] "GET /api/v1/tasks/1 HTTP/1.1" 200 -
+[2020-04-15 14:24:23.003] [ INFO    ] [_internal:_log:122] 98150  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:24:23.140] [ INFO    ] [_internal:_log:122] 98122  * Restarting with stat
+[2020-04-15 14:24:24.583] [ WARNING ] [_internal:_log:122] 99065  * Debugger is active!
+[2020-04-15 14:24:24.583] [ INFO    ] [_internal:_log:122] 99065  * Debugger PIN: 507-280-042
+[2020-04-15 14:25:02.017] [ INFO    ] [_internal:_log:122] 99065 127.0.0.1 - - [15/Apr/2020 14:25:02] "GET /api/v1/deployments HTTP/1.1" 302 -
+[2020-04-15 14:25:02.159] [ INFO    ] [_internal:_log:122] 99065 127.0.0.1 - - [15/Apr/2020 14:25:02] "GET /api/v1/hosts/deployments HTTP/1.1" 200 -
+[2020-04-15 14:25:06.208] [ INFO    ] [_internal:_log:122] 99065 127.0.0.1 - - [15/Apr/2020 14:25:06] "GET /api/v1/hosts/deployments/1 HTTP/1.1" 404 -
+[2020-04-15 14:25:18.030] [ INFO    ] [_internal:_log:122] 99065 127.0.0.1 - - [15/Apr/2020 14:25:18] "GET /api/v1/hosts/deployments HTTP/1.1" 200 -
+[2020-04-15 14:25:41.319] [ INFO    ] [_internal:_log:122] 99065 127.0.0.1 - - [15/Apr/2020 14:25:41] "GET /api/v1/deployments/1 HTTP/1.1" 200 -
+[2020-04-15 14:26:14.307] [ INFO    ] [_internal:_log:122] 99065  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-04-15 14:26:14.428] [ INFO    ] [_internal:_log:122] 98122  * Restarting with stat
+[2020-04-15 14:26:46.868] [ INFO    ] [_internal:_log:122] 101983  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 14:26:46.869] [ INFO    ] [_internal:_log:122] 101983  * Restarting with stat
+[2020-04-15 14:26:48.548] [ WARNING ] [_internal:_log:122] 102021  * Debugger is active!
+[2020-04-15 14:26:48.548] [ INFO    ] [_internal:_log:122] 102021  * Debugger PIN: 507-280-042
+[2020-04-15 14:26:50.854] [ INFO    ] [_internal:_log:122] 102021 127.0.0.1 - - [15/Apr/2020 14:26:50] "GET /api/v1/deployments HTTP/1.1" 302 -
+[2020-04-15 14:26:50.976] [ INFO    ] [_internal:_log:122] 102021 127.0.0.1 - - [15/Apr/2020 14:26:50] "GET /api/v1/hosts/deployments HTTP/1.1" 200 -
+[2020-04-15 14:26:53.988] [ INFO    ] [_internal:_log:122] 102021 127.0.0.1 - - [15/Apr/2020 14:26:53] "GET /api/v1/hosts/deployments/1 HTTP/1.1" 200 -
+[2020-04-15 15:55:10.313] [ INFO    ] [_internal:_log:122] 78257  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-15 15:55:10.313] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 15:55:11.641] [ WARNING ] [_internal:_log:122] 78285  * Debugger is active!
+[2020-04-15 15:55:11.642] [ INFO    ] [_internal:_log:122] 78285  * Debugger PIN: 507-280-042
+[2020-04-15 15:56:52.930] [ INFO    ] [_internal:_log:122] 78285  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 15:56:53.053] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 15:56:54.503] [ WARNING ] [_internal:_log:122] 80391  * Debugger is active!
+[2020-04-15 15:56:54.503] [ INFO    ] [_internal:_log:122] 80391  * Debugger PIN: 507-280-042
+[2020-04-15 15:56:59.639] [ INFO    ] [_internal:_log:122] 80391  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 15:56:59.786] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 15:57:01.602] [ WARNING ] [_internal:_log:122] 80538  * Debugger is active!
+[2020-04-15 15:57:01.604] [ INFO    ] [_internal:_log:122] 80538  * Debugger PIN: 507-280-042
+[2020-04-15 15:57:10.505] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current HTTP/1.1" 500 -
+[2020-04-15 15:57:10.594] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 15:57:10.601] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 15:57:10.613] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 15:57:10.733] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 15:57:10.800] [ INFO    ] [_internal:_log:122] 80538 127.0.0.1 - - [15/Apr/2020 15:57:10] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 16:07:09.334] [ INFO    ] [_internal:_log:122] 80538  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:07:09.506] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:07:11.148] [ WARNING ] [_internal:_log:122] 92732  * Debugger is active!
+[2020-04-15 16:07:11.148] [ INFO    ] [_internal:_log:122] 92732  * Debugger PIN: 507-280-042
+[2020-04-15 16:07:15.249] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current HTTP/1.1" 500 -
+[2020-04-15 16:07:15.310] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 16:07:15.313] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 16:07:15.321] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 16:07:15.430] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 16:07:15.512] [ INFO    ] [_internal:_log:122] 92732 127.0.0.1 - - [15/Apr/2020 16:07:15] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 16:07:37.785] [ INFO    ] [_internal:_log:122] 92732  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:07:37.922] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:07:40.048] [ WARNING ] [_internal:_log:122] 93329  * Debugger is active!
+[2020-04-15 16:07:40.049] [ INFO    ] [_internal:_log:122] 93329  * Debugger PIN: 507-280-042
+[2020-04-15 16:07:42.888] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:42] "GET /api/v1/installation/current HTTP/1.1" 500 -
+[2020-04-15 16:07:43.020] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:43] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-15 16:07:43.027] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:43] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-15 16:07:43.031] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:43] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-15 16:07:43.221] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:43] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 16:07:43.259] [ INFO    ] [_internal:_log:122] 93329 127.0.0.1 - - [15/Apr/2020 16:07:43] "GET /api/v1/installation/current?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-15 16:08:17.177] [ INFO    ] [_internal:_log:122] 93329  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:08:17.320] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:08:19.617] [ WARNING ] [_internal:_log:122] 94122  * Debugger is active!
+[2020-04-15 16:08:19.618] [ INFO    ] [_internal:_log:122] 94122  * Debugger PIN: 507-280-042
+[2020-04-15 16:08:19.752] [ INFO    ] [_internal:_log:122] 94122 127.0.0.1 - - [15/Apr/2020 16:08:19] "GET /api/v1/installation/current HTTP/1.1" 400 -
+[2020-04-15 16:08:36.129] [ INFO    ] [_internal:_log:122] 94122  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:08:36.252] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:08:38.529] [ WARNING ] [_internal:_log:122] 94520  * Debugger is active!
+[2020-04-15 16:08:38.530] [ INFO    ] [_internal:_log:122] 94520  * Debugger PIN: 507-280-042
+[2020-04-15 16:08:38.676] [ INFO    ] [_internal:_log:122] 94520 127.0.0.1 - - [15/Apr/2020 16:08:38] "GET /api/v1/installation/current HTTP/1.1" 404 -
+[2020-04-15 16:12:47.595] [ INFO    ] [_internal:_log:122] 94520  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:12:47.737] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:12:49.388] [ WARNING ] [_internal:_log:122] 99639  * Debugger is active!
+[2020-04-15 16:12:49.389] [ INFO    ] [_internal:_log:122] 99639  * Debugger PIN: 507-280-042
+[2020-04-15 16:12:54.527] [ INFO    ] [_internal:_log:122] 99639  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:12:54.624] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:12:56.034] [ WARNING ] [_internal:_log:122] 99786  * Debugger is active!
+[2020-04-15 16:12:56.034] [ INFO    ] [_internal:_log:122] 99786  * Debugger PIN: 507-280-042
+[2020-04-15 16:13:25.762] [ INFO    ] [_internal:_log:122] 99786  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:13:25.933] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:13:27.515] [ WARNING ] [_internal:_log:122] 100418  * Debugger is active!
+[2020-04-15 16:13:27.515] [ INFO    ] [_internal:_log:122] 100418  * Debugger PIN: 507-280-042
+[2020-04-15 16:15:34.595] [ INFO    ] [_internal:_log:122] 100418  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:15:34.804] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:15:36.027] [ WARNING ] [_internal:_log:122] 102999  * Debugger is active!
+[2020-04-15 16:15:36.028] [ INFO    ] [_internal:_log:122] 102999  * Debugger PIN: 507-280-042
+[2020-04-15 16:17:08.327] [ INFO    ] [_internal:_log:122] 102999  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:17:08.482] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:17:09.803] [ WARNING ] [_internal:_log:122] 104871  * Debugger is active!
+[2020-04-15 16:17:09.803] [ INFO    ] [_internal:_log:122] 104871  * Debugger PIN: 507-280-042
+[2020-04-15 16:17:12.897] [ INFO    ] [_internal:_log:122] 104871  * Detected change in '/home/vttek/lamtv10/Project23022020/libs/ansible/runner.py', reloading
+[2020-04-15 16:17:13.049] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:17:14.431] [ WARNING ] [_internal:_log:122] 104977  * Debugger is active!
+[2020-04-15 16:17:14.432] [ INFO    ] [_internal:_log:122] 104977  * Debugger PIN: 507-280-042
+[2020-04-15 16:34:33.198] [ INFO    ] [_internal:_log:122] 104977  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:34:33.348] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:34:34.935] [ WARNING ] [_internal:_log:122] 125825  * Debugger is active!
+[2020-04-15 16:34:34.935] [ INFO    ] [_internal:_log:122] 125825  * Debugger PIN: 507-280-042
+[2020-04-15 16:34:47.269] [ INFO    ] [_internal:_log:122] 125825  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-15 16:34:47.411] [ INFO    ] [_internal:_log:122] 78257  * Restarting with stat
+[2020-04-15 16:34:49.128] [ WARNING ] [_internal:_log:122] 126110  * Debugger is active!
+[2020-04-15 16:34:49.128] [ INFO    ] [_internal:_log:122] 126110  * Debugger PIN: 507-280-042
