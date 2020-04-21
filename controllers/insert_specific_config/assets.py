@@ -6,7 +6,7 @@ import sys, os
 from collections import OrderedDict
 from global_assets.common import *
 import json
-
+import re
 
 
 def convert_original_to_input_sf(data, output_file):
@@ -28,7 +28,7 @@ def convert_original_to_input_sf(data, output_file):
             for config in data[key].keys():
                 config_data = OrderedDict()
                 config_data['key'] = config
-                config_data['ex_value'] = data[key][config]
+                config_data['ex_value'] = data[key][config] if data[key][config] is not None else ""
                 config_data['required'] = False
                 config_data['editable'] = True
                 config_data['need_edit'] = False
@@ -42,7 +42,7 @@ def convert_original_to_input_sf(data, output_file):
         else:
             config_data=OrderedDict()
             config_data['key'] = key
-            config_data['ex_value'] = data[key]
+            config_data['ex_value'] = data[key] if data[key] is not None else ""
             config_data['required'] = False
             config_data['editable'] = True
             config_data['need_edit'] = False
@@ -64,12 +64,22 @@ def convert_input_sf_to_origin(data, output_file):
             for config in group_data['configs']:
                 key = config['key']
                 value = config['ex_value']
+                # print(str(value))
+                if re.match(r'^OrderedDict\((.+)\)$', str(value)):
+                    value = eval(value, {'OrderedDict': OrderedDict})
+                    print(type(value))
+                if str(value)=='None':
+                    value = ""
                 output[key] =value
         else :
             output[group_data['name']] = OrderedDict()
             for config in group_data['configs']:
                 key = config['key']
                 value = config['ex_value']
+                # print(str(value))
+                if re.match(r'^OrderedDict\((.+)\)$', str(value)):
+                    value = eval(value, {'OrderedDict': OrderedDict})
+                print(type(value))
                 output[group_data['name']][key] = value
     stream = file(output_file, 'w')
     # print(data)

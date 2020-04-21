@@ -8,15 +8,25 @@
     <title>Sign Up Form by Colorlib</title>
 
     <!-- Font Icon -->
-    <link rel="stylesheet" href="static/form/fonts/material-icon/css/material-design-iconic-font.min.css">
-    <link rel="stylesheet" href="static/form/vendor/nouislider/nouislider.min.css">
+    <link rel="stylesheet" href="/static/form/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/static/form/vendor/nouislider/nouislider.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="static/form/css/style.css">
+    <link rel="stylesheet" href="/static/form/css/style.css">
 </head>
 
 <body class="{{template}}">
-
+<p>
+	{% with messages = get_flashed_messages() %}
+	  {% if messages %}
+		<ul class=flashes>
+		{% for message in messages %}
+		  <li>{{ message }}</li>
+		{% endfor %}
+		</ul>
+	  {% endif %}
+	{% endwith %}
+</p>
   {% block content %}{% endblock %}
 
   <!-- Scripts -->

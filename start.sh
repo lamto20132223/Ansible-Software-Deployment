@@ -5,6 +5,8 @@ pwd
 
 cp -nr /root/app/bk/inventory/* /root/app/static/ansible/inventory/
 
-\cp -r /root/app/bk/inventory/group_vars/* /root/app/static/ansible/inventory/group_vars/
+cp -nr /root/app/bk/group_vars_template/* /root/app/static/ansible/group_vars_template/
+
+\cp -r /root/app/bk/group_vars_template/group_vars_default_template/* /root/app/static/ansible/group_vars_template/group_vars_default_template/
 
 python app_dev.py

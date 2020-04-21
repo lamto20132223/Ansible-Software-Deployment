@@ -33,3 +33,4 @@ class Config:
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         CONF["database"]["connection"]
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_POOL_RECYCLE = 400

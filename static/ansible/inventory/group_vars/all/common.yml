@@ -1,7 +1,8 @@
----
 group_name: Default
-
-# Host Name và Host Ip của các Server
+repository: 172.16.29.19944
+port_docker_registry: 4000
+usr_share_docker: /usr/share/docker
+host_name: '{{ ansible_hostname }}'
 host_info:
   name:
     controller01: controller01
@@ -10,7 +11,6 @@ host_info:
     compute01: compute01
     compute02: compute02
     compute03: compute03
-
   ip:
     controller01: 172.16.29.193
     controller02: 172.16.29.193
@@ -18,33 +18,15 @@ host_info:
     compute01: compute01
     compute02: compute02
     compute03: compute03
-   
-
-# Ip Port của Docker Registry
-repository: 172.16.29.199
-port_docker_registry: 4000
-
-# Tên các Docker Image dùng cài Openstack Service
 docker_image:
-  keystone: docker-registry:4000/keystone_v2:q 
+  keystone: docker-registry:4000/keystone_v2:q
   glance: docker-registry:4000/glance_v2:q
-  nova: docker-registry:4000/nova_v2:q  
+  nova: docker-registry:4000/nova_v2:q
   cinder_api: docker-registry:4000/cinder_api_v2:q
-  cinder_scheduler: docker-registry:4000/cinder_scheduler_v2:q 
+  cinder_scheduler: docker-registry:4000/cinder_scheduler_v2:q
   cinder_volume: docker-registry:4000/cinder_volume_v2:q
-  neutron: docker-registry:4000/neutron_v2:q 
-  neutron_dpdk: docker-registry:4000/neutron_v2:q 
-  horizon: docker-registry:4000/horizon_v2:q 
-  swift_proxy: docker-registry:4000/swift_proxy_v6:q 
+  neutron: docker-registry:4000/neutron_v2:q
+  neutron_dpdk: docker-registry:4000/neutron_v2:q
+  horizon: docker-registry:4000/horizon_v2:q
+  swift_proxy: docker-registry:4000/swift_proxy_v6:q
   neutron_agent: docker-registry:4000/neutron_v2:q
-
-# Thư mục sẽ dùng để chứa các file cấu hình cho Openstack
-usr_share_docker: /usr/share/docker
-
-# Dùng để tự động lấy host_name
-host_name: "{{ ansible_hostname }}"
-
-
-
-
-

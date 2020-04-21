@@ -1,12 +1,21 @@
 import json
 import ast
 import logging
-
+from collections import OrderedDict
+import re
 info = "{'msg' : 'm OK'}"
 
-print(info)
+info = "OrderedDict([('controller01', '172.16.29.194'), ('controller02', '172.16.29.193'),('controller03', '172.16.29.193'),('compute01', 'compute01'), ('compute02','compute02'), ('compute03', 'compute03')])"
 
-print(type(ast.literal_eval(info)))
+print(type(info))
+if re.match(r'^OrderedDict\((.+)\)$', str(info)):
+    info = eval( str(info), {'OrderedDict': OrderedDict})
+
+print(type(info))
+
+a = eval(info, {'OrderedDict': OrderedDict})
+print (a)
+print(type(a))
 x = json.dumps( ast.literal_eval(info))
 print(type(x))
 

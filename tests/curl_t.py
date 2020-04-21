@@ -96,12 +96,12 @@ def delete_data():
 
 def reset_group_var():
 
-    url = 'http://127.0.0.1:4321/tools/edit_ansible_group_vars'
+    url = 'http://127.0.0.1:4321/tools/list_ansible_group_vars'
     payload = {'reset_ansible_group_vars': True, 'reset_all': True, 'role_name': 'CONTROLLER', 'file_name': 'dir_log_file.yml'}
     headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
     r = requests.post(url, json=payload, headers=headers)
     print(r.text)
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+
     time.sleep(5)
 
 
