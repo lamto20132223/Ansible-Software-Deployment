@@ -10,14 +10,14 @@
     ex_value: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{%
       if not loop.last %},{% endif  %}{% endfor %}
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: memcached_servers
     ex_value: '{% for node in groups[''controller''] %}{{node}}:11211{% if not loop.last
       %},{% endif  %}{% endfor %}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: use_vcpu_pin_set

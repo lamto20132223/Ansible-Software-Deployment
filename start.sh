@@ -9,4 +9,6 @@ cp -nr /root/app/bk/group_vars_template/* /root/app/static/ansible/group_vars_te
 
 \cp -r /root/app/bk/group_vars_template/group_vars_default_template/* /root/app/static/ansible/group_vars_template/group_vars_default_template/
 
+\cp -r /root/app/bk/group_vars_template/group_vars_for_software_management/* /root/app/static/ansible/group_vars_template/group_vars_for_software_management/
+
 python app_dev.py

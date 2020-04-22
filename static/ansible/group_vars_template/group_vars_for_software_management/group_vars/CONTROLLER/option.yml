@@ -34,20 +34,20 @@
     ex_value: gcomm://172.16.29.193,172.16.29.194,172.16.29.195
     required: false
     editable: true
-    need_edit: false
+    need_edit: true
     input_type: text
   - key: transport_url
     ex_value: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{%
       if not loop.last %},{% endif  %}{% endfor %}
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: memcached_servers
     ex_value: '{% for node in groups[''controller''] %}{{node}}:11211{% if not loop.last
       %},{% endif  %}{% endfor %}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: rbd_store_ceph_conf

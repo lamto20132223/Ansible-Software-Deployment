@@ -93,13 +93,13 @@
   - key: first_controller
     ex_value: '{{ HUB }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: chrony_server
     ex_value: '{{ HUB }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: INTERNAL_VIP_ADDRESS
@@ -111,7 +111,7 @@
   - key: VIP_PUBLIC
     ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: HAPROXY_STATS_PORT
@@ -135,13 +135,13 @@
   - key: VIP_PRIVATE_INF
     ex_value: '{{ network_interface }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: VIP_PRIVATE
     ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: ROUTER_ID
@@ -153,7 +153,7 @@
   - key: OS_CONTROLLER
     ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
   - key: sriov_dev_name

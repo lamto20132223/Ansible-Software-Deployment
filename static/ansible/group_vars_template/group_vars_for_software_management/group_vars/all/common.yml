@@ -7,10 +7,10 @@
     need_edit: false
     input_type: text
   - key: repository
-    ex_value: 172.16.29.19944
-    required: false
+    ex_value: 172.16.29.193
+    required: true
     editable: true
-    need_edit: false
+    need_edit: true
     input_type: text
   - key: port_docker_registry
     ex_value: 4000
@@ -27,7 +27,7 @@
   - key: host_name
     ex_value: '{{ ansible_hostname }}'
     required: false
-    editable: true
+    editable: false
     need_edit: false
     input_type: text
 - name: host_info
