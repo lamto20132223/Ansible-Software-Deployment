@@ -19,6 +19,10 @@ def send_task_info():
     os.system(
         'curl -X POST "http://172.16.29.194:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
 
+def update_host():
+    os.system(
+        'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/update_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
+
 def add_host():
     os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
     time.sleep(1)
@@ -129,10 +133,11 @@ def run_service_set_up_start_at_task(deployment_id, setup_index, start_at_task_i
 
 if __name__ == "__main__":
     #delete_data()
+    # update_host()
     add_host()
     discover_hosts()
-    # add_host_to_role()
-    # insert_test_data()
+    add_host_to_role()
+    insert_test_data()
 
 
     #send_task_info()
@@ -146,4 +151,4 @@ if __name__ == "__main__":
     # run_task_id(6)
     # run_task_id(7)
     #run_service_setup(1,1)
-    #run_service_set_up_start_at_task(1,1,1)
+    run_service_set_up_start_at_task(1,1,1)
