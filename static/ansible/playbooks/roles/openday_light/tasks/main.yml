@@ -25,6 +25,7 @@
     with_items:
     - sudo setenforce 0
     register: infos
+    ignore_errors: yes
   - include: extends/after_ok.yml task_index=2 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=2 info={{ infos  }}
@@ -58,6 +59,7 @@
       enabled: no
       masked: no
     register: infos
+    ignore_errors: yes
   - include: extends/after_ok.yml task_index=4 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=4 info={{ infos  }}
@@ -71,10 +73,12 @@
   - include: extends/before.yml task_index=5
   - command: '{{ item }}'
     with_items:
-    - echo "{{ inventory_hostname }}     "
+    - echo "{{ inventory_hostname }}"
     - touch /home/"{{ service_name }}"
-    - cp /home/lamtv10/lkt /home/lamtv10/
-    - echo 'group_name'
+    - echo "{{ group_name }}" /home/"{{ service_name }}"
+
+#    - cp /home/lamtv10/lkt /home/lamtv10/
+
     register: infos
   - include: extends/after_ok.yml task_index=5 info={{ infos  }}
   rescue:
@@ -121,3 +125,21 @@
   tags:
   - install
   - '7'
+
+- block:
+  - name: 8.example GET
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+    uri:
+      url: http://{{ repository }}:5000
+      method: GET
+      body_format: json
+      return_content: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
