@@ -442,6 +442,15 @@ def update_task_info():
             else :
                 task.result = "FAILED TO CHANGE SERVICE " + info_msg
                 task.log = json.dumps(info)
+    if 'uri' in task.task_type:
+        if info_failed == False:
+            info_status =  info.get('status') if info.get('status') else ""
+            task.result = "FAILED Status =  " + str(info_status) + " Message: "+ str(info_msg)
+            task.log = json.dumps(info)
+        else:
+            info_status =  info.get('status') if info.get('status') else ""
+            task.result = "OK Status =  " + str(info_status) + " Message: "+ str(info_msg)
+            task.log = json.dumps(info)
     session.add(task)
     session.commit()
     res = jsonify(models.to_json(task, 'Task', False))

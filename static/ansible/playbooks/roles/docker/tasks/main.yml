@@ -131,7 +131,7 @@
     debug: msg='Starting 8-------------------------------------------->'
   - include: extends/before.yml task_index=8
   - uri:
-      url: http://{{ repository }}:5000
+      url: http://{{ repository }}:8774
       method: GET
       body_format: json
       return_content: yes
