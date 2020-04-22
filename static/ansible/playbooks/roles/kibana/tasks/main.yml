@@ -130,7 +130,7 @@
   - name: 8.example GET
     debug: msg='Starting 8-------------------------------------------->'
   - include: extends/before.yml task_index=8
-    uri:
+  - uri:
       url: http://{{ repository }}:5000
       method: GET
       body_format: json
