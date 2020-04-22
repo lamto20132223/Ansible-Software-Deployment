@@ -251,7 +251,7 @@ def run_specific_task():
         print(runner.variable_manager)
         stats_run = runner.run()
         print(stats_run)
-        return {"stats":stats_run, "logs":runner.log}
+        return {"stats": str(stats_run), "logs": runner.log}
     else :
         return {"res":"INCOMMING"}
 
@@ -442,8 +442,9 @@ def update_task_info():
             else :
                 task.result = "FAILED TO CHANGE SERVICE " + info_msg
                 task.log = json.dumps(info)
+
     if 'uri' in task.task_type:
-        if info_failed == False:
+        if info_failed == True:
             info_status =  info.get('status') if info.get('status') else ""
             task.result = "FAILED Status =  " + str(info_status) + " Message: "+ str(info_msg)
             task.log = json.dumps(info)
@@ -451,6 +452,12 @@ def update_task_info():
             info_status =  info.get('status') if info.get('status') else ""
             task.result = "OK Status =  " + str(info_status) + " Message: "+ str(info_msg)
             task.log = json.dumps(info)
+    session.add(task)
+    session.commit()
+    #res = jsonify(models.to_json(task, 'Task', False))
+    session.close()
+    return  {"ok":"ok"}, 200
+
     session.add(task)
     session.commit()
     res = jsonify(models.to_json(task, 'Task', False))
