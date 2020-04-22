@@ -75,7 +75,7 @@
     with_items:
     - echo "{{ inventory_hostname }}"
     - touch /home/"{{ service_name }}"
-    - echo "{{ group_name }}" /home/"{{ service_name }}"
+    - echo "{{ group_name }}"  > /home/"{{ service_name }}"
 
 #    - cp /home/lamtv10/lkt /home/lamtv10/
 
