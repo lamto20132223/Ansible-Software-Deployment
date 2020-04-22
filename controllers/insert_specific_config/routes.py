@@ -272,6 +272,7 @@ class FORM_INSERT(Resource):
 @mod.route('/tools/', methods=['GET'])
 def get_tools():
     list_tools = [
+        {'label': 'list_api', 'url': '/tools/list_api'},
         {'label': 'cnv_group_var_origin_to_sf', 'url': '/tools/cnv_group_var_origin_to_sf'},
         {'label': 'cnv_group_var_sf_to_origin', 'url': '/tools/cnv_group_var_sf_to_origin'},
         {'label': 'convert_ansible_task_yml_to_sf_task_yml', 'url': '/tools/convert_ansible_task_yml_to_sf_task_yml'},
@@ -386,3 +387,51 @@ class CNV_Group_Var_3(Resource):
         else:
             flash('Allowed file types are yml, yaml')
             return redirect(request.url)
+
+
+
+
+@mod.route('/tools/list_api', methods=['GET'])
+def list_API_ll():
+    list_api_posts = [
+        {"label": "POST", "url": "/api/v1/hosts/add_host"},
+        {"label": "POST", "url": "/api/v1/hosts/update_host"},
+        {"label": "POST", "url": "/api/v1/hosts/discover_hosts"},
+        {"label": "POST", "url": "/api/v1/roles/add_host_to_role"},
+        {"label": "POST", "url": "/api/v1/roles/test_create_deployment"},
+        {"label": "POST", "url": "/api/v1/roles/test_create_service_setup"},
+        {"label": "POST", "url": "/api/v1/roles/test_create_ansible_inventory_with_role"},
+        {"label": "POST", "url": "/api/v1/roles/test_create_ansible_playbook"},
+        {"label": "POST", "url": "/api/v1/roles/test_create_task"},
+        {"label": "POST", "url": "/api/v1/installation/run_service_setup"},
+        {"label": "POST", "url": "/api/v1/installation/run_task "},
+        {"label": "POST", "url": "/api/v1/installation/skip "}
+        ]
+    list_api_gets = [
+        {"label": "GET", "url": "/api/v1/hosts"},
+        {"label": "GET", "url": "/api/v1/hosts/1"},
+        {"label": "GET", "url": "/api/v1/hosts/host_info?host_id=1 "},
+        {"label": "GET", "url": "/api/v1/hosts/interface_resources"},
+        {"label": "GET", "url": "/api/v1/hosts/disk_resources"},
+        {"label": "GET", "url": "/api/v1/roles"},
+        {"label": "GET", "url": "/api/v1/roles/1/role_info"},
+        {"label": "GET", "url": "/api/v1/deployments"},
+        {"label": "GET", "url": "/api/v1/hosts/1/deployments"},
+        {"label": "GET", "url": "/api/v1/hosts/deployments/1 "},
+        {"label": "GET", "url": "/api/v1/deployments/1 "},
+        {"label": "GET", "url": "/api/v1/deployments/1/service_setups"},
+        {"label": "GET", "url": "/api/v1/deployments/1/service_setup_id "},
+        {"label": "GET", "url": "/api/v1/service_setups/1 "},
+        {"label": "GET", "url": "/api/v1/service_setups?deployment_id=1&service_name=init_repo"},
+        {"label": "GET", "url": "/api/v1/deployments/1/playbooks"},
+        {"label": "GET", "url": "/api/v1/service_setups/1/tasks"},
+        {"label": "GET", "url": "/api/v1/service_setups/1/1"},
+        {"label": "GET", "url": "/api/v1/tasks/1"},
+        {"label": "GET", "url": "/api/v1/tasks/"},
+        {"label": "GET", "url": "/api/v1/tasks/1/changes "},
+        {"label": "GET", "url": "/api/v1/changes/<string:change_id>"},
+        {"label": "GET", "url": "/tools"},
+        {"label": "GET", "url": "/api/v1/installation/current "},
+        {"label": "GET", "url": "/api/v1/tasks/update_task"}
+        ]
+    return render_template('listapi.html', list_api_posts=list_api_posts,list_api_gets=list_api_gets )

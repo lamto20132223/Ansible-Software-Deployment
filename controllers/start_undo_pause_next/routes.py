@@ -463,3 +463,4 @@ def update_task_info():
     res = jsonify(models.to_json(task, 'Task', False))
     session.close()
     return  res, 200
+
