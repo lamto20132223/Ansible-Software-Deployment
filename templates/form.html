@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="main">
+
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <form method="POST" class="register-form" id="register-form" action="/form">
+                    {%  for group in my_data %}
+                    <h1 style="color:red">{{ group['name'] }}</h1>
+                    <div class="form-row">
+                        <div class="form-group">
+                            {%  for config in group['configs'] %}
+                            <div class="form-input">
+                                <label for="{{ config.key }}" class="required" style="width: 300px">{{ config.key }}</label>
+
+                                {%  if config.input_type|string() != 'checkbox'  %}
+
+                                    {% if not config.editable %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}" value='{{ config.ex_value }}'  placeholder='{{ config.ex_value }}' style="background-color:#dddddd;" readonly/>
+                                    {%  elif config.need_edit %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}" placeholder='{{ config.ex_value }}' style="border:1px solid #dc6b0a"  required/>
+                                    {% else %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}" value='{{ config.ex_value }}' placeholder='{{ config.ex_value }}'  required/>
+                                    {% endif %}
+
+                                {% else %}
+
+                                    {% if not config.editable %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}"  {% if config.ex_value==True %}checked="true"{% else %}{% endif %}  style="background-color:#dddddd;" readonly/>
+                                    {%  elif config.need_edit %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}" {% if config.ex_value==True %}checked="true"{% else %}{% endif %}  style="border:1px solid #dc6b0a"  />
+                                    {% else %}
+                                    <input type="{{ config.input_type }}" name="{{group['name']+"###"+config.key}}" {% if config.ex_value==True %}checked="true"{% else %}{% endif %}  />
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                            {%  endfor %}
+                        </div>
+
+                    </div>
+                    {%  endfor %}
+
+
+                    <div class="donate-us">
+                        <label>Donate us</label>
+                        <div class="price_slider ui-slider ui-slider-horizontal">
+                            <div id="slider-margin"></div>
+                            <span class="donate-value" id="value-lower"></span>
+                        </div>
+                    </div>
+                    <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" id="submit" name="submit" />
+{#                        <input type="submit" value="Reset" class="submit" id="reset" name="reset" />#}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

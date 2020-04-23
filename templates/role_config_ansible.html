@@ -1,0 +1,27 @@
+<!doctype html>
+<title>Python Flask File Upload Example</title>
+<h4>Tool chuyen doi file group_var dung trong API SoftwareManagement sang file group_var origin dung trong Ansible</h4>
+<h2>Select a file to upload</h2>
+{#<p>#}
+{#	{% with messages = get_flashed_messages() %}#}
+{#	  {% if messages %}#}
+{#		<ul class=flashes>#}
+{#		{% for message in messages %}#}
+{#		  <li>{{ message }}</li>#}
+{#		{% endfor %}#}
+{#		</ul>#}
+{#	  {% endif %}#}
+{#	{% endwith %}#}
+{#</p>#}
+
+
+<form method="post" action="/tools/cnv_group_var_sf_to_origin" enctype="multipart/form-data">
+    <dl>
+		<p>
+			<input type="file" name="file" autocomplete="off" required>
+		</p>
+    </dl>
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>

@@ -16,6 +16,8 @@ from ansible.executor import playbook_executor
 
 from tempfile import NamedTemporaryFile
 from ansible.utils.display import Display
+
+
 import global_assets.const as CONST
 
 
@@ -110,6 +112,9 @@ class Runner(object):
         # Set global verbosity
         self.display = Display()
         self.display.verbosity = self.options.verbosity
+
+        self.log = {"processed":"0", "failures":"0", "ok":"0","dark":"0","changed":"0","skipped":"0", 'summarize':{}}
+
         # Executor appears to have it's own
         # verbosity object/setting as well
         #playbook_executor.verbosity = self.options.verbosity
@@ -167,17 +172,24 @@ class Runner(object):
 
     def run(self):
         # Results of PlaybookExecutor
+        cb =self.pbex._tqm._stdout_callback
         self.pbex.run()
         stats = self.pbex._tqm._stats
         print(stats)
 
+
+
         # Test if success for record_logs
         run_success = True
         hosts = sorted(stats.processed.keys())
-        for h in hosts:
+
+        for index,h in  enumerate(hosts,start=1):
             t = stats.summarize(h)
+            self.log["summarize"][index]=[h,t]
             if t['unreachable'] > 0 or t['failures'] > 0:
                 run_success = False
+
+
 
         # Dirty hack to send callback to save logs with data we want
         # Note that function "record_logs" is one I created and put into
@@ -187,9 +199,18 @@ class Runner(object):
             success=run_success
         )
 
-
+        self.log['processed'] = stats.processed
+        self.log['failures'] = stats.failures
+        self.log['ok'] = stats.ok
+        self.log['dark'] = stats.dark
+        self.log['changed'] = stats.changed
+        self.log['skipped'] = stats.skipped
+        self.log['cb'] = cb
 
         return stats
+
+    def terminate(self):
+        self.pbex._tqm.terminate()
 
 
 
@@ -211,7 +232,6 @@ def print_stats(stats):
     # print(stats.rescued)
     # print("ignored: ")
     # print(stats.ignored)
-
 
 def get_stats(stats):
 #https://fossies.org/linux/ansible/lib/ansible/executor/stats.py

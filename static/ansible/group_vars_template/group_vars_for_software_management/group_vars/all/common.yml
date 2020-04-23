@@ -1,0 +1,118 @@
+- name: DEFAULT
+  configs:
+  - key: group_name
+    ex_value: Default
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: repository
+    ex_value: 172.16.29.193
+    required: true
+    editable: true
+    need_edit: true
+    input_type: text
+  - key: port_docker_registry
+    ex_value: 4000
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: usr_share_docker
+    ex_value: /usr/share/docker
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: host_name
+    ex_value: '{{ ansible_hostname }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+- name: host_info
+  configs:
+  - key: name
+    ex_value: OrderedDict([('controller01', 'controller01'), ('controller02', 'controller02'),
+      ('controller03', 'controller03'), ('compute01', 'compute01'), ('compute02',
+      'compute02'), ('compute03', 'compute03')])
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: ip
+    ex_value: OrderedDict([('controller01', '172.16.29.193'), ('controller02', '172.16.29.193'),
+      ('controller03', '172.16.29.193'), ('compute01', 'compute01'), ('compute02',
+      'compute02'), ('compute03', 'compute03')])
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+- name: docker_image
+  configs:
+  - key: keystone
+    ex_value: docker-registry:4000/keystone_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: glance
+    ex_value: docker-registry:4000/glance_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: nova
+    ex_value: docker-registry:4000/nova_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: cinder_api
+    ex_value: docker-registry:4000/cinder_api_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: cinder_scheduler
+    ex_value: docker-registry:4000/cinder_scheduler_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: cinder_volume
+    ex_value: docker-registry:4000/cinder_volume_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: neutron
+    ex_value: docker-registry:4000/neutron_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: neutron_dpdk
+    ex_value: docker-registry:4000/neutron_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: horizon
+    ex_value: docker-registry:4000/horizon_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: swift_proxy
+    ex_value: docker-registry:4000/swift_proxy_v6:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: neutron_agent
+    ex_value: docker-registry:4000/neutron_v2:q
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text

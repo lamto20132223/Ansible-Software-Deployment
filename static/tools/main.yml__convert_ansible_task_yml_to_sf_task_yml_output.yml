@@ -1,0 +1,98 @@
+- block:
+  - name: 1.yum install -y devel
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - yum:
+      name:
+      - glib2-devel
+      - pixman-devel
+      - zlib-devel
+      - kernel-devel
+      state: latest
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.copy qemu-2_12_0.tar.xz
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - copy:
+      src: /etc/ansible/roles/qemu/files/qemu_2.12.0.tar.gz
+      dest: /usr/src/qemu_2.12.0.tar.gz
+      mode: 400
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.unzip  qemu-2_12_0.tar.gz
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/ && tar -xvf qemu_2.12.0.tar.gz
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.mkdir /usr/src/qemu-2.12.0/build
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - file:
+      path: /usr/src/qemu-2.12.0/build
+      state: directory
+      recurse: no
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.build
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/qemu-2.12.0/build && ../configure --prefix=/usr --sysconfdir=/etc
+      --target-list=x86_64-softmmu --enable-debug --with-sdlabi=2.0 --docdir=/usr/share/doc/qemu-2.12.0
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.install qemu-2.12.0
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/qemu-2.12.0/build && make -j4
+    - cd /usr/src/qemu-2.12.0/build && make install
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'

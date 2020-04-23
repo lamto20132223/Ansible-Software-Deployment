@@ -1,8 +1,14 @@
----
 group_name: compute_password
-
-# Cấu hình port cho các service trong Openstack
-services_port: 
+transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{%
+  if not loop.last %},{% endif  %}{% endfor %}
+memcached_servers: '{% for node in groups[''controller''] %}{{node}}:11211{% if not
+  loop.last %},{% endif  %}{% endfor %}'
+use_vcpu_pin_set: false
+rbd_store_ceph_conf: /etc/ceph/ceph.conf
+nova_backend_ceph: true
+resume_guests_state_on_host_boot: true
+osapi_compute_unique_server_name_scope: false
+services_port:
   keystone: 5000
   glance_api: 9292
   glance_registry: 9191
@@ -10,17 +16,7 @@ services_port:
   nova_placement_api: 8778
   nova_metadata: 8775
   nova_novncproxy: 6080
-  neutron_server: 9696
+  neutron_server: 9697
   horizon: 80
   cinder_api: 8776
   masakari_api: 15868
-
-transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
-memcached_servers: "{% for node in groups['controller'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
-
-# Cấu hình đặc biệt cho nova-compute
-use_vcpu_pin_set: false
-rbd_store_ceph_conf: /etc/ceph/ceph.conf
-nova_backend_ceph: false
-resume_guests_state_on_host_boot : false
-osapi_compute_unique_server_name_scope: false

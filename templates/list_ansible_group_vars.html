@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>List Ansible Group Vars</title>
+    <link href="/static/form/css/app-theme.min.css?v=2.1.2" rel="stylesheet" />
+    <link href="/static/form/css/app-mine.css?v=2.1.2" rel="stylesheet" />
+</head>
+
+
+<body class="app-bg">
+<div class="wrapper">
+    <div class="main-panel" style="float: none; width: auto; position: relative;">
+        <nav class="navbar navbar-expand-lg navbar-transparent">
+            <div class="container" style="max-width: 1500px">
+                <div class="">
+                    <div class="logo"><h1 href="#" style="font-weight: bold; color: #000" class="simple-text logo-normal">
+                        Ansible List Group_vars Config
+                    </h1></div>
+                </div>
+
+                <div class="collapse navbar-collapse justify-content-end">
+{#                    <ul class="nav">#}
+{#                        <li class="nav-item dropdown">#}
+{#                            <a class="nav-link" href="javascript:;" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">#}
+{#                                <i class="material-icons">person</i>#}
+{#                                <p class="d-lg-none d-md-block">#}
+{#                                    Account#}
+{#                                </p>#}
+{#                            </a>#}
+{#                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">#}
+{#                            </div>#}
+{#                        </li>#}
+{##}
+{#                        <li class="nav-item" style="padding-top: 10px; color: #fff">#}
+{#                            Admin#}
+{#                        </li>#}
+{##}
+{#                        <li class="nav-item" style="padding-top: 10px; margin-left: 10px;">#}
+{#                            <a th:href="@{/logout}">(Log out)</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+                </div>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+        <div class="content-ndh app-bg">
+            <div class="container" style="max-width: 1500px">
+
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success" style="background-color: #263238
+
+">
+                                <ul class=flashes>
+                                    {% for message in messages %}
+                                      <li>{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                  {% endif %}
+                {% endwith %}
+
+                <div class="row">
+                    <div class="col-md-4">
+                        {% for key in data.keys() %}
+                        <div class="card">
+                            <div class="card-header card-header-success" style="background: #329e5e">
+                                <h4 class="card-title">{{ key }}</h4>
+                            </div>
+                            <div class="card-body table-responsive">
+                                <table class="table table-hover" style="margin-bottom: 15px">
+                                    <thead  style="font-weight: bold">
+                                    <th>Link</th>
+                                    <th>node_display_name</th>
+                                    <th>node_id</th>
+                                    <th>management_ip</th>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in data[key] %}
+                                        <tr>
+                                            <td><a href="/api/v1/hosts/{{ item['node_id'] }}"> link</a></td>
+                                            <td>{{ item['node_display_name'] }}</td>
+                                            <td>{{ item['node_id'] }}</td>
+                                            <td>{{ item['management_ip'] }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="col-md-8">
+                        {% for group in list_group %}
+                        <div class="card">
+                            <div class="card-header card-header-success" style="background: #01579b">
+                                <h4 class="card-title">{{ group['name'] }}</h4>
+                            </div>
+
+                            {% for config in group['configs'] %}
+                            <div class="card-body table-responsive" style="box-shadow: 0 1px 4px 0 rgba(18, 16, 16, 0.15);">
+                                <h4 style="margin-bottom: 25px"> <b>{{ config['filename'] }}</b> <a class="btn btn-info" style="float: right;color: #4287f5;
+background-color: #dce7fa;" href="/tools/list_ansible_group_vars?download=yes&group={{ group['name'] }}&filename={{ config['filename'] }}">  download </a> </h4>
+                                <table class="table table-hover" style="margin-bottom: 15px">
+                                    <tbody>
+                                        <tr>
+                                            <td>file_path</td><td>{{ config['file_path'] }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>link_to_edit</td>
+                                            <td><a href="{{ config['link_to_edit'] }}"> {{ config['link_to_edit'] }}</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endfor %}
+                    </div>
+
+<!-- 
+                    <div class="col-md-6">
+                        <div class="row">
+                            {% for group in list_group %}
+                            <div class="col-md-12">
+                                <div class="card" style="height: 480px; position: relative">
+                                    <div class="card-body">
+                                        <h4 class="card-title">{{ group['name'] }}</h4>
+                                        <div class="row" style=" display: flex;">
+                                            {% for config in group['configs'] %}
+                                                <h4> {{ config['filename'] }} <a href="/tools/list_ansible_group_vars?download=yes&group={{ group['name'] }}&filename={{ config['filename'] }}">  download </a> </h4>
+                                                <p>file_path: {{ config['file_path'] }}</p>
+                                                <p>link_to_edit: <a href="{{ config['link_to_edit'] }}"> {{ config['link_to_edit'] }}</a></p>
+                                            {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

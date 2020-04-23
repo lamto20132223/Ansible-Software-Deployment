@@ -4,6 +4,7 @@ import os
 #
 
 import time
+import requests
 
 ##task = [task for task in tasks if task['id'] == task_id]
 
@@ -14,7 +15,9 @@ import time
 
 ##***************** add_host ************************
 
-
+def send_task_info():
+    os.system(
+        'curl -X POST "http://172.16.29.193:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
 
 def add_host():
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
@@ -46,7 +49,6 @@ def add_host_to_role():
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role4.json')
     time.sleep(5)
 
-
 def insert_test_data():
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/test_create_deployment" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
@@ -57,8 +59,6 @@ def insert_test_data():
     time.sleep(5)
 
     os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/test_create_ansible_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
-    time.sleep(5)
-    os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/test_run_first_ansble_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
     time.sleep(5)
 
 
@@ -72,7 +72,7 @@ def insert_test_data():
 # http://0.0.0.0:4321/api/v1/roles/test_code3
 
 
-#os.system('curl -X GET "http://172.16.29.193:4321/api/v1/hosts/host_info?host_id=154"')
+#os.system('curl -X GET "http://127.0.0.1:4321/api/v1/hosts/host_info?host_id=154"')
 
 # // {"node_id":"175", "roles": ["CONTROLLER"]}
 # //{"node_id":"177", "roles": ["COMPUTE"]}
@@ -85,6 +85,25 @@ def insert_test_data():
 #{"management_ip":"172.16.29.27", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute01"}
 #{"management_ip":"172.16.29.41", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute02"}
 #{"management_ip":"172.16.29.43", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"ceph"}
+
+def delete_data():
+    os.system(
+        'curl -X POST "http://172.16.29.193:4321/api/v1/clean_data" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+
+
+def run_one_task():
+    os.system('curl -X POST "http://172.16.29.193:4321/api/v1/roles/test_run_first_ansble_playbook" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    time.sleep(5)
+
+def run_task_id(task_id):
+
+    url = 'http://172.16.29.193:4321/api/v1/installation/runtask'
+    payload = {'task_id':task_id,'method':'Install'}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+    # os.system('curl -X POST "http://172.16.29.193:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+    time.sleep(5)
 
 if __name__ == "__main__":
     #add_host()

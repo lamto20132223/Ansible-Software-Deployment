@@ -1,115 +1,117 @@
 from app import  db, session, Node_Base, Column, relationship, ansible
 from datetime import  datetime
 import  models
-import os
+import oyaml as yaml
+import sys, os
+from collections import OrderedDict
+from global_assets.common import *
 import json
-
-def get_facts(ansible_inventory_dir, ansible_facts_dir):
-    list_nodes = session.query(models.Node).all()
-    os.system(' rm -rf ' + ansible_inventory_dir)
-    file_new_node = open(ansible_inventory_dir,"a")
-    file_new_node.write('[all]')
-    file_new_node.write("\n")
-    for node in list_nodes:
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
-        file_new_node.write("\n")
-    for node in list_nodes:
-        file_new_node.write('['+str(node.node_display_name)+']' )
-        file_new_node.write("\n")
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
-        file_new_node.write("\n")
-    file_new_node.close()
-    f = open(ansible_inventory_dir, "r")
-    return f.read()
+import re
 
 
-
-    #os.system('ansible all  -i /etc/ansible/inventory/new_node -m setup  --tree ' + ansible_facts_dir)
-    #print(get_facts(inventory_dir,facts_dir))
-    #runner = ansible.Runner('ansible_get_facts.yml', 'new_node',
-    #                          {'extra_vars': {'target': "all", 'facts_dir': facts_dir}, 'tags': ["download"]}, None, False, None,
-    #                          None, None)
-    #stats = runner.run()
+def convert_original_to_input_sf(data, output_file):
 
 
+    # data = {"ok":"ok"}
+    print(data.keys())
+
+    output = []
+    default_group = OrderedDict()
+    default_group['name'] = 'DEFAULT'
+    default_group['configs'] = []
+    output.append(default_group)
+    for key in data.keys():
+        if type(data[key]) is OrderedDict:
+            new_group = OrderedDict()
+            new_group['name'] = key
+            new_group['configs'] = []
+            for config in data[key].keys():
+                config_data = OrderedDict()
+                config_data['key'] = config
+                config_data['ex_value'] = data[key][config] if data[key][config] is not None else ""
+                config_data['required'] = False
+                config_data['editable'] = True
+                config_data['need_edit'] = False
+                config_data['input_type'] = 'text'
+                if type(config_data['ex_value']) is int:
+                    config_data['input_type'] = 'number'
+                if type(config_data['ex_value']) is bool:
+                    config_data['input_type'] = 'checkbox'
+                new_group['configs'].append(config_data)
+            output.append(new_group)
+        else:
+            config_data=OrderedDict()
+            config_data['key'] = key
+            config_data['ex_value'] = data[key] if data[key] is not None else ""
+            config_data['required'] = False
+            config_data['editable'] = True
+            config_data['need_edit'] = False
+            config_data['input_type'] = 'text'
+            if type(config_data['ex_value']) is int:
+                config_data['input_type'] = 'number'
+            if type(config_data['ex_value']) is bool:
+                config_data['input_type'] = 'checkbox'
+            default_group['configs'].append(config_data)
+
+
+    stream = file(output_file, 'w')
+    print(data)
+    yaml.dump(output, stream)
+def convert_input_sf_to_origin(data, output_file):
+    output = OrderedDict()
+    for group_data in data:
+        if group_data['name']=='DEFAULT':
+            for config in group_data['configs']:
+                key = config['key']
+                value = config['ex_value']
+                # print(str(value))
+                if re.match(r'^OrderedDict\((.+)\)$', str(value)):
+                    value = eval(value, {'OrderedDict': OrderedDict})
+                    print(type(value))
+                if str(value)=='None':
+                    value = ""
+                output[key] =value
+        else :
+            output[group_data['name']] = OrderedDict()
+            for config in group_data['configs']:
+                key = config['key']
+                value = config['ex_value']
+                # print(str(value))
+                if re.match(r'^OrderedDict\((.+)\)$', str(value)):
+                    value = eval(value, {'OrderedDict': OrderedDict})
+                print(type(value))
+                output[group_data['name']][key] = value
+    stream = file(output_file, 'w')
+    # print(data)
+    yaml.dump(output, stream)
 
 
 
-def load_node_info_to_database(ansible_facts_dir):
-    nodes=session.query(models.Node).all()
+def convert_ansible_task_yml_to_sf_task_yml(data, output_file):
+    list_input_tasks = data
+    list_output_tasks = []
+    for index, input_task in enumerate(list_input_tasks, start=1):
+        input_task['register'] = 'infos'
+        name_output_task =  OrderedDict()
+        name_output_task['name'] = str(index) + "." + input_task['name']
+        name_output_task['debug'] = 'msg=\'Starting ' + str(index) + "-------------------------------------------->\'"
+        input_task.pop('name')
 
-    for node in nodes:
-        node.updated_at=datetime.now()
-        node.node_type="oenstack"
-        status="udate_info_to_database"
-        with open(ansible_facts_dir+ str(node.management_ip)) as data_node:
-            node_data = json.load(data_node)
-            ansible_facts=node_data['ansible_facts']
-            #print(node_data)
-            node_name = ansible_facts['ansible_hostname']
-            memory_mb = ansible_facts['ansible_memtotal_mb']
-            memory_mb_free=ansible_facts['ansible_memfree_mb']
-            numa_topology=None
-            metrics= None
-            processor_core=ansible_facts['ansible_processor_cores']
-            processor_count=ansible_facts['ansible_processor_count']
-            processor_threads_per_core=ansible_facts['ansible_processor_threads_per_core']
-            processor_vcpu=ansible_facts['ansible_processor_vcpus']
-            os_family=ansible_facts['ansible_os_family']
-            pkg_mgr=ansible_facts['ansible_pkg_mgr']
-            os_version=ansible_facts['ansible_distribution_version']
-            default_ipv4=ansible_facts['ansible_default_ipv4']['address']
-            default_broadcast=ansible_facts['ansible_default_ipv4']['broadcast']
-            default_gateway=ansible_facts['ansible_default_ipv4']['gateway']
-            default_interface_id=ansible_facts['ansible_default_ipv4']['interface']
+        output_task = OrderedDict()
+        output_task['block'] = []
+        output_task['block'].append(name_output_task)
+        output_task['block'].append(OrderedDict([('include', 'extends/before.yml task_index='+str(index))]))
+        output_task['block'].append(input_task)
+        output_task['block'].append(OrderedDict([('include', 'extends/after_ok.yml task_index='+str(index)+' info={{ infos  }}')]))
+        output_task['rescue'] =[]
+        output_task['rescue'].append(OrderedDict([('include', 'extends/after_failse.yml task_index='+str(index)+' info={{ infos  }}')]))
+        output_task['rescue'].append(OrderedDict([('fail', 'msg={{ infos  }}')]))
+        output_task['tags']=['install',str(index)]
+        list_output_tasks.append(output_task)
 
-            node_info=models.Node_info(node_name=node_name,memory_mb=memory_mb,memory_mb_free=memory_mb_free,numa_topology=numa_topology,metrics=metrics,processor_core=processor_core,processor_count=processor_count,processor_threads_per_core=processor_threads_per_core, processor_vcpu=processor_vcpu,os_family=os_family, pkg_mgr=pkg_mgr,os_version=os_version,default_ipv4=default_ipv4,default_broadcast=default_broadcast,default_gateway=default_gateway,default_interface_id=default_interface_id)
-            interface_resources=[]
 
-            for interface in ansible_facts['ansible_interfaces']:
-                if "docker" not in interface and "veth" not in interface and "virb" not in interface :
 
-                    interface_info=ansible_facts['ansible_'+interface]
-                    device_name=interface_info.get('device')
-                    speed=interface_info.get('speed')
-                    port_info=None
-                    active=str(interface_info.get('active'))
-                    features=str(interface_info.get('features'))
-                    macaddress=interface_info.get('macaddress')
-                    module=interface_info.get('module')
-                    mtu=interface_info.get('mtu')
-                    pciid=interface_info.get('pciid')
-                    phc_index=interface_info.get('phc_index')
-                    type_interface=interface_info.get('type_interface')
-                    if device_name==ansible_facts['ansible_default_ipv4']['interface']:
-                        is_default_ip='True'
-                    else:
-                        is_default_ip='False'
+    print("lamtv10")
+    with open(output_file, 'w') as yaml_file:
 
-                    interface_resource=models.Interface_resource(device_name=device_name,speed=speed,port_info=port_info,active=active,features=features,macaddress=macaddress,module=module,mtu=mtu,pciid=pciid,phc_index=phc_index,type_interface=type_interface,is_default_ip=is_default_ip)
-                    interface_resources.append(interface_resource)
-            node_info.interface_resources=interface_resources
-
-            disk_resources=[]
-            for device in ansible_facts['ansible_devices']:
-                if "sd" in device:
-                    device_data=ansible_facts['ansible_devices'][str(device)]
-                    device_name=device
-                    size = int(float(device_data.get('size')[0:-2].replace(" ", "")))
-                    model = device_data.get('model')
-                    removable= device_data.get('removable')
-                    sectors = device_data.get('sectors')
-                    sectorsize=device_data.get('sectorsize')
-                    serial = device_data.get('serial')
-                    vendor = device_data.get('vendor')
-                    support_discard=device_data.get('support_discard')
-                    virtual=device_data.get('virtual')
-
-                    disk_resource= models.Disk_resource(device_name=device_name, size=size, model=model, removable=removable,sectors=sectors,sectorsize=sectorsize,serial=serial, vendor=vendor,support_discard=support_discard,virtual=virtual)
-                    disk_resources.append(disk_resource)
-
-            node_info.disk_resources=disk_resources
-            node.node_info=node_info
-            session.add(node)
-            session.commit()
-
+        yaml.dump(list_output_tasks, yaml_file)

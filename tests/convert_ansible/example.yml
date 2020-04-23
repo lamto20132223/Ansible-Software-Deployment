@@ -1,0 +1,19 @@
+- block:
+  - name: 1.cp selinux.conf.j2 /etc/selinux/config
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - template:
+      src: selinux.conf.j2
+      dest: /etc/selinux/config
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'

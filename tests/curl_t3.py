@@ -19,15 +19,23 @@ def send_task_info():
     os.system(
         'curl -X POST "http://172.16.29.194:4321/api/v1/tasks/update_task" -H  "accept: application/json" -H  "Content-Type: application/json" --data   @task_info.json ')
 
+def update_host():
+    os.system(
+        'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/update_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
+
 def add_host():
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
+    os.system(
+        'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
     time.sleep(1)
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes2.json')
-    time.sleep(1)
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes3.json')
-    time.sleep(1)
-    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes4.json')
-    time.sleep(1)
+
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
+    # time.sleep(1)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes2.json')
+    # time.sleep(1)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes3.json')
+    # time.sleep(1)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes4.json')
+    # time.sleep(1)
 
 ##***************************** discover_hosts *********************************************
 def discover_hosts():
@@ -106,5 +114,57 @@ def run_task_id(task_id):
     # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
     time.sleep(5)
 
+def run_service_setup(deployment_id, setup_index):
+
+    url = 'http://172.16.29.194:4321/api/v1/installation/run_service_setup'
+    payload = {'deployment_id':deployment_id,'setup_index':setup_index,  'method':'Install'}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+    time.sleep(5)
+
+
+def run_service_set_up_start_at_task(deployment_id, setup_index, start_at_task_id):
+
+    url = 'http://172.16.29.194:4321/api/v1/installation/run_service_setup'
+    payload = {'deployment_id':deployment_id,'setup_index':setup_index,  'method':'Install','start_at_task_id':start_at_task_id}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+    time.sleep(5)
+
+def run_deployment(deployment_id, service_setup_id):
+    url = 'http://172.16.29.194:4321/api/v1/installation/run_deployment'
+    payload = {'deployment_id':deployment_id,'service_setup_id':service_setup_id,  'method':'Install'}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
+    time.sleep(5)
+
 if __name__ == "__main__":
-    run_task_id(5)
+    # delete_data()
+    # update_host()
+    update_host()
+    discover_hosts()
+    #add_host_to_role()
+    #insert_test_data()
+
+
+    #send_task_info()
+    #run_one_task(
+    # )
+    #run_task_id(1)
+    # run_task_id(2)
+    # run_task_id(3)
+    # run_task_id(4)
+    # run_task_id(5)
+    # run_task_id(6)
+    # run_task_id(7)
+    #
+    #run_service_set_up_start_at_task(1,1,8)
+    # run_service_setup(1, 3)
+    #run_task_id(8)
+    #run_deployment(1,1)

@@ -1,0 +1,1 @@
+select host,count(host) from information_schema.processlist group by host;

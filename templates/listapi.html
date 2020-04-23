@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Danh sach tool hien co</title>
+</head>
+<body>
+    <h1>Danh sach cac APIS hien co:</h1>
+    <div style="float: left; width: 40%">
+    <ul id="navigation">
+    {% for item in list_api_posts %}
+
+        <li ><p style="display: inline-block"> {{ item.label + ":   " }} <a href="{{ item.url }}">{{ item.url }}</a></p></li>
+    {% endfor %}
+    </ul>
+    </div>
+  <div style="float: right; width: 60%">
+    <ul id="navigation">
+    {% for item in list_api_gets %}
+
+        <li><p style="display: inline-block"> {{ item.label + ":   " }}  <a href="{{ item.url }}">{{ item.url }}</a></p></li>
+    {% endfor %}
+    </ul>
+    </div>
+</body>
+</html>

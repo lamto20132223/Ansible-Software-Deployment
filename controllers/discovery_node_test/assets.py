@@ -99,26 +99,28 @@ def load_node_info_to_database(ansible_facts_dir):
                 for interface in ansible_facts['ansible_interfaces']:
                     if "docker" not in interface and "veth" not in interface and "virb" not in interface :
 
-                        interface_info=ansible_facts['ansible_'+interface]
-                        device_name=interface_info.get('device')
-                        speed=interface_info.get('speed')
-                        port_info=None
-                        active=str(interface_info.get('active'))
-                        features=str(interface_info.get('features'))
-                        macaddress=interface_info.get('macaddress')
-                        module=interface_info.get('module')
-                        mtu=interface_info.get('mtu')
-                        pciid=interface_info.get('pciid')
-                        phc_index=interface_info.get('phc_index')
-                        type_interface=interface_info.get('type_interface')
-                        if device_name==ansible_facts.get('ansible_default_ipv4').get('interface'):
-                            is_default_ip='True'
-                        else:
-                            is_default_ip='False'
+                        interface_info=ansible_facts.get('ansible_'+interface)
+                        if interface_info is not None:
+                            device_name=interface_info.get('device')
+                            speed=interface_info.get('speed')
+                            port_info=None
+                            active=str(interface_info.get('active'))
+                            features=str(interface_info.get('features'))
+                            macaddress=interface_info.get('macaddress')
+                            module=interface_info.get('module')
+                            mtu=interface_info.get('mtu')
+                            pciid=interface_info.get('pciid')
+                            phc_index=interface_info.get('phc_index')
+                            type_interface=interface_info.get('type_interface')
+                            if device_name==ansible_facts.get('ansible_default_ipv4').get('interface'):
+                                is_default_ip='True'
+                            else:
+                                is_default_ip='False'
 
-                        interface_resource=models.Interface_resource(device_name=device_name,speed=speed,port_info=port_info,active=active,features=features,macaddress=macaddress,module=module,mtu=mtu,pciid=pciid,phc_index=phc_index,type_interface=type_interface,is_default_ip=is_default_ip)
-                        interface_resources.append(interface_resource)
+                            interface_resource=models.Interface_resource(device_name=device_name,speed=speed,port_info=port_info,active=active,features=features,macaddress=macaddress,module=module,mtu=mtu,pciid=pciid,phc_index=phc_index,type_interface=type_interface,is_default_ip=is_default_ip)
+                            interface_resources.append(interface_resource)
                 node_info.interface_resources=interface_resources
+                #node_info.update(interface_resources=interface_resources)
 
                 disk_resources=[]
                 for device in ansible_facts['ansible_devices']:
@@ -147,5 +149,6 @@ def load_node_info_to_database(ansible_facts_dir):
                 res['error']+=1
             session.add(node)
             session.commit()
+    session.close()
     return res
 

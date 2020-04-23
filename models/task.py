@@ -12,7 +12,7 @@ class Task(Node_Base):
     result=Column(db.String(255))
     log=Column(db.Text)
     task_index=Column(db.Integer)
-    service_setup_id=Column(db.String(255), db.ForeignKey('service_setups.service_setup_id'))
+    service_setup_id=Column(db.Integer , db.ForeignKey('service_setups.service_setup_id'))
     service_setup = relationship("Service_setup")
     changes = relationship("Change", back_populates="task")
     def __repr__(self):

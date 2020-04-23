@@ -118,7 +118,7 @@ CREATE INDEX `fk_interface_resources_node_infos1_idx` ON `auto_lamtv10`.`interfa
 -- Table `auto_lamtv10`.`service_setups`
 -- -----------------------------------------------------
 CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`service_setups` (
-  `service_setup_id` VARCHAR(255) NOT NULL ,
+  `service_setup_id` INT(11) NOT NULL AUTO_INCREMENT,
   `service_type` VARCHAR(255) NULL ,
   `service_name` VARCHAR(255) NULL ,
   `enable` VARCHAR(255) NULL ,
@@ -155,7 +155,7 @@ CREATE  TABLE IF NOT EXISTS `auto_lamtv10`.`tasks` (
   `result` VARCHAR(255) NULL ,
   `log` TEXT NULL ,
   `task_index` INT(11) NULL ,
-  `service_setup_id` VARCHAR(255) NOT NULL ,
+  `service_setup_id` INT(11) NOT NULL ,
   PRIMARY KEY (`task_id`) ,
   CONSTRAINT `fk_tasks_service_setups1`
     FOREIGN KEY (`service_setup_id` )

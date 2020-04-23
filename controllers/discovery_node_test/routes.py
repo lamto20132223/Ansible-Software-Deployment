@@ -21,7 +21,7 @@ def add_host():
         abort(400)
     else:
         data = request.json
-    old_nodes = session.query(models.Node).filter(or_(models.Node.management_ip==data.get('management_ip'), models.Node.node_display_name==data.get('node_display_name'))).all()
+    old_nodes = session.query(models.Node).filter(or_(models.Node.management_ip==data.get('management_ip'), models.Node.node_display_name==data.get('node_display_name').lower())).all()
     if len(old_nodes) != 0:
         return {"status":"Node da ton tai"}, 226
 
@@ -30,8 +30,38 @@ def add_host():
     session.add(node)
     session.commit()
     new_node = session.query(models.Node).filter_by(node_display_name=str(data.get('node_display_name', ''))).all()
+    res = jsonify(models.to_json(new_node, 'Node',True))
+    session.close()
     #print(models.to_json(new_node, 'Node',True))
-    return jsonify(models.to_json(new_node, 'Node',True)), 201
+    return res, 201
+
+
+@mod.route('/hosts/update_host', methods=['POST'])
+def update_host_ssh():
+    if not request.json :
+        abort(400)
+    else:
+        data = request.json
+    node =session.query(models.Node).filter_by(node_id=data.get('node_id')).first()
+    if node is None:
+        return {"status":"Node chua ton tai"}, 404
+
+    node.updated_at = datetime.now()
+    node.management_ip = data.get('management_ip', "")
+    node.ssh_user=data.get('ssh_user',"")
+    node.ssh_password = data.get('ssh_password', "")
+    node.status = "set_ip"
+    node.node_display_name = data.get('node_display_name', '')
+
+
+    session.add(node)
+    session.commit()
+
+    res = jsonify(models.to_json(node, 'Node',False))
+    session.close()
+    #print(models.to_json(new_node, 'Node',True))
+    return res, 200
+
 
 @mod.route('/hosts', methods=['GET'])
 def get_hosts():
@@ -41,8 +71,9 @@ def get_hosts():
     ############UNDONE /api/v1/hosts?role=controller
 
     nodes = session.query(models.Node).all()
+    res = jsonify(models.to_json(nodes, 'Node', True))
     #print(models.to_json(nodes, 'Node', True))
-    return jsonify(models.to_json(nodes, 'Node', True)), 200
+    return res, 200
 
 @mod.route('/hosts/<string:host_id>', methods=['GET'])
 def get_host(host_id):
@@ -52,7 +83,8 @@ def get_host(host_id):
     if len(selected_node) ==0:
         return abort(404)
     else:
-        return jsonify(models.to_json(selected_node[0], 'Node', False)), 200
+        res =  jsonify(models.to_json(selected_node[0], 'Node', False))
+        return res , 200
 
 
 @mod.route('/hosts/discover_hosts_v1', methods=['POST']) #################################### ERROR #######################

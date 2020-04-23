@@ -1,0 +1,204 @@
+- name: DEFAULT
+  configs:
+  - key: base_distro
+    ex_value: rhel7.7
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: openstack_release
+    ex_value: queens
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: network_interface
+    ex_value: eno1
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: NTP_NETWORK
+    ex_value: 172.16.29.0/25
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: subnet1
+    ex_value: 172.16.29.0/24
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: subnet2
+    ex_value: 172.16.31.0/24
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: CONTROLLER_HOST
+    ex_value: os-controller
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: keystone_auth_url
+    ex_value: http://os-controller:5000/v3
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: project_domain_name
+    ex_value: Default
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: user_domain_name
+    ex_value: Default
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: project_name
+    ex_value: service
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: ADMIN_PASS
+    ex_value: Vttek@123
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: REGION_NAME
+    ex_value: North_VN
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: CELL_NAME
+    ex_value: cell1
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: HUB
+    ex_value: controller01
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: first_controller
+    ex_value: '{{ HUB }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: chrony_server
+    ex_value: '{{ HUB }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: INTERNAL_VIP_ADDRESS
+    ex_value: 172.16.29.199
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: VIP_PUBLIC
+    ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: HAPROXY_STATS_PORT
+    ex_value: 1995
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: HAPROXY_STATS_USER
+    ex_value: cloud
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: HAPROXY_STATS_PASS
+    ex_value: GdYc6d8jYwURfAn5A3sc08Ipt5zcanPl
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+  - key: VIP_PRIVATE_INF
+    ex_value: '{{ network_interface }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: VIP_PRIVATE
+    ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: ROUTER_ID
+    ex_value: 100
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: OS_CONTROLLER
+    ex_value: '{{ INTERNAL_VIP_ADDRESS }}'
+    required: false
+    editable: false
+    need_edit: false
+    input_type: text
+  - key: sriov_dev_name
+    ex_value: ens2f0
+    required: false
+    editable: true
+    need_edit: false
+    input_type: text
+- name: KEEPALIVED_PRIORS
+  configs:
+  - key: controller01
+    ex_value: 3
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: controller02
+    ex_value: 2
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: controller03
+    ex_value: 1
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+- name: pc_weight
+  configs:
+  - key: controller01
+    ex_value: 43
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: controller02
+    ex_value: 30
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number
+  - key: controller03
+    ex_value: 20
+    required: false
+    editable: true
+    need_edit: false
+    input_type: number

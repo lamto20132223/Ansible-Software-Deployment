@@ -4,6 +4,6 @@
     url: http://172.16.29.194:4321/api/v1/tasks/update_task
     method: POST
     body_format: json
-    body: {"node_ip":"{{ inventory_hostname }}","task_index":"{{ task_index }}", "service_name":"{{ service_name }}" }
+    body: {"node_ip":"{{ inventory_hostname }}","task_index":"{{ task_index }}", "service_name":"{{ service_name }}","state":"before_task" }
     return_content: yes
 

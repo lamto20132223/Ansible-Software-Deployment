@@ -53,24 +53,6 @@ def create_ansible_playbook(host_name, service_name, role_name):
     return "OK"
 
 
-def get_service_setups_from_deployment(deployment):
-    def sort_function(e):
-        return e.setup_index
-
-    service_setups = deployment.service_setups
-    service_setups.sort(key=sort_function)
-    return service_setups
-
-def load_yml_file(file_path):
-    with open(file_path) as file:
-        # The FullLoader parameter handles the conversion from YAML
-        # scalar values to Python the dictionary format
-        result = yaml.load(file, Loader=yaml.FullLoader)
-
-        #print(type(list_task))
-    return result
-
-
 #
 # def load_node_info_to_database(ansible_facts_dir):
 #     nodes=session.query(models.Node).all()

@@ -1,1 +1,1 @@
-{"management_ip":"172.16.29.43", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"ceph"}
+{"management_ip":"172.16.29.193", "ssh_user":"root", "ssh_password":"123456@Epc", "node_display_name":"controller193", "node_id":1}
