@@ -380,7 +380,7 @@ def update_task_info():
     node_ip = request.json.get('node_ip')
     task_index = int(request.json.get('task_index').encode('utf-8'))
     service_name = request.json.get('service_name').encode('utf-8')
-    logging.debug("TYPE INDEX: " + str(type(task_index)))
+    # logging.debug("TYPE INDEX: " + str(type(task_index)))
 
     task = session.query(models.Task).filter(and_(models.Task.task_index == task_index, models.Task.service_setup.has(models.Service_setup.service_name == str(service_name)),
                                                   models.Task.service_setup.has(models.Service_setup.deployment.has(
@@ -408,7 +408,7 @@ def update_task_info():
         return res, 200
 
 
-    logging.debug("TYPE INFO: " + str(type(info)))
+    # logging.debug("TYPE INFO: " + str(type(info)))
     if type(info) is unicode:
         info = info.encode('utf-8')
     if type(info) is not  dict:
