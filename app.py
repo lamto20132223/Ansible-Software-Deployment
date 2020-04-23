@@ -9,18 +9,29 @@ import json
 
 import importlib
 from flask_restplus import Api, Resource, fields
+import logging
+import logging.config
+
+
+
+
+import importlib
+from flask_restplus import Api, Resource, fields
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+log_config_dir = os.path.join(ROOT_DIR, 'configs/logging.conf')
+logging.config.fileConfig(log_config_dir, disable_existing_loggers=False)
+
+
 app = Flask(__name__)
 api=Api(app)
 
+
+# FOR DEV TEST ONLY
 app.config.from_object(Config)
 
 lamtv10="tovanlam"
 
-import logging
-import logging.config
-ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
-log_config_dir = os.path.join(ROOT_DIR, 'configs/logging.conf')
-logging.config.fileConfig(log_config_dir, disable_existing_loggers=False)
+
 
 # def connect_database():
 db = SQLAlchemy(app)
@@ -30,6 +41,12 @@ Node_Base = db.Model
 # Node_Base.metadata.create_all(db)
 Column = db.Column
 relationship = db.relationship
+
+
+# @app.teardown_appcontext
+# def shutdown_session(exception=None):
+#     session.remove()
+
 
 #
 #
@@ -113,13 +130,13 @@ if __name__ == "__main__":
     register_module("discovery_node_test",'/api/v1')
     register_module("test_api")
     register_module("assign_role",'/api/v1')
-    register_module("insert_specific_config", "/api/v1")
+    register_module("insert_specific_config")
     register_module("start_undo_pause_next", "/api/v1")
     register_module("scallingup_scallingdown","/api/v1")
     register_module("replace_controller", "/api/v1")
     register_module("gen_template", "/api/v1")
     register_module("get_recommend", "/api/v1")
-    register_module("management_file_config", "/api/v1")
+    register_module("management_file_config")
     register_module("change_password","/api/v1" )
 
 
@@ -132,7 +149,7 @@ if __name__ == "__main__":
 
     @app.route("/hello")
     def home():
-        return "Hello World! "
+        return "Hello World!"
 
 
     @app.route('/index')
@@ -146,10 +163,5 @@ if __name__ == "__main__":
         print(nodes[0].__dict__)
 
         return {'result' : str(nodes)}, 201
-
+    app.logger.addHandler(logging.handlers)
     app.run(debug=True,host="0.0.0.0", port=4321)
-
-    @app.teardown_appcontext
-    def shutdown_session(exception=None):
-        session.remove()
-
