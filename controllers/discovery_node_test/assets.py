@@ -120,6 +120,7 @@ def load_node_info_to_database(ansible_facts_dir):
                             interface_resource=models.Interface_resource(device_name=device_name,speed=speed,port_info=port_info,active=active,features=features,macaddress=macaddress,module=module,mtu=mtu,pciid=pciid,phc_index=phc_index,type_interface=type_interface,is_default_ip=is_default_ip)
                             interface_resources.append(interface_resource)
                 node_info.interface_resources=interface_resources
+                #node_info.update(interface_resources=interface_resources)
 
                 disk_resources=[]
                 for device in ansible_facts['ansible_devices']:
