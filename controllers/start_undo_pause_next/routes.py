@@ -256,7 +256,9 @@ def run_specific_deployment():
                     start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
                 runner.run()
                 list_logs.append(runner.log)
-                if service_setup.status != 'DONE':
+                status = session.query(models.Service_setup).filter_by(service_setup_id=service_setup.service_setup_id).first().status
+                session.commit()
+                if status != 'DONE':
                     break
         session.close()
 
