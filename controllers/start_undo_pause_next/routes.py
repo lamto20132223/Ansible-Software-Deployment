@@ -218,6 +218,58 @@ def run_specific_service_setup():
 
 
 
+@mod.route('/installation/run_deployment', methods=['POST'])
+def run_specific_deployment():
+    if not request.json:
+        abort(400)
+    else:
+        service_setup_id = request.json.get('service_setup_id')
+        deployment_id = request.json.get('deployment_id')
+        method = request.json.get('method')
+
+
+    service_setup_start = None
+
+    if service_setup_id is not None:
+        service_setup_start = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
+        if service_setup_start is None:
+            return abort(400, "Cannot Find Service_setup with id: ", service_setup_id)
+
+    if deployment_id is not None:
+        deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
+        if deployment is None:
+            return abort(400, "Cannot Find deployment with id: ", deployment_id)
+
+    if service_setup_start.deployment.deployment_id != deployment.deployment_id:
+        return abort(400, "Service Setup Khong thuoc Deployment")
+
+    list_service_setups = get_service_setups_from_deployment(deployment)
+    if method == "Install":
+        list_logs = []
+        for service_setup in list_service_setups:
+            if service_setup.setup_index >= service_setup_start.setup_index:
+                node = deployment.node
+                service_name = service_setup.service_name
+                node_display_name = node.node_display_name
+                runner = Runner(playbook='playbook_setup_' + service_name + '_for_' + node_display_name + '.yml',
+                    inventory='new_node', run_data={'extra_vars': {'target': 'No'}, 'tags': ['install']},
+                    start_at_task=None, step=False, private_key_file=None, become_pass=None, verbosity=None)
+                runner.run()
+                list_logs.append(runner.log)
+                if service_setup.status != 'DONE':
+                    break
+        session.close()
+
+        return { "logs": list_logs}
+
+        # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
+
+
+
+    else :
+        return {"res":"INCOMMING"}
+
+
 
 @mod.route('/installation/runtask', methods=['POST'])
 def run_specific_task():
