@@ -276,7 +276,8 @@ def get_tools():
         {'label': 'cnv_group_var_origin_to_sf', 'url': '/tools/cnv_group_var_origin_to_sf'},
         {'label': 'cnv_group_var_sf_to_origin', 'url': '/tools/cnv_group_var_sf_to_origin'},
         {'label': 'convert_ansible_task_yml_to_sf_task_yml', 'url': '/tools/convert_ansible_task_yml_to_sf_task_yml'},
-        {'label': 'edit_ansible_group_vars', 'url': '/tools/list_ansible_group_vars'}]
+        {'label': 'edit_ansible_group_vars', 'url': '/tools/list_ansible_group_vars'}
+    ,{'label': 'json_to_list', 'url': '/tools/convert_json_to_list_name'}]
     return render_template('tools.html', list_tools=list_tools)
 @mod.route('/api/v1/tools/', methods=['GET'])
 def get_tools_v1():
@@ -387,6 +388,72 @@ class CNV_Group_Var_3(Resource):
         else:
             flash('Allowed file types are yml, yaml')
             return redirect(request.url)
+
+def get_list_end_points(input):
+    print(type(input))
+    if input is None:
+        return ' =None'
+    output=[]
+    if type(input) is dict:
+        list_keys=input.keys()
+        if len(list_keys) ==0:
+            return ' ={}'
+
+        for key in list_keys:
+
+            if (type(input[key]) is  not dict and type(input[key]) is  not list ):
+                output.append(key + '                        =' + str(input[key]))
+            else:
+                list_end_points = get_list_end_points(input[key])
+                if type(list_end_points) is list:
+                    for endpoint in list_end_points:
+                        output.append(key+'.'+endpoint)
+                else:
+                    output.append(key + '' + str(list_end_points))
+        return output
+    elif type(input) is list:
+        if len(input) ==0:
+            return '                        =[]'
+        for i in range(len(input)):
+            if type(input[i]) is  not dict and type(input[i]) is  not list:
+                output.append('[' + str(i)+']' + '                        =' + str(input[i]))
+            else:
+                list_end_points = get_list_end_points(input[i])
+                if type(list_end_points) is list:
+                    for endpoint in list_end_points:
+                        output.append('[' + str(i)+']'+'.' + endpoint)
+                else :
+                    output.append('[' + str(i)+']' + '' + str(list_end_points))
+        return output
+    else:
+        return ['                        ='+str(input)]
+
+
+@mod_v1.route('/tools/convert_json_to_list_name', methods=['GET', 'POST'])
+class CNV_Group_Var_9(Resource):
+    def get(self):
+        tool_name = 'tool convert json to list'
+        tool_url = "/tools/convert_json_to_list_name"
+        return Response(render_template('convert_tool_v2.html', tool_name=tool_name, tool_url=tool_url, list_endpoints=[]), 200,
+                        mimetype='text/html')
+
+    def post(self):
+        # check if the post request has the file part
+        tool_name = 'tool convert json to list'
+        tool_url = "/tools/convert_json_to_list_name"
+        res = request.form.to_dict()
+        print(res.keys())
+        list_keys = res.keys()
+        # list_keys.remove('submit')
+
+        list_out_put=[]
+        print(res['json_input'])
+        json_input = json.loads(res['json_input'])
+        list_endpoints = get_list_end_points(json_input)
+        #print(json_input[0])
+        return Response(render_template('convert_tool_v2.html', tool_name=tool_name, tool_url=tool_url,list_endpoints=list_endpoints), 200,
+                        mimetype='text/html')
+
 
 
 

@@ -1,0 +1,26 @@
+
+<!doctype html>
+<title>Python Flask File Upload Example</title>
+<h4>{{ tool_name }}</h4>
+<h2>Select a file to upload</h2>
+
+<form method="post" action="{{ tool_url }}" enctype="multipart/form-data">
+        <br>
+         Fill the Detail:
+         <br />
+
+         <textarea rows = "5" cols = "50" name = "json_input" placeholder="Dien Json vao day">
+         </textarea>
+
+
+
+
+    <p>
+		<input type="submit" value="Submit">
+	</p>
+</form>
+<ul>
+      {% for key in list_endpoints %}
+<li>{{ key }}</li>
+{% endfor %}
+</ul>
