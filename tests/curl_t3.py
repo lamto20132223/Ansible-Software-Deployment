@@ -24,18 +24,18 @@ def update_host():
         'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/update_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
 
 def add_host():
-    os.system(
-        'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
-    time.sleep(1)
+    # os.system(
+    #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
+    # time.sleep(1)
 
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
-    # time.sleep(1)
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes2.json')
-    # time.sleep(1)
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes3.json')
-    # time.sleep(1)
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes4.json')
-    # time.sleep(1)
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes1.json')
+    time.sleep(1)
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes2.json')
+    time.sleep(1)
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes3.json')
+    time.sleep(1)
+    os.system('curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes4.json')
+    time.sleep(1)
 
 ##***************************** discover_hosts *********************************************
 def discover_hosts():
@@ -144,13 +144,18 @@ def run_deployment(deployment_id, service_setup_id):
     # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/installation/runtask" -H  "accept: application/json" -H  "Content-Type: application/json"  --data "{\'task_id\':\'1\',\'method\':\'Install\' }"')
     time.sleep(5)
 
+
+def run_get(endpoint):
+    os.system(
+        'curl -X GET'+' \"' + endpoint+ '\" -H  "accept: application/json" -H  "Content-Type: application/json"  ')
+
 if __name__ == "__main__":
     # delete_data()
-    # update_host()
-    update_host()
-    discover_hosts()
-    #add_host_to_role()
-    #insert_test_data()
+    # add_host()
+    # #update_host()
+    # discover_hosts()
+    # add_host_to_role()
+    # insert_test_data()
 
 
     #send_task_info()
@@ -168,3 +173,4 @@ if __name__ == "__main__":
     # run_service_setup(1, 3)
     #run_task_id(8)
     #run_deployment(1,1)
+    run_get('http://0.0.0.0:4321/api/v1/hosts')
