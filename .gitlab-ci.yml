@@ -30,7 +30,7 @@ run_image_stage:
     - docker run -d --network=host --name lamtv10_software -v /home/lamtv10/software_deployment/data/playbooks:/root/app/static/ansible/playbooks -v /home/lamtv10/software_deployment/data/inventory:/root/app/static/ansible/inventory  -v /home/lamtv10/software_deployment/data/group_vars_template:/root/app/static/ansible/group_vars_template  registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
 
 run_image_test:
- before_script:
+  before_script:
     - ls
   stage: test
   tags:
