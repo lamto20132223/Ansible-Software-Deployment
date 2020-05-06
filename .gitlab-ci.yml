@@ -37,8 +37,10 @@ run_image_test:
     - docker_run_test_api_v1
   image: registry.ocs.com/mailp/testapi/test_rest_api_v1
   script:
+    - pwd=`pwd`
+    - cd /root/test_api
     - /root/app/jdk/bin/java -cp "./lib/*.jar:auto_nfvi.jar" automation.Automation
-    - mv Extent_Output/ ../Test_Output$CI_COMMIT_SHA
+    - mv Extent_Output/ $pwd/Test_Output$CI_COMMIT_SHA
   artifacts:
     paths:
       - Test_Output$CI_COMMIT_SHA
