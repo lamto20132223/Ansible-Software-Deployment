@@ -29,7 +29,7 @@ run_image_stage:
 
     - docker run -d --network=host --name lamtv10_software -v /home/lamtv10/software_deployment/data/playbooks:/root/app/static/ansible/playbooks -v /home/lamtv10/software_deployment/data/inventory:/root/app/static/ansible/inventory  -v /home/lamtv10/software_deployment/data/group_vars_template:/root/app/static/ansible/group_vars_template  registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
 
-run_image_test:
+run_image_test_default:
   before_script:
     - ls
   stage: test
@@ -40,12 +40,26 @@ run_image_test:
     - pwd=`pwd`
     - cd /root/test_api
     - /root/app/jdk/bin/java -cp "./lib/*.jar:auto_nfvi.jar" automation.Automation
-    - mv Extent_Output/ $pwd/Test_Output$CI_COMMIT_SHA
+    - mv Extent_Output/ $pwd/Default_Test_Output$CI_COMMIT_SHA
   artifacts:
     paths:
-      - Test_Output$CI_COMMIT_SHA
+      - Default_Test_Output$CI_COMMIT_SHA
 
 
+
+run_image_test_custom:
+  before_script:
+    - ls
+  stage: test
+  tags:
+    - docker_run_test_api_v1
+  image: registry.ocs.com/mailp/testapi/test_rest_api_v1
+  script:
+    - /root/app/jdk/bin/java -cp "/root/test_api/lib/*.jar:/root/test_api/auto_nfvi.jar" -Dconfig_path=configs/test_data.xlsx  automation.Automation
+    - mv Extent_Output/ Custom_Test_Output$CI_COMMIT_SHA
+  artifacts:
+    paths:
+      - Custom_Test_Output$CI_COMMIT_SHA
 
 
 
