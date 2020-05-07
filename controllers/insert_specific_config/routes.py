@@ -167,6 +167,8 @@ class Ansible_Group_Vars(Resource):
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
         reset_all = request.json.get('reset_all')
+        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + sf_dir)
         if reset_all is True:
             os.system(' \cp -r  ' + template_dir + '/*' + ' ' + group_var_dir)
             os.system(' \cp -r  ' + template_dir + '/*' + ' ' + sf_dir)
@@ -206,7 +208,8 @@ class FORM_INSERT(Resource):
 
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
-
+        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + sf_dir)
         args = request.args
         file_path = group_var_dir + '/' + request.args.get('group') + '/' + request.args.get('filename')
         if not os.path.isfile(file_path):

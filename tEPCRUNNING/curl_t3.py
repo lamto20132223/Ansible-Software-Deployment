@@ -143,10 +143,10 @@ if __name__ == "__main__":
     # delete_data()
     #add_host()
     #update_host()
-    discover_hosts()
-    # add_host_to_role()
-    # insert_test_data()
-    # create_ansible_group_var()
+    #discover_hosts()
+    add_host_to_role()
+    insert_test_data()
+    create_ansible_group_var()
 
     #send_task_info()
     #run_one_task(
