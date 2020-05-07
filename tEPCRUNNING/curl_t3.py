@@ -141,12 +141,12 @@ def create_ansible_group_var():
     time.sleep(5)
 if __name__ == "__main__":
     # delete_data()
-    add_host()
+    #add_host()
     #update_host()
     discover_hosts()
-    add_host_to_role()
-    insert_test_data()
-    create_ansible_group_var()
+    # add_host_to_role()
+    # insert_test_data()
+    # create_ansible_group_var()
 
     #send_task_info()
     #run_one_task(
@@ -162,4 +162,4 @@ if __name__ == "__main__":
     #run_service_set_up_start_at_task(1,1,8)
     # run_service_setup(1, 3)
     #run_task_id(8)
-    run_deployment(1,1)
+    # run_deployment(1,1)
