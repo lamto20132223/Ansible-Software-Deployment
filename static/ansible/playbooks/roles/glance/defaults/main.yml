@@ -1,0 +1,49 @@
+---
+enable_glance_image_cache: false
+glance_cache_max_size: 0
+
+rbd_stores: glance.store.rbd.Store
+rbd_store_pool: images 
+rbd_store_user: images
+
+docker_bootstrap:
+  - name: glance-bootstrap
+    image: '{{ docker_image.glance }}'
+    network_mode: host
+    restart_policy: unless-stopped
+    volumes:
+      - '{{ VAR_LOG_DIR }}/glance:/var/log/glance'
+      - '{{ glance_image_path }}:/var/lib/glance'
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/localtime:/etc/localtime
+    user: glance 
+    env: 
+      GLANCE_START: 'BOOTSTRAP' 
+
+containers:
+  - name: glance-api
+    image: '{{ docker_image.glance }}'
+    network_mode: host
+    restart_policy : unless-stopped
+    volumes:
+      - '{{ VAR_LOG_DIR }}/glance:/var/log/glance'
+      - '{{ glance_image_path }}:/var/lib/glance'
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/localtime:/etc/localtime
+    user: glance 
+    env: 
+      GLANCE_START: 'START_GLANCE_API' 
+  - name: glance-registry
+    image: '{{ docker_image.glance }}'
+    network_mode: host
+    restart_policy: unless-stopped
+    volumes:
+      - '{{ VAR_LOG_DIR }}/glance:/var/log/glance'
+      - '{{ glance_image_path }}:/var/lib/glance'
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/localtime:/etc/localtime
+    user: glance 
+    env: 
+      GLANCE_START: 'START_GLANCE_REGISTRY' 
+  
+

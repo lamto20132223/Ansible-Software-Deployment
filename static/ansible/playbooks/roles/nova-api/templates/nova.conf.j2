@@ -1,0 +1,125 @@
+[DEFAULT]
+debug = {{ nova_logging_debug }}
+state_path = /var/lib/nova
+log_dir = {{ nova_log_file }}
+my_ip = {{ host_info.ip[host_name] }}
+enabled_apis=osapi_compute,metadata
+osapi_compute_listen = {{ host_info.ip[host_name] }}
+osapi_compute_listen_port = {{ services_port.nova_api }}
+metadata_listen = {{ host_info.ip[host_name] }}
+metadata_listen_port = {{ services_port.nova_metadata }}
+firewall_driver = nova.virt.firewall.NoopFirewallDriver
+osapi_compute_unique_server_name_scope = global
+instance_name_template = instance-%08x
+transport_url = {{ transport_url }}
+max_local_block_devices={{ max_local_block_devices }}
+max_concurrent_builds={{ max_concurrent_builds }}
+max_concurrent_live_migrations={{ max_concurrent_live_migrations }}
+max_instances_per_host={{ max_instances_per_host }}
+instance_update_sync_database_limit={{ instance_update_sync_database_limit }}
+
+[api_database]
+connection = mysql+pymysql://{{ db_user_nova }}:{{ DB_NOVA_PASS }}@{{ CONTROLLER_HOST }}/{{ db_nova_api_name }}
+max_retries = -1
+
+[database]
+connection =  mysql+pymysql://{{ db_user_nova }}:{{ DB_NOVA_PASS }}@{{ CONTROLLER_HOST }}/{{ db_nova_name }}
+max_pool_size = 50
+max_overflow = 1000
+max_retries = -1
+
+[api]
+auth_strategy = keystone
+
+[keystone_authtoken]
+auth_url = {{ keystone_auth_url }}
+auth_type = password
+os_region_name = {{ REGION_NAME }}
+project_domain_name = {{ project_domain_name }}
+user_domain_name = {{ user_domain_name }}
+project_name = service
+username = {{ ops_user_nova }}
+password = {{ OPS_NOVA_PASS }}
+memcached_servers = {{ memcached_servers }}
+service_token_roles_required=true
+
+[placement]
+auth_url = {{ keystone_auth_url }}
+auth_type = password
+os_region_name = {{ REGION_NAME }}
+project_domain_name = {{ project_domain_name }}
+user_domain_name = {{ user_domain_name }}
+project_name = service
+username = {{ ops_user_placement }}
+password = {{ OPS_PLACEMENT_PASS }}
+
+[neutron]
+url = http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+auth_url =  {{ keystone_auth_url }}
+auth_type = password
+os_region_name = {{ REGION_NAME }}
+project_domain_name = {{ project_domain_name }}
+user_domain_name = {{ user_domain_name }}
+project_name = service
+username = {{ ops_user_neutron }}
+password = {{ OPS_NEUTRON_PASS }}
+service_metadata_proxy = True
+metadata_proxy_shared_secret = {{ METADATA_SECRET }}
+
+[cache]
+backend = oslo_cache.memcache_pool
+enabled = true
+memcache_servers = {{ memcached_servers }}
+
+[cinder]
+os_region_name = {{ REGION_NAME }}
+
+[glance]
+api_servers = http://{{ CONTROLLER_HOST }}:{{ services_port.glance_api }}
+[cells]
+enable = false
+
+[crypto]
+keys_path = /var/lib/nova/keys
+
+[oslo_concurrency]
+lock_path = /var/lib/nova/tmp
+
+[wsgi]
+api_paste_config=/etc/nova/api-paste.ini
+
+[vnc]
+enabled = true
+server_listen = 0.0.0.0
+server_proxyclient_address = $my_ip
+novncproxy_host = $my_ip
+novncproxy_port = {{ services_port.nova_novncproxy }}
+
+[upgrade_levels]
+compute = auto
+
+[scheduler]
+driver = filter_scheduler
+discover_hosts_in_cells_interval = 60
+
+[filter_scheduler]
+enabled_filters = RetryFilter,AvailabilityZoneFilter,RamFilter,DiskFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,CoreFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter,SameHostFilter,DifferentHostFilter,AggregateInstanceExtraSpecsFilter
+ram_weight_multiplier=30.0
+
+[quota]
+instances = {{ quota.instances }}
+floating-ips = {{ quota.floating_ips }}
+cores ={{ quota.cores }}
+ram = {{ quota.ram }}
+gigabytes = {{ quota.gigabytes }}
+volumes = {{ quota.volumes }}
+secgroups = {{ quota.secgroups }}
+secgroup-rules = {{ quota.secgroup_rules }}
+
+[libvirt]
+disk_cachemodes = "network=writeback"
+images_type = {{ nova_images_type }}
+images_rbd_pool = {{ nova_images_rbd_pool }}
+images_rbd_ceph_conf = {{ nova_images_rbd_ceph_conf }}
+rbd_user = {{ nova_rbd_user }}
+rbd_secret_uuid = {{ nova_rbd_secret_uuid }}

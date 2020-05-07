@@ -1,2 +1,2 @@
 ---
-service_name: keepalived
+router_id: LVS_DEVEL

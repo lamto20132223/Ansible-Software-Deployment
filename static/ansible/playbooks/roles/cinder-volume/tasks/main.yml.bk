@@ -1,0 +1,71 @@
+---
+
+- name:  pull docker-registry:4000/cinder_volume:q
+  command: '{{ item }}'
+  with_items:
+    - docker pull '{{ docker_image.cinder_volume }}'
+
+- name: mkdir '{{ usr_share_docker }}/cinder'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 0775
+    recurse: no
+  with_items: 
+    - '{{ usr_share_docker }}/cinder/cinder'
+    - '{{ usr_share_docker }}/cinder/backup'
+    - '{{ usr_share_docker }}/cinder/ceph'
+  when: ( "{{ cinder_re_config }}" == "true" )
+
+
+
+- name: Create Cinder Volume Group
+  shell: '{{ item }}'
+  with_items:
+    - yum install lvm2 device-mapper-persistent-data
+    - systemctl enable lvm2-lvmetad.service
+    - systemctl start lvm2-lvmetad.service
+    - pvcreate '{{cinder_volume_disk}}'
+    - vgcreate cinder-volumes '{{cinder_volume_disk}}'
+
+  when: ( "{{ cinder_backend_lvm }}" == "true" )
+
+
+- name: cp /usr/share/docker/cinder/cinder/ 
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+    - { src: 'cinder.conf.j2', dest: '{{ usr_share_docker }}/cinder/cinder/cinder.conf' }
+  when: ( "{{ cinder_re_config }}" == "true" )
+
+- name: cp /usr/share/docker/cinder/ceph/ 
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+    - { src: 'ceph.conf.j2', dest: '{{ usr_share_docker }}/cinder/ceph/ceph.conf' }
+    - { src: 'ceph.client.images.keyring.j2', dest: '{{ usr_share_docker }}/cinder/ceph/ceph.client.images.keyring' }
+  when: ( "{{ cinder_re_config }}" == "true" )
+
+- name: Cerate Cinder volumes Container 
+  docker_container: 
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: "host"
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'
+

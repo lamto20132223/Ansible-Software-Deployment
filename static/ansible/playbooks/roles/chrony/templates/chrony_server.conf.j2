@@ -1,0 +1,17 @@
+server {{host_info.ip[host_name]}} iburst
+local stratum 10
+stratumweight 0
+makestep 10 3
+keyfile /etc/chrony.keys
+commandkey 1
+driftfile /var/lib/chrony/chrony.drift
+log tracking measurements statistics
+logdir /var/log/chrony
+maxupdateskew 100.0
+dumponexit
+dumpdir /var/lib/chrony
+allow {{ subnet1 }}
+allow {{ subnet2 }}
+logchange 0.5
+hwclockfile /etc/adjtime
+rtcsync

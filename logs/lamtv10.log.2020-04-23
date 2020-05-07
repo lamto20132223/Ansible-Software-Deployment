@@ -1,0 +1,61 @@
+[2020-04-27 16:33:02.086] [ INFO    ] [_internal:_log:122] 27225  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-27 16:33:02.103] [ INFO    ] [_internal:_log:122] 27225  * Restarting with stat
+[2020-04-27 16:33:03.609] [ WARNING ] [_internal:_log:122] 27335  * Debugger is active!
+[2020-04-27 16:33:03.610] [ INFO    ] [_internal:_log:122] 27335  * Debugger PIN: 507-280-042
+[2020-04-27 16:33:36.745] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 16:33:36] "GET /tests/test1 HTTP/1.1" 200 -
+[2020-04-27 17:22:18.223] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:22:18] "GET /api/v1/tests/test1 HTTP/1.1" 404 -
+[2020-04-27 17:24:38.074] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:24:38] "GET /tests/test1 HTTP/1.1" 200 -
+[2020-04-27 17:25:39.011] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:25:39] "GET /tests/test1 HTTP/1.1" 200 -
+[2020-04-27 17:26:05.990] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:26:05] "GET /tests/test1 HTTP/1.1" 200 -
+[2020-04-27 17:26:45.167] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:26:45] "GET /lotto HTTP/1.1" 404 -
+[2020-04-27 17:28:34.569] [ INFO    ] [_internal:_log:122] 27335 127.0.0.1 - - [27/Apr/2020 17:28:34] "GET /lotto HTTP/1.1" 404 -
+[2020-04-27 17:38:51.085] [ INFO    ] [_internal:_log:122] 27335  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:38:51.232] [ INFO    ] [_internal:_log:122] 27225  * Restarting with stat
+[2020-04-27 17:38:52.965] [ WARNING ] [_internal:_log:122] 109228  * Debugger is active!
+[2020-04-27 17:38:52.966] [ INFO    ] [_internal:_log:122] 109228  * Debugger PIN: 507-280-042
+[2020-04-27 17:38:59.062] [ INFO    ] [_internal:_log:122] 109228  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:38:59.179] [ INFO    ] [_internal:_log:122] 27225  * Restarting with stat
+[2020-04-27 17:39:00.948] [ WARNING ] [_internal:_log:122] 109401  * Debugger is active!
+[2020-04-27 17:39:00.949] [ INFO    ] [_internal:_log:122] 109401  * Debugger PIN: 507-280-042
+[2020-04-27 17:39:05.042] [ INFO    ] [_internal:_log:122] 109401  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:39:05.189] [ INFO    ] [_internal:_log:122] 27225  * Restarting with stat
+[2020-04-27 17:39:06.416] [ WARNING ] [_internal:_log:122] 109538  * Debugger is active!
+[2020-04-27 17:39:06.416] [ INFO    ] [_internal:_log:122] 109538  * Debugger PIN: 507-280-042
+[2020-04-27 17:41:02.332] [ INFO    ] [_internal:_log:122] 112014  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-27 17:41:02.332] [ INFO    ] [_internal:_log:122] 112014  * Restarting with stat
+[2020-04-27 17:41:03.580] [ WARNING ] [_internal:_log:122] 112046  * Debugger is active!
+[2020-04-27 17:41:03.581] [ INFO    ] [_internal:_log:122] 112046  * Debugger PIN: 507-280-042
+[2020-04-27 17:42:30.427] [ INFO    ] [_internal:_log:122] 112046  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:42:30.532] [ INFO    ] [_internal:_log:122] 112014  * Restarting with stat
+[2020-04-27 17:42:31.880] [ WARNING ] [_internal:_log:122] 113854  * Debugger is active!
+[2020-04-27 17:42:31.881] [ INFO    ] [_internal:_log:122] 113854  * Debugger PIN: 507-280-042
+[2020-04-27 17:44:56.296] [ INFO    ] [_internal:_log:122] 113854 127.0.0.1 - - [27/Apr/2020 17:44:56] "GET /tests/test2 HTTP/1.1" 200 -
+[2020-04-27 17:47:37.863] [ INFO    ] [_internal:_log:122] 113854  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:47:37.975] [ INFO    ] [_internal:_log:122] 112014  * Restarting with stat
+[2020-04-27 17:47:39.360] [ WARNING ] [_internal:_log:122] 120261  * Debugger is active!
+[2020-04-27 17:47:39.361] [ INFO    ] [_internal:_log:122] 120261  * Debugger PIN: 507-280-042
+[2020-04-27 17:54:18.433] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:18] "GET /tests/test3 HTTP/1.1" 500 -
+[2020-04-27 17:54:54.487] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:54] "GET /tests/test3 HTTP/1.1" 500 -
+[2020-04-27 17:54:54.636] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:54] "GET /tests/test3?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-27 17:54:54.637] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:54] "GET /tests/test3?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-27 17:54:54.639] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:54] "GET /tests/test3?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-27 17:54:55.085] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:55] "GET /tests/test3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-27 17:54:55.093] [ INFO    ] [_internal:_log:122] 120261 127.0.0.1 - - [27/Apr/2020 17:54:55] "GET /tests/test3?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-27 17:55:30.636] [ INFO    ] [_internal:_log:122] 120261  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 17:55:30.754] [ INFO    ] [_internal:_log:122] 112014  * Restarting with stat
+[2020-04-27 17:55:31.998] [ WARNING ] [_internal:_log:122] 130118  * Debugger is active!
+[2020-04-27 17:55:31.999] [ INFO    ] [_internal:_log:122] 130118  * Debugger PIN: 507-280-042
+[2020-04-27 17:55:34.063] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 17:55:34] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 17:55:44.839] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 17:55:44] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 17:57:22.479] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 17:57:22] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 17:57:23.911] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 17:57:23] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 17:57:24.863] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 17:57:24] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:00:26.748] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:00:26] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:00:47.944] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:00:47] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:04:42.946] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:04:42] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:14:34.586] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:14:34] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:14:35.369] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:14:35] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:14:52.425] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:14:52] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:14:53.192] [ INFO    ] [_internal:_log:122] 130118 127.0.0.1 - - [27/Apr/2020 18:14:53] "GET /tests/test3 HTTP/1.1" 200 -
+[2020-04-27 18:18:04.215] [ INFO    ] [_internal:_log:122] 130118  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/management_file_config/routes.py', reloading
+[2020-04-27 18:18:04.344] [ INFO    ] [_internal:_log:122] 112014  * Restarting with stat

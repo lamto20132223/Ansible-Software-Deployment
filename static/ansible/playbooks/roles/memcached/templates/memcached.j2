@@ -1,0 +1,5 @@
+PORT= {{ PORT }}
+USER= {{ USER }}
+MAXCONN={{ MAXCONN }}
+CACHESIZE={{ CACHESIZE }}
+OPTIONS="-l 127.0.0.1,{{ host_info.ip[host_name] }}"

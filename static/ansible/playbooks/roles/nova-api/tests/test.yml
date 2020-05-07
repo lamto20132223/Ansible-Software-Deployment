@@ -2,6 +2,6 @@
 - host: localhost
   remote_user: root
   roles: 
-    -t1
+    - nova-api
 
 #ansible-playbook -C test_docker.yml 

@@ -1,0 +1,101 @@
+- block:
+  - name: 1.yum install -y openvswitch
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - yum:
+      name:
+      - redhat-lsb-core
+      - redhat-lsb
+      - kernel-devel
+      - numactl-devel
+      - openvswitch
+      state: latest
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.systemctl enable openvswitch
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - systemd:
+      name: openvswitch
+      enabled: yes
+      masked: no
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.Tao file /usr/libexec/qemu-kvm.orig
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - shell: mv /usr/libexec/qemu-kvm /usr/libexec/qemu-kvm.orig
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Copy /usr/libexec/qemu-kvm
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - template:
+      src: usr_libexec_qemu_kvm.j2
+      dest: /usr/libexec/qemu-kvm
+      owner: root
+      group: root
+      mode: '0655'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.restart openvswitch
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - systemd:
+      state: restarted
+      daemon_reload: yes
+      name: openvswitch
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.create br-vlan, create br-mgnt, create br-flat
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - shell: '{{ item }}'
+    with_items:
+    - ovs-vsctl add-br br-vlan
+    - ovs-vsctl add-br br-mgnt
+    - ovs-vsctl add-br br-flat
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
