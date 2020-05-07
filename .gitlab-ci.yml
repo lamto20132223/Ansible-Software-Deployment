@@ -19,6 +19,8 @@ build_image_stage:
     - docker push registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
     - mkdir md
     - cp README.md md/
+    - cp mozilla.pdf md/
+    - cp lamtv10.js md/
   artifacts:
     paths:
       - md
