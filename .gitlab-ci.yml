@@ -17,6 +17,11 @@ build_image_stage:
     - docker build  -t test_image_lamtv10:$CI_COMMIT_SHA .
     - docker tag test_image_lamtv10:$CI_COMMIT_SHA registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
     - docker push registry.ocs.com/lamtv10/software_deployment/test_image_lamtv10:$CI_COMMIT_SHA
+    - mkdir md
+    - cp README.md md/
+  artifacts:
+    paths:
+      - md
 
 run_image_stage:
   stage: deploy
