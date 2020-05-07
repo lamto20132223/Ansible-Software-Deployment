@@ -24,3 +24,6 @@ rbd_store_ceph_conf: /etc/ceph/ceph.conf
 nova_backend_ceph: false
 resume_guests_state_on_host_boot : false
 osapi_compute_unique_server_name_scope: false
+nova_compute_logging_debug: debug
+
+

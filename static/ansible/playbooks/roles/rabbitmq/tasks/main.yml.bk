@@ -1,0 +1,27 @@
+---
+- name: remove
+  command: '{{ item }}'
+  with_items:
+    - rm -rf /usr/share/docker/rabbitmq/rabbitmq/
+    - rm -rf /u01/docker/docker_log/rabbitmq/
+    - rm -rf  /var/lib/rabbitmq
+    - mkdir -p /u01/docker/docker_log/rabbitmq/
+    - mkdir  -p  /usr/share/docker/rabbitmq/rabbitmq/rabbitmq-data/
+    - echo  "VZDYBEEEQDCBCHSKENTY" > /usr/share/docker/rabbitmq/rabbitmq/.erlang.cookie 
+    - chown -R 1014:1012 /usr/share/docker/rabbitmq/
+    - chown -R 1014:1012 /u01/docker/docker_log/rabbitmq/
+
+- name: install on first_controller
+  command: '{{ item }}'
+  with_items:
+    - docker run  -d  --network=host --privileged  -v /u01/docker/docker_log/rabbitmq:/var/log/rabbitmq   -v /usr/share/docker/:/usr/share/docker/  -v /var/lib/rabbitmq:/var/lib/rabbitmq:shared   -u root -e RABBITMQ_START='BOOTSTRAP'   -e OPENSTACK_PASSWORD="{{ RB_OPENSTACK }}"   docker-registry:4000/rabbitmq_v43:q
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+
+
+- name: install on second_controller
+  command: '{{ item }}'
+  with_items:
+    - docker run  -d  --network=host --privileged  -v /u01/docker/docker_log/rabbitmq:/var/log/rabbitmq    -v /usr/share/docker/:/usr/share/docker/  -v /var/lib/rabbitmq:/var/lib/rabbitmq:shared  -u root -e RABBITMQ_START='INIT_RABBITMQ_CLUSTER'   -e RABBITMQ_HUB="controller01"  docker-registry:4000/rabbitmq_v43:q
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+
+

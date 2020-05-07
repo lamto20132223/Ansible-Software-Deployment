@@ -1,0 +1,98 @@
+#!/bin/bash -
+VIRTIO_OPTIONS="csum=off,gso=off,guest_tso4=off,guest_tso6=off,guest_ecn=off"
+VHOST_FORCE="vhostforce"
+SHARE="share=on"
+add_mem=False
+kafka=0
+MOUNT_DRIVE_1="file=/u01/vm/kafka-data1.qcow2,format=qcow2,if=none,id=drive-virtio-disk1"
+MOUNT_DEVICE_1="virtio-blk-pci,scsi=off,bus=pci.0,addr=0x09,drive=drive-virtio-disk1,id=virtio-disk1"
+MOUNT_DRIVE_2="file=/u02/vm/kafka-data2.qcow2,format=qcow2,if=none,id=drive-virtio-disk2"
+MOUNT_DEVICE_2="virtio-blk-pci,scsi=off,bus=pci.0,addr=0x10,drive=drive-virtio-disk2,id=virtio-disk2"
+i=0
+while [ $# -gt 0 ]; do
+    case "$1" in
+    -name)
+        args[i]="$1"
+        (( i++ ))
+        shift
+        if [[ "$1" =~ "guest" ]]; then
+                instance_id=`echo $1 | cut -c16-23`
+                dec_id=`printf '%d' 0x${instance_id}`
+                if [[ $dec_id -gt 0 && $dec_id -lt 20 ]]; then
+                    kafka=1
+                fi
+
+                args[i]=${1}
+                (( i++))
+                shift
+        fi
+        ;;
+    -device)
+        args[i]="$1"
+        (( i++ ))
+        shift
+        if [[ "$1" =~ "vhost-user" ]]; then
+                args[i]=${1},${VHOST_FORCE}
+                (( i++))
+                shift
+        fi
+        if [[ $1 == virtio-net-pci* ]]; then
+                args[i]=${1},${VIRTIO_OPTIONS}
+                (( i++))
+                shift
+        fi
+        if [[ "$1" =~ "virtio-blk-pci" && $kafka == 1 ]]; then
+                args[i]=${1}
+                (( i++))
+                args[i]="-drive"
+                (( i++))
+                args[i]=${MOUNT_DRIVE_1}
+                (( i++))
+                args[i]="-device"
+                (( i++))
+                args[i]=${MOUNT_DEVICE_1}
+                (( i++))
+                args[i]="-drive"
+                (( i++))
+                args[i]=${MOUNT_DRIVE_2}
+                (( i++))
+                args[i]="-device"
+                (( i++))
+                args[i]=${MOUNT_DEVICE_2}
+                (( i++))
+                shift
+                (( kafka-- ))
+        fi
+        ;;
+    -object)
+        args[i]="$1"
+        (( i++ ))
+        shift
+        if [[ "$1" =~ "memory-backend-file" ]]; then
+                args[i]=${1},${SHARE}
+                (( i++))
+                shift
+        fi
+        ;;
+    -netdev)
+        args[i]="$1"
+        (( i++ ))
+        shift
+        if [[ "$1" =~ "vhost-user" ]]; then
+                args[i]=${1},${VHOST_FORCE}
+                (( i++))
+                shift
+        fi
+        ;;
+    *)
+         args[i]="$1"
+         (( i++ ))
+         shift ;;
+    esac
+done
+
+if [ -e /usr/libexec/qemu-kvm.orig ]; then
+        exec /usr/libexec/qemu-kvm.orig  "${args[@]}"
+elif [ -e /usr/bin/qemu-system-x86_64 ]; then
+    exec /usr/bin/qemu-system-x86_64  "${args[@]}"
+fi

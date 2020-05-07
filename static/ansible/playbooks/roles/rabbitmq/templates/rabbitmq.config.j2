@@ -1,0 +1,36 @@
+%% -*- mode: erlang -*-
+
+[
+ {rabbit,
+  [
+   {vm_memory_high_watermark, '{{vm_memory_high_watermark}}' },
+   %%{vm_memory_high_watermark, {absolute, 1073741824}},
+   {vm_memory_high_watermark_paging_ratio, '{{ vm_memory_high_watermark_paging_ratio }}' },
+   {memory_monitor_interval, '{{ memory_monitor_interval }}' },
+   {disk_free_limit, '{{ disk_free_limit }}' },
+   {cluster_partition_handling, '{{ cluster_partition_handling }}' }
+  ]},
+ {kernel,
+  [
+  ]},
+ {rabbitmq_management,
+  [
+  ]},
+ {rabbitmq_shovel,
+  [{shovels,
+    [
+    ]}
+  ]},
+ {rabbitmq_stomp,
+  [
+  ]},
+ {rabbitmq_mqtt,
+  [
+  ]},
+ {rabbitmq_amqp1_0,
+  [
+  ]},
+ {rabbitmq_auth_backend_ldap,
+  [
+  ]}
+].

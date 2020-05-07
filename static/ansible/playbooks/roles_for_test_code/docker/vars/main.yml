@@ -1,0 +1,11 @@
+log_dir: "/var/log/nova"
+vcpu_pin_set : "3-17,39-53,21-35,57-71"
+MY_IP: "{{ ansible_default_ipv4.address }}"
+host_name: "{{ ansible_hostname }}"
+hostvars:
+  tower:
+    compute01: "XXXXXX01"
+    compute02: "YYYYYY02"
+  red: "RED" 
+  green: "GREEN"
+  blue: "BLUE"

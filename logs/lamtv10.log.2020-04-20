@@ -1,0 +1,548 @@
+[2020-04-22 08:45:41.083] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:41] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 08:45:41.431] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:41] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 200 -
+[2020-04-22 08:45:41.440] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:41] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 08:45:41.585] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:41] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 08:45:58.845] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:58] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 08:45:58.940] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:58] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 08:45:58.947] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:58] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 08:45:59.075] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:45:59] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 08:46:14.777] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:46:14] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 08:46:14.835] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:46:14] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 08:46:14.858] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:46:14] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 08:46:14.975] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:46:14] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 08:46:27.251] [ INFO    ] [_internal:_log:122] 115885 127.0.0.1 - - [22/Apr/2020 08:46:27] "GET /api/v1/hosts/2 HTTP/1.1" 200 -
+[2020-04-22 09:03:16.910] [ INFO    ] [_internal:_log:122] 110100  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-22 09:03:16.924] [ INFO    ] [_internal:_log:122] 110100  * Restarting with stat
+[2020-04-22 09:03:18.334] [ WARNING ] [_internal:_log:122] 110187  * Debugger is active!
+[2020-04-22 09:03:18.334] [ INFO    ] [_internal:_log:122] 110187  * Debugger PIN: 507-280-042
+[2020-04-22 09:03:40.903] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:03:40] "GET /favicon.ico HTTP/1.1" 404 -
+[2020-04-22 09:03:53.662] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:03:53] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:03:53.779] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:03:53] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:03:53.783] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:03:53] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:03:53.850] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:03:53] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:06:12.105] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:06:12] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:06:12.166] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:06:12] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:06:12.181] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:06:12] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:06:12.264] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:06:12] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:11:51.124] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:11:51] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:11:51.183] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:11:51] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:11:51.198] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:11:51] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:11:51.289] [ INFO    ] [_internal:_log:122] 110187 127.0.0.1 - - [22/Apr/2020 09:11:51] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:29:52.679] [ INFO    ] [_internal:_log:122] 12557  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-22 09:29:52.680] [ INFO    ] [_internal:_log:122] 12557  * Restarting with stat
+[2020-04-22 09:29:53.979] [ WARNING ] [_internal:_log:122] 12583  * Debugger is active!
+[2020-04-22 09:29:53.979] [ INFO    ] [_internal:_log:122] 12583  * Debugger PIN: 507-280-042
+[2020-04-22 09:30:56.583] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:30:56] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:30:56.695] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:30:56] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:30:56.705] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:30:56] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:30:56.881] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:30:56] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:33:02.102] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:33:02] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:33:02.194] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:33:02] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:33:02.200] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:33:02] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:33:02.403] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:33:02] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:35:43.094] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:35:43] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:35:43.213] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:35:43] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:35:43.235] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:35:43] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:35:43.522] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:35:43] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:38:12.711] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:38:12] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:38:12.807] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:38:12] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:38:12.813] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:38:12] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:38:12.899] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:38:12] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:44:19.415] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:44:19] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:44:19.496] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:44:19] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:44:19.505] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:44:19] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:44:19.604] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:44:19] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:45:40.290] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:40] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:45:40.380] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:40] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:45:40.401] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:40] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:45:40.474] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:40] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:45:42.568] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:42] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:45:42.631] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:42] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:45:42.634] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:42] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:45:42.714] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:45:42] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:46:50.995] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:46:50] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:46:51.054] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:46:51] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:46:51.058] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:46:51] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:46:51.124] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:46:51] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:47:00.701] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:00] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:47:00.773] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:00] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:00.781] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:00] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:00.865] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:00] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:47:17.324] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:17] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:47:17.367] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:17] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:17.380] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:17] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:17.456] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:17] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:47:31.559] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:31] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:47:31.621] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:31] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:31.627] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:31] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:31.743] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:31] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:47:42.300] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:42] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:47:42.383] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:42] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:42.389] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:42] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:47:42.513] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:47:42] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:48:18.403] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:18] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:48:18.477] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:18] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:48:18.488] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:18] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:48:18.613] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:18] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:48:47.143] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:47] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:48:47.238] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:47] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:48:47.251] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:47] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:48:47.337] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:47] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:48:49.991] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:49] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 09:48:50.093] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 200 -
+[2020-04-22 09:48:50.093] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.099] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 200 -
+[2020-04-22 09:48:50.122] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.130] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/css/style.css HTTP/1.1" 200 -
+[2020-04-22 09:48:50.135] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.142] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.151] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.153] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-04-22 09:48:50.197] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:48:50.213] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:48:50.224] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 200 -
+[2020-04-22 09:48:50.258] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 200 -
+[2020-04-22 09:48:50.297] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:48:50.305] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:48:50.346] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 200 -
+[2020-04-22 09:48:50.347] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 200 -
+[2020-04-22 09:48:50.382] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:48:50.387] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:48:50.406] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 200 -
+[2020-04-22 09:48:50.416] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:50] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 200 -
+[2020-04-22 09:48:54.726] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:54] "GET /static/form/css/style.css.map HTTP/1.1" 404 -
+[2020-04-22 09:48:54.814] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:54] "GET /static/form/fonts/poppins/poppins-v5-latin-600.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:48:54.883] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:54] "GET /static/form/fonts/poppins/poppins-v5-latin-600.woff HTTP/1.1" 404 -
+[2020-04-22 09:48:54.993] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:54] "GET /static/form/fonts/poppins/poppins-v5-latin-600.ttf HTTP/1.1" 404 -
+[2020-04-22 09:48:56.130] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:56] "POST /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 302 -
+[2020-04-22 09:48:56.198] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:56] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:48:56.399] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:48:56] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:49:04.085] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /tools/edit_ansible_group_vars?group=ops_node&filename=ops_node.yml HTTP/1.1" 200 -
+[2020-04-22 09:49:04.195] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-04-22 09:49:04.208] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-04-22 09:49:04.223] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-04-22 09:49:04.423] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:49:04.433] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:49:04.600] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 304 -
+[2020-04-22 09:49:04.608] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:49:04.616] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:49:04.677] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 304 -
+[2020-04-22 09:49:04.829] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:49:04.839] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:04] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:49:05.148] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:05] "GET /static/form/css/style.css.map HTTP/1.1" 404 -
+[2020-04-22 09:49:15.518] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:49:15.533] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:49:15.615] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:49:15.629] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:49:15.715] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:49:15.726] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:49:52.518] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:52] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:49:52.584] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:52] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:49:52.585] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:52] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:49:52.685] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:49:52] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:50:09.199] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /tools/edit_ansible_group_vars?group=ops_node&filename=ops_node.yml HTTP/1.1" 200 -
+[2020-04-22 09:50:09.389] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:09.399] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:09.482] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:09.523] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:09.549] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:50:09.558] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:09] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:50:15.144] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /tools/edit_ansible_group_vars?group=ops_node&filename=ops_node.yml HTTP/1.1" 200 -
+[2020-04-22 09:50:15.241] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:15.246] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:15.309] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:15.319] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:15.359] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:50:15.365] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:50:23.427] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /tools/edit_ansible_group_vars?group=ops_node&filename=ops_node.yml HTTP/1.1" 200 -
+[2020-04-22 09:50:23.623] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:23.633] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:50:23.666] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:23.685] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:50:23.693] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:50:23.706] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:50:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:55:44.278] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:55:44] "GET /static/form/css/style.css.map HTTP/1.1" 404 -
+[2020-04-22 09:55:44.391] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:55:44] "GET /static/form/fonts/poppins/poppins-v5-latin-600.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:55:44.469] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:55:44] "GET /static/form/fonts/poppins/poppins-v5-latin-600.woff HTTP/1.1" 404 -
+[2020-04-22 09:55:44.578] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:55:44] "GET /static/form/fonts/poppins/poppins-v5-latin-600.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:15.873] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:15.885] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:15.925] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:15.932] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:15.974] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:15.986] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:16.658] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:16.667] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:16.717] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:16.735] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:16.768] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:16.787] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:16] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:18.025] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:18.031] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:56:18.062] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:18.074] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:56:18.098] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:18.107] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:18] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:56:50.523] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:50] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:56:50.605] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:50] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:56:50.613] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:50] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:56:50.716] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:56:50] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:57:56.236] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:57:56] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:57:56.313] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:57:56] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:57:56.326] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:57:56] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 09:57:56.412] [ INFO    ] [_internal:_log:122] 12583 127.0.0.1 - - [22/Apr/2020 09:57:56] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 09:59:51.143] [ INFO    ] [_internal:_log:122] 49736  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-22 09:59:51.143] [ INFO    ] [_internal:_log:122] 49736  * Restarting with stat
+[2020-04-22 09:59:52.858] [ WARNING ] [_internal:_log:122] 49762  * Debugger is active!
+[2020-04-22 09:59:52.858] [ INFO    ] [_internal:_log:122] 49762  * Debugger PIN: 507-280-042
+[2020-04-22 09:59:57.424] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 09:59:57.470] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-04-22 09:59:57.479] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-04-22 09:59:57.484] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-04-22 09:59:57.494] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.498] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.511] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.522] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.530] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.539] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-04-22 09:59:57.550] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:59:57.559] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 09:59:57.577] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 304 -
+[2020-04-22 09:59:57.632] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 09:59:57.644] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 09:59:57.649] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 304 -
+[2020-04-22 09:59:57.671] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 304 -
+[2020-04-22 09:59:57.695] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 09:59:57.713] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 09:59:57.716] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 304 -
+[2020-04-22 09:59:57.717] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 304 -
+[2020-04-22 09:59:57.747] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:57] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 304 -
+[2020-04-22 09:59:59.069] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:59] "POST /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 302 -
+[2020-04-22 09:59:59.312] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:59] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 09:59:59.446] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 09:59:59] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:01:35.878] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:35] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:01:38.861] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:38] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:01:38.928] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:38] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:01:38.942] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:38] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:01:39.016] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:39] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:01:41.704] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:41] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 10:01:41.853] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:41] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:01:41.883] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:41] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:01:41.988] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:41] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 10:01:42.040] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:42] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 10:01:42.058] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:42] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 10:01:42.069] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:42] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 10:01:43.208] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:43] "POST /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 302 -
+[2020-04-22 10:01:43.269] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:43] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:01:43.413] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:01:43] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:02:21.613] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:21] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:02:21.737] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:21] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:02:21.739] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:21] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:02:21.879] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:21] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:02:23.832] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:23] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 10:02:23.957] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:02:23.965] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:02:24.082] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:24] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 10:02:24.090] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:24] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 10:02:24.157] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:24] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 10:02:24.161] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:24] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 10:02:25.411] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:25] "POST /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 302 -
+[2020-04-22 10:02:25.469] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:25] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:02:25.652] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:02:25] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:07:23.869] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:23] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:07:23.943] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:23] "GET /static/form/css/app-theme.min.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:07:23.973] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:23] "GET /static/form/css/app-mine.css?v=2.1.2 HTTP/1.1" 304 -
+[2020-04-22 10:07:24.080] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:24] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:07:32.974] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:32] "GET /tools/list_ansible_group_vars?download=yes&group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 10:07:47.040] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:07:47] "GET /tools/list_ansible_group_vars?download=yes&group=CONTROLLER&filename=dir_log_file.yml HTTP/1.1" 200 -
+[2020-04-22 10:09:28.128] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:09:28] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 10:17:23.665] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 10:17:23.847] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:17:23.855] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 10:17:23.920] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 10:17:23.947] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 10:17:23.999] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:23] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 10:17:24.015] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:24] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 10:17:25.351] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:25] "POST /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 302 -
+[2020-04-22 10:17:25.423] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:25] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:17:25.588] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:17:25] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 10:34:38.032] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:34:38] "GET /tools/list_ansible_group_vars HTTP/1.1" 200 -
+[2020-04-22 10:34:38.219] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 10:34:38] "GET /static/img/bg2.jpg HTTP/1.1" 404 -
+[2020-04-22 11:49:28.706] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /tools/edit_ansible_group_vars?group=CEPH&filename=storage.yml HTTP/1.1" 200 -
+[2020-04-22 11:49:28.819] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-04-22 11:49:28.823] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-04-22 11:49:28.897] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-04-22 11:49:28.909] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-04-22 11:49:28.966] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-04-22 11:49:28.978] [ INFO    ] [_internal:_log:122] 49762 127.0.0.1 - - [22/Apr/2020 11:49:28] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-04-22 16:05:36.961] [ INFO    ] [_internal:_log:122] 110389  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-22 16:05:36.961] [ INFO    ] [_internal:_log:122] 110389  * Restarting with stat
+[2020-04-22 16:05:37.824] [ WARNING ] [_internal:_log:122] 110420  * Debugger is active!
+[2020-04-22 16:05:37.824] [ INFO    ] [_internal:_log:122] 110420  * Debugger PIN: 507-280-042
+[2020-04-22 16:05:55.224] [ INFO    ] [_internal:_log:122] 110420 127.0.0.1 - - [22/Apr/2020 16:05:55] "GET /tools/ HTTP/1.1" 200 -
+[2020-04-22 16:05:58.136] [ INFO    ] [_internal:_log:122] 110420 127.0.0.1 - - [22/Apr/2020 16:05:58] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:06:15.757] [ INFO    ] [_internal:_log:122] 110420  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-22 16:06:15.880] [ INFO    ] [_internal:_log:122] 110389  * Restarting with stat
+[2020-04-22 16:06:17.737] [ WARNING ] [_internal:_log:122] 111370  * Debugger is active!
+[2020-04-22 16:06:17.738] [ INFO    ] [_internal:_log:122] 111370  * Debugger PIN: 507-280-042
+[2020-04-22 16:07:48.744] [ INFO    ] [_internal:_log:122] 111370  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-22 16:07:48.865] [ INFO    ] [_internal:_log:122] 110389  * Restarting with stat
+[2020-04-22 16:07:50.282] [ WARNING ] [_internal:_log:122] 113307  * Debugger is active!
+[2020-04-22 16:07:50.283] [ INFO    ] [_internal:_log:122] 113307  * Debugger PIN: 507-280-042
+[2020-04-22 16:09:29.012] [ INFO    ] [_internal:_log:122] 113307 127.0.0.1 - - [22/Apr/2020 16:09:29] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:09:39.310] [ INFO    ] [_internal:_log:122] 113307 127.0.0.1 - - [22/Apr/2020 16:09:39] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-22 16:09:55.201] [ INFO    ] [_internal:_log:122] 113307 127.0.0.1 - - [22/Apr/2020 16:09:55] "GET /api/v1/hosts/add_host HTTP/1.1" 404 -
+[2020-04-22 16:10:04.118] [ INFO    ] [_internal:_log:122] 113307 127.0.0.1 - - [22/Apr/2020 16:10:04] "GET /api/v1/hosts/host_info?host_id=1 HTTP/1.1" 200 -
+[2020-04-22 16:13:25.956] [ INFO    ] [_internal:_log:122] 113307  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-22 16:13:26.048] [ INFO    ] [_internal:_log:122] 110389  * Restarting with stat
+[2020-04-22 16:13:27.292] [ WARNING ] [_internal:_log:122] 120231  * Debugger is active!
+[2020-04-22 16:13:27.292] [ INFO    ] [_internal:_log:122] 120231  * Debugger PIN: 507-280-042
+[2020-04-22 16:13:57.074] [ INFO    ] [_internal:_log:122] 120231  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-22 16:13:57.201] [ INFO    ] [_internal:_log:122] 110389  * Restarting with stat
+[2020-04-22 16:13:58.312] [ WARNING ] [_internal:_log:122] 120875  * Debugger is active!
+[2020-04-22 16:13:58.312] [ INFO    ] [_internal:_log:122] 120875  * Debugger PIN: 507-280-042
+[2020-04-22 16:14:04.414] [ INFO    ] [_internal:_log:122] 120999  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-22 16:14:04.415] [ INFO    ] [_internal:_log:122] 120999  * Restarting with stat
+[2020-04-22 16:14:05.678] [ WARNING ] [_internal:_log:122] 121034  * Debugger is active!
+[2020-04-22 16:14:05.679] [ INFO    ] [_internal:_log:122] 121034  * Debugger PIN: 507-280-042
+[2020-04-22 16:14:06.743] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:14:06] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:15:23.593] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:15:23] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:16:32.204] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:16:32] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:16:50.169] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:16:50] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:17:50.133] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:17:50] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:18:06.366] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:18:06] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:18:35.827] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:18:35] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:18:50.519] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:18:50] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:19:11.842] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:19:11] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 16:20:20.766] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:20:20] "GET /tools/ HTTP/1.1" 200 -
+[2020-04-22 16:20:25.446] [ INFO    ] [_internal:_log:122] 121034 127.0.0.1 - - [22/Apr/2020 16:20:25] "GET /tools/list_api HTTP/1.1" 200 -
+[2020-04-22 18:19:45.305] [ INFO    ] [_internal:_log:122] 121034  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-22 18:19:45.442] [ INFO    ] [_internal:_log:122] 120999  * Restarting with stat
+[2020-04-24 13:39:14.009] [ INFO    ] [_internal:_log:122] 65180  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 13:39:14.011] [ INFO    ] [_internal:_log:122] 65180  * Restarting with stat
+[2020-04-24 13:39:15.448] [ WARNING ] [_internal:_log:122] 65256  * Debugger is active!
+[2020-04-24 13:39:15.448] [ INFO    ] [_internal:_log:122] 65256  * Debugger PIN: 507-280-042
+[2020-04-24 13:39:18.548] [ INFO    ] [_internal:_log:122] 65256 127.0.0.1 - - [24/Apr/2020 13:39:18] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:40:18.080] [ INFO    ] [_internal:_log:122] 65256 127.0.0.1 - - [24/Apr/2020 13:40:18] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:41:01.195] [ INFO    ] [_internal:_log:122] 65256  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:41:01.326] [ INFO    ] [_internal:_log:122] 65180  * Restarting with stat
+[2020-04-24 13:41:03.466] [ WARNING ] [_internal:_log:122] 67487  * Debugger is active!
+[2020-04-24 13:41:03.467] [ INFO    ] [_internal:_log:122] 67487  * Debugger PIN: 507-280-042
+[2020-04-24 13:41:10.963] [ INFO    ] [_internal:_log:122] 67487 127.0.0.1 - - [24/Apr/2020 13:41:10] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:41:18.126] [ INFO    ] [_internal:_log:122] 67487 127.0.0.1 - - [24/Apr/2020 13:41:18] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:43:40.186] [ INFO    ] [_internal:_log:122] 67487  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:43:40.299] [ INFO    ] [_internal:_log:122] 65180  * Restarting with stat
+[2020-04-24 13:43:41.767] [ WARNING ] [_internal:_log:122] 70726  * Debugger is active!
+[2020-04-24 13:43:41.768] [ INFO    ] [_internal:_log:122] 70726  * Debugger PIN: 507-280-042
+[2020-04-24 13:44:02.264] [ INFO    ] [_internal:_log:122] 70726  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:44:02.430] [ INFO    ] [_internal:_log:122] 65180  * Restarting with stat
+[2020-04-24 13:45:00.607] [ INFO    ] [_internal:_log:122] 72336  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 13:45:00.608] [ INFO    ] [_internal:_log:122] 72336  * Restarting with stat
+[2020-04-24 13:45:02.238] [ WARNING ] [_internal:_log:122] 72362  * Debugger is active!
+[2020-04-24 13:45:02.239] [ INFO    ] [_internal:_log:122] 72362  * Debugger PIN: 507-280-042
+[2020-04-24 13:45:03.337] [ INFO    ] [_internal:_log:122] 72362 127.0.0.1 - - [24/Apr/2020 13:45:03] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:45:07.295] [ INFO    ] [_internal:_log:122] 72362 127.0.0.1 - - [24/Apr/2020 13:45:07] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:45:11.791] [ INFO    ] [_internal:_log:122] 72362 127.0.0.1 - - [24/Apr/2020 13:45:11] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:45:44.378] [ INFO    ] [_internal:_log:122] 72362  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:45:44.472] [ INFO    ] [_internal:_log:122] 72336  * Restarting with stat
+[2020-04-24 13:45:45.796] [ WARNING ] [_internal:_log:122] 73283  * Debugger is active!
+[2020-04-24 13:45:45.796] [ INFO    ] [_internal:_log:122] 73283  * Debugger PIN: 507-280-042
+[2020-04-24 13:45:49.588] [ INFO    ] [_internal:_log:122] 73283 127.0.0.1 - - [24/Apr/2020 13:45:49] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:46:04.234] [ INFO    ] [_internal:_log:122] 73283  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:46:04.366] [ INFO    ] [_internal:_log:122] 72336  * Restarting with stat
+[2020-04-24 13:46:06.111] [ WARNING ] [_internal:_log:122] 73698  * Debugger is active!
+[2020-04-24 13:46:06.111] [ INFO    ] [_internal:_log:122] 73698  * Debugger PIN: 507-280-042
+[2020-04-24 13:46:11.143] [ INFO    ] [_internal:_log:122] 73698 127.0.0.1 - - [24/Apr/2020 13:46:11] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:49:14.498] [ INFO    ] [_internal:_log:122] 73698  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:49:14.643] [ INFO    ] [_internal:_log:122] 72336  * Restarting with stat
+[2020-04-24 13:49:16.338] [ WARNING ] [_internal:_log:122] 77544  * Debugger is active!
+[2020-04-24 13:49:16.338] [ INFO    ] [_internal:_log:122] 77544  * Debugger PIN: 507-280-042
+[2020-04-24 13:49:21.221] [ INFO    ] [_internal:_log:122] 77544 127.0.0.1 - - [24/Apr/2020 13:49:21] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:49:26.038] [ INFO    ] [_internal:_log:122] 77544 127.0.0.1 - - [24/Apr/2020 13:49:26] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:49:35.562] [ INFO    ] [_internal:_log:122] 77544 127.0.0.1 - - [24/Apr/2020 13:49:35] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:49:44.058] [ INFO    ] [_internal:_log:122] 77544  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:49:44.193] [ INFO    ] [_internal:_log:122] 72336  * Restarting with stat
+[2020-04-24 13:49:45.965] [ WARNING ] [_internal:_log:122] 78172  * Debugger is active!
+[2020-04-24 13:49:45.965] [ INFO    ] [_internal:_log:122] 78172  * Debugger PIN: 507-280-042
+[2020-04-24 13:49:47.542] [ INFO    ] [_internal:_log:122] 78172 127.0.0.1 - - [24/Apr/2020 13:49:47] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:49:54.090] [ INFO    ] [_internal:_log:122] 78348  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 13:49:54.091] [ INFO    ] [_internal:_log:122] 78348  * Restarting with stat
+[2020-04-24 13:49:55.656] [ WARNING ] [_internal:_log:122] 78387  * Debugger is active!
+[2020-04-24 13:49:55.657] [ INFO    ] [_internal:_log:122] 78387  * Debugger PIN: 507-280-042
+[2020-04-24 13:49:56.350] [ INFO    ] [_internal:_log:122] 78387 127.0.0.1 - - [24/Apr/2020 13:49:56] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 13:54:57.911] [ INFO    ] [_internal:_log:122] 78387  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 13:54:58.051] [ INFO    ] [_internal:_log:122] 78348  * Restarting with stat
+[2020-04-24 13:54:59.481] [ WARNING ] [_internal:_log:122] 84535  * Debugger is active!
+[2020-04-24 13:54:59.482] [ INFO    ] [_internal:_log:122] 84535  * Debugger PIN: 507-280-042
+[2020-04-24 13:57:35.456] [ INFO    ] [_internal:_log:122] 84535 127.0.0.1 - - [24/Apr/2020 13:57:35] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 14:12:18.166] [ INFO    ] [_internal:_log:122] 84535  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 14:12:18.319] [ INFO    ] [_internal:_log:122] 78348  * Restarting with stat
+[2020-04-24 15:08:50.371] [ INFO    ] [_internal:_log:122] 44207  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 15:08:50.372] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:08:51.835] [ WARNING ] [_internal:_log:122] 44252  * Debugger is active!
+[2020-04-24 15:08:51.836] [ INFO    ] [_internal:_log:122] 44252  * Debugger PIN: 507-280-042
+[2020-04-24 15:10:49.635] [ INFO    ] [_internal:_log:122] 44252  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 15:10:49.793] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:10:51.035] [ WARNING ] [_internal:_log:122] 46662  * Debugger is active!
+[2020-04-24 15:10:51.036] [ INFO    ] [_internal:_log:122] 46662  * Debugger PIN: 507-280-042
+[2020-04-24 15:11:25.850] [ INFO    ] [_internal:_log:122] 46662  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/discovery_node_test/routes.py', reloading
+[2020-04-24 15:11:26.106] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:11:27.977] [ WARNING ] [_internal:_log:122] 47413  * Debugger is active!
+[2020-04-24 15:11:27.978] [ INFO    ] [_internal:_log:122] 47413  * Debugger PIN: 507-280-042
+[2020-04-24 15:13:09.665] [ INFO    ] [_internal:_log:122] 47413  * Detected change in '/home/vttek/lamtv10/Project23022020/configs/conf_app.py', reloading
+[2020-04-24 15:13:09.793] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:13:10.928] [ WARNING ] [_internal:_log:122] 49569  * Debugger is active!
+[2020-04-24 15:13:10.929] [ INFO    ] [_internal:_log:122] 49569  * Debugger PIN: 507-280-042
+[2020-04-24 15:20:15.835] [ INFO    ] [_internal:_log:122] 49569  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-04-24 15:20:15.984] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:20:17.972] [ WARNING ] [_internal:_log:122] 58222  * Debugger is active!
+[2020-04-24 15:20:17.972] [ INFO    ] [_internal:_log:122] 58222  * Debugger PIN: 507-280-042
+[2020-04-24 15:20:23.114] [ INFO    ] [_internal:_log:122] 58222  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:20:23.264] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:20:25.248] [ WARNING ] [_internal:_log:122] 58387  * Debugger is active!
+[2020-04-24 15:20:25.248] [ INFO    ] [_internal:_log:122] 58387  * Debugger PIN: 507-280-042
+[2020-04-24 15:20:56.065] [ INFO    ] [_internal:_log:122] 58387  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:20:56.185] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:20:58.069] [ WARNING ] [_internal:_log:122] 59053  * Debugger is active!
+[2020-04-24 15:20:58.069] [ INFO    ] [_internal:_log:122] 59053  * Debugger PIN: 507-280-042
+[2020-04-24 15:21:39.915] [ INFO    ] [_internal:_log:122] 59053  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:21:40.013] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:21:41.582] [ WARNING ] [_internal:_log:122] 59951  * Debugger is active!
+[2020-04-24 15:21:41.583] [ INFO    ] [_internal:_log:122] 59951  * Debugger PIN: 507-280-042
+[2020-04-24 15:21:42.644] [ INFO    ] [_internal:_log:122] 59951  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:21:42.759] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:21:44.097] [ WARNING ] [_internal:_log:122] 60017  * Debugger is active!
+[2020-04-24 15:21:44.098] [ INFO    ] [_internal:_log:122] 60017  * Debugger PIN: 507-280-042
+[2020-04-24 15:31:22.293] [ INFO    ] [_internal:_log:122] 60017  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:31:22.427] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:31:23.758] [ WARNING ] [_internal:_log:122] 71691  * Debugger is active!
+[2020-04-24 15:31:23.759] [ INFO    ] [_internal:_log:122] 71691  * Debugger PIN: 507-280-042
+[2020-04-24 15:31:51.431] [ INFO    ] [_internal:_log:122] 71691  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:31:51.587] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:31:53.050] [ WARNING ] [_internal:_log:122] 72305  * Debugger is active!
+[2020-04-24 15:31:53.050] [ INFO    ] [_internal:_log:122] 72305  * Debugger PIN: 507-280-042
+[2020-04-24 15:37:18.565] [ INFO    ] [_internal:_log:122] 72305  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:37:18.734] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:37:20.573] [ WARNING ] [_internal:_log:122] 78851  * Debugger is active!
+[2020-04-24 15:37:20.573] [ INFO    ] [_internal:_log:122] 78851  * Debugger PIN: 507-280-042
+[2020-04-24 15:54:10.537] [ INFO    ] [_internal:_log:122] 78851  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:54:10.665] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:54:12.288] [ WARNING ] [_internal:_log:122] 99195  * Debugger is active!
+[2020-04-24 15:54:12.289] [ INFO    ] [_internal:_log:122] 99195  * Debugger PIN: 507-280-042
+[2020-04-24 15:55:44.590] [ INFO    ] [_internal:_log:122] 99195  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:55:44.742] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:55:46.044] [ WARNING ] [_internal:_log:122] 101078  * Debugger is active!
+[2020-04-24 15:55:46.045] [ INFO    ] [_internal:_log:122] 101078  * Debugger PIN: 507-280-042
+[2020-04-24 15:56:20.994] [ INFO    ] [_internal:_log:122] 101078  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:56:21.101] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:56:22.694] [ WARNING ] [_internal:_log:122] 101828  * Debugger is active!
+[2020-04-24 15:56:22.695] [ INFO    ] [_internal:_log:122] 101828  * Debugger PIN: 507-280-042
+[2020-04-24 15:56:38.129] [ INFO    ] [_internal:_log:122] 101828  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:56:38.243] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:56:39.654] [ WARNING ] [_internal:_log:122] 102184  * Debugger is active!
+[2020-04-24 15:56:39.655] [ INFO    ] [_internal:_log:122] 102184  * Debugger PIN: 507-280-042
+[2020-04-24 15:57:07.044] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:57:07] "GET /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 15:57:22.638] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:57:22] "GET /api/v1/hosts HTTP/1.1" 200 -
+[2020-04-24 15:58:18.632] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:18] "POST /tools/convert_json_to_list_name HTTP/1.1" 500 -
+[2020-04-24 15:58:18.746] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:18] "GET /tools/convert_json_to_list_name?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-04-24 15:58:18.747] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:18] "GET /tools/convert_json_to_list_name?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-04-24 15:58:18.754] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:18] "GET /tools/convert_json_to_list_name?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-04-24 15:58:19.147] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:19] "GET /tools/convert_json_to_list_name?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-24 15:58:19.183] [ INFO    ] [_internal:_log:122] 102184 127.0.0.1 - - [24/Apr/2020 15:58:19] "GET /tools/convert_json_to_list_name?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-04-24 15:58:56.203] [ INFO    ] [_internal:_log:122] 102184  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:58:56.318] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:58:57.986] [ WARNING ] [_internal:_log:122] 105042  * Debugger is active!
+[2020-04-24 15:58:57.987] [ INFO    ] [_internal:_log:122] 105042  * Debugger PIN: 507-280-042
+[2020-04-24 15:59:00.044] [ INFO    ] [_internal:_log:122] 105042  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:59:00.151] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:59:01.922] [ WARNING ] [_internal:_log:122] 105128  * Debugger is active!
+[2020-04-24 15:59:01.923] [ INFO    ] [_internal:_log:122] 105128  * Debugger PIN: 507-280-042
+[2020-04-24 15:59:07.347] [ INFO    ] [_internal:_log:122] 105128 127.0.0.1 - - [24/Apr/2020 15:59:07] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 15:59:47.014] [ INFO    ] [_internal:_log:122] 105128  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 15:59:47.151] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 15:59:48.694] [ WARNING ] [_internal:_log:122] 106100  * Debugger is active!
+[2020-04-24 15:59:48.694] [ INFO    ] [_internal:_log:122] 106100  * Debugger PIN: 507-280-042
+[2020-04-24 16:00:07.138] [ INFO    ] [_internal:_log:122] 106100  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:00:07.276] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:00:09.069] [ WARNING ] [_internal:_log:122] 106526  * Debugger is active!
+[2020-04-24 16:00:09.069] [ INFO    ] [_internal:_log:122] 106526  * Debugger PIN: 507-280-042
+[2020-04-24 16:00:27.574] [ INFO    ] [_internal:_log:122] 106526  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:00:27.731] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:00:29.103] [ WARNING ] [_internal:_log:122] 106948  * Debugger is active!
+[2020-04-24 16:00:29.104] [ INFO    ] [_internal:_log:122] 106948  * Debugger PIN: 507-280-042
+[2020-04-24 16:00:33.222] [ INFO    ] [_internal:_log:122] 106948  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:00:33.333] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:00:34.725] [ WARNING ] [_internal:_log:122] 107069  * Debugger is active!
+[2020-04-24 16:00:34.726] [ INFO    ] [_internal:_log:122] 107069  * Debugger PIN: 507-280-042
+[2020-04-24 16:00:43.361] [ INFO    ] [_internal:_log:122] 107069 127.0.0.1 - - [24/Apr/2020 16:00:43] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 16:01:03.289] [ INFO    ] [_internal:_log:122] 107069 127.0.0.1 - - [24/Apr/2020 16:01:03] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 16:01:13.636] [ INFO    ] [_internal:_log:122] 107069  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:01:13.762] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:01:15.593] [ WARNING ] [_internal:_log:122] 108075  * Debugger is active!
+[2020-04-24 16:01:15.594] [ INFO    ] [_internal:_log:122] 108075  * Debugger PIN: 507-280-042
+[2020-04-24 16:01:16.630] [ INFO    ] [_internal:_log:122] 108075  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:01:16.736] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:01:18.274] [ WARNING ] [_internal:_log:122] 108148  * Debugger is active!
+[2020-04-24 16:01:18.274] [ INFO    ] [_internal:_log:122] 108148  * Debugger PIN: 507-280-042
+[2020-04-24 16:01:25.899] [ INFO    ] [_internal:_log:122] 108148 127.0.0.1 - - [24/Apr/2020 16:01:25] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 16:02:03.378] [ INFO    ] [_internal:_log:122] 108148  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:02:03.515] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:02:05.327] [ WARNING ] [_internal:_log:122] 109115  * Debugger is active!
+[2020-04-24 16:02:05.327] [ INFO    ] [_internal:_log:122] 109115  * Debugger PIN: 507-280-042
+[2020-04-24 16:02:27.857] [ INFO    ] [_internal:_log:122] 109115  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 16:02:27.980] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 16:02:29.316] [ WARNING ] [_internal:_log:122] 109624  * Debugger is active!
+[2020-04-24 16:02:29.317] [ INFO    ] [_internal:_log:122] 109624  * Debugger PIN: 507-280-042
+[2020-04-24 16:49:59.534] [ INFO    ] [_internal:_log:122] 109624 127.0.0.1 - - [24/Apr/2020 16:49:59] "GET /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:27:51.864] [ INFO    ] [_internal:_log:122] 109624  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:27:51.996] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:27:53.394] [ WARNING ] [_internal:_log:122] 82637  * Debugger is active!
+[2020-04-24 17:27:53.394] [ INFO    ] [_internal:_log:122] 82637  * Debugger PIN: 507-280-042
+[2020-04-24 17:30:12.549] [ INFO    ] [_internal:_log:122] 82637  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:30:12.684] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:30:14.644] [ WARNING ] [_internal:_log:122] 85532  * Debugger is active!
+[2020-04-24 17:30:14.645] [ INFO    ] [_internal:_log:122] 85532  * Debugger PIN: 507-280-042
+[2020-04-24 17:31:08.993] [ INFO    ] [_internal:_log:122] 85532  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:31:09.114] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:31:10.417] [ WARNING ] [_internal:_log:122] 86665  * Debugger is active!
+[2020-04-24 17:31:10.417] [ INFO    ] [_internal:_log:122] 86665  * Debugger PIN: 507-280-042
+[2020-04-24 17:31:34.998] [ INFO    ] [_internal:_log:122] 86665  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:31:35.138] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:31:37.111] [ WARNING ] [_internal:_log:122] 87202  * Debugger is active!
+[2020-04-24 17:31:37.112] [ INFO    ] [_internal:_log:122] 87202  * Debugger PIN: 507-280-042
+[2020-04-24 17:31:39.202] [ INFO    ] [_internal:_log:122] 87202  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:31:39.370] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:31:40.944] [ WARNING ] [_internal:_log:122] 87298  * Debugger is active!
+[2020-04-24 17:31:40.944] [ INFO    ] [_internal:_log:122] 87298  * Debugger PIN: 507-280-042
+[2020-04-24 17:31:46.065] [ INFO    ] [_internal:_log:122] 87298  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:31:46.195] [ INFO    ] [_internal:_log:122] 44207  * Restarting with stat
+[2020-04-24 17:35:19.667] [ INFO    ] [_internal:_log:122] 91728  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 17:35:19.668] [ INFO    ] [_internal:_log:122] 91728  * Restarting with stat
+[2020-04-24 17:35:21.165] [ WARNING ] [_internal:_log:122] 91766  * Debugger is active!
+[2020-04-24 17:35:21.166] [ INFO    ] [_internal:_log:122] 91766  * Debugger PIN: 507-280-042
+[2020-04-24 17:35:27.564] [ INFO    ] [_internal:_log:122] 91766 127.0.0.1 - - [24/Apr/2020 17:35:27] "GET /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:35:29.977] [ INFO    ] [_internal:_log:122] 91766 127.0.0.1 - - [24/Apr/2020 17:35:29] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:35:47.485] [ INFO    ] [_internal:_log:122] 91766 127.0.0.1 - - [24/Apr/2020 17:35:47] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:46:30.167] [ INFO    ] [_internal:_log:122] 91766  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:46:30.302] [ INFO    ] [_internal:_log:122] 91728  * Restarting with stat
+[2020-04-24 17:46:32.001] [ WARNING ] [_internal:_log:122] 105378  * Debugger is active!
+[2020-04-24 17:46:32.002] [ INFO    ] [_internal:_log:122] 105378  * Debugger PIN: 507-280-042
+[2020-04-24 17:46:39.258] [ INFO    ] [_internal:_log:122] 105378 127.0.0.1 - - [24/Apr/2020 17:46:39] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:47:50.891] [ INFO    ] [_internal:_log:122] 105378  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:47:51.018] [ INFO    ] [_internal:_log:122] 91728  * Restarting with stat
+[2020-04-24 17:47:52.587] [ WARNING ] [_internal:_log:122] 107019  * Debugger is active!
+[2020-04-24 17:47:52.587] [ INFO    ] [_internal:_log:122] 107019  * Debugger PIN: 507-280-042
+[2020-04-24 17:47:54.649] [ INFO    ] [_internal:_log:122] 107019  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:47:54.790] [ INFO    ] [_internal:_log:122] 91728  * Restarting with stat
+[2020-04-24 17:47:56.666] [ WARNING ] [_internal:_log:122] 107104  * Debugger is active!
+[2020-04-24 17:47:56.666] [ INFO    ] [_internal:_log:122] 107104  * Debugger PIN: 507-280-042
+[2020-04-24 17:48:01.726] [ INFO    ] [_internal:_log:122] 107104 127.0.0.1 - - [24/Apr/2020 17:48:01] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:48:05.739] [ INFO    ] [_internal:_log:122] 107104 127.0.0.1 - - [24/Apr/2020 17:48:05] "POST /tools/convert_json_to_list_name HTTP/1.1" 200 -
+[2020-04-24 17:48:40.232] [ INFO    ] [_internal:_log:122] 108160  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-04-24 17:48:40.232] [ INFO    ] [_internal:_log:122] 108160  * Restarting with stat
+[2020-04-24 17:48:41.573] [ WARNING ] [_internal:_log:122] 108188  * Debugger is active!
+[2020-04-24 17:48:41.573] [ INFO    ] [_internal:_log:122] 108188  * Debugger PIN: 507-280-042
+[2020-04-24 17:50:32.439] [ INFO    ] [_internal:_log:122] 108188  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-04-24 17:50:32.588] [ INFO    ] [_internal:_log:122] 108160  * Restarting with stat
+[2020-04-24 17:50:34.396] [ WARNING ] [_internal:_log:122] 110443  * Debugger is active!
+[2020-04-24 17:50:34.396] [ INFO    ] [_internal:_log:122] 110443  * Debugger PIN: 507-280-042

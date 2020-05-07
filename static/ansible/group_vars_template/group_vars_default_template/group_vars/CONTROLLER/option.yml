@@ -37,7 +37,7 @@ SQL_SST_PASSWD: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew
 #SQL_MAX_CONNECT_ERRORS: 10
 #SQL_MAX_ALLOWED_PACKET: 10
 #MY_HOST_NAME: pxc-cluster-node-1
-wsrep_cluster_address: gcomm://172.16.29.193,172.16.29.194,172.16.29.195
+wsrep_cluster_address: gcomm://172.16.29.191,172.16.29.201,172.16.29.234
 
 # RabbitMQ and Memcached
 transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
@@ -47,4 +47,4 @@ memcached_servers: "{% for node in groups['controller'] %}{{node}}:11211{% if no
 rbd_store_ceph_conf: /etc/ceph/ceph.conf
 glance_backend_ceph: false
 cinder_backend_ceph: false
-
+glance_image_path: /home/root/var/lib/glance

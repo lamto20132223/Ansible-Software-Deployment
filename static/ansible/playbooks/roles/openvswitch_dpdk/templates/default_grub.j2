@@ -1,0 +1,11 @@
+GRUB_TIMEOUT=5
+GRUB_DISTRIBUTOR="$(sed 's, release .*$,,g' /etc/system-release)"
+GRUB_DEFAULT=saved
+GRUB_DISABLE_SUBMENU=true
+GRUB_TERMINAL_OUTPUT="console"
+GRUB_CMDLINE_LINUX="net.ifnames=1 crashkernel=auto rd.lvm.lv=vg00/lv_root rd.lvm.lv=vg00/lv_swap rd.lvm.lv=vg00/lv_usr rhgb quiet default_hugepagesz=1G hugepagesz=1G hugepages=238 intel_iommu=on iommu=pt isolcpus=2-17,38-53,20-35,56-71"
+GRUB_DISABLE_RECOVERY="true"
+
+
+
+#grub2-mkconfig -o /etc/grub2.cfg

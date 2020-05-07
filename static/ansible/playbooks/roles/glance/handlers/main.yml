@@ -1,0 +1,30 @@
+---
+- name: restart_glance_api
+  docker_container:
+    name: glance-api
+    image: '{{ docker_image.glance }}'
+    state: started
+    restart: yes
+
+- name: restart_glance_registry
+  docker_container:
+    name: glance-registry
+    image: '{{ docker_image.glance }}' 
+    state: started
+    restart: yes
+
+- name: stop_glance
+  docker_container:
+    name: '{{ item }}'
+    state: stopped
+  with_items: 
+    - glance-api
+    - glance-registry
+
+- name: remove_glance
+  docker_container:
+    name: '{{ item }}'
+    state: absent
+  with_items: 
+    - glance-api
+    - glance-registry

@@ -1,14 +1,11 @@
 - block:
-  - name: 1.cp selinux.conf.j2 /etc/selinux/config
+  - name: 1.yum install -y Percona-XtraDB-Cluster-57
     debug: msg='Starting 1-------------------------------------------->'
   - include: extends/before.yml task_index=1
-  - template:
-      src: selinux.conf.j2
-      dest: /etc/selinux/config
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
+  - yum:
+      name:
+      - Percona-XtraDB-Cluster-57
+      state: latest
     register: infos
   - include: extends/after_ok.yml task_index=1 info={{ infos  }}
   rescue:
@@ -18,14 +15,13 @@
   - install
   - '1'
 - block:
-  - name: 2.stop selinux
+  - name: 2.systemctl stop mysql
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
-  - command: '{{ item }}'
-    with_items:
-    - sudo setenforce 0
+  - systemd:
+      name: mysql
+      state: stopped
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=2 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=2 info={{ infos  }}
@@ -34,15 +30,14 @@
   - install
   - '2'
 - block:
-  - name: 3.systemctl stop iptables
+  - name: 3.systemctl enable mysql
     debug: msg='Starting 3-------------------------------------------->'
   - include: extends/before.yml task_index=3
   - systemd:
-      name: iptables
-      enabled: no
+      name: mysql
+      enabled: yes
       masked: no
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=3 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=3 info={{ infos  }}
@@ -51,15 +46,17 @@
   - install
   - '3'
 - block:
-  - name: 4.systemctl stop firewalld
+  - name: 4.cp wsrep.cnf
     debug: msg='Starting 4-------------------------------------------->'
   - include: extends/before.yml task_index=4
-  - systemd:
-      name: firewalld
-      enabled: no
-      masked: no
+  - template:
+      src: wsrep.cnf.j2
+      dest: /etc/percona-xtradb-cluster.conf.d/wsrep.cnf
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=4 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=4 info={{ infos  }}
@@ -68,17 +65,13 @@
   - install
   - '4'
 - block:
-  - name: 5.test_ansible_command
+  - name: 5.systemctl start mysql@bootstrap
     debug: msg='Starting 5-------------------------------------------->'
   - include: extends/before.yml task_index=5
-  - command: '{{ item }}'
-    with_items:
-    - echo "{{ inventory_hostname }}"
-    - touch /home/"{{ service_name }}"
-    - echo "{{ group_name }}"  > /home/"{{ service_name }}"
-
-#    - cp /home/lamtv10/lkt /home/lamtv10/
-
+  - systemd:
+      name: mysql@bootstrap
+      state: started
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
     register: infos
   - include: extends/after_ok.yml task_index=5 info={{ infos  }}
   rescue:
@@ -88,16 +81,17 @@
   - install
   - '5'
 - block:
-  - name: 6.cp local.repo.j2 /etc/yum.repos.d/local.repo
+  - name: 6.Create mysql cluster user
     debug: msg='Starting 6-------------------------------------------->'
   - include: extends/before.yml task_index=6
-  - template:
-      src: local.repo.j2
-      dest: /etc/yum.repos.d/local.repo
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
+  - command: '{{ item }}'
+    with_items:
+    - mysql  -e "CREATE USER '{{ wsrep_sst_user }}'@'localhost' IDENTIFIED BY '{{
+      wsrep_sst_password }}'"
+    - mysql  -e "GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO
+      '{{ wsrep_sst_user }}'@'localhost'"
+    - mysql -e "FLUSH PRIVILEGES"
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
     register: infos
   - include: extends/after_ok.yml task_index=6 info={{ infos  }}
   rescue:
@@ -107,16 +101,13 @@
   - install
   - '6'
 - block:
-  - name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+  - name: 7.systemctl start mysql
     debug: msg='Starting 7-------------------------------------------->'
   - include: extends/before.yml task_index=7
-  - template:
-      src: docker.repo.j2
-      dest: /etc/yum.repos.d/docker.repo
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
+  - systemd:
+      name: mysql
+      state: started
+    when: ( "{{ host_name }}" != "{{ first_controller }}" )
     register: infos
   - include: extends/after_ok.yml task_index=7 info={{ infos  }}
   rescue:
@@ -125,21 +116,3 @@
   tags:
   - install
   - '7'
-
-- block:
-  - name: 8.example GET
-    debug: msg='Starting 8-------------------------------------------->'
-  - include: extends/before.yml task_index=8
-  - uri:
-      url: http://{{ repository }}:8774
-      method: GET
-      body_format: json
-      return_content: yes
-    register: infos
-  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
-  rescue:
-  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
-  - fail: msg={{ infos  }}
-  tags:
-  - install
-  - '8'

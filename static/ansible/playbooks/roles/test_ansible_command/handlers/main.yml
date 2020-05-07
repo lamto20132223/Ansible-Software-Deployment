@@ -1,6 +1,0 @@
----
-- name: restart_glance
-  command: '{{ item }}' 
-  with_items:
-    - docker restart glance-api
-    - docker restart glance-registry

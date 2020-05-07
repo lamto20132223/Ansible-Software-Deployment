@@ -4,7 +4,7 @@ base_distro: 'rhel7.7'
 openstack_release: "queens"
 
 # Dải mạng để các service trong Openstack giao tiếp
-network_interface: eno1
+network_interface: eno49
 NTP_NETWORK: 172.16.29.0/25
 subnet1: 172.16.29.0/24
 subnet2: 172.16.31.0/24
@@ -25,7 +25,7 @@ first_controller: '{{ HUB }}'
 chrony_server: '{{ HUB }}'
 
 # IP Os-controller 
-INTERNAL_VIP_ADDRESS: 172.16.29.199
+INTERNAL_VIP_ADDRESS: 172.16.29.15
 
 # Cấu hình cho Haproxy và Keepalived
 VIP_PUBLIC: '{{ INTERNAL_VIP_ADDRESS }}'
@@ -34,7 +34,7 @@ HAPROXY_STATS_USER: cloud
 HAPROXY_STATS_PASS: GdYc6d8jYwURfAn5A3sc08Ipt5zcanPl
 VIP_PRIVATE_INF: '{{ network_interface }}'
 VIP_PRIVATE: '{{ INTERNAL_VIP_ADDRESS }}'
-ROUTER_ID: 100
+ROUTER_ID: 105
 OS_CONTROLLER: '{{ INTERNAL_VIP_ADDRESS }}'
 KEEPALIVED_PRIORS: 
   controller01: 3
