@@ -11,12 +11,12 @@ def get_facts_local(ansible_inventory_dir, ansible_facts_dir):
     file_new_node.write('[all]')
     file_new_node.write("\n")
     for node in list_nodes:
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
         file_new_node.write("\n")
     for node in list_nodes:
         file_new_node.write('['+str(node.node_display_name)+']' )
         file_new_node.write("\n")
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
         file_new_node.write("\n")
     file_new_node.close()
     f = open(ansible_inventory_dir, "r")
@@ -39,12 +39,12 @@ def get_facts(ansible_inventory_dir, ansible_facts_dir):
     file_new_node.write('[all]')
     file_new_node.write("\n")
     for node in list_nodes:
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
         file_new_node.write("\n")
     for node in list_nodes:
         file_new_node.write('['+str(node.node_display_name)+']' )
         file_new_node.write("\n")
-        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+str(node.ssh_password))
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
         file_new_node.write("\n")
     file_new_node.close()
 

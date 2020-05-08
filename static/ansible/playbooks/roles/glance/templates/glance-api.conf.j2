@@ -1,0 +1,49 @@
+[DEFAULT]
+debug = {{ glance_logging_debug }}
+log_file = {{ glance_log_file }}
+bind_host = {{ host_info.ip[host_name] }}
+bind_port = {{ services_port.glance_api }}
+registry_host = {{ CONTROLLER_HOST }}
+show_image_direct_url = true
+
+{% if glance_backend_ceph | bool %}
+show_multiple_locations = True
+{% endif %}
+
+transport_url = {{ transport_url }}
+
+{% if enable_glance_image_cache | bool %}
+image_cache_max_size = {{ glance_cache_max_size }}
+image_cache_dir = /var/lib/glance/image-cache
+{% endif %}
+
+[database]
+connection = mysql+pymysql://{{ db_user_glance }}:{{ DB_GLANCE_PASS }}@{{ CONTROLLER_HOST }}/{{ db_glance_name }}
+
+[glance_store]
+{% if glance_backend_ceph | bool %}
+stores = {{ rbd_stores }}
+default_store = rbd
+rbd_store_pool = {{ rbd_store_pool }}
+rbd_store_user = {{ rbd_store_user }}
+rbd_store_ceph_conf = {{ rbd_store_ceph_conf }}
+rbd_store_chunk_size = 8
+{% else %}
+stores = file,http
+default_store = file
+filesystem_store_datadir = /var/lib/glance/images/
+{% endif %}
+
+[keystone_authtoken]
+auth_url = {{ keystone_auth_url }}
+auth_type = password
+project_domain_name = {{ project_domain_name }}
+user_domain_name = {{ user_domain_name }}
+project_name = service 
+username = {{ ops_user_glance }}
+password = {{ OPS_GLANCE_PASS }}
+service_token_roles_required  = true
+memcached_servers = {{ memcached_servers }}
+
+[paste_deploy]
+flavor = {% if enable_glance_image_cache | bool %}keystone+cachemanagement{% else %}keystone{% endif %}

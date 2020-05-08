@@ -1,0 +1,47 @@
+---
+- name: yum install -y Percona-XtraDB-Cluster-57
+  yum:
+    name:
+      - Percona-XtraDB-Cluster-57
+    state: latest
+
+- name: systemctl stop mysql
+  systemd:
+    name: mysql
+    state: stopped
+
+- name: systemctl enable mysql
+  systemd:
+    name: mysql
+    enabled: yes
+    masked: no
+
+- name: cp wsrep.cnf
+  template:
+    src: wsrep.cnf.j2
+    dest: '/etc/percona-xtradb-cluster.conf.d/wsrep.cnf'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: systemctl start mysql@bootstrap
+  systemd:
+    name: mysql@bootstrap
+    state: started
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+
+- name: Create mysql cluster user
+  command: '{{ item }}'
+  with_items:
+    - mysql  -e "CREATE USER '{{ wsrep_sst_user }}'@'localhost' IDENTIFIED BY '{{ wsrep_sst_password }}'"
+    - mysql  -e "GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO '{{ wsrep_sst_user }}'@'localhost'"
+    - mysql -e "FLUSH PRIVILEGES"
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+
+- name: systemctl start mysql
+  systemd:
+    name: mysql
+    state: started
+  when: ( "{{ host_name }}" != "{{ first_controller }}" )
+

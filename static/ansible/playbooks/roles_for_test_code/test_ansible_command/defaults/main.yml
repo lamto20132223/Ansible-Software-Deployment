@@ -1,0 +1,7 @@
+---
+enable_glance_image_cache: false
+glance_cache_max_size: 0
+
+rbd_stores: glance.store.rbd.Store
+rbd_store_pool: images 
+rbd_store_user: images

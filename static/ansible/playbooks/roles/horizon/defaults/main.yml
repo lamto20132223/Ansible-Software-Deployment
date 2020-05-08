@@ -1,2 +1,14 @@
 ---
-service_name: horizon
+
+containers:
+  - name: horizon
+    image: '{{ docker_image.horizon }}' 
+    network_mode: host
+    restart_policy : unless-stopped
+    volumes:
+      - '{{ VAR_LOG_DIR }}/apache2:/var/log/apache2'
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/localtime:/etc/localtime
+    user: root 
+    env: 
+      HORIZON_START: 'START_HORIZON'

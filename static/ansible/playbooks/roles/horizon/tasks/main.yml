@@ -1,14 +1,8 @@
 - block:
-  - name: 1.cp selinux.conf.j2 /etc/selinux/config
+  - name: 1.pull '{{ docker_image.horizon }}'
     debug: msg='Starting 1-------------------------------------------->'
   - include: extends/before.yml task_index=1
-  - template:
-      src: selinux.conf.j2
-      dest: /etc/selinux/config
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
+  - command: docker pull '{{ docker_image.horizon }}'
     register: infos
   - include: extends/after_ok.yml task_index=1 info={{ infos  }}
   rescue:
@@ -18,14 +12,21 @@
   - install
   - '1'
 - block:
-  - name: 2.stop selinux
+  - name: 2.mkdir '{{ usr_share_docker }}/horizon'
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
-  - command: '{{ item }}'
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
     with_items:
-    - sudo setenforce 0
+    - '{{ usr_share_docker }}/horizon/apache2/conf-enabled'
+    - '{{ usr_share_docker }}/horizon/backup'
+    - '{{ usr_share_docker }}/horizon/openstack-dashboard'
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=2 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=2 info={{ infos  }}
@@ -34,15 +35,22 @@
   - install
   - '2'
 - block:
-  - name: 3.systemctl stop iptables
+  - name: 3.cp /usr/share/docker/horizon/horizon
     debug: msg='Starting 3-------------------------------------------->'
   - include: extends/before.yml task_index=3
-  - systemd:
-      name: iptables
-      enabled: no
-      masked: no
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: apache2_conf_enabled_openstack_dashboard.conf.j2
+      dest: '{{ usr_share_docker }}/horizon/apache2/conf-enabled/openstack-dashboard.conf'
+    - src: openstack_dashboard_local_setting.py.j2
+      dest: '{{ usr_share_docker }}/horizon/openstack-dashboard/local_settings.py'
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=3 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=3 info={{ infos  }}
@@ -51,15 +59,19 @@
   - install
   - '3'
 - block:
-  - name: 4.systemctl stop firewalld
+  - name: 4.Cerate  Horizon Container
     debug: msg='Starting 4-------------------------------------------->'
   - include: extends/before.yml task_index=4
-  - systemd:
-      name: firewalld
-      enabled: no
-      masked: no
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
     register: infos
-    ignore_errors: yes
   - include: extends/after_ok.yml task_index=4 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=4 info={{ infos  }}
@@ -67,79 +79,3 @@
   tags:
   - install
   - '4'
-- block:
-  - name: 5.test_ansible_command
-    debug: msg='Starting 5-------------------------------------------->'
-  - include: extends/before.yml task_index=5
-  - command: '{{ item }}'
-    with_items:
-    - echo "{{ inventory_hostname }}"
-    - touch /home/"{{ service_name }}"
-    - echo "{{ group_name }}"  > /home/"{{ service_name }}"
-
-#    - cp /home/lamtv10/lkt /home/lamtv10/
-
-    register: infos
-  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
-  rescue:
-  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
-  - fail: msg={{ infos  }}
-  tags:
-  - install
-  - '5'
-- block:
-  - name: 6.cp local.repo.j2 /etc/yum.repos.d/local.repo
-    debug: msg='Starting 6-------------------------------------------->'
-  - include: extends/before.yml task_index=6
-  - template:
-      src: local.repo.j2
-      dest: /etc/yum.repos.d/local.repo
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
-    register: infos
-  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
-  rescue:
-  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
-  - fail: msg={{ infos  }}
-  tags:
-  - install
-  - '6'
-- block:
-  - name: 7.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
-    debug: msg='Starting 7-------------------------------------------->'
-  - include: extends/before.yml task_index=7
-  - template:
-      src: docker.repo.j2
-      dest: /etc/yum.repos.d/docker.repo
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
-    register: infos
-  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
-  rescue:
-  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
-  - fail: msg={{ infos  }}
-  tags:
-  - install
-  - '7'
-
-- block:
-  - name: 8.example GET
-    debug: msg='Starting 8-------------------------------------------->'
-  - include: extends/before.yml task_index=8
-  - uri:
-      url: http://{{ repository }}:8774
-      method: GET
-      body_format: json
-      return_content: yes
-    register: infos
-  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
-  rescue:
-  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
-  - fail: msg={{ infos  }}
-  tags:
-  - install
-  - '8'

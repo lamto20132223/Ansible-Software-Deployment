@@ -1,0 +1,28 @@
+---
+- name: yum install -y memcached python-memcached
+  yum:
+    name:
+      - memcached
+      - python-memcached
+    state: latest
+
+- name: cp memcached.j2 /etc/sysconfig/memcached
+  template:
+    src: memcached.j2
+    dest: /etc/sysconfig/memcached
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: systemctl enable memcached 
+  systemd:
+    name: memcached
+    enabled: yes
+    masked: no
+
+- name: restart memcached
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: memcached

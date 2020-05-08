@@ -1,0 +1,7 @@
+---
+- host: localhost
+  remote_user: root
+  roles: 
+    -t1
+
+#ansible-playbook -C test_docker.yml 

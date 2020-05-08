@@ -9,7 +9,7 @@ from assets import *
 from controllers.insert_specific_config.test import ROOT_DIR
 
 from global_assets.common import *
-
+from global_assets.custom_response import custom_response,custom_response_flask_restful
 from flask_restplus import Api, Resource
 
 mod = Blueprint('insert_specific_config', __name__,
@@ -167,6 +167,8 @@ class Ansible_Group_Vars(Resource):
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
         reset_all = request.json.get('reset_all')
+        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + sf_dir)
         if reset_all is True:
             os.system(' \cp -r  ' + template_dir + '/*' + ' ' + group_var_dir)
             os.system(' \cp -r  ' + template_dir + '/*' + ' ' + sf_dir)
@@ -177,16 +179,14 @@ class Ansible_Group_Vars(Resource):
                 for filename in list_file:
                     origin_data = load_yml_file(group_var_dir+ '/' + group + '/'+filename)
                     convert_original_to_input_sf(origin_data, sf_dir+ '/' + group + '/'+filename)
-
-            return {"response": 'Reset All Group_vars sucessfully. Check Result in /tools/edit_ansible_group_vars'}, 200
-
+            return custom_response_flask_restful(request, 200, None, 'Reset All Group_vars sucessfully. Check Result in /tools/edit_ansible_group_vars', None)
         role_name = request.json.get('role_name')
         filename = request.json.get('filename')
 
         template_file = template_dir + '/' + role_name + '/' + filename
         if not os.path.isfile(template_file):
-            return abort(404, 'No such File ' + template_file)
-
+            return custom_response_flask_restful(request, 404, 'No such File ' + template_file,
+                               None, None)
         group_var_file = group_var_dir + '/' + role_name + '/' + filename
         os.system('mkdir -p ' + group_var_dir + '/' + role_name)
         os.system('mkdir -p ' + sf_dir + '/' + role_name)
@@ -194,23 +194,22 @@ class Ansible_Group_Vars(Resource):
         os.system(' \cp -r  ' + template_file + ' ' + group_var_file)
         origin_data = load_yml_file(group_var_file)
         convert_original_to_input_sf(origin_data, sf_dir  + '/' + role_name + '/' + filename)
-        return {
-                   "response": 'Reset Group_vars ' + group_var_file + ' sucessfully. Check Result in /tools/edit_ansible_group_vars'}, 200
 
+        return custom_response_flask_restful(request, 200, None,'Reset Group_vars ' + group_var_file + ' sucessfully. Check Result in /tools/edit_ansible_group_vars', None)
 
 @mod_v1.route('/tools/edit_ansible_group_vars', methods=['GET', 'POST'])
 class FORM_INSERT(Resource):
     def get(self):
         if not request.args.get('group') or not request.args.get('filename'):
-            return abort(400, 'Need Group and FileName')
-
+            return custom_response_flask_restful(request, 400, ' Request body Group and FileName Not Validate',None,None)
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
-
+        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + sf_dir)
         args = request.args
         file_path = group_var_dir + '/' + request.args.get('group') + '/' + request.args.get('filename')
         if not os.path.isfile(file_path):
-            return abort(404, 'No such file ' + file_path)
+            return custom_response_flask_restful(request, 404, 'No such file ' + file_path, None, None)
         else:
 
             origin_data = load_yml_file(file_path)

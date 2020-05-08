@@ -10,18 +10,38 @@ host_info:
     compute01: compute01
     compute02: compute02
     compute03: compute03
-
+    compute04: compute04
+    compute05: compute05
+    compute06: compute06
+    compute07: compute07
+    compute08: compute08
+    compute09: compute09
+    compute10: compute10
+    compute11: compute11
+    compute12: compute12
+    compute13: compute13
+    compute14: compute14
   ip:
-    controller01: 172.16.29.193
-    controller02: 172.16.29.193
-    controller03: 172.16.29.193
-    compute01: compute01
-    compute02: compute02
-    compute03: compute03
-   
+    controller01: 172.16.29.191
+    controller02: 172.16.29.201
+    controller03: 172.16.29.234
+    compute01: 172.16.29.235
+    compute02: 172.16.29.236
+    compute03: 172.16.29.202
+    compute04: 172.16.29.240
+    compute05: 172.16.29.189
+    compute06: 172.16.29.193
+    compute07: 172.16.29.194
+    compute08: 172.16.29.195
+    compute09: 172.16.29.196
+    compute10: 172.16.29.197
+    compute11: 172.16.29.198
+    compute12: 172.16.29.199
+    compute13: 172.16.29.200
+    compute14: 172.16.29.233
 
 # Ip Port của Docker Registry
-repository: 172.16.29.199
+repository: 172.16.29.193
 port_docker_registry: 4000
 
 # Tên các Docker Image dùng cài Openstack Service

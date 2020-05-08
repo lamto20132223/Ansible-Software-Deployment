@@ -1,2 +1,38 @@
 ---
-service_name: keystone
+fernet_key_0: TkyJoi2l8hpYvSqh3ShddRaCwWRd-d16Z-uR-dxilA8=
+fernet_key_1: anETUPml6tEBWZSrI9vfoCJwtNYk_KjYz5yITd01fKk=
+credential_key_0: TkyJoi2l8hpYvSqh3ShddRaCwWRd-d16Z-uR-dxilA8=
+credential_key_1: TkyJoi2l8hpYvSqh3ShddRaCwWRd-d16Z-uR-dxilA8=
+
+docker_bootstrap:
+  - name: keystone-bootstrap
+    image: '{{ docker_image.keystone }}' 
+    network_mode: host
+    volumes:
+      - '{{ VAR_LOG_DIR }}/apache2:/var/log/apache2'
+      - /etc/keystone/credential-keys:/etc/keystone/credential-keys 
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/keystone/fernet-keys:/etc/keystone/fernet-keys
+      - /etc/localtime:/etc/localtime
+    user: root 
+    env: 
+      KEYSTONE_START: 'BOOTSTRAP'
+      CONTROLLER_HOST: '{{ CONTROLLER_HOST }}'
+      ADMIN_PASS: '{{ ADMIN_PASS }}'
+      REGION_NAME: '{{ REGION_NAME }}'
+      CELL_NAME:  cell1 
+
+containers:
+  - name: keystone
+    image: '{{ docker_image.keystone }}' 
+    network_mode: host
+    restart_policy : unless-stopped
+    volumes:
+      - '{{ VAR_LOG_DIR }}/apache2:/var/log/apache2'
+      - /etc/keystone/credential-keys:/etc/keystone/credential-keys 
+      - '{{ usr_share_docker }}:/usr/share/docker/'
+      - /etc/keystone/fernet-keys:/etc/keystone/fernet-keys
+      - /etc/localtime:/etc/localtime
+    user: root 
+    env: 
+      KEYSTONE_START: 'START_KEYSTONE'

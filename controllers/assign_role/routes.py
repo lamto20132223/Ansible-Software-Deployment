@@ -17,20 +17,23 @@ import ast
 from collections import OrderedDict
 import logging
 
+
+from global_assets.custom_response import custom_response
+
 LOGGER = logging.getLogger(__name__)
 
 
-def close_session(func):
-
-    def inner(*args, **kwargs):
-        print("I can decorate any function")
-        output=  func(*args, **kwargs)
-
-        print("I still can decorate any function")
-        #session.close()
-        return output
-    return inner
-
+# def close_session(func):
+#
+#     def inner(*args, **kwargs):
+#         print("I can decorate any function")
+#         output=  func(*args, **kwargs)
+#
+#         print("I still can decorate any function")
+#         #session.close()
+#         return output
+#     return inner
+#
 
 
 
@@ -61,11 +64,11 @@ def get_all_roles():
 
     #print(role_data.keys())
 
-    res = OrderedDict()
-    res["list_roles_and_configs"] = list_roles
-    res["data"] = result
 
-    return res
+    res_data = result
+    res_data["list_roles_and_configs"] = list_roles
+
+    return custom_response(request,200,None,None,res_data)
 
 @mod.route('/roles/<int:role_id>/', methods=['GET'])
 def get_role_info_by_id(role_id):
@@ -82,7 +85,7 @@ def get_role_info(role_id):
 
     role_info = [{ "role_name":role_name , "role_inf" : role_data[role_name]} for role_name in role_data.keys() if role_data[role_name]['id']==role_id]
     if len(role_info)==0 :
-        return {"status: " : "Role id not found" }
+        return custom_response(request,404,"role_id Not Found!",None,{})
 
     role_node = []
 
@@ -93,11 +96,13 @@ def get_role_info(role_id):
 
     session.close()
 
-    return {
-        "status" : "OK",
+    res_data ={
         "role_info": role_info[0],
         "role_node" : role_node
     }
+
+
+    return  custom_response(request,200,None,"Succeed Get Role Info", res_data)
 
 
 
@@ -111,14 +116,14 @@ def add_host_to_role():
 
     node = session.query(models.Node).filter_by(node_id=node_id).first()
     if node is None:
-        return {"response": "Node is not exist"}, 226
+        return custom_response(request,404,"Node is not exist!",None,None)
 
     if node.node_info is None:
-        return {"response": "Node is not discover yet! "},404
+        return custom_response(request,404,"Node is not discover yet!",None,None)
 
 
     if roles is None:
-        return {"response": "Require Role"}, 226
+        return custom_response(request,226,"Roles Data Not Valid",None,None)
 
     with open('static/role_service.json') as role_data_file:
         role_data = json.load(role_data_file)
@@ -127,17 +132,23 @@ def add_host_to_role():
         for role in roles:
             if role not in list_roles:
 
-                return {"response": "Error Information Role with name" + role + " is not invalid"}, 226
+                return custom_response(request,226, "Information Role with name" + role + " is not invalid",None,None)
 
 
     for role in roles:
         node_role = models.Node_role(role_name=role)
         node.node_roles.append(node_role)
     session.add(node)
+    data = {"node_info":models.to_json(node, 'Node', False)}
     session.commit()
-    res = {"respone":"Done Add Node to Role", "node_info":models.to_json(node, 'Node', False)}
     session.close()
-    return res,202
+
+    return custom_response(request,202,None,None,data)
+
+
+
+
+    # return res,202
 
 
 @mod.route('/roles/test_create_deployment', methods=['POST', 'GET'])
@@ -150,7 +161,7 @@ def add_all_deployment():
         session.add(node)
     session.commit()
     session.close()
-    return {"respone":"Done Add Deployment to Database"} ,202
+    return custom_response(request,202, None,"Done Add Deployment to Database",None)
 
 @mod.route('/roles/test_create_service_setup', methods=['POST', 'GET'])
 def test_code_create_service_setup():
@@ -173,7 +184,7 @@ def test_code_create_service_setup():
         session.add(node)
     session.commit()
     session.close()
-    return  {"respone":"Done Add Service Setup to Database"} ,202
+    return  custom_response(request,202, None,"Done Add Service Setup to Database",None)
 
 
 
@@ -199,7 +210,8 @@ def test_code_create_ansible_playbook_p1():
     file_new_node.close()
 
     f = open(CONST.inventory_dir+'/new_node', "r")
-    return {"respone": "Done Create Ansible Inventory", "inventory": str(f.read())}, 202
+    return custom_response(request, 202, None, "Done Create Ansible Inventory",  {"inventory": str(f.read())})
+
 
 
 @mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
@@ -251,8 +263,8 @@ def test_code_create_ansible_playbook_p2():
     #
     #     session.add(node)
     # session.commit()
-    return {"respone":"Done Create Ansible Playbooks", "List Playbooks":list_playbooks} ,202
 
+    return custom_response(request, 202, None, "Done Create Ansible Playbooks",  {"List Playbooks":list_playbooks})
 
 
 
@@ -296,8 +308,7 @@ def test_code_create_task_for_service():
         session.add(node)
     session.commit()
     session.close()
-    return {"respone": "Done Create Tasks in Database. Check in /api/v1/tasks"}, 202
-
+    return custom_response(request, 202, None, "Done Create Tasks in Database. Check in /api/v1/tasks",  None)
 
 @mod.route('/roles/test_code7', methods=['POST', 'GET'])
 def test_code_create_task_for_service7():
@@ -313,8 +324,7 @@ def test_code_create_task_for_service7():
 def get_all_deployments():
     deployments = session.query(models.Deployment).all()
     session.commit()
-    return {"response": models.to_json(deployments, 'Deployment', True)},200
-
+    return custom_response(request, 200, None, None,  models.to_json(deployments, 'Deployment', True))
 
 
 @mod.route('/hosts/<string:host_id>/deployments', methods=['GET'])
@@ -323,8 +333,7 @@ def get_deployment(host_id):
     session.commit()
 
 
-    return {"response": models.to_json(node.deployment, 'Deployment', False)},200
-
+    return custom_response(request, 200, None, None,  models.to_json(node.deployment, 'Deployment', False))
 @mod.route('/deployments', methods=['GET'])
 def get_all_deployments_v2():
     return redirect('/api/v1/hosts/deployments')
@@ -337,8 +346,7 @@ def get_deployment_by_id_v0(deployment_id):
     if deployment is None:
         abort(400)
 
-    return jsonify(models.to_json(deployment, 'Deployment', False)) , 200
-
+    return custom_response(request, 200, None, None, models.to_json(deployment, 'Deployment', False))
 
 @mod.route('/deployments/<string:deployment_id>', methods=['GET'])
 def get_deployment_by_id(deployment_id):
@@ -347,8 +355,7 @@ def get_deployment_by_id(deployment_id):
     if deployment is None:
         abort(400)
 
-    return jsonify(models.to_json(deployment, 'Deployment', False)) , 200
-
+    return custom_response(request, 200, None, None, models.to_json(deployment, 'Deployment', False))
 @mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
 def get_all_service_setups_v0(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
@@ -357,16 +364,14 @@ def get_all_service_setups_v0(deployment_id):
     service_setups=get_service_setups_from_deployment(deployment)
     session.commit()
 
-    return {"response":  models.to_json(service_setups, 'Service_setup', True)}
-
+    return custom_response(request, 200, None, None, models.to_json(service_setups, 'Service_setup', True))
 @mod.route('/deployments/<string:deployment_id>/<string:service_setup_id>', methods=['GET'])
 def get_one_service_setup(deployment_id,service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id, deployment_id=deployment_id).first()
     if service_setup is None:
         abort(400)
     session.commit()
-    return jsonify(models.to_json(service_setup,'Service_setup',False)) ,201
-
+    return custom_response(request, 201, None, None, models.to_json(service_setup,'Service_setup',False))
 
 
 @mod.route('/service_setups/', methods=['GET'])
@@ -375,14 +380,13 @@ def get_service_setup():
 
     if not (request.args.get('deployment_id') or request.args.get('service_name')):
         service_setup = session.query(models.Service_setup).all()
-        res = jsonify(models.to_json(service_setup, 'Service_setup', True))
-        return res
+        return custom_response(request, 200, None, None, models.to_json(service_setup, 'Service_setup', True))
+
     service_setup = session.query(models.Service_setup).filter_by(deployment_id=request.args.get('deployment_id'),service_name =  request.args.get('service_name')).first()
     if service_setup is None:
         abort(400)
-    res = jsonify(models.to_json(service_setup, 'Service_setup', False))
+    return custom_response(request, 200, None, None, models.to_json(service_setup, 'Service_setup', False))
 
-    return res
 
 
 
@@ -418,7 +422,9 @@ def get_all_playbooks(deployment_id):
         for service in service_setups:
             list_playbook.append('playbook_setup_'+ service.service_name + '_for_'+node.node_display_name + '.yml')
         session.commit()
-        return {"response: ":list_playbook}
+        return   custom_response(request, 200, None, None, list_playbook)
+
+
 
     else :
         return "INCOMMING " + str(request.args.get('service_setup_id'))
@@ -436,13 +442,13 @@ def get_service(service_setup_id):
     if service_setup is None:
         abort(400)
     session.commit()
-    return jsonify(models.to_json(service_setup,'Service_setup',False)) ,201
+    return custom_response(request, 200, None, None, models.to_json(service_setup,'Service_setup',False))
 @mod.route('/service_setups/<string:service_setup_id>/tasks', methods=['GET'])
 def get_all_tasks_with_service_setups(service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
     tasks = service_setup.tasks
     session.commit()
-    return jsonify(models.to_json(tasks,'Task',True)) ,201
+    return custom_response(request, 200, None, None, models.to_json(tasks,'Task',True))
 
 
 @mod.route('/service_setups/<string:service_setup_id>/<string:task_id>', methods=['GET'])
@@ -453,7 +459,7 @@ def get_task(service_setup_id,task_id):
         return abort(400)
 
     session.commit()
-    return jsonify(models.to_json(task, 'Task', False)), 200
+    return custom_response(request, 200, None, None,models.to_json(task, 'Task', False))
 
 @mod.route('/tasks', methods=['GET'])
 def get_all_tasks():
@@ -474,7 +480,7 @@ def get_all_tasks():
 
         result.append(node_data)
     session.commit()
-    return {"response: " : result}
+    return custom_response(request, 200, None, None, result)
 
 # from random import random
 @mod.route('/tasks/<string:task_id>', methods=['GET','POST'])
@@ -485,7 +491,7 @@ def get_task_by_id(task_id):
         return abort(400)
 
     session.commit()
-    return jsonify(models.to_json(task, 'Task', False)), 200
+    return custom_response(request, 200, None, None, models.to_json(task, 'Task', False))
 # class ClassTask(Resource):
 #     def get(self, task_id):
 #         task = session.query(models.Task).filter_by(task_id=task_id).first()
@@ -506,7 +512,7 @@ def get_change(change_id):
     change = session.query(models.Change).filter_by(change_id=change_id).first()
     if change is None:
         return abort(400)
-    return jsonify(models.to_json(change, 'Change', False))
+    return custom_response(request, 200, None, None,models.to_json(change, 'Change', False))
 
 
 @mod.route('/tasks/<string:task_id>/changes', methods=['GET'])
@@ -517,7 +523,7 @@ def get_all_changes(task_id):
         return abort(400)
     changes = task.changes
     session.commit()
-    return jsonify(models.to_json(changes, 'Change', True))
+    return custom_response(request, 200, None, None,models.to_json(changes, 'Change', True))
 
 
 

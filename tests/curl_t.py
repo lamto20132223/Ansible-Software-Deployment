@@ -41,12 +41,12 @@ def discover_hosts():
 def add_host_to_role():
     os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role1.json')
     time.sleep(5)
-    os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role2.json')
-    time.sleep(5)
-    os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role3.json')
-    time.sleep(5)
-    os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role4.json')
-    time.sleep(5)
+    # os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role2.json')
+    # time.sleep(5)
+    # os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role3.json')
+    # time.sleep(5)
+    # os.system('curl -X POST "http://127.0.0.1:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role4.json')
+    # time.sleep(5)
 
 
 def insert_test_data():
@@ -107,10 +107,10 @@ def reset_group_var():
 
 if __name__ == "__main__":
     # delete_data()
-    add_host()
-    discover_hosts()
+    # add_host()
+    # discover_hosts()
     add_host_to_role()
-    insert_test_data()
+    # insert_test_data()
 
     # send_task_info()
     # reset_group_var()

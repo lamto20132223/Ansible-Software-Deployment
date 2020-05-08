@@ -10,9 +10,12 @@ cinder_logging_debug: false
 VAR_LOG_DIR: /u01/docker/docker_log
 VAR_LIB_DOCKER: /home/root/var/lib/docker
 
+
+
 #LOG_DIR
 glance_log_file: /var/log/glance/glance-api.log
 nova_log_file: /var/log/nova
 cinder_log_file: /var/log/cinder
 volumes_dir: /var/lib/cinder/volumes 
+
 
