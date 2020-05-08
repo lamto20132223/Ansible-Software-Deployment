@@ -29,8 +29,8 @@ def add_host():
 
     session.add(node)
     session.commit()
-    new_node = session.query(models.Node).filter_by(node_display_name=str(data.get('node_display_name', ''))).all()
-    res = jsonify(models.to_json(new_node, 'Node',True))
+    new_node = session.query(models.Node).filter_by(node_display_name=str(data.get('node_display_name', ''))).first()
+    res = models.to_json(new_node, 'Node',False)
     session.close()
     #print(models.to_json(new_node, 'Node',True))
     return custom_response(request, 201, None, None,res)
@@ -57,7 +57,7 @@ def update_host_ssh():
     session.add(node)
     session.commit()
 
-    res = jsonify(models.to_json(node, 'Node',False))
+    res = models.to_json(node, 'Node',False)
     session.close()
     #print(models.to_json(new_node, 'Node',True))
     return custom_response(request, 200, None, None,res)
@@ -71,9 +71,9 @@ def get_hosts():
     ############UNDONE /api/v1/hosts?role=controller
 
     nodes = session.query(models.Node).all()
-    res = jsonify(models.to_json(nodes, 'Node', True))
+    res = models.to_json(nodes, 'Node', True)
     #print(models.to_json(nodes, 'Node', True))
-    return res, 200
+    return custom_response(request, 200,None, None,res)
 
 @mod.route('/hosts/<string:host_id>', methods=['GET'])
 def get_host(host_id):
@@ -83,7 +83,7 @@ def get_host(host_id):
     if len(selected_node) ==0:
         return abort(404)
     else:
-        res =  jsonify(models.to_json(selected_node[0], 'Node', False))
+        res =  models.to_json(selected_node[0], 'Node', False)
         return custom_response(request, 200,None, None,res)
 
 
@@ -123,7 +123,7 @@ def get_host_info():
         return abort(400)
     #print(nodes.node_info)
     if request.args.get("fields") is None:
-        return custom_response(request, 200, None, None, jsonify(models.to_json(nodes.node_info, 'Node_info',False)))
+        return custom_response(request, 200, None, None, models.to_json(nodes.node_info, 'Node_info',False))
     else:
         return custom_response(request, 200, None, None,models.to_json(nodes.node_info, 'Node_info',False))
 
@@ -136,18 +136,18 @@ def get_interface_resources():
 
     if interface_id is not None:
         interface_resource = session.query(models.Interface_resource).filter_by(interface_id=str(interface_id)).first()
-        return custom_response(request, 200, None, None,jsonify(models.to_json(interface_resource, 'Interface_resource', False)))
+        return custom_response(request, 200, None, None,models.to_json(interface_resource, 'Interface_resource', False))
 
     if host_id is not None:
         if device_name is not None:
             list_interface_resources=session.query(models.Interface_resource).filter(and_(models.Interface_resource.device_name==str(device_name) , models.Interface_resource.node_info.has(models.Node_info.node.has(models.Node.node_id==host_id)))).all()
-            return custom_response(request, 200, None, None,jsonify(models.to_json(list_interface_resources, 'Interface_resource', True)))
+            return custom_response(request, 200, None, None,models.to_json(list_interface_resources, 'Interface_resource', True))
         else:
             list_interface_resources = session.query(models.Interface_resource).filter( models.Interface_resource.node_info.has(models.Node_info.node.has(models.Node.node_id==host_id))).all()
-            return custom_response(request, 200, None, None,jsonify(models.to_json(list_interface_resources, 'Interface_resource', True)))
+            return custom_response(request, 200, None, None,models.to_json(list_interface_resources, 'Interface_resource', True))
     if device_name is not None:
         list_interface_resources = session.query(models.Interface_resource).filter_by(device_name=str(device_name)).all()
-        return custom_response(request, 200, None, None,jsonify(models.to_json(list_interface_resources, 'Interface_resource', True)))
+        return custom_response(request, 200, None, None,models.to_json(list_interface_resources, 'Interface_resource', True))
 
     return abort(400)
 
@@ -160,22 +160,22 @@ def get_disk_resources():
 
     if disk_id is not None:
         disk_resource = session.query(models.Disk_resource).filter_by(disk_id=str(disk_id)).first()
-        return custom_response(request, 200, None, None,jsonify(models.to_json(disk_resource, 'Disk_resource', False)))
+        return custom_response(request, 200, None, None,models.to_json(disk_resource, 'Disk_resource', False))
 
     if host_id is not None:
         if device_name is not None:
             list_disk_resources=session.query(models.Disk_resource).filter(and_(models.Disk_resource.device_name==str(device_name) , models.Disk_resource.node_info.has(models.Node_info.node.has(models.Node.node_id==host_id)))).all()
             return custom_response(request, 200, None, None,
-                                   jsonify(models.to_json(list_disk_resources, 'Disk_resource', True)))
+                                   models.to_json(list_disk_resources, 'Disk_resource', True))
         else:
             list_disk_resources = session.query(models.Disk_resource).filter( models.Disk_resource.node_info.has(models.Node_info.node.has(models.Node.node_id==host_id))).all()
             return custom_response(request, 200, None, None,
-                                   jsonify(models.to_json(list_disk_resources, 'Disk_resource', True)))
+                                   models.to_json(list_disk_resources, 'Disk_resource', True))
 
     if device_name is not None:
         list_disk_resources = session.query(models.Disk_resource).filter_by(device_name=str(device_name)).all()
         return custom_response(request, 200, None, None,
-                               jsonify(models.to_json(list_disk_resources, 'Disk_resource', True)))
+                               models.to_json(list_disk_resources, 'Disk_resource', True))
 
     return abort(400)
 

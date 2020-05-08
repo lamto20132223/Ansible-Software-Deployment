@@ -324,7 +324,7 @@ def test_code_create_task_for_service7():
 def get_all_deployments():
     deployments = session.query(models.Deployment).all()
     session.commit()
-    return custom_response(request, 200, None, None,  jsonify(models.to_json(deployments, 'Deployment', True)))
+    return custom_response(request, 200, None, None,  models.to_json(deployments, 'Deployment', True))
 
 
 @mod.route('/hosts/<string:host_id>/deployments', methods=['GET'])
@@ -333,7 +333,7 @@ def get_deployment(host_id):
     session.commit()
 
 
-    return custom_response(request, 200, None, None,  jsonify(models.to_json(node.deployment, 'Deployment', False)))
+    return custom_response(request, 200, None, None,  models.to_json(node.deployment, 'Deployment', False))
 @mod.route('/deployments', methods=['GET'])
 def get_all_deployments_v2():
     return redirect('/api/v1/hosts/deployments')
@@ -346,7 +346,7 @@ def get_deployment_by_id_v0(deployment_id):
     if deployment is None:
         abort(400)
 
-    return custom_response(request, 200, None, None, jsonify(models.to_json(deployment, 'Deployment', False)))
+    return custom_response(request, 200, None, None, models.to_json(deployment, 'Deployment', False))
 
 @mod.route('/deployments/<string:deployment_id>', methods=['GET'])
 def get_deployment_by_id(deployment_id):
@@ -355,7 +355,7 @@ def get_deployment_by_id(deployment_id):
     if deployment is None:
         abort(400)
 
-    return custom_response(request, 200, None, None, jsonify(models.to_json(deployment, 'Deployment', False)))
+    return custom_response(request, 200, None, None, models.to_json(deployment, 'Deployment', False))
 @mod.route('/deployments/<string:deployment_id>/service_setups', methods=['GET'])
 def get_all_service_setups_v0(deployment_id):
     deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
@@ -364,14 +364,14 @@ def get_all_service_setups_v0(deployment_id):
     service_setups=get_service_setups_from_deployment(deployment)
     session.commit()
 
-    return custom_response(request, 200, None, None, jsonify(models.to_json(service_setups, 'Service_setup', True)))
+    return custom_response(request, 200, None, None, models.to_json(service_setups, 'Service_setup', True))
 @mod.route('/deployments/<string:deployment_id>/<string:service_setup_id>', methods=['GET'])
 def get_one_service_setup(deployment_id,service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id, deployment_id=deployment_id).first()
     if service_setup is None:
         abort(400)
     session.commit()
-    return custom_response(request, 201, None, None, jsonify(models.to_json(service_setup,'Service_setup',False)))
+    return custom_response(request, 201, None, None, models.to_json(service_setup,'Service_setup',False))
 
 
 @mod.route('/service_setups/', methods=['GET'])
@@ -380,12 +380,12 @@ def get_service_setup():
 
     if not (request.args.get('deployment_id') or request.args.get('service_name')):
         service_setup = session.query(models.Service_setup).all()
-        res = jsonify(models.to_json(service_setup, 'Service_setup', True))
-        return res
+        return custom_response(request, 200, None, None, models.to_json(service_setup, 'Service_setup', True))
+
     service_setup = session.query(models.Service_setup).filter_by(deployment_id=request.args.get('deployment_id'),service_name =  request.args.get('service_name')).first()
     if service_setup is None:
         abort(400)
-    return custom_response(request, 200, None, None, jsonify(models.to_json(service_setup, 'Service_setup', False)))
+    return custom_response(request, 200, None, None, models.to_json(service_setup, 'Service_setup', False))
 
 
 
@@ -442,13 +442,13 @@ def get_service(service_setup_id):
     if service_setup is None:
         abort(400)
     session.commit()
-    return custom_response(request, 200, None, None, jsonify(models.to_json(service_setup,'Service_setup',False)))
+    return custom_response(request, 200, None, None, models.to_json(service_setup,'Service_setup',False))
 @mod.route('/service_setups/<string:service_setup_id>/tasks', methods=['GET'])
 def get_all_tasks_with_service_setups(service_setup_id):
     service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
     tasks = service_setup.tasks
     session.commit()
-    return custom_response(request, 200, None, None, jsonify(models.to_json(tasks,'Task',True)))
+    return custom_response(request, 200, None, None, models.to_json(tasks,'Task',True))
 
 
 @mod.route('/service_setups/<string:service_setup_id>/<string:task_id>', methods=['GET'])
@@ -459,7 +459,7 @@ def get_task(service_setup_id,task_id):
         return abort(400)
 
     session.commit()
-    return custom_response(request, 200, None, None, jsonify(models.to_json(task, 'Task', False)))
+    return custom_response(request, 200, None, None,models.to_json(task, 'Task', False))
 
 @mod.route('/tasks', methods=['GET'])
 def get_all_tasks():
@@ -491,7 +491,7 @@ def get_task_by_id(task_id):
         return abort(400)
 
     session.commit()
-    return custom_response(request, 200, None, None, jsonify(models.to_json(task, 'Task', False)))
+    return custom_response(request, 200, None, None, models.to_json(task, 'Task', False))
 # class ClassTask(Resource):
 #     def get(self, task_id):
 #         task = session.query(models.Task).filter_by(task_id=task_id).first()
@@ -512,7 +512,7 @@ def get_change(change_id):
     change = session.query(models.Change).filter_by(change_id=change_id).first()
     if change is None:
         return abort(400)
-    return custom_response(request, 200, None, None,jsonify(models.to_json(change, 'Change', False)))
+    return custom_response(request, 200, None, None,models.to_json(change, 'Change', False))
 
 
 @mod.route('/tasks/<string:task_id>/changes', methods=['GET'])
@@ -523,7 +523,7 @@ def get_all_changes(task_id):
         return abort(400)
     changes = task.changes
     session.commit()
-    return custom_response(request, 200, None, None,jsonify(models.to_json(changes, 'Change', True)))
+    return custom_response(request, 200, None, None,models.to_json(changes, 'Change', True))
 
 
 

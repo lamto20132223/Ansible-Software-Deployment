@@ -407,7 +407,7 @@ def update_task_info():
         task.service_setup.status="INPROCESSING"
         task.service_setup.deployment.status="INPROCESSING"
         session.add(task)
-        res =  jsonify(models.to_json(task, 'Task', False))
+        res =  models.to_json(task, 'Task', False)
         session.commit()
         session.close()
         return custom_response(request, 200, None, None,res)
@@ -515,7 +515,7 @@ def update_task_info():
 
     session.add(task)
     session.commit()
-    res = jsonify(models.to_json(task, 'Task', False))
+    res = models.to_json(task, 'Task', False)
     session.close()
     return custom_response(request, 201, None, "Update task succeed",res)
 

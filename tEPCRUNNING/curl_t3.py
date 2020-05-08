@@ -26,7 +26,7 @@ def update_host():
 def add_host():
     for i in range(18)[1:]:
         os.system(
-            'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes'+str(i)+'.json')
+            'curl -X POST "http://127.0.0.1:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes'+str(i)+'.json')
         time.sleep(1)
 
 
@@ -143,10 +143,10 @@ if __name__ == "__main__":
     # delete_data()
     add_host()
     #update_host()
-    discover_hosts()
-    add_host_to_role()
-    insert_test_data()
-    create_ansible_group_var()
+    # discover_hosts()
+    # add_host_to_role()
+    # insert_test_data()
+    # create_ansible_group_var()
 
     #send_task_info()
     #run_one_task(
