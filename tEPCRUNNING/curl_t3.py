@@ -141,9 +141,9 @@ def create_ansible_group_var():
     time.sleep(5)
 if __name__ == "__main__":
     # delete_data()
-    #add_host()
+    add_host()
     #update_host()
-    #discover_hosts()
+    discover_hosts()
     add_host_to_role()
     insert_test_data()
     create_ansible_group_var()

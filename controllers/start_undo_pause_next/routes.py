@@ -9,9 +9,11 @@ import oyaml as yaml
 from sqlalchemy import and_,or_
 from assets import *
 from global_assets.common import *
+
 import logging
 from libs.ansible.runner import Runner
 from flask_restplus import Api, Resource,Namespace
+from global_assets.custom_response import custom_response
 import json
 import ast
 LOGGER = logging.getLogger(__name__)
@@ -51,7 +53,7 @@ def test_code_create_ansible_playbook_p3():
 
     log_run = runner.run()
     print(log_run)
-    return str(log_run)
+    return   custom_response(request,200,None,None,str(log_run))
 
 
 
@@ -212,7 +214,8 @@ def run_specific_service_setup():
 
         stats_run = runner.run()
         print(stats_run)
-        return {"stats":str(stats_run), "logs":runner.log}
+        return custom_response(request, 201, None, "Finished run_service_setup ",
+                               {"stats": str(stats_run), "logs": runner.log})
     else :
         return {"res":"INCOMMING"}
 
@@ -261,8 +264,8 @@ def run_specific_deployment():
                 if status != 'DONE':
                     break
         session.close()
-
-        return { "logs": list_logs}
+        return custom_response(request, 201, None, "Finished run_deployment ",
+                               {"logs": list_logs})
 
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
@@ -305,7 +308,8 @@ def run_specific_task():
         print(runner.variable_manager)
         stats_run = runner.run()
         print(stats_run)
-        return {"stats": str(stats_run), "logs": runner.log}
+        return custom_response(request, 201, None, "Finished run_service_setup ",
+                               {"stats": str(stats_run), "logs": runner.log})
     else :
         return {"res":"INCOMMING"}
 
@@ -339,8 +343,8 @@ def skip_current_installation():
     res= {" current_task": models.to_json(current_task,'Task',False)  ,
             " next_task": models.to_json(next_task, 'Task', False)}
     session.close()
-    return res
 
+    return custom_response(request, 201,None, None, res)
 
 @mod.route('/installation/current', methods=['GET'])
 def get_current_installation_status():
@@ -356,7 +360,8 @@ def get_current_installation_status():
 
             current_task = current_task[0] if len(current_task)>0 else None
     if current_task is None:
-        return abort(404, "No Task was Run")
+        return custom_response(request, 404, "No Task was Run", None,None)
+
 
 
     current_service = current_task.service_setup
@@ -367,7 +372,7 @@ def get_current_installation_status():
              }
     session.commit()
     session.close()
-    return res , 200
+    return custom_response(request, 200, None, None,res)
 
 
 
@@ -390,8 +395,8 @@ def update_task_info():
     if task is None:
         session.commit()
         session.close()
-        return {"res": "Error Task Not Found" + 'node_ip: ' + str(
-            node_ip) + ' service_name: ' + str(service_name)+ ' task_index: ' + str(task_index) }, 200
+        return   custom_response(request, 404, "Error Task Not Found" + 'node_ip: ' + str(
+            node_ip) + ' service_name: ' + str(service_name)+ ' task_index: ' + str(task_index), None,None)
 
 
 
@@ -405,7 +410,7 @@ def update_task_info():
         res =  jsonify(models.to_json(task, 'Task', False))
         session.commit()
         session.close()
-        return res, 200
+        return custom_response(request, 200, None, None,res)
 
 
     # logging.debug("TYPE INFO: " + str(type(info)))
@@ -506,15 +511,11 @@ def update_task_info():
             info_status =  info.get('status') if info.get('status') else ""
             task.result = "OK Status =  " + str(info_status) + " Message: "+ str(info_msg)
             task.log = json.dumps(info)
-    session.add(task)
-    session.commit()
-    #res = jsonify(models.to_json(task, 'Task', False))
-    session.close()
-    return  {"ok":"ok"}, 200
+
 
     session.add(task)
     session.commit()
     res = jsonify(models.to_json(task, 'Task', False))
     session.close()
-    return  res, 200
+    return custom_response(request, 201, None, "Update task succeed",res)
 
