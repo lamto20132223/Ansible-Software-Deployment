@@ -26,7 +26,6 @@ class Config:
 
     SESSION_COOKIE_NAME = os.environ.get('SESSION_COOKIE_NAME') if os.environ.get('SESSION_COOKIE_NAME') else "lamtv10_flask_app"
 
-
     CONF = {"database": {"connection": "mysql+pymysql://lamtv10:lamtv10@172.16.29.197/auto_lamtv10"}}
     SQLALCHEMY_ENGINE_OPTIONS = {"pool_size":200, "max_overflow":200 }
     #db_engine = db.create_engine(CONF["database"]["connection"])
