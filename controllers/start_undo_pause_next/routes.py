@@ -219,7 +219,7 @@ def run_specific_service_setup():
                                {"stats": str(stats_run), "logs": runner.log})
         else:
             flash(json.dumps({"stats": str(stats_run), "logs": runner.log}))
-            redirect('/tools/installation/run_service_setup')
+            return redirect('/tools/installation/run_service_setup')
     else :
         return {"res":"INCOMMING"}
 
@@ -273,7 +273,7 @@ def run_specific_deployment():
                                {"logs": list_logs})
         else:
             flash(json.dumps({"logs": list_logs}))
-            redirect('/tools/installation/run_service_setup')
+            return redirect('/tools/installation/run_service_setup')
 
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
@@ -321,7 +321,7 @@ def run_specific_task():
                                {"stats": str(stats_run), "logs": runner.log})
         else:
             flash(json.dumps( {"stats": str(stats_run), "logs": runner.log}))
-            redirect('/tools/installation/run_service_setup')
+            return redirect('/tools/installation/run_service_setup')
     else :
         return {"res":"INCOMMING"}
 
