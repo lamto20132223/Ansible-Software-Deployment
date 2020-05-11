@@ -316,7 +316,7 @@ def test_code_create_task_for_service7():
     return {"response: ": ROOT_DIR+CONST.inventory_dir},200
 
 
-@mod.route('/service_setups/add_service_setup_to_node/', methods=[ 'POST'])
+@mod.route('/service_setups/add_service_setup_to_node', methods=[ 'POST'])
 def add_service_setup_to_node():
     if not request.json :
         abort(400)

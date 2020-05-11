@@ -139,14 +139,31 @@ def create_ansible_group_var():
     print(r.text)
 
     time.sleep(5)
+
+
+def add_service_setup_to_node( node_id,  service_setup_name):
+    url = 'http://172.16.29.194:4321/api/v1/service_setups/add_service_setup_to_node'
+
+
+    payload = {'node_id': node_id, 'service_setup_name': service_setup_name}
+    headers = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r = requests.post(url, json=payload, headers=headers)
+    print(r.text)
+
+    time.sleep(5)
+
+
+
 if __name__ == "__main__":
     # delete_data()
-    add_host()
+    # add_host()
     #update_host()
-    discover_hosts()
+    #discover_hosts()
     # add_host_to_role()
     # insert_test_data()
     # create_ansible_group_var()
+
+    add_service_setup_to_node(1, "neutron-agents")
 
     #send_task_info()
     #run_one_task(
