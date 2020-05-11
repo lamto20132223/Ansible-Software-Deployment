@@ -462,14 +462,6 @@ def edit_enable_service():
     return "INCOMMING"
 
 
-@mod.route('/service_setups/add_service_setup_to_node/', methods=[ 'POST'])
-def edit_enable_service():
-    if not request.json :
-        abort(400)
-    else:
-        data = request.json
-
-    return "INCOMMING"
 
 
 
