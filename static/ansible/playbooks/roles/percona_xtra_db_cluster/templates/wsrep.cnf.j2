@@ -36,7 +36,7 @@ wsrep_sst_method=xtrabackup-v2
 wsrep_sst_auth="{{ wsrep_sst_user }}:{{ wsrep_sst_password }}"
 wsrep_provider_options="pc.weight={{ pc_weight[host_name] }}"
 
-
+max_connections = 5000
 # MyISAM storage engine has only experimental support
 default_storage_engine=InnoDB
 # InnoDB config

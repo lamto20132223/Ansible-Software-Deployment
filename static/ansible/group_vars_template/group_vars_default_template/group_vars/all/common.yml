@@ -57,6 +57,8 @@ docker_image:
   horizon: docker-registry:4000/horizon_v2:q 
   swift_proxy: docker-registry:4000/swift_proxy_v6:q 
   neutron_agent: docker-registry:4000/neutron_v2:q
+  sriov_agent: docker-registry:4000/neutron_v2:q
+
 
 # Thư mục sẽ dùng để chứa các file cấu hình cho Openstack
 usr_share_docker: /usr/share/docker

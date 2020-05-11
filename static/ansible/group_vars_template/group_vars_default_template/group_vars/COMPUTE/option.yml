@@ -19,11 +19,31 @@ transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPE
 memcached_servers: "{% for node in groups['controller'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
 
 # Cấu hình đặc biệt cho nova-compute
-use_vcpu_pin_set: false
+use_vcpu_pin_set: true
+cpu_pin: true
+vcpu_pin_set: 3-17,39-53,21-35,57-71
 rbd_store_ceph_conf: /etc/ceph/ceph.conf
 nova_backend_ceph: false
-resume_guests_state_on_host_boot : false
+resume_guests_state_on_host_boot : true
 osapi_compute_unique_server_name_scope: false
-nova_compute_logging_debug: debug
+nova_compute_logging_debug: false
 
 
+vcpu_pin_set:
+  controller01: 3-17,39-53,21-35,57-71
+  controller02: 3-17,39-53,21-35,57-71
+  controller03: 3-17,39-53,21-35,57-71
+  compute01: 3-17,39-53,21-35,57-71
+  compute02: 3-17,39-53,21-35,57-71
+  compute03: 3-17,39-53,21-35,57-71
+  compute04: 3-17,39-53,21-35,57-71
+  compute05: 3-17,39-53,21-35,57-71
+  compute06: 3-17,39-53,21-35,57-71
+  compute07: 3-17,39-53,21-35,57-71
+  compute08: 3-17,39-53,21-35,57-71
+  compute09: 3-17,39-53,21-35,57-71
+  compute10: 3-17,39-53,21-35,57-71
+  compute11: 3-17,39-53,21-35,57-71
+  compute12: 3-17,39-53,21-35,57-71
+  compute13: 3-17,39-53,21-35,57-71
+  compute14: 3-17,39-53,21-35,57-71

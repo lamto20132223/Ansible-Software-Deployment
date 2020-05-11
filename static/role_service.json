@@ -33,10 +33,12 @@
 	{"index":4, "service_name":"qemu"},
 	{"index":5, "service_name":"nova-compute"},
 	{"index":6, "service_name":"openvswitch_dpdk"},
-	{"index":7, "service_name":"neutron-openvswitch_agent"},
-	{"index":8, "service_name":"neutron-dhcp_agent"},
-	{"index":9, "service_name":"neutron-metadata_agent"},
-	{"index":10, "service_name":"neutron-sriov_agent"}
+	{"index":6, "service_name":"neutron-agents"},
+	{"index":7, "service_name":"neutron-sriov_agent"},
+	{"index":8, "service_name":"neutron-openvswitch_agent"},
+	{"index":9, "service_name":"neutron-dhcp_agent"},
+	{"index":10, "service_name":"neutron-metadata_agent"}
+
 ]},
 
 

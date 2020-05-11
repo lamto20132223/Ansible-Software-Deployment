@@ -1,5 +1,5 @@
 [DEFAULT]
-debug = True
+debug = {{ nova_compute_logging_debug }}
 state_path = /home/root/var/lib/nova
 
 log_dir = {{ nova_log_file }}
@@ -9,7 +9,9 @@ osapi_compute_listen_port = {{ services_port.nova_api }}
 resume_guests_state_on_host_boot = {{ resume_guests_state_on_host_boot }}
 metadata_listen_port = {{ services_port.nova_metadata }}
 firewall_driver = nova.virt.firewall.NoopFirewallDriver
-pci_passthrough_whitelist =[{ "devname": "{{sriov_dev_name}}", "physical_network": "physnet1"} ]
+#pci_passthrough_whitelist =[{ "devname": "{{sriov_dev_name}}", "physical_network": "physnet1"} ]
+pci_passthrough_whitelist =[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]
+
 {% if osapi_compute_unique_server_name_scope | bool %}
 osapi_compute_unique_server_name_scope = global
 {% endif %}
@@ -18,7 +20,7 @@ instance_name_template = instance-%08x
 transport_url ={{ transport_url }}
 
 {% if cpu_pin | bool %}
-vcpu_pin_set = {{ vcpu_pin_set }}
+vcpu_pin_set = {{  vcpu_pin_set[host_name]  }}
 {% endif %}
 
 [api_database]
