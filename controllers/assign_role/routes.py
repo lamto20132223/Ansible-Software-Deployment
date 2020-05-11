@@ -317,7 +317,7 @@ def test_code_create_task_for_service7():
 
 
 @mod.route('/service_setups/add_service_setup_to_node/', methods=[ 'POST'])
-def edit_enable_service():
+def add_service_setup_to_node():
     if not request.json :
         abort(400)
     else:
