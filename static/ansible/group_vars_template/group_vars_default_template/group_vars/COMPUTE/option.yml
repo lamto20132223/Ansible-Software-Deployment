@@ -30,7 +30,7 @@ nova_compute_logging_debug: false
 
 
 vcpu_pin_set:
-  controller01: 3-17,39-53,21-35,57-71
+  epc_controller01: 3-17,39-53,21-35,57-71
   controller02: 3-17,39-53,21-35,57-71
   controller03: 3-17,39-53,21-35,57-71
   compute01: 3-17,39-53,21-35,57-71

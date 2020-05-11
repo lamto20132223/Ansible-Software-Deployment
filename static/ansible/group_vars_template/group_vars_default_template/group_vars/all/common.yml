@@ -4,7 +4,7 @@ group_name: Default
 # Host Name và Host Ip của các Server
 host_info:
   name:
-    controller01: controller01
+    epc_controller01: epc_controller01
     controller02: controller02
     controller03: controller03
     compute01: compute01
@@ -22,7 +22,7 @@ host_info:
     compute13: compute13
     compute14: compute14
   ip:
-    controller01: 172.16.29.191
+    epc_controller01: 172.16.29.191
     controller02: 172.16.29.201
     controller03: 172.16.29.234
     compute01: 172.16.29.235
