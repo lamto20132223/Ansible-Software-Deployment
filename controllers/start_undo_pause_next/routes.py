@@ -537,7 +537,7 @@ def update_task_info():
     session.commit()
     res = models.to_json(task, 'Task', False)
     session.close()
-    return custom_response(request, 201, None, "Update task succeed",res)
+    return custom_response(request, 200, None, "Update task succeed",res)
 
 
 
