@@ -1,3 +1,4 @@
+service_name: openvswitch_dpdk
 OVS_HUGEPAGE_MOUNT_PAGESIZE: '1GB'
 OVS_NUM_HUGEPAGES: 120
 

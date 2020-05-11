@@ -1,4 +1,5 @@
 ---
+service_name: percona_xtra_db_cluster
 wsrep_cluster_name: pxc-cluster
 wsrep_sst_user: sstuser 
 wsrep_sst_password: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew

@@ -1,4 +1,5 @@
 ---
+service_name: glance
 enable_glance_image_cache: false
 glance_cache_max_size: 0
 

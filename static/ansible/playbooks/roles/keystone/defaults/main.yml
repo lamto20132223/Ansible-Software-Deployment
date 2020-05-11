@@ -1,4 +1,5 @@
 ---
+service_name: keystone
 fernet_key_0: TkyJoi2l8hpYvSqh3ShddRaCwWRd-d16Z-uR-dxilA8=
 fernet_key_1: anETUPml6tEBWZSrI9vfoCJwtNYk_KjYz5yITd01fKk=
 credential_key_0: TkyJoi2l8hpYvSqh3ShddRaCwWRd-d16Z-uR-dxilA8=

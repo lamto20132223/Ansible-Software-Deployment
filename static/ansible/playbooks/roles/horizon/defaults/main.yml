@@ -1,5 +1,5 @@
 ---
-
+service_name: horizon
 containers:
   - name: horizon
     image: '{{ docker_image.horizon }}' 

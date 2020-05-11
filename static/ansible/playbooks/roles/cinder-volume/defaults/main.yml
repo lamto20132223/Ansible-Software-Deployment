@@ -1,5 +1,5 @@
 ---
-
+service_name: cinder-volume
 volume_group: cinder-volumes
 rbd_pool: volumes 
 rbd_ceph_conf: /etc/ceph/ceph.conf 

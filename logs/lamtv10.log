@@ -256,3 +256,7 @@ IOError: [Errno 32] Broken pipe
 [2020-05-11 10:12:21.219] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
 [2020-05-11 10:12:22.720] [ WARNING ] [_internal:_log:122] 48587  * Debugger is active!
 [2020-05-11 10:12:22.720] [ INFO    ] [_internal:_log:122] 48587  * Debugger PIN: 507-280-042
+[2020-05-11 14:33:04.747] [ INFO    ] [_internal:_log:122] 48587  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-05-11 14:33:05.512] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 14:33:12.777] [ WARNING ] [_internal:_log:122] 99141  * Debugger is active!
+[2020-05-11 14:33:12.786] [ INFO    ] [_internal:_log:122] 99141  * Debugger PIN: 507-280-042

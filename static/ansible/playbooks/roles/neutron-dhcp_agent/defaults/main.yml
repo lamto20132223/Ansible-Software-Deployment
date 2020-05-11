@@ -1,4 +1,5 @@
 ---
+service_name: neutron-dhcp_agent
 allow_overlapping_ips: true
 notify_nova_on_port_status_changes: true
 notify_nova_on_port_data_changes: true

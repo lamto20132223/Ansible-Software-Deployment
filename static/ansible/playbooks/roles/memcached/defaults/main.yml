@@ -1,3 +1,4 @@
+service_name: memcached
 PORT: "11211"
 USER : "memcached"
 MAXCONN: "2048"

@@ -1,4 +1,5 @@
 ---
+service_name: swift_proxy
 Haproxy_Config:
   - service_name: horizon
     port: 80 

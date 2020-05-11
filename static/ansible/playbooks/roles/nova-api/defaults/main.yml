@@ -1,4 +1,5 @@
 ---
+service_name: nova-api
 max_local_block_devices: -1
 max_concurrent_builds: 0
 max_concurrent_live_migrations: 2

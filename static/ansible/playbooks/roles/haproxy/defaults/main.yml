@@ -1,4 +1,5 @@
 ---
+service_name: haproxy
 Haproxy_Config:
   - service_name: horizon
     port: 80 

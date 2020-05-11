@@ -163,12 +163,12 @@ if __name__ == "__main__":
     # insert_test_data()
     # create_ansible_group_var()
 
-    add_service_setup_to_node(1, "neutron-agents")
+    #add_service_setup_to_node(1, "neutron-agents")
 
     #send_task_info()
     #run_one_task(
     # )
-    #run_task_id(1)
+    run_task_id(1)
     # run_task_id(2)
     # run_task_id(3)
     # run_task_id(4)
