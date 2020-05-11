@@ -275,7 +275,10 @@ def get_tools():
         {'label': 'cnv_group_var_origin_to_sf', 'url': '/tools/cnv_group_var_origin_to_sf'},
         {'label': 'cnv_group_var_sf_to_origin', 'url': '/tools/cnv_group_var_sf_to_origin'},
         {'label': 'convert_ansible_task_yml_to_sf_task_yml', 'url': '/tools/convert_ansible_task_yml_to_sf_task_yml'},
-        {'label': 'edit_ansible_group_vars', 'url': '/tools/list_ansible_group_vars'}]
+        {'label': 'edit_ansible_group_vars', 'url': '/tools/list_ansible_group_vars'},
+        {'label': 'run_service_setup', 'url': '/tools/installation/run_service_setup'},
+
+    ]
     return render_template('tools.html', list_tools=list_tools)
 @mod.route('/api/v1/tools/', methods=['GET'])
 def get_tools_v1():
@@ -388,6 +391,26 @@ class CNV_Group_Var_3(Resource):
             return redirect(request.url)
 
 
+
+
+
+@mod_v1.route('/tools/installation/run_service_setup', methods=['GET', 'POST'])
+class Install(Resource):
+    def get(self):
+        tool_name = 'Tool chuyen doi file group_var_origin dung trong Ansible sang file group_var dung trong API SoftwareManagement'
+        tool_url = "/tools/installation/run_service_setup"
+        return Response(render_template('form_setup_tools.html', tool_name=tool_name, tool_url=tool_url), 200,
+                        mimetype='text/html')
+
+    def post(self):
+        # check if the post request has the file part
+        flash(json.dumps(request.form.to_dict()))
+        print(json.dumps(request.form.to_dict()))
+        tool_name = 'Tool chuyen doi file group_var_origin dung trong Ansible sang file group_var dung trong API SoftwareManagement'
+        tool_url = "/tools/installation/run_service_setup"
+        # return Response(render_template('form_setup_tools.html', tool_name=tool_name, tool_url=tool_url), 200,
+        #                         mimetype='text/html')
+        return redirect('/tools/installation/run_service_setup')
 
 
 @mod.route('/tools/list_api', methods=['GET'])

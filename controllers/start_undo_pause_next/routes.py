@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, abort,  abort, jsonify, request,make_response, redirect
+from flask import Blueprint, render_template, abort,  abort, jsonify, request,make_response, redirect,flash
 from jinja2 import TemplateNotFound
 from app import  db, session, Node_Base, Column, relationship, ansible
 from datetime import  datetime
@@ -168,14 +168,14 @@ def get_change_info():
 
 @mod.route('/installation/run_service_setup', methods=['POST'])
 def run_specific_service_setup():
-    if not request.json:
+    if not (request.json or request.form):
         abort(400)
     else:
-        service_setup_id = request.json.get('service_setup_id')
-        deployment_id = request.json.get('deployment_id')
-        setup_index = request.json.get('setup_index')
-        method = request.json.get('method')
-        start_at_task_id = request.json.get('start_at_task_id')
+        service_setup_id = request.json.get('service_setup_id') if request.json is not None else request.form.get('service_setup_id')
+        deployment_id = request.json.get('deployment_id') if request.json is not None else request.form.get('deployment_id')
+        setup_index = request.json.get('setup_index') if request.json is not None else request.form.get('setup_index')
+        method = request.json.get('method') if request.json is not None else request.form.get('method')
+        start_at_task_id = request.json.get('start_at_task_id') if request.json is not None else request.form.get('start_at_task_id')
 
     service_setup = None
 
@@ -214,8 +214,12 @@ def run_specific_service_setup():
 
         stats_run = runner.run()
         print(stats_run)
-        return custom_response(request, 201, None, "Finished run_service_setup ",
+        if request.json :
+            return custom_response(request, 201, None, "Finished run_service_setup ",
                                {"stats": str(stats_run), "logs": runner.log})
+        else:
+            flash(json.dumps({"stats": str(stats_run), "logs": runner.log}))
+            redirect('/tools/installation/run_service_setup')
     else :
         return {"res":"INCOMMING"}
 
@@ -223,12 +227,12 @@ def run_specific_service_setup():
 
 @mod.route('/installation/run_deployment', methods=['POST'])
 def run_specific_deployment():
-    if not request.json:
+    if not (request.json or request.form):
         abort(400)
     else:
-        service_setup_id = request.json.get('service_setup_id')
-        deployment_id = request.json.get('deployment_id')
-        method = request.json.get('method')
+        service_setup_id = request.json.get('service_setup_id') if request.json is not None else request.form.get('service_setup_id')
+        deployment_id = request.json.get('deployment_id') if request.json is not None else request.form.get('deployment_id')
+        method = request.json.get('method') if request.json is not None else request.form.get('method')
 
 
     service_setup_start = None
@@ -264,8 +268,12 @@ def run_specific_deployment():
                 if status != 'DONE':
                     break
         session.close()
-        return custom_response(request, 201, None, "Finished run_deployment ",
+        if request.json:
+            return custom_response(request, 201, None, "Finished run_deployment ",
                                {"logs": list_logs})
+        else:
+            flash(json.dumps({"logs": list_logs}))
+            redirect('/tools/installation/run_service_setup')
 
         # ansible-playbook ansible_compute.yml --extra-vars "target=target other_variable=foo" --tags "install, uninstall" --start-at-task=task.task_display_name --step
 
@@ -278,11 +286,11 @@ def run_specific_deployment():
 
 @mod.route('/installation/runtask', methods=['POST'])
 def run_specific_task():
-    if not request.json:
+    if  not (request.json or request.form):
         abort(400)
     else:
-        task_id = request.json.get('task_id')
-        method = request.json.get('method')
+        task_id = request.json.get('task_id') if request.json is not None else request.form.get('task_id')
+        method = request.json.get('method') if request.json is not None else request.form.get('method')
 
     task = session.query(models.Task).filter_by(task_id=task_id).first()
 
@@ -308,10 +316,22 @@ def run_specific_task():
         print(runner.variable_manager)
         stats_run = runner.run()
         print(stats_run)
-        return custom_response(request, 201, None, "Finished run_service_setup ",
+        if request.json:
+            return custom_response(request, 201, None, "Finished run_service_setup ",
                                {"stats": str(stats_run), "logs": runner.log})
+        else:
+            flash(json.dumps( {"stats": str(stats_run), "logs": runner.log}))
+            redirect('/tools/installation/run_service_setup')
     else :
         return {"res":"INCOMMING"}
+
+
+
+
+
+
+
+
 
 
 @mod.route('/installation/skip', methods=['GET'])
@@ -518,4 +538,8 @@ def update_task_info():
     res = models.to_json(task, 'Task', False)
     session.close()
     return custom_response(request, 201, None, "Update task succeed",res)
+
+
+
+
 

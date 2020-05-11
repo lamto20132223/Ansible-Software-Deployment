@@ -1,0 +1,153 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="main">
+
+    <div class="container">
+        <div class="signup-content">
+            <div class="signup-form">
+                <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/runtask" style="    float: left;
+    margin: 1%;
+    box-sizing: border-box;
+    width: 45%;
+    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">run task_id</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="task_id1" class="required">task_id</label>
+                                <input type="number" name="task_id" id="task_id1" />
+                            </div>
+                            <div class="form-input" style="display: none">
+                                <label for="method1" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Install' id="method1" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-submit" >
+                        <input type="submit" value="Submit" class="submit" id="submit_1" name="submit" />
+                    </div>
+                </form>
+
+                      <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/run_service_setup" style="float: right;
+    margin: 1%;
+    box-sizing: border-box;
+    width: 45%;
+    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">run deployment_id + service_setup_index</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="deployment_id2" class="required">deployment_id</label>
+                                <input type="number" name="deployment_id" id="deployment_id2" />
+                            </div>
+                            <div class="form-input">
+                                <label for="setup_index2" class="required">setup_index</label>
+                                <input type="number" name="setup_index" id="setup_index2" />
+                            </div>
+                            <div class="form-input" style="display: none">
+                                <label for="method2" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Install' id="method2" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-submit" >
+                        <input type="submit" value="Submit" class="submit" id="submit_2" name="submit" />
+                    </div>
+                </form>
+
+
+        <form method="POST" class="register-form" id="register-form1" action="/tools/installation/run_service_setup" style="    float: left;
+    margin: 1%;
+    box-sizing: border-box;
+    width: 45%;
+    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">run deployment_id + service_setup_index + start-at_task</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="deployment_id3" class="required">deployment_id</label>
+                                <input type="number" name="deployment_id" id="deployment_id3" />
+                            </div>
+                            <div class="form-input">
+                                <label for="service_setup_id3" class="required">service_setup_id</label>
+                                <input type="number" name="service_setup_id" id="service_setup_id3" />
+                            </div>
+                            <div class="form-input">
+                                <label for="start_at_task_id3" class="required">start_at_task_id</label>
+                                <input type="number" name="start_at_task_id" id="start_at_task_id3" />
+                            </div>
+
+                             <div class="form-input" style="display: none">
+                                <label for="method3" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Install' id="method3" />
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" id="submit_3" name="submit" />
+                    </div>
+                </form>
+
+
+       <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/run_deployment" style="float: right;
+    margin: 1%;
+    box-sizing: border-box;
+    width: 45%;
+    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">run_deployment</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="deployment_id4" class="required">deployment_id</label>
+                                <input type="number" name="deployment_id" id="deployment_id4" />
+                            </div>
+                            <div class="form-input">
+                                <label for="service_setup_id4" class="required">service_setup_id</label>
+                                <input type="number" name="service_setup_id" id="service_setup_id4" />
+                            </div>
+                            <div class="form-input" style="display: none">
+                                <label for="method" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Install' id="method" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" id="submit_4" name="submit" />
+                    </div>
+                </form>
+
+
+                <div class="donate-us" style="float:left;width: 100%">
+                        <label>Donate us <br>
+                    {% with messages = get_flashed_messages() %}
+                      {% if messages %}
+
+                        {% for message in messages %}
+                          {{ message }}
+                        {% endfor %}
+
+                      {% endif %}
+                    {% endwith %}
+                </label>
+                        <div class="price_slider ui-slider ui-slider-horizontal">
+                            <div id="slider-margin"></div>
+                            <span class="donate-value" id="value-lower"></span>
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

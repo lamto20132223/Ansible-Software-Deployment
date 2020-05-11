@@ -316,6 +316,58 @@ def test_code_create_task_for_service7():
     return {"response: ": ROOT_DIR+CONST.inventory_dir},200
 
 
+@mod.route('/service_setups/add_service_setup_to_node/', methods=[ 'POST'])
+def edit_enable_service():
+    if not request.json :
+        abort(400)
+    else:
+        node_id = request.json.get('node_id')
+        service_setup_name = request.json.get('service_setup_name')
+
+    node = session.query(models.Node).filter_by(node_id=str(node_id)).first()
+    if node is None:
+        return abort(404," No host found ")
+    deployment = node.deployment
+    index = len(deployment.service_setups)+1
+    service_setup = models.Service_setup(service_type="Additional Service", service_name=service_setup_name, enable="ENABLE",
+                                         service_lib=None, service_config_folder=None, setup_index=index,
+                                         is_validated_success=None, validated_status=None)
+    host_name = node.node_display_name
+
+    ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+    playbook_temp = os.path.join(ROOT_DIR, 'global_assets/playbook_temp.yml')
+    new_playbook = CONST.playbook_dir + '/' + 'playbook_setup_' + service_setup_name + '_for_' + host_name + '.yml'
+    os.system('\cp ' + str(playbook_temp) + ' ' + new_playbook)
+    os.system('sed -i "s|SERVICE_NAME|' + service_setup_name + '|g" ' + str(new_playbook))
+    os.system('sed -i "s|HOST_NAME|' + host_name + '|g" ' + str(new_playbook))
+    os.system('sed -i "s|ROLE_NAME|' + service_setup_name + '|g" ' + str(new_playbook))
+
+    list_tasks = load_yml_file(CONST.role_dir + '/' +service_setup_name + '/tasks/main.yml')
+    list_task_info = []
+    for index, task in enumerate(list_tasks, start=0):
+
+        task_info = {}
+
+        for command in task.get('block'):
+            if command.get('name') is not None:
+                task_info['name'] = command.get('name')
+            elif command.get('include') is None:
+                setup_data = str(json.dumps(command))
+                task_info['setup_data'] = setup_data[:250] + (setup_data[250:] and '..')
+                task_info['task_type'] = command.keys()
+                if 'register' in task_info['task_type']: task_info['task_type'].remove('register')
+        list_task_info.append(task_info)
+
+    for index, task in enumerate(list_task_info, start=1):
+        task_data = models.Task(created_at=datetime.now(), task_display_name=task.get('name'),
+                                setup_data=task.get('setup_data'), task_type=str(task.get('task_type')),
+                                task_index=index)
+        service_setup.tasks.append(task_data)
+    deployment.service_setups.append(service_setup)
+    session.add(node)
+    session.commit()
+    session.close()
+    return custom_response(request, 202, None, "Done Add Service to Node", None)
 
 
 
@@ -408,6 +460,20 @@ def edit_enable_service():
         data = request.json
 
     return "INCOMMING"
+
+
+@mod.route('/service_setups/add_service_setup_to_node/', methods=[ 'POST'])
+def edit_enable_service():
+    if not request.json :
+        abort(400)
+    else:
+        data = request.json
+
+    return "INCOMMING"
+
+
+
+
 
 @mod.route('/deployments/<string:deployment_id>/playbooks', methods=['GET'])
 def get_all_playbooks(deployment_id):
