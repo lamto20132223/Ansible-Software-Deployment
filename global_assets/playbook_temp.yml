@@ -2,6 +2,7 @@
 - name: install SERVICE_NAME on HOST_NAME
   hosts: 'HOST_NAME'
   remote_user: root
-  gather_facts: no
+  gather_facts: yes
+
   roles:
     - { role: ROLE_NAME }
