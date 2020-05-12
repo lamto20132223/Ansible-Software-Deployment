@@ -488,7 +488,7 @@ def update_task_info():
                 change = models.Change(created_at=datetime.now(), change_type=change_type, status=change_status , change_log=change_log, finished_at=finished_at, file_config_id = file_config_id)
                 task.changes.append(change)
 
-            task.result = task_result
+            task.result = task_result[:250] + (task_result[250:] and '..')
 
 
     if 'template' in task.task_type:
@@ -532,6 +532,8 @@ def update_task_info():
             task.result = "OK Status =  " + str(info_status) + " Message: "+ str(info_msg)
             task.log = json.dumps(info)
 
+
+    task.result = task.result[:250] + (task.result[250:] and '..')
 
     session.add(task)
     session.commit()
