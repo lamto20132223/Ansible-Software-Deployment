@@ -478,9 +478,13 @@ def update_task_info():
             task_result = "SUCCEED "
             task.changes[:] = []
             for index, change_info in enumerate(info_result, start=1):
+
+
+
                 change_status = "OK" if change_info.get('failed') is False else "FAILED"
-                change_log = " stdout = " +  change_info.get("stdout") +"|| stderr = " + change_info.get("stderr")
-                task_result = "ERROR " + change_info.get("stderr") if change_info.get("stderr") != "" else task_result + change_info.get("stdout")
+
+                change_log = " stdout = " +  str(change_info.get("stdout")) +"|| stderr = " + str(change_info.get("stderr"))
+                task_result = "ERROR " + str(change_info.get("stderr")) if str(change_info.get("stderr")) != "" else task_result + str(change_info.get("stdout"))
                 finished_at = datetime.now() if change_info.get('failed') is False else None
                 change_type = json.dumps(change_info)
                 change_type = change_type[:250] + (change_type[250:] and '..')
