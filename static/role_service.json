@@ -49,13 +49,14 @@
 	},
 	"list_service" : [
 	{"index":1, "service_name":"init_repo"},
+	{"index":8, "service_name":"docker"},
 	{"index":2, "service_name":"chrony"},
 	{"index":3, "service_name":"rabbitmq"},
 	{"index":4, "service_name":"memcached"},
 	{"index":5, "service_name":"percona_xtra_db_cluster"},
 	{"index":6, "service_name":"keepalived"},
 	{"index":7, "service_name":"haproxy"},
-	{"index":8, "service_name":"docker"},
+
 	{"index":9, "service_name":"keystone"},
 	{"index":10, "service_name":"glance-api"},
 	{"index":11, "service_name":"nova-api"},

@@ -10,7 +10,7 @@
 
 - name: copy qemu-2_12_0.tar.xz
   copy:
-    src: '/etc/ansible/roles/qemu/files/qemu_2.12.0.tar.gz'
+    src: '/root/app/static/ansible/playbooks/roles/qemu/files/qemu_2.12.0.tar.gz'
     dest: '/usr/src/qemu_2.12.0.tar.gz'
     mode: 400
 

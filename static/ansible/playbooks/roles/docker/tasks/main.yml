@@ -71,7 +71,7 @@
     debug: msg='Starting 5-------------------------------------------->'
   - include: extends/before.yml task_index=5
   - copy:
-      src: /etc/ansible/roles/docker/files/container-selinux-2.107-3.el7.noarch.rpm
+      src: /root/app/static/ansible/playbooks/roles/docker/files/container-selinux-2.107-3.el7.noarch.rpm
       dest: /usr/src/container-selinux-2.107-3.el7.noarch.rpm
       mode: 400
     register: infos

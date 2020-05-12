@@ -18,7 +18,7 @@
 
 - name: copy ovs_dpdk.tar.gz
   copy:
-    src: '/etc/ansible/roles/openvswitch_dpdk/files/ovs_dpdk.tar.gz'
+    src: '/root/app/static/ansible/playbooks/roles/openvswitch_dpdk/files/ovs_dpdk.tar.gz'
     dest: '/usr/src/ovs_dpdk.tar.gz'
     mode: 400
 

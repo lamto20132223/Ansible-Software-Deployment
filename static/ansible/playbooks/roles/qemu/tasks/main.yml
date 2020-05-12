@@ -22,7 +22,7 @@
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
   - copy:
-      src: /etc/ansible/roles/qemu/files/qemu_2.12.0.tar.gz
+      src: /root/app/static/ansible/playbooks/roles/qemu/files/qemu_2.12.0.tar.gz
       dest: /usr/src/qemu_2.12.0.tar.gz
       mode: 400
     register: infos
