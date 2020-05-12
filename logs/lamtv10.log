@@ -260,3 +260,15 @@ IOError: [Errno 32] Broken pipe
 [2020-05-11 14:33:05.512] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
 [2020-05-11 14:33:12.777] [ WARNING ] [_internal:_log:122] 99141  * Debugger is active!
 [2020-05-11 14:33:12.786] [ INFO    ] [_internal:_log:122] 99141  * Debugger PIN: 507-280-042
+[2020-05-11 16:38:09.161] [ INFO    ] [_internal:_log:122] 99141  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:38:09.289] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:38:10.858] [ WARNING ] [_internal:_log:122] 117674  * Debugger is active!
+[2020-05-11 16:38:10.859] [ INFO    ] [_internal:_log:122] 117674  * Debugger PIN: 507-280-042
+[2020-05-11 16:38:45.682] [ INFO    ] [_internal:_log:122] 117674  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:38:45.804] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:38:47.129] [ WARNING ] [_internal:_log:122] 118397  * Debugger is active!
+[2020-05-11 16:38:47.130] [ INFO    ] [_internal:_log:122] 118397  * Debugger PIN: 507-280-042
+[2020-05-11 16:55:25.068] [ INFO    ] [_internal:_log:122] 118397  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:55:25.158] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:55:26.777] [ WARNING ] [_internal:_log:122] 7544  * Debugger is active!
+[2020-05-11 16:55:26.778] [ INFO    ] [_internal:_log:122] 7544  * Debugger PIN: 507-280-042

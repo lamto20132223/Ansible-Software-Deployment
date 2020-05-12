@@ -40,8 +40,8 @@ SQL_SST_PASSWD: fPWOWrsMGLaBaP74iK57XoOyJy8aAEew
 wsrep_cluster_address: gcomm://172.16.29.191,172.16.29.201,172.16.29.234
 
 # RabbitMQ and Memcached
-transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
-memcached_servers: "{% for node in groups['controller'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
+transport_url: rabbit://{% for node in groups['CONTROLLER'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
+memcached_servers: "{% for node in groups['CONTROLLER'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
 
 #Ceph
 rbd_store_ceph_conf: /etc/ceph/ceph.conf

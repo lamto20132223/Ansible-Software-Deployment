@@ -15,8 +15,8 @@ services_port:
   cinder_api: 8776
   masakari_api: 15868
 
-transport_url: rabbit://{% for node in groups['controller'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
-memcached_servers: "{% for node in groups['controller'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
+transport_url: rabbit://{% for node in groups['CONTROLLER'] %}openstack:{{RB_OPENSTACK}}@{{node}}:5672{% if not loop.last %},{% endif  %}{% endfor %}
+memcached_servers: "{% for node in groups['CONTROLLER'] %}{{node}}:11211{% if not loop.last %},{% endif  %}{% endfor %}"
 
 # Cấu hình đặc biệt cho nova-compute
 use_vcpu_pin_set: true
@@ -30,20 +30,51 @@ nova_compute_logging_debug: false
 
 
 vcpu_pin_set:
-  epc_controller01: 3-17,39-53,21-35,57-71
-  controller02: 3-17,39-53,21-35,57-71
-  controller03: 3-17,39-53,21-35,57-71
-  compute01: 3-17,39-53,21-35,57-71
-  compute02: 3-17,39-53,21-35,57-71
-  compute03: 3-17,39-53,21-35,57-71
-  compute04: 3-17,39-53,21-35,57-71
-  compute05: 3-17,39-53,21-35,57-71
-  compute06: 3-17,39-53,21-35,57-71
-  compute07: 3-17,39-53,21-35,57-71
-  compute08: 3-17,39-53,21-35,57-71
-  compute09: 3-17,39-53,21-35,57-71
-  compute10: 3-17,39-53,21-35,57-71
-  compute11: 3-17,39-53,21-35,57-71
-  compute12: 3-17,39-53,21-35,57-71
-  compute13: 3-17,39-53,21-35,57-71
-  compute14: 3-17,39-53,21-35,57-71
+  epc_compute01: 3-17,39-53,21-35,57-71
+  epc_compute02: 3-17,39-53,21-35,57-71
+  epc_compute03: 3-17,39-53,21-35,57-71
+  epc_compute04: 3-17,39-53,21-35,57-71
+  epc_compute05: 3-17,39-53,21-35,57-71
+  epc_compute06: 3-17,39-53,21-35,57-71
+  epc_compute07: 3-17,39-53,21-35,57-71
+  epc_compute08: 3-17,39-53,21-35,57-71
+  epc_compute09: 3-17,39-53,21-35,57-71
+  epc_compute10: 3-17,39-53,21-35,57-71
+  epc_compute11: 3-17,39-53,21-35,57-71
+  epc_compute12: 3-17,39-53,21-35,57-71
+  epc_compute13: 3-17,39-53,21-35,57-71
+  epc_compute14: 3-17,39-53,21-35,57-71
+
+
+
+sriov_config:
+  pci_passthrough_whitelist:
+    epc_compute01: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute02: 3-17,39-53,21-35,57-71
+    epc_compute03: 3-17,39-53,21-35,57-71
+    epc_compute04: 3-17,39-53,21-35,57-71
+    epc_compute05: 3-17,39-53,21-35,57-71
+    epc_compute06: 3-17,39-53,21-35,57-71
+    epc_compute07: 3-17,39-53,21-35,57-71
+    epc_compute08: 3-17,39-53,21-35,57-71
+    epc_compute09: 3-17,39-53,21-35,57-71
+    epc_compute10: 3-17,39-53,21-35,57-71
+    epc_compute11: 3-17,39-53,21-35,57-71
+    epc_compute12: 3-17,39-53,21-35,57-71
+    epc_compute13: 3-17,39-53,21-35,57-71
+    epc_compute14: 3-17,39-53,21-35,57-71
+  physical_device_mappings:
+    epc_compute01: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute02: 3-17,39-53,21-35,57-71
+    epc_compute03: 3-17,39-53,21-35,57-71
+    epc_compute04: 3-17,39-53,21-35,57-71
+    epc_compute05: 3-17,39-53,21-35,57-71
+    epc_compute06: 3-17,39-53,21-35,57-71
+    epc_compute07: 3-17,39-53,21-35,57-71
+    epc_compute08: 3-17,39-53,21-35,57-71
+    epc_compute09: 3-17,39-53,21-35,57-71
+    epc_compute10: 3-17,39-53,21-35,57-71
+    epc_compute11: 3-17,39-53,21-35,57-71
+    epc_compute12: 3-17,39-53,21-35,57-71
+    epc_compute13: 3-17,39-53,21-35,57-71
+    epc_compute14: 3-17,39-53,21-35,57-71

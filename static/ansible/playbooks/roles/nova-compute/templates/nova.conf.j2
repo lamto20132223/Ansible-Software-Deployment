@@ -9,8 +9,8 @@ osapi_compute_listen_port = {{ services_port.nova_api }}
 resume_guests_state_on_host_boot = {{ resume_guests_state_on_host_boot }}
 metadata_listen_port = {{ services_port.nova_metadata }}
 firewall_driver = nova.virt.firewall.NoopFirewallDriver
-#pci_passthrough_whitelist =[{ "devname": "{{sriov_dev_name}}", "physical_network": "physnet1"} ]
-pci_passthrough_whitelist =[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]
+
+pci_passthrough_whitelist ={{ sriov_config.pci_passthrough_whitelist[host_name] }}
 
 {% if osapi_compute_unique_server_name_scope | bool %}
 osapi_compute_unique_server_name_scope = global

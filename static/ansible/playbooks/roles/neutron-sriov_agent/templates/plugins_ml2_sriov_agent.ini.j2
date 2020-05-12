@@ -135,7 +135,7 @@ extensions = qos
 #
 # From neutron.ml2.sriov.agent
 #
-physical_device_mappings =physnet2:ens2f0, physnet1:ens1f0
+physical_device_mappings ={{ sriov_config.physical_device_mappings[host_name] }}
 # Comma-separated list of <physical_network>:<network_device> tuples mapping
 # physical network names to the agent's node-specific physical network device
 # interfaces of SR-IOV physical function to be used for VLAN networks. All

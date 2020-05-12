@@ -5,40 +5,40 @@ group_name: Default
 host_info:
   name:
     epc_controller01: epc_controller01
-    controller02: controller02
-    controller03: controller03
-    compute01: compute01
-    compute02: compute02
-    compute03: compute03
-    compute04: compute04
-    compute05: compute05
-    compute06: compute06
-    compute07: compute07
-    compute08: compute08
-    compute09: compute09
-    compute10: compute10
-    compute11: compute11
-    compute12: compute12
-    compute13: compute13
-    compute14: compute14
+    epc_controller02: epc_controller02
+    epc_controller03: epc_controller03
+    epc_compute01: epc_compute01
+    epc_compute02: epc_compute02
+    epc_compute03: epc_compute03
+    epc_compute04: epc_compute04
+    epc_compute05: epc_compute05
+    epc_compute06: epc_compute06
+    epc_compute07: epc_compute07
+    epc_compute08: epc_compute08
+    epc_compute09: epc_compute09
+    epc_compute10: epc_compute10
+    epc_compute11: epc_compute11
+    epc_compute12: epc_compute12
+    epc_compute13: epc_compute13
+    epc_compute14: epc_compute14
   ip:
     epc_controller01: 172.16.29.191
-    controller02: 172.16.29.201
-    controller03: 172.16.29.234
-    compute01: 172.16.29.235
-    compute02: 172.16.29.236
-    compute03: 172.16.29.202
-    compute04: 172.16.29.240
-    compute05: 172.16.29.189
-    compute06: 172.16.29.193
-    compute07: 172.16.29.194
-    compute08: 172.16.29.195
-    compute09: 172.16.29.196
-    compute10: 172.16.29.197
-    compute11: 172.16.29.198
-    compute12: 172.16.29.199
-    compute13: 172.16.29.200
-    compute14: 172.16.29.233
+    epc_controller02: 172.16.29.201
+    epc_controller03: 172.16.29.234
+    epc_compute01: 172.16.29.235
+    epc_compute02: 172.16.29.236
+    epc_compute03: 172.16.29.202
+    epc_compute04: 172.16.29.240
+    epc_compute05: 172.16.29.189
+    epc_compute06: 172.16.29.193
+    epc_compute07: 172.16.29.194
+    epc_compute08: 172.16.29.195
+    epc_compute09: 172.16.29.196
+    epc_compute10: 172.16.29.197
+    epc_compute11: 172.16.29.198
+    epc_compute12: 172.16.29.199
+    epc_compute13: 172.16.29.200
+    epc_compute14: 172.16.29.233
 
 # Ip Port của Docker Registry
 repository: 172.16.29.193

@@ -20,7 +20,7 @@ REGION_NAME: North_VN
 CELL_NAME: cell1
 
 # Tên controller đầu tiên được cài để tạo DB, đăng ký user, service, password
-HUB: controller01
+HUB: epc_controller01
 first_controller: '{{ HUB }}'
 chrony_server: '{{ HUB }}'
 
@@ -37,13 +37,13 @@ VIP_PRIVATE: '{{ INTERNAL_VIP_ADDRESS }}'
 ROUTER_ID: 105
 OS_CONTROLLER: '{{ INTERNAL_VIP_ADDRESS }}'
 KEEPALIVED_PRIORS: 
-  controller01: 3
-  controller02: 2
-  controller03: 1 
+  epc_controller01: 3
+  epc_controller02: 2
+  epc_controller03: 1
 
 pc_weight: 
-  controller01: 40
-  controller02: 30
-  controller03: 20
+  epc_controller01: 40
+  epc_controller02: 30
+  epc_controller03: 20
 
 sriov_dev_name: ens2f0
