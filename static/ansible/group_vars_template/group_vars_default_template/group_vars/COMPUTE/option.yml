@@ -28,12 +28,11 @@ resume_guests_state_on_host_boot : true
 osapi_compute_unique_server_name_scope: false
 nova_compute_logging_debug: false
 
-
 vcpu_pin_set:
-  epc_compute01: 3-17,39-53,21-35,57-71
-  epc_compute02: 3-17,39-53,21-35,57-71
-  epc_compute03: 3-17,39-53,21-35,57-71
-  epc_compute04: 3-17,39-53,21-35,57-71
+  epc_compute01: 3-7,19-23,10-15,26-31
+  epc_compute02: 3-7,19-23,10-15,26-31
+  epc_compute03: 3-9,23-29,13-19,33-39
+  epc_compute04: 3-9,23-29,13-19,33-39
   epc_compute05: 3-17,39-53,21-35,57-71
   epc_compute06: 3-17,39-53,21-35,57-71
   epc_compute07: 3-17,39-53,21-35,57-71
@@ -49,32 +48,32 @@ vcpu_pin_set:
 
 sriov_config:
   pci_passthrough_whitelist:
-    epc_compute01: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute02: 3-17,39-53,21-35,57-71
-    epc_compute03: 3-17,39-53,21-35,57-71
-    epc_compute04: 3-17,39-53,21-35,57-71
-    epc_compute05: 3-17,39-53,21-35,57-71
-    epc_compute06: 3-17,39-53,21-35,57-71
-    epc_compute07: 3-17,39-53,21-35,57-71
-    epc_compute08: 3-17,39-53,21-35,57-71
-    epc_compute09: 3-17,39-53,21-35,57-71
-    epc_compute10: 3-17,39-53,21-35,57-71
-    epc_compute11: 3-17,39-53,21-35,57-71
-    epc_compute12: 3-17,39-53,21-35,57-71
-    epc_compute13: 3-17,39-53,21-35,57-71
-    epc_compute14: 3-17,39-53,21-35,57-71
+    epc_compute01: '[]'
+    epc_compute02: '[]'
+    epc_compute03: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
+    epc_compute04: '[]'
+    epc_compute05: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute06: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute07: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute08: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute09: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute10: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute11: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    epc_compute12: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
+    epc_compute13: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
+    epc_compute14: '[]'
   physical_device_mappings:
-    epc_compute01: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute02: 3-17,39-53,21-35,57-71
-    epc_compute03: 3-17,39-53,21-35,57-71
-    epc_compute04: 3-17,39-53,21-35,57-71
-    epc_compute05: 3-17,39-53,21-35,57-71
-    epc_compute06: 3-17,39-53,21-35,57-71
-    epc_compute07: 3-17,39-53,21-35,57-71
-    epc_compute08: 3-17,39-53,21-35,57-71
-    epc_compute09: 3-17,39-53,21-35,57-71
-    epc_compute10: 3-17,39-53,21-35,57-71
-    epc_compute11: 3-17,39-53,21-35,57-71
-    epc_compute12: 3-17,39-53,21-35,57-71
-    epc_compute13: 3-17,39-53,21-35,57-71
-    epc_compute14: 3-17,39-53,21-35,57-71
+    epc_compute01: ''
+    epc_compute02: ''
+    epc_compute03: physnet2:ens2f0
+    epc_compute04: ''
+    epc_compute05: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute06: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute07: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute08: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute09: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute10: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute11: physnet2:ens2f0, physnet1:ens1f0
+    epc_compute12: physnet2:ens2f0
+    epc_compute13: physnet2:ens2f0
+    epc_compute14: ''
