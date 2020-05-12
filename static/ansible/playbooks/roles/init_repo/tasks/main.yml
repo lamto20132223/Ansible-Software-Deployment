@@ -171,3 +171,20 @@
   tags:
   - install
   - '10'
+
+- block:
+  - name: 11. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    debug: msg='Starting 11-------------------------------------------->'
+  - include: extends/before.yml task_index=11
+  - command: '{{ item }}'
+    with_items:
+    - yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=11 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=11 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '11'

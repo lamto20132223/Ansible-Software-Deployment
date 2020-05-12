@@ -1,7 +1,7 @@
 [DEFAULT]
 log_dir = {{log_dir}}
 my_ip = {{MY_IP}}
-transport_url =  {% for node in groups['controller'] %}rabbit://openstack:{{RB_OPENSTACK}}@{{node}}:5672,{% endfor %}
+transport_url =  {% for node in groups['CONTROLLER'] %}rabbit://openstack:{{RB_OPENSTACK}}@{{node}}:5672,{% endfor %}
 vcpu_pin_set = {{vcpu_pin_set}}
 Tower name is: {{ host_info.name[host_name] }}
 Tower host is: {{host_name}}
