@@ -36,6 +36,12 @@ VIP_PRIVATE_INF: '{{ network_interface }}'
 VIP_PRIVATE: '{{ INTERNAL_VIP_ADDRESS }}'
 ROUTER_ID: 105
 OS_CONTROLLER: '{{ INTERNAL_VIP_ADDRESS }}'
+
+group_controllers:
+  - epc_controller01
+  - epc_controller02
+  - epc_controller03
+
 KEEPALIVED_PRIORS: 
   epc_controller01: 3
   epc_controller02: 2

@@ -42,7 +42,7 @@ listen stats
 listen {{ service.service_name }}
   bind {{ VIP_PUBLIC }}:{{ service.port }}
   {{ service.option }}
-{% for node in groups['CONTROLLER']  %}
+{% for node in group_controllers  %}
   server {{ node }} {{ host_info.ip[node] }}:{{service.port}} {{ service.config}}
 {% endfor %}
 {% endfor %}
