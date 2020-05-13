@@ -29,51 +29,51 @@ osapi_compute_unique_server_name_scope: false
 nova_compute_logging_debug: false
 
 vcpu_pin_set:
-  epc_compute01: 3-7,19-23,10-15,26-31
-  epc_compute02: 3-7,19-23,10-15,26-31
-  epc_compute03: 3-9,23-29,13-19,33-39
-  epc_compute04: 3-9,23-29,13-19,33-39
-  epc_compute05: 3-17,39-53,21-35,57-71
-  epc_compute06: 3-17,39-53,21-35,57-71
-  epc_compute07: 3-17,39-53,21-35,57-71
-  epc_compute08: 3-17,39-53,21-35,57-71
-  epc_compute09: 3-17,39-53,21-35,57-71
-  epc_compute10: 3-17,39-53,21-35,57-71
-  epc_compute11: 3-17,39-53,21-35,57-71
-  epc_compute12: 3-17,39-53,21-35,57-71
-  epc_compute13: 3-17,39-53,21-35,57-71
-  epc_compute14: 3-17,39-53,21-35,57-71
+  compute01epc: 3-7,19-23,10-15,26-31
+  compute02epc: 3-7,19-23,10-15,26-31
+  compute03epc: 3-9,23-29,13-19,33-39
+  compute04epc: 3-9,23-29,13-19,33-39
+  compute05epc: 3-17,39-53,21-35,57-71
+  compute06epc: 3-17,39-53,21-35,57-71
+  compute07epc: 3-17,39-53,21-35,57-71
+  compute08epc: 3-17,39-53,21-35,57-71
+  compute09epc: 3-17,39-53,21-35,57-71
+  compute10epc: 3-17,39-53,21-35,57-71
+  compute11epc: 3-17,39-53,21-35,57-71
+  compute12epc: 3-17,39-53,21-35,57-71
+  compute13epc: 3-17,39-53,21-35,57-71
+  compute14epc: 3-17,39-53,21-35,57-71
 
 
 
 sriov_config:
   pci_passthrough_whitelist:
-    epc_compute01: '[]'
-    epc_compute02: '[]'
-    epc_compute03: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
-    epc_compute04: '[]'
-    epc_compute05: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute06: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute07: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute08: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute09: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute10: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute11: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
-    epc_compute12: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
-    epc_compute13: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
-    epc_compute14: '[]'
+    compute01epc: '[]'
+    compute02epc: '[]'
+    compute03epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
+    compute04epc: '[]'
+    compute05epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute06epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute07epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute08epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute09epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute10epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute11epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
+    compute12epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
+    compute13epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
+    compute14epc: '[]'
   physical_device_mappings:
-    epc_compute01: ''
-    epc_compute02: ''
-    epc_compute03: physnet2:ens2f0
-    epc_compute04: ''
-    epc_compute05: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute06: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute07: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute08: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute09: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute10: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute11: physnet2:ens2f0, physnet1:ens1f0
-    epc_compute12: physnet2:ens2f0
-    epc_compute13: physnet2:ens2f0
-    epc_compute14: ''
+    compute01epc: ''
+    compute02epc: ''
+    compute03epc: physnet2:ens2f0
+    compute04epc: ''
+    compute05epc: physnet2:ens2f0, physnet1:ens1f0
+    compute06epc: physnet2:ens2f0, physnet1:ens1f0
+    compute07epc: physnet2:ens2f0, physnet1:ens1f0
+    compute08epc: physnet2:ens2f0, physnet1:ens1f0
+    compute09epc: physnet2:ens2f0, physnet1:ens1f0
+    compute10epc: physnet2:ens2f0, physnet1:ens1f0
+    compute11epc: physnet2:ens2f0, physnet1:ens1f0
+    compute12epc: physnet2:ens2f0
+    compute13epc: physnet2:ens2f0
+    compute14epc: ''

@@ -1,1 +1,1 @@
-{"management_ip":"172.16.29.202", "ssh_user":"root", "ssh_password":"123456@Epc", "node_display_name":"epc_compute03"}
+{"management_ip":"172.16.29.202", "ssh_user":"root", "ssh_password":"123456@Epc", "node_display_name":"compute03epc"}

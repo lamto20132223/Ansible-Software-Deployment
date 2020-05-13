@@ -100,7 +100,7 @@
   - name: 7.yum install container-selinux-2.107-3.el7.noarch.rpm
     debug: msg='Starting 7-------------------------------------------->'
   - include: extends/before.yml task_index=7
-  - command: yum install -y docker-ce docker-compose python-docker-py
+  - command: yum install -y docker-ce docker-compose python-docker-py 
     ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=7 info={{ infos  }}
