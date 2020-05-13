@@ -26,6 +26,15 @@
       - openstack-nova-compute
     state: latest
 
+
+- name: copy /var/lib/nova
+  shell: '{{ item }}'
+  with_items:
+    - mkdir -p {{ nova_state_path }}
+    - chown -R nova:nova {{ nova_state_path }}
+    - cp -ar /var/lib/nova/*  {{ nova_state_path }}
+
+
 - name: copy config
   template:
     src: "{{ item.src }}"

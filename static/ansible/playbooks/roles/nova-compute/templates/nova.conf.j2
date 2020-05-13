@@ -1,6 +1,6 @@
 [DEFAULT]
 debug = {{ nova_compute_logging_debug }}
-state_path = /home/root/var/lib/nova
+state_path = {{ nova_state_path }}
 
 log_dir = {{ nova_log_file }}
 my_ip = {{ host_info.ip[host_name] }}

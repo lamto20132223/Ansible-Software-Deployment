@@ -39,7 +39,7 @@ def convert_file(file_path):
         input_task['register'] = 'infos'
         name_output_task =  OrderedDict()
         name_output_task['name'] = str(index) + "." + input_task['name']
-        name_output_task['debug'] = 'msg=\'Starting ' + str(index) + "---------cccccccc----------------------------------->\'"
+        name_output_task['debug'] = 'msg=\'Starting ' + str(index) + "----------------------------------------------->\'"
         input_task.pop('name')
 
         output_task = OrderedDict()
