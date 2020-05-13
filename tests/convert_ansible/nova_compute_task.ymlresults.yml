@@ -1,6 +1,6 @@
 - block:
   - name: 1.mkdir /etc/ceph
-    debug: msg='Starting 1-------------------------------------------->'
+    debug: msg='Starting 1---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=1
   - file:
       path: /etc/ceph
@@ -19,7 +19,7 @@
   - '1'
 - block:
   - name: 2.stop libvirtd
-    debug: msg='Starting 2-------------------------------------------->'
+    debug: msg='Starting 2---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=2
   - systemd:
       name: libvirtd
@@ -34,7 +34,7 @@
   - '2'
 - block:
   - name: 3.remove old qemu-kvm
-    debug: msg='Starting 3-------------------------------------------->'
+    debug: msg='Starting 3---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=3
   - yum:
       name:
@@ -50,7 +50,7 @@
   - '3'
 - block:
   - name: 4.yum install -y openstack-nova-compute
-    debug: msg='Starting 4-------------------------------------------->'
+    debug: msg='Starting 4---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=4
   - yum:
       name:
@@ -66,7 +66,7 @@
   - '4'
 - block:
   - name: 5.copy config
-    debug: msg='Starting 5-------------------------------------------->'
+    debug: msg='Starting 5---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=5
   - template:
       src: '{{ item.src }}'
@@ -94,7 +94,7 @@
   - '5'
 - block:
   - name: 6.systemctl enable openstack-nova-compute
-    debug: msg='Starting 6-------------------------------------------->'
+    debug: msg='Starting 6---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=6
   - systemd:
       name: openstack-nova-compute
@@ -110,7 +110,7 @@
   - '6'
 - block:
   - name: 7.restart libvirtd
-    debug: msg='Starting 7-------------------------------------------->'
+    debug: msg='Starting 7---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=7
   - systemd:
       state: restarted
@@ -126,7 +126,7 @@
   - '7'
 - block:
   - name: 8.start openstack-nova-compute
-    debug: msg='Starting 8-------------------------------------------->'
+    debug: msg='Starting 8---------cccccccc----------------------------------->'
   - include: extends/before.yml task_index=8
   - systemd:
       state: started

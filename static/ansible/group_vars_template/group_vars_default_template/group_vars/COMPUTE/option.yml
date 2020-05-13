@@ -21,14 +21,14 @@ memcached_servers: "{% for node in groups['CONTROLLER'] %}{{node}}:11211{% if no
 # Cấu hình đặc biệt cho nova-compute
 use_vcpu_pin_set: true
 cpu_pin: true
-vcpu_pin_set: 3-17,39-53,21-35,57-71
+
 rbd_store_ceph_conf: /etc/ceph/ceph.conf
 nova_backend_ceph: false
 resume_guests_state_on_host_boot : true
 osapi_compute_unique_server_name_scope: false
 nova_compute_logging_debug: false
 
-vcpu_pin_set:
+vcpu_pin_sets:
   compute01epc: 3-7,19-23,10-15,26-31
   compute02epc: 3-7,19-23,10-15,26-31
   compute03epc: 3-9,23-29,13-19,33-39

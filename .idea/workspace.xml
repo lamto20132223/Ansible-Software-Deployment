@@ -2,269 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4e918f03-26dd-4073-8165-78aa019268c3" name="Default Changelist" comment="update _ task _index">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/logs/lamtv10.log.2020-05-03" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/logs/lamtv10.log.2020-05-04" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/5f8a8980-148a-46ce-8e76-e76c9b36a83e.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/templates/chrony_client.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/templates/chrony_server.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/chrony/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/ceph.client.volumes.keyring.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/ceph.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/cinder.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/cinder.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/templates/notify" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-api/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/ceph.client.volumes.keyring.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/ceph.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/cinder.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/templates/cinder.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/cinder-volume/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/files/container-selinux-2.107-3.el7.noarch.rpm" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/templates/daemon.json.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/docker/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/ceph.client.images.keyring.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/ceph.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance-api.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance-registry.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/glance.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/glance/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/templates/etc_sysctl.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/templates/haproxy.cfg.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/haproxy/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/apache2_conf_enabled_openstack_dashboard.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/templates/openstack_dashboard_local_setting.py.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/horizon/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/docker.repo.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/local.repo.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/templates/selinux.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/init_repo/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/templates/keepalived.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keepalived/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/credential_key_0.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/credential_key_1.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/fernet_key_0.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/fernet_key_1.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/keystone.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/keystone.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/templates/open.rc.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/keystone/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/templates/memcached.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/memcached/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/dhcp_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/metadata_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/neutron.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/neutron.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-agents/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/dhcp_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/metadata_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/neutron.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/neutron.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_ml2_conf_sriov.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_openvswitch_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/templates/plugins_ml2_sriov_agent.ini.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/neutron-server/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/ceph.client.images.keyring.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/ceph.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/templates/nova.sql.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-api/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/ceph.client.images.keyring.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/ceph.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/templates/open.rc.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/nova-compute/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tasks/main2.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/templates/wsrep.cnf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/percona_xtra_db_cluster/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tasks/main2.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/templates/rabbitmq.config.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/rabbitmq/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/defaults/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/templates/nova.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/backup/test_ansible_command/vars/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/ceph/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/chrony/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-api/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/cinder-volume/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/handlers/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/meta/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tasks/main.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/docker.repo.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/local.repo.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/templates/selinux.conf.j2" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tests/inventory" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/tests/test.yml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/init_repo/vars/main.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/option.yml" afterPath="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/option.yml" />
       <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/elasticsearch/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/fluentd/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/glance-api/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/horizon/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keepalived/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/keystone/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/kibana/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/memcached/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-dhcp_agent/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-metadata_agent/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/templates/docker.repo.j2" />
       <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openday_light/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/prometheus/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/tasks/main.yml" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/tasks/main.yml" />
-      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/templates/docker.repo.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/templates/docker.repo.j2" />
-      <change beforePath="$PROJECT_DIR$/tests/node_role1.json" afterPath="$PROJECT_DIR$/tests/node_role1.json" />
-      <change beforePath="$PROJECT_DIR$/tests/node_role2.json" afterPath="$PROJECT_DIR$/tests/node_role2.json" />
-      <change beforePath="$PROJECT_DIR$/tests/node_role3.json" afterPath="$PROJECT_DIR$/tests/node_role3.json" />
-      <change beforePath="$PROJECT_DIR$/tests/node_role4.json" afterPath="$PROJECT_DIR$/tests/node_role4.json" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml.bk" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml.bk" />
+      <change beforePath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/nova.conf.j2" afterPath="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/nova.conf.j2" />
+      <change beforePath="$PROJECT_DIR$/tEPCRUNNING/curl_t3.py" afterPath="$PROJECT_DIR$/tEPCRUNNING/curl_t3.py" />
+      <change beforePath="$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py" afterPath="$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -277,9 +25,11 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Project23022020$curl_t2.coverage" NAME="curl_t2 Coverage Results" MODIFIED="1585910329946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1585557076038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$curl_t3__1_.coverage" NAME="curl_t3 (1) Coverage Results" MODIFIED="1589342218762" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tEPCRUNNING" />
     <SUITE FILE_PATH="coverage/Project23022020$app__1_.coverage" NAME="app (1) Coverage Results" MODIFIED="1584960636122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Project23022020$convert_ansible_task_yml_to_api_yml.coverage" NAME="convert_ansible_task_yml_to_api_yml Coverage Results" MODIFIED="1589368362979" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests/convert_ansible" />
     <SUITE FILE_PATH="coverage/Project23022020$curl_t.coverage" NAME="curl_t Coverage Results" MODIFIED="1585882708452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Project23022020$app_dev.coverage" NAME="app_dev Coverage Results" MODIFIED="1585882620830" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Project23022020$app_dev.coverage" NAME="app_dev Coverage Results" MODIFIED="1589166739510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Project23022020$routes.coverage" NAME="routes Coverage Results" MODIFIED="1582686275060" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/controllers/discovery_node_test" />
     <SUITE FILE_PATH="coverage/Project23022020$const.coverage" NAME="const Coverage Results" MODIFIED="1585038406636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/global_assets" />
     <SUITE FILE_PATH="coverage/Project23022020$mp_thread.coverage" NAME="mp_thread Coverage Results" MODIFIED="1582600632991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -327,23 +77,63 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="routes.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
+            <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py">
                 <provider selected="true" editor-type-id="text-editor">
                   <state relative-caret-position="740">
-                    <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
+                    <caret line="96" column="1" lean-forward="false" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
                     <folding>
-                      <element signature="e#0#101#0" expanded="true" />
+                      <element signature="e#0#107#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py">
+            <file leaf-file-name="curl_t3.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/tEPCRUNNING/curl_t3.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="941">
-                    <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+                  <state relative-caret-position="2160">
+                    <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="main.yml.bk" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml.bk">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="306">
+                    <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles_for_test_code/init_repo/tasks/main.yml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="378">
+                    <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="option.yml" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/option.yml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="522">
+                    <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="common.yml" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/all/common.yml">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="432">
+                    <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
                     <folding />
                   </state>
                 </provider>
@@ -356,101 +146,101 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py">
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2736">
-              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#101#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="curl_t2.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/curl_t2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+            <state relative-caret-position="551">
+              <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="deployments" pinned="false" current-in-tab="false">
-        <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.deployments">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tasks" pinned="false" current-in-tab="false">
-        <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="curl_t3.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/curl_t3.py">
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="231">
-              <caret line="92" column="160" lean-forward="false" selection-start-line="92" selection-start-column="160" selection-end-line="92" selection-end-column="160" />
+            <state relative-caret-position="797">
+              <caret line="142" column="0" lean-forward="true" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DROP_DATABASE_V2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/libs/DROP_DATABASE_V2.py">
+      <file leaf-file-name="main.yml.bk" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml.bk">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="630" column="0" lean-forward="false" selection-start-line="630" selection-start-column="0" selection-end-line="630" selection-end-column="0" />
+            <state relative-caret-position="1080">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_role3.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/node_role3.json">
+      <file leaf-file-name="nova_compute_task.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/convert_ansible/nova_compute_task.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+            <state relative-caret-position="540">
+              <caret line="30" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_role4.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/node_role4.json">
+      <file leaf-file-name="convert_ansible_task_yml_to_api_yml.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+            <state relative-caret-position="347">
+              <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_role1.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/node_role1.json">
+      <file leaf-file-name="nova_compute_task.ymlresults.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/convert_ansible/nova_compute_task.ymlresults.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+            <state relative-caret-position="486">
+              <caret line="27" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_role2.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/node_role2.json">
+      <file leaf-file-name="main.yml.bk" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml.bk">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+            <state relative-caret-position="-348">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nova.conf.j2" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/nova.conf.j2">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dir_log_file.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CONTROLLER/dir_log_file.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -461,42 +251,43 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>playbook_dir</find>
-      <find>fk_node_role</find>
-      <find>playbook</find>
-      <find>127.0.0.1</find>
-      <find>playboo</find>
-      <find>ON DE</find>
-      <find>db.session.query</find>
-      <find>update_task</find>
-      <find>jsonify</find>
-      <find>load</find>
-      <find>R</find>
-      <find>ims</find>
-      <find>ROOT</find>
-      <find>ast.literal_eval</find>
-      <find>if</find>
-      <find>print</find>
-      <find>task</find>
-      <find>changes</find>
-      <find>query</find>
-      <find>change</find>
-      <find>ROOT_DIR +  '/static/ansible/inventory'</find>
-      <find>for</find>
-      <find>ansible_facts_dir</find>
-      <find>status</find>
-      <find>SERVICE_SE</find>
-      <find>load_node_info_to_database</find>
-      <find>deployment</find>
-      <find>get_deployment</find>
       <find>get_deployment_by_id</find>
       <find>task_name</find>
+      <find>jsonify</find>
+      <find>jsonif</find>
+      <find>172.16.29.194</find>
+      <find>172.16.29.193</find>
+      <find>flash</find>
+      <find>session.query(models.Node)</find>
+      <find>nodes</find>
+      <find>role_name</find>
+      <find>edit_enabl</find>
+      <find>status</find>
+      <find>gath</find>
+      <find>201</find>
+      <find>R</find>
+      <find>trans</find>
+      <find>ens2f0</find>
+      <find>ignor</find>
+      <find>igno</find>
+      <find>controller</find>
+      <find>task_resul</find>
+      <find>logging</find>
+      <find>file</find>
+      <find>task.res</find>
+      <find>docker</find>
+      <find>name</find>
+      <find>controll</find>
+      <find>.get</find>
+      <find>group_controllers</find>
+      <find>sysctl -p</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -511,57 +302,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/assets/const.json" />
-        <option value="$PROJECT_DIR$/assets/__init__.py" />
-        <option value="$PROJECT_DIR$/assets/const.py" />
-        <option value="$PROJECT_DIR$/assets/playbook_temp.yml" />
-        <option value="$PROJECT_DIR$/assets/playbook_temp.yml.test" />
-        <option value="$PROJECT_DIR$/libs/ansible/runner.py" />
-        <option value="$PROJECT_DIR$/tests/drop_table.sql" />
-        <option value="$PROJECT_DIR$/models/node.py" />
-        <option value="$PROJECT_DIR$/models/deployment.py" />
-        <option value="$PROJECT_DIR$/tests/nodes2.json" />
-        <option value="$PROJECT_DIR$/tests/nodes3.json" />
-        <option value="$PROJECT_DIR$/tests/nodes4.json" />
-        <option value="$PROJECT_DIR$/global_assets/const.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role/assets.py" />
-        <option value="$PROJECT_DIR$/controllers/admin/routes.py" />
-        <option value="$PROJECT_DIR$/libs/export_db_to__file_config.py" />
-        <option value="$PROJECT_DIR$/libs/flask.py" />
-        <option value="$PROJECT_DIR$/start.sh" />
-        <option value="$PROJECT_DIR$/models/node_info.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/stuff.yml" />
-        <option value="$PROJECT_DIR$/.gitlab-ci.yml" />
-        <option value="$PROJECT_DIR$/tests/task_info.json" />
-        <option value="$PROJECT_DIR$/controllers/assign_role/__init__.py" />
-        <option value="$PROJECT_DIR$/configs/logging.conf" />
-        <option value="$PROJECT_DIR$/app_dev.py" />
-        <option value="$PROJECT_DIR$/libs/DROP_DATABASE_V2.py" />
-        <option value="$PROJECT_DIR$/tests/test.py" />
-        <option value="$PROJECT_DIR$/tests/curl_t.py" />
-        <option value="$PROJECT_DIR$/configs/conf_dev.py" />
-        <option value="$PROJECT_DIR$/app.py" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
-        <option value="$PROJECT_DIR$/configs/conf_app.py" />
-        <option value="$PROJECT_DIR$/tests/node_role1.json" />
-        <option value="$PROJECT_DIR$/tests/node_role2.json" />
-        <option value="$PROJECT_DIR$/tests/node_role3.json" />
-        <option value="$PROJECT_DIR$/tests/node_role4.json" />
-        <option value="$PROJECT_DIR$/tests/curl_t2.py" />
-        <option value="$PROJECT_DIR$/static/ansible/playbooks/ansible_compute.yml" />
-        <option value="$PROJECT_DIR$/static/ansible/playbooks/extends/stuff.yml" />
-        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/tasks/main.yml" />
-        <option value="$PROJECT_DIR$/tests/main.yml" />
-        <option value="$PROJECT_DIR$/tests/testyml.py" />
-        <option value="$PROJECT_DIR$/tests/create_database.sql" />
-        <option value="$PROJECT_DIR$/models/service_setup.py" />
-        <option value="$PROJECT_DIR$/controllers/discovery_node_test/routes.py" />
-        <option value="$PROJECT_DIR$/controllers/discovery_node_test/assets.py" />
-        <option value="$PROJECT_DIR$/tests/nodes1.json" />
-        <option value="$PROJECT_DIR$/tests/curl_t3.py" />
-        <option value="$PROJECT_DIR$/controllers/assign_role/routes.py" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-openvswitch_agent/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/qemu/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/swift_proxy/defaults/main.yml" />
+        <option value="$PROJECT_DIR$/global_assets/playbook_temp.yml" />
+        <option value="$PROJECT_DIR$/copy.sh" />
+        <option value="$PROJECT_DIR$/static/ansible/ansible.cfg" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes1.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes2.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes3.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes4.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes5.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes6.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes7.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes8.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes9.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes10.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes11.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes12.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes13.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes14.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes15.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes16.json" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/nodes17.json" />
+        <option value="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CONTROLLER/option.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/etc_hosts.j2" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/plugins_ml2_sriov_agent.ini.j2" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/tests/list_cpu_pin.py" />
+        <option value="$PROJECT_DIR$/static/role_service.json" />
         <option value="$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/all/global.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/haproxy.cfg.j2" />
+        <option value="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/all/common.yml" />
+        <option value="$PROJECT_DIR$/tEPCRUNNING/curl_t3.py" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/option.yml" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/nova.conf.j2" />
+        <option value="$PROJECT_DIR$/tests/convert_ansible/nova_compute_task.yml" />
+        <option value="$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml.bk" />
+        <option value="$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml" />
       </list>
     </option>
   </component>
@@ -571,11 +362,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="57" />
-    <option name="y" value="53" />
-    <option name="width" value="1920" />
-    <option name="height" value="1032" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1917" />
+    <option name="y" value="-2" />
+    <option name="width" value="1926" />
+    <option name="height" value="1084" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -618,6 +409,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -639,18 +431,6 @@
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
               <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="assign_role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="discovery_node_test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
               <item name="start_undo_pause_next" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -661,17 +441,276 @@
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
-              <item name="libs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
-              <item name="logs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="all" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="CEPH" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="COMPUTE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars_default_template" type="462c0819:PsiDirectoryNode" />
+              <item name="group_vars" type="462c0819:PsiDirectoryNode" />
+              <item name="CONTROLLER" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="docker" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="haproxy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="haproxy" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="haproxy" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="neutron-server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="neutron-server" type="462c0819:PsiDirectoryNode" />
+              <item name="defaults" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="neutron-server" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-api" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-compute" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-compute" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="nova-compute" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="openvswitch_dpdk" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="openvswitch_dpdk" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="rabbitmq" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="ansible" type="462c0819:PsiDirectoryNode" />
+              <item name="playbooks" type="462c0819:PsiDirectoryNode" />
+              <item name="roles" type="462c0819:PsiDirectoryNode" />
+              <item name="rabbitmq" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="tools" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="tEPCRUNNING" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
@@ -680,31 +719,34 @@
             </path>
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Project23022020" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="convert_ansible" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Project23022020" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; Python 2.7 (viettel) &gt;" type="70bed36:NamedLibraryElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app_dev.py" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app_dev.py" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/defaults" />
       <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/controllers" />
       <recent name="$PROJECT_DIR$/controllers/test_thread" />
@@ -722,7 +764,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.curl_t3">
+  <component name="RunManager" selected="Python.convert_ansible_task_yml_to_api_yml">
     <configuration name="app_dev" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -742,64 +784,64 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="curl_t2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="convert_ansible_task_yml_to_api_yml" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests/convert_ansible" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/curl_t2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="curl_t3" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="curl_t3 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tEPCRUNNING" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/curl_t3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tEPCRUNNING/curl_t3.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="custom_response" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/global_assets" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/global_assets/custom_response.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="testyml" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="test_app" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -812,26 +854,26 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project23022020" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/testyml.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.curl_t2" />
+      <item index="0" class="java.lang.String" itemvalue="Python.curl_t3 (1)" />
       <item index="1" class="java.lang.String" itemvalue="Python.app_dev" />
-      <item index="2" class="java.lang.String" itemvalue="Python.test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.curl_t3" />
-      <item index="4" class="java.lang.String" itemvalue="Python.testyml" />
+      <item index="2" class="java.lang.String" itemvalue="Python.custom_response" />
+      <item index="3" class="java.lang.String" itemvalue="Python.test_app" />
+      <item index="4" class="java.lang.String" itemvalue="Python.convert_ansible_task_yml_to_api_yml" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.curl_t3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.testyml" />
-        <item index="2" class="java.lang.String" itemvalue="Python.test" />
-        <item index="3" class="java.lang.String" itemvalue="Python.app_dev" />
-        <item index="4" class="java.lang.String" itemvalue="Python.curl_t2" />
+        <item index="0" class="java.lang.String" itemvalue="Python.convert_ansible_task_yml_to_api_yml" />
+        <item index="1" class="java.lang.String" itemvalue="Python.curl_t3 (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.app_dev" />
+        <item index="3" class="java.lang.String" itemvalue="Python.test_app" />
+        <item index="4" class="java.lang.String" itemvalue="Python.custom_response" />
       </list>
     </recent_temporary>
   </component>
@@ -849,160 +891,6 @@
       <option name="presentableId" value="Default" />
       <updated>1582447585588</updated>
       <workItem from="1582447592520" duration="1605000" />
-    </task>
-    <task id="LOCAL-00006" summary="Default Changelist">
-      <created>1585302893580</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1585302893580</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Update 30032020">
-      <created>1585533783111</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1585533783111</updated>
-    </task>
-    <task id="LOCAL-00008" summary="update session db close">
-      <created>1585536123664</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1585536123664</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Update clean database">
-      <created>1585560562385</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1585560562385</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Update discover host">
-      <created>1585564354899</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1585564354900</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Test _dev _env">
-      <created>1585620889052</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1585620889053</updated>
-    </task>
-    <task id="LOCAL-00012" summary="test_docker_push">
-      <created>1585621907992</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1585621907992</updated>
-    </task>
-    <task id="LOCAL-00013" summary="docker push">
-      <created>1585622733796</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1585622733796</updated>
-    </task>
-    <task id="LOCAL-00014" summary="docker file for dev">
-      <created>1585622904731</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1585622904731</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Update _ get _data">
-      <created>1585623630928</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1585623630928</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Default Changelist">
-      <created>1585624410448</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1585624410448</updated>
-    </task>
-    <task id="LOCAL-00017" summary="update  task_info v1">
-      <created>1585626455519</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1585626455519</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Default Changelist">
-      <created>1585645432155</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1585645432155</updated>
-    </task>
-    <task id="LOCAL-00019" summary="update _test_info_01042020_v1">
-      <created>1585725474664</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1585725474664</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Default Changelist">
-      <created>1585727932281</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1585727932281</updated>
-    </task>
-    <task id="LOCAL-00021" summary="update_pool_size, max_over_flow">
-      <created>1585728601188</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1585728601188</updated>
-    </task>
-    <task id="LOCAL-00022" summary="update pool size , max overflow">
-      <created>1585728818219</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1585728818219</updated>
-    </task>
-    <task id="LOCAL-00023" summary="01042">
-      <created>1585734545249</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1585734545249</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Default Changelist">
-      <created>1585737349913</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1585737349913</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Insert Logging p1">
-      <created>1585882251459</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1585882251459</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Default Changelist">
-      <created>1585882777804</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1585882777804</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Default Changelist">
-      <created>1585883324091</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1585883324091</updated>
     </task>
     <task id="LOCAL-00028" summary="Default Changelist">
       <created>1585883483434</created>
@@ -1193,28 +1081,181 @@
       <option name="project" value="LOCAL" />
       <updated>1586251617205</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="update _ task _index">
+      <created>1588992244142</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1588992244142</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Update For Seup with Layout">
+      <created>1589166383339</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1589166383339</updated>
+    </task>
+    <task id="LOCAL-00057" summary="Update For Seup with Layout">
+      <created>1589166499960</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1589166499960</updated>
+    </task>
+    <task id="LOCAL-00058" summary="update _ task _index">
+      <created>1589166717287</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1589166717287</updated>
+    </task>
+    <task id="LOCAL-00059" summary="Update For Seup with Layout">
+      <created>1589172511954</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1589172511954</updated>
+    </task>
+    <task id="LOCAL-00060" summary="update _ task _index">
+      <created>1589182530366</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1589182530366</updated>
+    </task>
+    <task id="LOCAL-00061" summary="Update For Seup with Layout">
+      <created>1589186445000</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1589186445000</updated>
+    </task>
+    <task id="LOCAL-00062" summary="Update For Seup with Layout">
+      <created>1589189946360</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1589189946361</updated>
+    </task>
+    <task id="LOCAL-00063" summary="Update For Seup with Layout">
+      <created>1589190951264</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1589190951264</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Update ansible Gather Fact">
+      <created>1589193317559</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1589193317559</updated>
+    </task>
+    <task id="LOCAL-00065" summary="update _ task _index">
+      <created>1589194491379</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1589194491379</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Update For Seup with Layout">
+      <created>1589252198190</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1589252198190</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Update For Seup with Layout">
+      <created>1589271835113</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1589271835113</updated>
+    </task>
+    <task id="LOCAL-00068" summary="Update For Seup with Layout">
+      <created>1589272257588</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1589272257588</updated>
+    </task>
+    <task id="LOCAL-00069" summary="update _ task _index">
+      <created>1589275800840</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1589275800840</updated>
+    </task>
+    <task id="LOCAL-00070" summary="Update For Seup with Layout">
+      <created>1589277244933</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1589277244933</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Update For Seup with Layout">
+      <created>1589277923662</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1589277923662</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Update ansible Gather Fact">
+      <created>1589280181853</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1589280181853</updated>
+    </task>
+    <task id="LOCAL-00073" summary="update _ task _index">
+      <created>1589280439023</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1589280439023</updated>
+    </task>
+    <task id="LOCAL-00074" summary="update _ task _index">
+      <created>1589281873063</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1589281873063</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Update ansible Gather Fact">
+      <created>1589282305537</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1589282305538</updated>
+    </task>
+    <task id="LOCAL-00076" summary="START TESTING FOR EPC 13052020">
+      <created>1589340741232</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1589340741232</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="1605000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="53" width="1920" height="1032" extended-state="0" />
-    <editor active="true" />
+    <frame x="1917" y="-2" width="1926" height="1084" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3839384" sideWeight="0.49519745" order="6" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31133112" sideWeight="0.62113124" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3635359" sideWeight="0.5048026" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.4994664" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19749217" sideWeight="0.5517609" order="12" side_tool="false" content_ui="tabs" x="95" y="575" width="1678" height="432" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5935214" sideWeight="0.50053364" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3876698" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2248394" sideWeight="0.7170139" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.226254" sideWeight="0.7892031" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13222697" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13127" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2248394" sideWeight="0.2829861" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44334432" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.226254" sideWeight="0.21079692" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39691943" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1260,9 +1301,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="test_docker_push" />
-    <MESSAGE value="docker push" />
-    <MESSAGE value="docker file for dev" />
     <MESSAGE value="Update _ get _data" />
     <MESSAGE value="update  task_info v1" />
     <MESSAGE value="update _test_info_01042020_v1" />
@@ -1283,17 +1321,16 @@
     <MESSAGE value="update _ ansible _fact error case" />
     <MESSAGE value="07042020 _ Update task Info" />
     <MESSAGE value="update task info remove info in post command" />
-    <MESSAGE value="update _ task _index" />
     <MESSAGE value="update _ task _index and serive_name" />
-    <option name="LAST_COMMIT_MESSAGE" value="update _ task _index and serive_name" />
+    <MESSAGE value="Update For Seup with Layout" />
+    <MESSAGE value="update _ task _index" />
+    <MESSAGE value="Update ansible Gather Fact" />
+    <MESSAGE value="START TESTING FOR EPC 13052020" />
+    <option name="LAST_COMMIT_MESSAGE" value="START TESTING FOR EPC 13052020" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py</url>
-          <line>95</line>
-        </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/tests/curl_t.py</url>
           <line>51</line>
@@ -1314,414 +1351,572 @@
           <line>18</line>
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/assign_role/routes.py</url>
+          <line>132</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/assign_role/routes.py</url>
+          <line>134</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/assign_role/routes.py</url>
+          <line>137</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>369</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py</url>
+          <line>66</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py</url>
+          <line>65</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/insert_specific_config/routes.py</url>
+          <line>302</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/insert_specific_config/routes.py</url>
+          <line>235</line>
+          <option name="timeStamp" value="36" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/assign_role/routes.py</url>
+          <line>116</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/global_assets/custom_response.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/global_assets/custom_response.py</url>
+          <line>16</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/global_assets/custom_response.py</url>
+          <line>13</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/insert_specific_config/routes.py</url>
+          <line>181</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/insert_specific_config/routes.py</url>
+          <line>182</line>
+          <option name="timeStamp" value="46" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/insert_specific_config/routes.py</url>
+          <line>183</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/global_assets/custom_response.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>173</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>171</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>288</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>291</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py</url>
+          <line>292</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="54" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Project23022020$app.coverage" NAME="app Coverage Results" MODIFIED="1582448942841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>request.form</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>request.form.get('task_id')</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>request.form.json</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>request.json</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/task.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/plugins_ml2_openvswitch_agent.ini.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="11" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="11" />
+        <state relative-caret-position="144">
+          <caret line="8" column="40" lean-forward="true" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/change.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/plugins_ml2_ml2_conf_sriov.ini.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="7" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/node_info.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/plugins_ml2_ml2_conf.ini.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="23" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/correlate_config.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/neutron.sql.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-151">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/neutron.conf.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/metadata_agent.ini.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/templates/dhcp_agent.ini.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/password.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CONTROLLER/password.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-223">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/create_node_database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1469">
-          <caret line="134" column="40" lean-forward="false" selection-start-line="134" selection-start-column="40" selection-end-line="134" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/anaconda2/envs/viettel/lib/python2.7/site-packages/flask/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="1949" column="0" lean-forward="false" selection-start-line="1949" selection-start-column="0" selection-end-line="1949" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/ims.log" />
-    <entry file="file://$PROJECT_DIR$/tests/task_info.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="0" column="146" lean-forward="false" selection-start-line="0" selection-start-column="146" selection-end-line="0" selection-end-column="146" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/ops_node/ops_node.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/log.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="64" lean-forward="true" selection-start-line="1" selection-start-column="64" selection-end-line="1" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/logs/lamtv10.log">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="31" column="150" lean-forward="false" selection-start-line="31" selection-start-column="149" selection-end-line="31" selection-end-column="150" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/common_funtion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="40" column="37" lean-forward="false" selection-start-line="40" selection-start-column="37" selection-end-line="40" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/export_db_to__file_config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="27" selection-end-line="23" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="15" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/logging.conf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/ansible_compute.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="38" column="8" lean-forward="true" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
-          <folding>
-            <marker date="1585911632730" expanded="true" signature="203:204" ph="all" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/extends/stuff.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/test_ansible_command/tasks/main.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/curl_t.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="27" column="49" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_dev.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="17" column="19" lean-forward="false" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/configs/conf_app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/docker/templates/daemon.json.j2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitlab-ci.yml">
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CEPH/storage.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+        <state relative-caret-position="18">
+          <caret line="1" column="24" lean-forward="true" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/test.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/dir_log_file.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/main.yml">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/docker.repo.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/assets.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="887">
-          <caret line="69" column="31" lean-forward="false" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#70#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/testyml.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.disk_resources">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.service_setups">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/service_setup.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/etc_hosts.j2">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <caret line="25" column="26" lean-forward="true" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes_bk.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/local.repo.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="-252">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/templates/selinux.conf.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/list_cpu_pin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1523">
+          <caret line="92" column="17" lean-forward="true" selection-start-line="92" selection-start-column="17" selection-end-line="92" selection-end-column="17" />
           <folding>
-            <element signature="e#0#101#0" expanded="false" />
+            <element signature="e#1738#1775#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/task.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="18" column="362" lean-forward="false" selection-start-line="18" selection-start-column="362" selection-end-line="18" selection-end-column="362" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/global_assets/const.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-118">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/global_assets/const.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+        <state relative-caret-position="-108">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/assets.py">
+    <entry file="file://$PROJECT_DIR$/static/role_service.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="143" column="27" lean-forward="false" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="27" />
+        <state relative-caret-position="437">
+          <caret line="75" column="22" lean-forward="true" selection-start-line="75" selection-start-column="22" selection-end-line="75" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/create_database.sql">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-sriov_agent/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="130" column="39" lean-forward="true" selection-start-line="130" selection-start-column="39" selection-end-line="130" selection-end-column="39" />
+        <state relative-caret-position="378">
+          <caret line="21" column="19" lean-forward="true" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/nodes1.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-agents/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="27" lean-forward="false" selection-start-line="0" selection-start-column="27" selection-end-line="0" selection-end-column="27" />
+        <state relative-caret-position="-227">
+          <caret line="55" column="32" lean-forward="false" selection-start-line="55" selection-start-column="26" selection-end-line="55" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/node_role1.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-agents/defaults/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        <state relative-caret-position="313">
+          <caret line="41" column="55" lean-forward="true" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="55" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/node_role2.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CONTROLLER/option.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        <state relative-caret-position="113">
+          <caret line="14" column="18" lean-forward="true" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/node_role3.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/percona_xtra_db_cluster/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        <state relative-caret-position="270">
+          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/node_role4.json">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/init_repo/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="14" lean-forward="false" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+        <state relative-caret-position="302">
+          <caret line="181" column="22" lean-forward="false" selection-start-line="181" selection-start-column="22" selection-end-line="181" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/curl_t3.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/templates/haproxy.cfg.j2">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="92" column="160" lean-forward="false" selection-start-line="92" selection-start-column="160" selection-end-line="92" selection-end-column="160" />
+        <state relative-caret-position="349">
+          <caret line="44" column="36" lean-forward="false" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/discovery_node_test/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="941">
-          <caret line="98" column="0" lean-forward="false" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/DROP_DATABASE_V2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="630" column="0" lean-forward="false" selection-start-line="630" selection-start-column="0" selection-end-line="630" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.tasks">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/64e563ee/5f8a8980-148a-46ce-8e76-e76c9b36a83e/auto_lamtv10.deployments">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/start_undo_pause_next/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2736">
-          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#101#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/assign_role/routes.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="740">
-          <caret line="442" column="0" lean-forward="false" selection-start-line="442" selection-start-column="0" selection-end-line="442" selection-end-column="0" />
+          <caret line="96" column="1" lean-forward="false" selection-start-line="96" selection-start-column="1" selection-end-line="96" selection-end-column="1" />
           <folding>
-            <element signature="e#0#101#0" expanded="true" />
+            <element signature="e#0#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/curl_t2.py">
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-api/tasks/main.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+        <state relative-caret-position="-3294">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/defaults/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="756">
+          <caret line="42" column="42" lean-forward="false" selection-start-line="42" selection-start-column="22" selection-end-line="42" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles_for_test_code/init_repo/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="58" lean-forward="false" selection-start-line="21" selection-start-column="58" selection-end-line="21" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/neutron-server/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="196" column="19" lean-forward="true" selection-start-line="196" selection-start-column="19" selection-end-line="196" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/all/global.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-111">
+          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml.bk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/haproxy/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/rabbitmq/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/docker/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="119" column="17" lean-forward="true" selection-start-line="119" selection-start-column="17" selection-end-line="119" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tEPCRUNNING/curl_t3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="123" column="0" lean-forward="true" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/CONTROLLER/dir_log_file.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/all/common.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="24" column="34" lean-forward="true" selection-start-line="24" selection-start-column="34" selection-end-line="24" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/templates/nova.conf.j2">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="22" column="47" lean-forward="true" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/group_vars_template/group_vars_default_template/group_vars/COMPUTE/option.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="29" column="0" lean-forward="true" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/openvswitch_dpdk/tasks/main.yml.bk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-348">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/convert_ansible/convert_ansible_task_yml_to_api_yml.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="68" column="35" lean-forward="false" selection-start-line="68" selection-start-column="35" selection-end-line="68" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/convert_ansible/nova_compute_task.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/convert_ansible/nova_compute_task.ymlresults.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="27" column="38" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml.bk">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1080">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/ansible/playbooks/roles/nova-compute/tasks/main.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="797">
+          <caret line="142" column="0" lean-forward="true" selection-start-line="142" selection-start-column="0" selection-end-line="142" selection-end-column="0" />
           <folding />
         </state>
       </provider>

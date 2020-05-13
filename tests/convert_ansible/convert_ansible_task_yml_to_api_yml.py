@@ -63,10 +63,10 @@ def convert_file(file_path):
 
 
 if __name__ == "__main__":
-    example_tasks = load_yml_file('./example.yml')[0]
-    print(example_tasks)
+    # example_tasks = load_yml_file('./example.yml')[0]
+    # print(example_tasks)
 
-    convert_file('init_repo.yml')
+    convert_file('nova_compute_task.yml')
 
 """
 \cp init_repo/tasks/main.yml ceph/tasks/main.yml

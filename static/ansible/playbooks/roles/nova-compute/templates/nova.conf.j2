@@ -20,7 +20,7 @@ instance_name_template = instance-%08x
 transport_url ={{ transport_url }}
 
 {% if cpu_pin | bool %}
-vcpu_pin_set = {{  vcpu_pin_set[host_name]  }}
+vcpu_pin_set = {{  vcpu_pin_sets[host_name]  }}
 {% endif %}
 
 [api_database]

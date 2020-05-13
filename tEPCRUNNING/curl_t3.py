@@ -161,7 +161,7 @@ if __name__ == "__main__":
     # discover_hosts()
     # add_host_to_role()
     # insert_test_data()
-    create_ansible_group_var()
+    # create_ansible_group_var()
 
     #add_service_setup_to_node(1, "neutron-agents")
 
