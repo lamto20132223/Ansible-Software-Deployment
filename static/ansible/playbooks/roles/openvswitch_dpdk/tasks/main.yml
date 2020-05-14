@@ -110,7 +110,6 @@
   - shell: '{{ item }}'
     with_items:
     - ovs-vsctl add-br br-flat
-    - ovs-vsctl add-br br-vlan
     register: infos
   - include: extends/after_ok.yml task_index=7 info={{ infos  }}
   rescue:
