@@ -29,8 +29,8 @@ osapi_compute_unique_server_name_scope: false
 nova_compute_logging_debug: false
 
 vcpu_pin_sets:
-  compute01epc: 3-7,19-23,10-15,26-31
-  compute02epc: 3-7,19-23,10-15,26-31
+  compute01epc: 3-9,23-29,13-19,33-39
+  compute02epc: 3-9,23-29,13-19,33-39
   compute03epc: 3-9,23-29,13-19,33-39
   compute04epc: 3-9,23-29,13-19,33-39
   compute05epc: 3-17,39-53,21-35,57-71
@@ -48,8 +48,8 @@ vcpu_pin_sets:
 
 sriov_config:
   pci_passthrough_whitelist:
-    compute01epc: '[]'
-    compute02epc: '[]'
+    compute01epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
+    compute02epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
     compute03epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"}]'
     compute04epc: '[]'
     compute05epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} , { "devname": "ens1f0", "physical_network": "physnet1"}]'
@@ -63,8 +63,8 @@ sriov_config:
     compute13epc: '[{ "devname": "ens2f0", "physical_network": "physnet2"} ]'
     compute14epc: '[]'
   physical_device_mappings:
-    compute01epc: ''
-    compute02epc: ''
+    compute01epc: physnet2:ens2f0
+    compute02epc: physnet2:ens2f0
     compute03epc: physnet2:ens2f0
     compute04epc: ''
     compute05epc: physnet2:ens2f0, physnet1:ens1f0

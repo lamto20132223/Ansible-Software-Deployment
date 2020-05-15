@@ -25,8 +25,8 @@ host_info:
     controller01epc: 172.16.29.191
     controller02epc: 172.16.29.201
     controller03epc: 172.16.29.234
-    compute01epc: 172.16.29.235
-    compute02epc: 172.16.29.236
+    compute01epc: 172.16.29.239
+    compute02epc: 172.16.29.246
     compute03epc: 172.16.29.202
     compute04epc: 172.16.29.240
     compute05epc: 172.16.29.189
