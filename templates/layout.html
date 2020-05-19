@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sign Up Form by Colorlib</title>
+    <title>Tool Software Deployment Lamtv10 _v1.3</title>
 
     <!-- Font Icon -->
     <link rel="stylesheet" href="/static/form/fonts/material-icon/css/material-design-iconic-font.min.css">
@@ -15,23 +15,23 @@
     <link rel="stylesheet" href="/static/form/css/style.css">
 </head>
 
-<body class="{{template}}">
+<body class="{{ template }}">
 <p>
-	{% with messages = get_flashed_messages() %}
-	  {% if messages %}
-		<ul class=flashes>
-		{% for message in messages %}
-		  <li>{{ message }}</li>
-		{% endfor %}
-		</ul>
-	  {% endif %}
-	{% endwith %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
 </p>
-  {% block content %}{% endblock %}
+{% block content %}{% endblock %}
 
-  <!-- Scripts -->
-  {% include 'scripts.html' %}
-  {% block additionalscripts %}{% endblock %}
+<!-- Scripts -->
+{% include 'scripts.html' %}
+{% block additionalscripts %}{% endblock %}
 </body>
 
 </html>

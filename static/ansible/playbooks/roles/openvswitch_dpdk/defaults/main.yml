@@ -2,8 +2,8 @@ service_name: openvswitch_dpdk
 OVS_HUGEPAGE_MOUNT_PAGESIZE: '1GB'
 OVS_NUM_HUGEPAGES: 15
 
-OVS_BRIDGE_MAPPINGS: ''
-OVS_DPDK_PORT_MAPPINGS: ''
+OVS_BRIDGE_MAPPINGS: 'mgnt:br-mgnt'
+OVS_DPDK_PORT_MAPPINGS: 'mgnt:br-mgnt'
 
 # lspci | egrep -i --color 'network|ethernet'
 OVS_PCI_MAPPINGS: ''

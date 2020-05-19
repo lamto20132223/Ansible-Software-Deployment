@@ -9,7 +9,7 @@ from assets import *
 from controllers.insert_specific_config.test import ROOT_DIR
 
 from global_assets.common import *
-from global_assets.custom_response import custom_response,custom_response_flask_restful
+from global_assets.custom_response import custom_response, custom_response_flask_restful
 from flask_restplus import Api, Resource
 
 mod = Blueprint('insert_specific_config', __name__,
@@ -84,9 +84,6 @@ from flask import Response
 
 import global_assets.const as CONST
 
-
-
-
 ALLOWED_EXTENSIONS = set(['yml', 'yaml'])
 
 
@@ -155,7 +152,8 @@ class Ansible_Group_Vars(Resource):
         res["list_roles_and_configs"] = list_role_configs
 
         return Response(
-            render_template('list_ansible_group_vars.html', data=res["data"], list_group=res["list_roles_and_configs"]), 200, mimetype='text/html')
+            render_template('list_ansible_group_vars.html', data=res["data"], list_group=res["list_roles_and_configs"]),
+            200, mimetype='text/html')
 
     def post(self):
         if not request.json:
@@ -167,7 +165,7 @@ class Ansible_Group_Vars(Resource):
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
         reset_all = request.json.get('reset_all')
-        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + group_var_dir)
         os.system(' mkdir -p   ' + sf_dir)
         if reset_all is True:
             os.system(' \cp -r  ' + template_dir + '/*' + ' ' + group_var_dir)
@@ -177,34 +175,40 @@ class Ansible_Group_Vars(Resource):
                 list_file = [o for o in os.listdir(group_var_dir + '/' + group) if
                              os.path.isfile(os.path.join(group_var_dir + '/' + group, o))]
                 for filename in list_file:
-                    origin_data = load_yml_file(group_var_dir+ '/' + group + '/'+filename)
-                    convert_original_to_input_sf(origin_data, sf_dir+ '/' + group + '/'+filename)
-            return custom_response_flask_restful(request, 200, None, 'Reset All Group_vars sucessfully. Check Result in /tools/edit_ansible_group_vars', None)
+                    origin_data = load_yml_file(group_var_dir + '/' + group + '/' + filename)
+                    convert_original_to_input_sf(origin_data, sf_dir + '/' + group + '/' + filename)
+            return custom_response_flask_restful(request, 200, None,
+                                                 'Reset All Group_vars sucessfully. Check Result in /tools/edit_ansible_group_vars',
+                                                 None)
         role_name = request.json.get('role_name')
         filename = request.json.get('filename')
 
         template_file = template_dir + '/' + role_name + '/' + filename
         if not os.path.isfile(template_file):
             return custom_response_flask_restful(request, 404, 'No such File ' + template_file,
-                               None, None)
+                                                 None, None)
         group_var_file = group_var_dir + '/' + role_name + '/' + filename
         os.system('mkdir -p ' + group_var_dir + '/' + role_name)
         os.system('mkdir -p ' + sf_dir + '/' + role_name)
 
         os.system(' \cp -r  ' + template_file + ' ' + group_var_file)
         origin_data = load_yml_file(group_var_file)
-        convert_original_to_input_sf(origin_data, sf_dir  + '/' + role_name + '/' + filename)
+        convert_original_to_input_sf(origin_data, sf_dir + '/' + role_name + '/' + filename)
 
-        return custom_response_flask_restful(request, 200, None,'Reset Group_vars ' + group_var_file + ' sucessfully. Check Result in /tools/edit_ansible_group_vars', None)
+        return custom_response_flask_restful(request, 200, None,
+                                             'Reset Group_vars ' + group_var_file + ' sucessfully. Check Result in /tools/edit_ansible_group_vars',
+                                             None)
+
 
 @mod_v1.route('/tools/edit_ansible_group_vars', methods=['GET', 'POST'])
 class FORM_INSERT(Resource):
     def get(self):
         if not request.args.get('group') or not request.args.get('filename'):
-            return custom_response_flask_restful(request, 400, ' Request body Group and FileName Not Validate',None,None)
+            return custom_response_flask_restful(request, 400, ' Request body Group and FileName Not Validate', None,
+                                                 None)
         sf_dir = CONST.ansible_group_vars_sf_dir
         group_var_dir = CONST.ansible_group_vars_dir
-        os.system(' mkdir -p   '  + group_var_dir)
+        os.system(' mkdir -p   ' + group_var_dir)
         os.system(' mkdir -p   ' + sf_dir)
         args = request.args
         file_path = group_var_dir + '/' + request.args.get('group') + '/' + request.args.get('filename')
@@ -259,13 +263,10 @@ class FORM_INSERT(Resource):
         yaml.dump(data, stream)
         convert_input_sf_to_origin(data, file_path)
 
-        flash('Edit  Group_vars ' + file_path + ' sucessfully. Check Result in /tools/edit_ansible_group_vars?'+'group='+request.args.get('group')+'&filename='+request.args.get('filename'))
+        flash(
+            'Edit  Group_vars ' + file_path + ' sucessfully. Check Result in /tools/edit_ansible_group_vars?' + 'group=' + request.args.get(
+                'group') + '&filename=' + request.args.get('filename'))
         return redirect('/tools/list_ansible_group_vars')
-
-
-
-
-
 
 
 @mod.route('/tools/', methods=['GET'])
@@ -277,13 +278,58 @@ def get_tools():
         {'label': 'convert_ansible_task_yml_to_sf_task_yml', 'url': '/tools/convert_ansible_task_yml_to_sf_task_yml'},
         {'label': 'edit_ansible_group_vars', 'url': '/tools/list_ansible_group_vars'},
         {'label': 'run_service_setup', 'url': '/tools/installation/run_service_setup'},
+        {'label': 'add_ansible_role', 'url': '/tools/add_ansible_role'}
 
     ]
     return render_template('tools.html', list_tools=list_tools)
+
+
 @mod.route('/api/v1/tools/', methods=['GET'])
 def get_tools_v1():
-
     return redirect('/tools')
+
+
+@mod_v1.route('/tools/add_ansible_role', methods=['GET', 'POST'])
+class TOOL_ADD_ANSIBLE_ROLE(Resource):
+
+    def get(self):
+        tool_name = 'Tool day file ansible role  dung trong Ansible  len thanh role moi trong API SoftwareManagement'
+        tool_url = "/tools/add_ansible_role"
+        return Response(render_template('add_ansible_role.html', tool_name=tool_name, tool_url=tool_url), 200,
+                        mimetype='text/html')
+
+    def post(self):
+        # check if the post request has the file part
+
+        if 'tasks' not in request.files or 'role_name' not in request.form:
+            flash('No Task file or  Role name')
+            return redirect(request.url)
+
+        role_name = request.form['role_name']
+
+        if os.path.isdir(CONST.role_dir + '/' + role_name):
+            flash('Role ' + role_name + ' Already Exists! ')
+            return redirect(request.url)
+
+        os.system(' mkdir -p   ' + CONST.role_dir + '/' + role_name)
+        list_ansible_role_elements = ['defaults', 'files', 'handlers', 'meta', 'tasks', 'templates', 'vars']
+
+        for role_element in list_ansible_role_elements:
+            os.system(' mkdir -p   ' + CONST.role_dir + '/' + role_name + '/' + role_element)
+            if role_element in ['defaults', 'handlers', 'meta', 'vars']:
+                os.system(' touch   ' + CONST.role_dir + '/' + role_name + '/' + role_element + '/' + 'main.yml')
+
+            file = request.files[role_element]
+            # if file.filename == '':
+            #     flash('No file ' + role_element+ ' selected for uploading')
+
+            if file and '.' in file.filename:
+                filename = secure_filename(file.filename)
+
+                # flash('File successfully uploaded' + ' ' + filename)
+                file.save(CONST.role_dir + '/' + role_name + '/' + role_element + '/' + filename)
+        flash("SUCCEED CREAT ANSIBLE ROLE " + role_name)
+        return redirect(request.url)
 
 
 @mod_v1.route('/tools/cnv_group_var_origin_to_sf', methods=['GET', 'POST'])
@@ -391,9 +437,6 @@ class CNV_Group_Var_3(Resource):
             return redirect(request.url)
 
 
-
-
-
 @mod_v1.route('/tools/installation/run_service_setup', methods=['GET', 'POST'])
 class Install(Resource):
     def get(self):
@@ -428,7 +471,7 @@ def list_API_ll():
         {"label": "POST", "url": "/api/v1/installation/run_service_setup"},
         {"label": "POST", "url": "/api/v1/installation/run_task "},
         {"label": "POST", "url": "/api/v1/installation/skip "}
-        ]
+    ]
     list_api_gets = [
         {"label": "GET", "url": "/api/v1/hosts"},
         {"label": "GET", "url": "/api/v1/hosts/1"},
@@ -455,5 +498,5 @@ def list_API_ll():
         {"label": "GET", "url": "/tools"},
         {"label": "GET", "url": "/api/v1/installation/current "},
         {"label": "GET", "url": "/api/v1/tasks/update_task"}
-        ]
-    return render_template('listapi.html', list_api_posts=list_api_posts,list_api_gets=list_api_gets )
+    ]
+    return render_template('listapi.html', list_api_posts=list_api_posts, list_api_gets=list_api_gets)
