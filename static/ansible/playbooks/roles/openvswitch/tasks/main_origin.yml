@@ -1,0 +1,35 @@
+- name: yum install -y openvswitch
+  yum:
+    name:
+    - redhat-lsb-core
+    - redhat-lsb
+    - kernel-devel
+    - numactl-devel
+    - openvswitch
+    state: latest
+- name: systemctl enable openvswitch
+  systemd:
+    name: openvswitch
+    enabled: yes
+    masked: no
+- name: Tao file /usr/libexec/qemu-kvm.orig
+  shell: mv /usr/libexec/qemu-kvm /usr/libexec/qemu-kvm.orig
+- name: Copy /usr/libexec/qemu-kvm
+  template:
+    src: usr_libexec_qemu_kvm.j2
+    dest: /usr/libexec/qemu-kvm
+    owner: root
+    group: root
+    mode: '0655'
+    backup: yes
+- name: restart openvswitch
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: openvswitch
+- name: create br-vlan, create br-mgnt, create br-flat
+  shell: '{{ item }}'
+  with_items:
+  - ovs-vsctl add-br br-vlan
+  - ovs-vsctl add-br br-mgnt
+  - ovs-vsctl add-br br-flat

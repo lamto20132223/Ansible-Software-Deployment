@@ -1,0 +1,59 @@
+- block:
+  - name: 1.remove
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: '{{ item }}'
+    with_items:
+    - rm -rf /usr/share/docker/rabbitmq/rabbitmq/
+    - rm -rf /u01/docker/docker_log/rabbitmq/
+    - rm -rf  /var/lib/rabbitmq
+    - mkdir -p /u01/docker/docker_log/rabbitmq/
+    - mkdir  -p  /usr/share/docker/rabbitmq/rabbitmq/rabbitmq-data/
+    - echo  "VZDYBEEEQDCBCHSKENTY" > /usr/share/docker/rabbitmq/rabbitmq/.erlang.cookie
+    - chown -R 1014:1012 /usr/share/docker/rabbitmq/
+    - chown -R 1014:1012 /u01/docker/docker_log/rabbitmq/
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.install on first_controller
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - command: '{{ item }}'
+    with_items:
+    - docker run  -d   --name rabbitmq-server --network=host --privileged  -v /u01/docker/docker_log/rabbitmq:/var/log/rabbitmq   -v
+      /usr/share/docker/:/usr/share/docker/  -v /var/lib/rabbitmq:/var/lib/rabbitmq:shared   -u
+      root -e RABBITMQ_START='BOOTSTRAP'   -e OPENSTACK_PASSWORD="{{ RB_OPENSTACK
+      }}"   docker-registry:4000/rabbitmq_v43:q
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.install on second_controller
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - command: '{{ item }}'
+    with_items:
+    - docker run  -d  --name rabbitmq-server --network=host --privileged  -v /u01/docker/docker_log/rabbitmq:/var/log/rabbitmq    -v
+      /usr/share/docker/:/usr/share/docker/  -v /var/lib/rabbitmq:/var/lib/rabbitmq:shared  -u
+      root -e RABBITMQ_START='INIT_RABBITMQ_CLUSTER'   -e RABBITMQ_HUB="{{first_controller}}"  docker-registry:4000/rabbitmq_v43:q
+    when: ( "{{ host_name }}" != "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'

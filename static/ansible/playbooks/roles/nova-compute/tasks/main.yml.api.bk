@@ -1,0 +1,159 @@
+- block:
+  - name: 1.mkdir /etc/ceph
+    debug: msg='Starting 1----------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - file:
+      path: /etc/ceph
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.stop libvirtd
+    debug: msg='Starting 2----------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - systemd:
+      name: libvirtd
+      state: stopped
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.remove old qemu-kvm
+    debug: msg='Starting 3----------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - yum:
+      name:
+      - qemu-kvm
+      state: absent
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.yum install -y openstack-nova-compute
+    debug: msg='Starting 4----------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - yum:
+      name:
+      - openstack-nova-compute
+      state: latest
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.copy /var/lib/nova
+    debug: msg='Starting 5----------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - shell: '{{ item }}'
+    with_items:
+    - mkdir -p {{ nova_state_path }}
+    - chown -R nova:nova {{ nova_state_path }}
+    - cp -ar /var/lib/nova/*  {{ nova_state_path }}
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.copy config
+    debug: msg='Starting 6----------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: nova.conf.j2
+      dest: /etc/nova/nova.conf
+    - src: open.rc.j2
+      dest: ~/open.rc
+    - src: ceph.client.images.keyring.j2
+      dest: /etc/ceph/ceph.client.images.keyring.j2
+    - src: ceph.conf.j2
+      dest: /etc/ceph/ceph.conf
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.systemctl enable openstack-nova-compute
+    debug: msg='Starting 7----------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - systemd:
+      name: openstack-nova-compute
+      enabled: yes
+      masked: no
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.restart libvirtd
+    debug: msg='Starting 8----------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - systemd:
+      state: restarted
+      daemon_reload: yes
+      name: libvirtd
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.start openstack-nova-compute
+    debug: msg='Starting 9----------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - systemd:
+      state: started
+      daemon_reload: yes
+      name: openstack-nova-compute
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'

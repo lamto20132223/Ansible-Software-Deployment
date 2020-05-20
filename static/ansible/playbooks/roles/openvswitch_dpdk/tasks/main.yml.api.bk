@@ -1,0 +1,120 @@
+- block:
+  - name: 1.yum install -y redhat-lsb-core kernel-devel redhat-lsb-core numactl-devel
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - yum:
+      name:
+      - redhat-lsb-core
+      - redhat-lsb
+      - kernel-devel
+      - numactl-devel
+      state: latest
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.remove old openvswitch
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/ && mv qemu* ..
+    - cd /usr/src/ && rm -rf /usr/src/*
+    - cd /usr/src/ && mv ../qemu* ./
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.copy ovs_dpdk.tar.gz
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - copy:
+      src: /root/app/static/ansible/playbooks/roles/openvswitch_dpdk/files/ovs_dpdk.tar.gz
+      dest: /usr/src/ovs_dpdk.tar.gz
+      mode: 400
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.unzip openvswitch_dpdk
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/ && tar -xvzf ovs_dpdk.tar.gz
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.cp settings
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: settings.j2
+      dest: /usr/src/ovs-dpdk/settings
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Create Openvswitch
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - shell: '{{ item }}'
+    with_items:
+    - cd /usr/src/ovs-dpdk && bash setup.sh setup pre-install
+    - cd /usr/src/ovs-dpdk && bash setup.sh setup install
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.Add Bridge
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - shell: '{{ item }}'
+    with_items:
+    - ovs-vsctl add-br br-flat
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'

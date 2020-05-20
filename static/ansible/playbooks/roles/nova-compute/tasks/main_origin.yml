@@ -1,0 +1,60 @@
+- name: mkdir /etc/ceph
+  file:
+    path: /etc/ceph
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+- name: stop libvirtd
+  systemd:
+    name: libvirtd
+    state: stopped
+- name: remove old qemu-kvm
+  yum:
+    name:
+    - qemu-kvm
+    state: absent
+- name: yum install -y openstack-nova-compute
+  yum:
+    name:
+    - openstack-nova-compute
+    state: latest
+- name: copy /var/lib/nova
+  shell: '{{ item }}'
+  with_items:
+  - mkdir -p {{ nova_state_path }}
+  - chown -R nova:nova {{ nova_state_path }}
+  - cp -ar /var/lib/nova/*  {{ nova_state_path }}
+- name: copy config
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: nova.conf.j2
+    dest: /etc/nova/nova.conf
+  - src: open.rc.j2
+    dest: ~/open.rc
+  - src: ceph.client.images.keyring.j2
+    dest: /etc/ceph/ceph.client.images.keyring.j2
+  - src: ceph.conf.j2
+    dest: /etc/ceph/ceph.conf
+- name: systemctl enable openstack-nova-compute
+  systemd:
+    name: openstack-nova-compute
+    enabled: yes
+    masked: no
+- name: restart libvirtd
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: libvirtd
+- name: start openstack-nova-compute
+  systemd:
+    state: started
+    daemon_reload: yes
+    name: openstack-nova-compute

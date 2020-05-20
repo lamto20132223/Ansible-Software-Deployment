@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <div class="main">
+    <div>
+                       {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="alert alert-success" style="background-color: #263238
+
+">
+                                <ul class=flashes>
+                                    {% for message in messages %}
+                                      <li style="display:block;">{{ message }}</li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                  {% endif %}
+                {% endwith %}
+                        </div>
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+
+                    <h4>{{ tool_name }}</h4>
+
+                    <h1 style="color:red">Select a file to upload</h1>
+
+                    <form method="POST" class="register-form" id="register-form" action="{{ tool_url }}"
+                          enctype="multipart/form-data">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="role_name" class="required">ROLE NAME</label>
+                                <input type="text" name="role_name" id="role_name"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="defaults">DEFAULTS</label>
+                                <input type="file" name="defaults" autocomplete="off"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="files" readonly>FILES</label>
+                                <input type="file" name="files" autocomplete="off"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="handlers" readonly>HANDLERS</label>
+                                <input type="file" name="handlers" autocomplete="off"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="meta" readonly>META</label>
+                                <input type="file" name="meta" autocomplete="off"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="tasks" class="required" readonly>TASKS</label>
+                                <input type="file" name="tasks" autocomplete="off" required/>
+                            </div>
+                            <div class="form-input">
+                                <label for="templates" readonly>TEMPLATES</label>
+                                <input type="file" name="templates" autocomplete="off"/>
+                            </div>
+                            <div class="form-input">
+                                <label for="vars" readonly>VARS</label>
+                                <input type="file" name="vars" autocomplete="off"/>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Submit" class="submit" id="submit_1" name="submit"/>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

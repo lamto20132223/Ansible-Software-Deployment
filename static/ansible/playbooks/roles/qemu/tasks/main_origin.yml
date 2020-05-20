@@ -1,0 +1,32 @@
+- name: yum install -y devel
+  yum:
+    name:
+    - glib2-devel
+    - pixman-devel
+    - zlib-devel
+    - kernel-devel
+    state: latest
+- name: copy qemu-2_12_0.tar.xz
+  copy:
+    src: /root/app/static/ansible/playbooks/roles/qemu/files/qemu_2.12.0.tar.gz
+    dest: /usr/src/qemu_2.12.0.tar.gz
+    mode: 400
+- name: unzip  qemu-2_12_0.tar.gz
+  shell: '{{ item }}'
+  with_items:
+  - cd /usr/src/ && tar -xvf qemu_2.12.0.tar.gz
+- name: mkdir /usr/src/qemu-2.12.0/build
+  file:
+    path: /usr/src/qemu-2.12.0/build
+    state: directory
+    recurse: no
+- name: build
+  shell: '{{ item }}'
+  with_items:
+  - cd /usr/src/qemu-2.12.0/build && ../configure --prefix=/usr --sysconfdir=/etc
+    --target-list=x86_64-softmmu --enable-debug --with-sdlabi=2.0 --docdir=/usr/share/doc/qemu-2.12.0
+- name: install qemu-2.12.0
+  shell: '{{ item }}'
+  with_items:
+  - cd /usr/src/qemu-2.12.0/build && make -j4
+  - cd /usr/src/qemu-2.12.0/build && make install

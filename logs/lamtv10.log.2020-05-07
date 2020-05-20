@@ -1,0 +1,274 @@
+[2020-05-11 09:22:44.252] [ INFO    ] [_internal:_log:122] 119337  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:22:44.254] [ INFO    ] [_internal:_log:122] 119337  * Restarting with stat
+[2020-05-11 09:22:45.668] [ WARNING ] [_internal:_log:122] 119502  * Debugger is active!
+[2020-05-11 09:22:45.668] [ INFO    ] [_internal:_log:122] 119502  * Debugger PIN: 507-280-042
+[2020-05-11 09:22:57.637] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:57] "GET /tools HTTP/1.1" 308 -
+[2020-05-11 09:22:57.682] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:57] "GET /tools/ HTTP/1.1" 200 -
+[2020-05-11 09:22:57.880] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:57] "GET /favicon.ico HTTP/1.1" 404 -
+[2020-05-11 09:22:57.901] [ ERROR   ] [_internal:_log:122] 119502 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:22:57.909] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:57] "GET /favicon.ico HTTP/1.1" 404 -
+[2020-05-11 09:22:59.535] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:22:59.670] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 200 -
+[2020-05-11 09:22:59.708] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 200 -
+[2020-05-11 09:22:59.715] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.726] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.727] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.749] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.755] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/css/style.css HTTP/1.1" 200 -
+[2020-05-11 09:22:59.766] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/js/main.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.770] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 200 -
+[2020-05-11 09:22:59.808] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:22:59.816] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:22:59.823] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 200 -
+[2020-05-11 09:22:59.993] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:22:59] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 200 -
+[2020-05-11 09:23:00.024] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:23:00.031] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:23:00.048] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 200 -
+[2020-05-11 09:23:00.050] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 200 -
+[2020-05-11 09:23:00.105] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:23:00.142] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:23:00.143] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 200 -
+[2020-05-11 09:23:00.144] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:00] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 200 -
+[2020-05-11 09:23:14.986] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:14] "POST /tools/installation/run_service_setup HTTP/1.1" 302 -
+[2020-05-11 09:23:15.007] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:23:15.100] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 200 -
+[2020-05-11 09:23:15.102] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/css/style.css HTTP/1.1" 200 -
+[2020-05-11 09:23:15.109] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+[2020-05-11 09:23:15.109] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 200 -
+[2020-05-11 09:23:15.128] [ ERROR   ] [_internal:_log:122] 119502 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:23:15.129] [ ERROR   ] [_internal:_log:122] 119502 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:23:15.131] [ ERROR   ] [_internal:_log:122] 119502 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:23:15.132] [ ERROR   ] [_internal:_log:122] 119502 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:23:15.192] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:23:15.203] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:23:15.371] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:23:15.382] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:23:15.402] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:23:15.417] [ INFO    ] [_internal:_log:122] 119502 127.0.0.1 - - [11/May/2020 09:23:15] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:27:16.870] [ INFO    ] [_internal:_log:122] 124976  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:27:16.871] [ INFO    ] [_internal:_log:122] 124976  * Restarting with stat
+[2020-05-11 09:27:18.301] [ WARNING ] [_internal:_log:122] 125014  * Debugger is active!
+[2020-05-11 09:27:18.301] [ INFO    ] [_internal:_log:122] 125014  * Debugger PIN: 507-280-042
+[2020-05-11 09:27:24.837] [ INFO    ] [_internal:_log:122] 125098  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:27:24.838] [ INFO    ] [_internal:_log:122] 125098  * Restarting with stat
+[2020-05-11 09:27:28.286] [ WARNING ] [_internal:_log:122] 125182  * Debugger is active!
+[2020-05-11 09:27:28.287] [ INFO    ] [_internal:_log:122] 125182  * Debugger PIN: 507-280-042
+[2020-05-11 09:27:33.201] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:27:33.434] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-05-11 09:27:33.480] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-05-11 09:27:33.488] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-05-11 09:27:33.492] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.506] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.521] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.542] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.545] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.563] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-05-11 09:27:33.567] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:27:33.596] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 304 -
+[2020-05-11 09:27:33.617] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:27:33.743] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:27:33.771] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 200 -
+[2020-05-11 09:27:33.776] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:27:33.791] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:27:33.872] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 304 -
+[2020-05-11 09:27:33.883] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:27:33.890] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:27:33.900] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:27:33.937] [ INFO    ] [_internal:_log:122] 125182 127.0.0.1 - - [11/May/2020 09:27:33] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:37:44.727] [ INFO    ] [_internal:_log:122] 6898  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:37:44.728] [ INFO    ] [_internal:_log:122] 6898  * Restarting with stat
+[2020-05-11 09:37:46.197] [ WARNING ] [_internal:_log:122] 6933  * Debugger is active!
+[2020-05-11 09:37:46.198] [ INFO    ] [_internal:_log:122] 6933  * Debugger PIN: 507-280-042
+[2020-05-11 09:37:55.251] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:55] "GET /tools/ HTTP/1.1" 200 -
+[2020-05-11 09:37:57.345] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:37:57.465] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/css/style.css HTTP/1.1" 200 -
+[2020-05-11 09:37:57.469] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+[2020-05-11 09:37:57.479] [ ERROR   ] [_internal:_log:122] 6933 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:37:57.491] [ ERROR   ] [_internal:_log:122] 6933 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-11 09:37:57.540] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:37:57.546] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:37:57.559] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:37:57.779] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff HTTP/1.1" 404 -
+[2020-05-11 09:37:57.790] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:37:57.795] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:37:57.822] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-900.ttf HTTP/1.1" 404 -
+[2020-05-11 09:37:57.839] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:37:57.850] [ INFO    ] [_internal:_log:122] 6933 127.0.0.1 - - [11/May/2020 09:37:57] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:38:35.252] [ INFO    ] [_internal:_log:122] 7934  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:38:35.253] [ INFO    ] [_internal:_log:122] 7934  * Restarting with stat
+[2020-05-11 09:38:36.816] [ WARNING ] [_internal:_log:122] 7967  * Debugger is active!
+[2020-05-11 09:38:36.816] [ INFO    ] [_internal:_log:122] 7967  * Debugger PIN: 507-280-042
+[2020-05-11 09:38:38.272] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:38:38.344] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-05-11 09:38:38.357] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-05-11 09:38:38.362] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.369] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.385] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.389] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.402] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.409] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-05-11 09:38:38.411] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-05-11 09:38:38.485] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 304 -
+[2020-05-11 09:38:38.487] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:38:38.501] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:38:38.589] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:38:38.658] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:38:38.670] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 304 -
+[2020-05-11 09:38:38.679] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:38:38.690] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:38:38.715] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 304 -
+[2020-05-11 09:38:38.721] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:38:38.737] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:38:38.747] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:38] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:38:43.673] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:38:43] "POST /api/v1/installation/runtask HTTP/1.1" 400 -
+[2020-05-11 09:41:20.067] [ INFO    ] [_internal:_log:122] 7967 127.0.0.1 - - [11/May/2020 09:41:20] "POST /api/v1/installation/run_service_setup HTTP/1.1" 400 -
+[2020-05-11 09:41:29.248] [ INFO    ] [_internal:_log:122] 11432  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:41:29.248] [ INFO    ] [_internal:_log:122] 11432  * Restarting with stat
+[2020-05-11 09:41:30.769] [ WARNING ] [_internal:_log:122] 11480  * Debugger is active!
+[2020-05-11 09:41:30.770] [ INFO    ] [_internal:_log:122] 11480  * Debugger PIN: 507-280-042
+[2020-05-11 09:41:49.096] [ INFO    ] [_internal:_log:122] 11804  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:41:49.097] [ INFO    ] [_internal:_log:122] 11804  * Restarting with stat
+[2020-05-11 09:41:53.729] [ WARNING ] [_internal:_log:122] 11879  * Debugger is active!
+[2020-05-11 09:41:53.730] [ INFO    ] [_internal:_log:122] 11879  * Debugger PIN: 507-280-042
+[2020-05-11 09:41:59.587] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /tools/installation/run_service_setup HTTP/1.1" 200 -
+[2020-05-11 09:41:59.780] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-05-11 09:41:59.819] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.836] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.859] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.890] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.924] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.929] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-05-11 09:41:59.932] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-05-11 09:41:59.948] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:41:59] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-05-11 09:42:00.056] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 304 -
+[2020-05-11 09:42:00.107] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:42:00.133] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff2?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:42:00.187] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-11 09:42:00.194] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 304 -
+[2020-05-11 09:42:00.212] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.woff?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:42:00.312] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-11 09:42:00.323] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/material-icon/fonts/Material-Design-Iconic-Font.ttf?v=2.2.0 HTTP/1.1" 304 -
+[2020-05-11 09:42:00.333] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-11 09:42:00.337] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 304 -
+[2020-05-11 09:42:00.390] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-11 09:42:00.467] [ INFO    ] [_internal:_log:122] 11879 127.0.0.1 - - [11/May/2020 09:42:00] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-11 09:42:38.071] [ INFO    ] [_internal:_log:122] 11879  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 09:42:38.247] [ INFO    ] [_internal:_log:122] 11804  * Restarting with stat
+[2020-05-11 09:43:19.291] [ INFO    ] [_internal:_log:122] 13695  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 09:43:19.292] [ INFO    ] [_internal:_log:122] 13695  * Restarting with stat
+[2020-05-11 09:43:21.003] [ WARNING ] [_internal:_log:122] 13733  * Debugger is active!
+[2020-05-11 09:43:21.003] [ INFO    ] [_internal:_log:122] 13733  * Debugger PIN: 507-280-042
+[2020-05-11 09:43:28.123] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:28] "GET /api/v1/installation/runtask HTTP/1.1" 405 -
+[2020-05-11 09:43:35.505] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "POST /api/v1/installation/runtask HTTP/1.1" 500 -
+[2020-05-11 09:43:35.644] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "GET /api/v1/installation/runtask?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-05-11 09:43:35.646] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "GET /api/v1/installation/runtask?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-05-11 09:43:35.652] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "GET /api/v1/installation/runtask?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-05-11 09:43:35.833] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "GET /api/v1/installation/runtask?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-05-11 09:43:35.878] [ INFO    ] [_internal:_log:122] 13733 127.0.0.1 - - [11/May/2020 09:43:35] "GET /api/v1/installation/runtask?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-05-11 09:44:19.437] [ INFO    ] [_internal:_log:122] 13733  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 09:44:19.574] [ INFO    ] [_internal:_log:122] 13695  * Restarting with stat
+[2020-05-11 09:44:21.516] [ WARNING ] [_internal:_log:122] 14942  * Debugger is active!
+[2020-05-11 09:44:21.516] [ INFO    ] [_internal:_log:122] 14942  * Debugger PIN: 507-280-042
+[2020-05-11 09:44:27.485] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:27] "POST /api/v1/installation/runtask HTTP/1.1" 400 -
+[2020-05-11 09:44:45.191] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks HTTP/1.1" 500 -
+[2020-05-11 09:44:45.280] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-05-11 09:44:45.290] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-05-11 09:44:45.296] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-05-11 09:44:45.444] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-05-11 09:44:45.509] [ INFO    ] [_internal:_log:122] 14942 127.0.0.1 - - [11/May/2020 09:44:45] "GET /api/v1/tasks?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-05-11 09:46:09.493] [ INFO    ] [_internal:_log:122] 14942  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 09:46:09.671] [ INFO    ] [_internal:_log:122] 13695  * Restarting with stat
+[2020-05-11 09:46:11.390] [ WARNING ] [_internal:_log:122] 17184  * Debugger is active!
+[2020-05-11 09:46:11.390] [ INFO    ] [_internal:_log:122] 17184  * Debugger PIN: 507-280-042
+[2020-05-11 09:49:15.962] [ INFO    ] [_internal:_log:122] 17184  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-05-11 09:49:16.064] [ INFO    ] [_internal:_log:122] 13695  * Restarting with stat
+[2020-05-11 10:12:21.218] [ INFO    ] [_internal:_log:122] 48548  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-11 10:12:21.219] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 10:12:22.720] [ WARNING ] [_internal:_log:122] 48587  * Debugger is active!
+[2020-05-11 10:12:22.720] [ INFO    ] [_internal:_log:122] 48587  * Debugger PIN: 507-280-042
+[2020-05-11 14:33:04.747] [ INFO    ] [_internal:_log:122] 48587  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/assign_role/routes.py', reloading
+[2020-05-11 14:33:05.512] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 14:33:12.777] [ WARNING ] [_internal:_log:122] 99141  * Debugger is active!
+[2020-05-11 14:33:12.786] [ INFO    ] [_internal:_log:122] 99141  * Debugger PIN: 507-280-042
+[2020-05-11 16:38:09.161] [ INFO    ] [_internal:_log:122] 99141  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:38:09.289] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:38:10.858] [ WARNING ] [_internal:_log:122] 117674  * Debugger is active!
+[2020-05-11 16:38:10.859] [ INFO    ] [_internal:_log:122] 117674  * Debugger PIN: 507-280-042
+[2020-05-11 16:38:45.682] [ INFO    ] [_internal:_log:122] 117674  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:38:45.804] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:38:47.129] [ WARNING ] [_internal:_log:122] 118397  * Debugger is active!
+[2020-05-11 16:38:47.130] [ INFO    ] [_internal:_log:122] 118397  * Debugger PIN: 507-280-042
+[2020-05-11 16:55:25.068] [ INFO    ] [_internal:_log:122] 118397  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/start_undo_pause_next/routes.py', reloading
+[2020-05-11 16:55:25.158] [ INFO    ] [_internal:_log:122] 48548  * Restarting with stat
+[2020-05-11 16:55:26.777] [ WARNING ] [_internal:_log:122] 7544  * Debugger is active!
+[2020-05-11 16:55:26.778] [ INFO    ] [_internal:_log:122] 7544  * Debugger PIN: 507-280-042

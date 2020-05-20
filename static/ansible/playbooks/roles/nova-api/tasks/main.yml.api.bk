@@ -1,0 +1,227 @@
+- block:
+  - name: 1.{{ docker_image.nova }}
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: docker pull '{{ docker_image.nova }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/nova'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/nova/nova'
+    - '{{ usr_share_docker }}/nova/backup'
+    - '{{ usr_share_docker }}/nova/ceph'
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.cp nova.sql
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - template:
+      src: nova.sql.j2
+      dest: '{{ usr_share_docker }}/nova/nova/nova.sql'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Create nova Database
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - shell: mysql < '{{ usr_share_docker }}/nova/nova/nova.sql'
+    ignore_errors: yes
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.Create Nova service
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - shell: '{{ item }}'
+    with_items:
+    - source ~/open.rc  && openstack user create --domain default --password {{ OPS_NOVA_PASS
+      }} {{ ops_user_nova }}
+    - source ~/open.rc  && openstack role add --project service --user {{ ops_user_nova
+      }} admin
+    - source ~/open.rc  && openstack service create --name nova --description "OpenStack
+      Compute" compute
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+      public http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+      internal  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+      admin  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Create placement service
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - shell: '{{ item }}'
+    with_items:
+    - source ~/open.rc  && openstack user create --domain default --password {{ OPS_PLACEMENT_PASS
+      }} {{ ops_user_placement }}
+    - source ~/open.rc  && openstack role add --project service --user {{ ops_user_placement
+      }} admin
+    - source ~/open.rc  && openstack service create --name placement --description
+      "Placement API" placement
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+      public  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+      internal http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+    - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+      admin http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.cp /usr/share/docker/nova/nova/
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: nova.conf.j2
+      dest: '{{ usr_share_docker }}/nova/nova/nova.conf'
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.cp /usr/share/docker/nova/ceph/
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: ceph.conf.j2
+      dest: '{{ usr_share_docker }}/nova/ceph/ceph.conf'
+    - src: ceph.client.images.keyring.j2
+      dest: '{{ usr_share_docker }}/nova/ceph/ceph.client.images.keyring'
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.Nova Bootstrap
+    debug: msg='Starting 9-------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      env: '{{ item.env }}'
+    with_items: '{{docker_bootstrap}}'
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'
+- block:
+  - name: 10.Pause 1800 Seconds Until nova_bootstrap done and exit
+    debug: msg='Starting 10-------------------------------------------->'
+  - include: extends/before.yml task_index=10
+  - pause:
+      seconds: 1800
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=10 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=10 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '10'
+- block:
+  - name: 11.Cerate  Nova Container
+    debug: msg='Starting 11-------------------------------------------->'
+  - include: extends/before.yml task_index=11
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
+    register: infos
+  - include: extends/after_ok.yml task_index=11 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=11 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '11'

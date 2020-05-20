@@ -1,0 +1,23 @@
+- name: yum install -y keepalived
+  yum:
+    name:
+    - keepalived
+    state: latest
+- name: cp haproxy_keepalive/keepalived.conf /etc/haproxy/
+  template:
+    src: keepalived.conf.j2
+    dest: /etc/keepalived/keepalived.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: systemctl enable keepalived
+  systemd:
+    name: keepalived
+    enabled: yes
+    masked: no
+- name: restart keepalived
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: keepalived

@@ -1,0 +1,89 @@
+- name: pull '{{ docker_image.keystone }}'
+  command: docker pull '{{ docker_image.keystone }}'
+- name: mkdir '{{ usr_share_docker }}/keystone'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/keystone/keystone'
+  - '{{ usr_share_docker }}/keystone/backup'
+  - /etc/keystone
+  - /etc/keystone/fernet-keys
+  - /etc/keystone/credential-keys
+- name: cp keystone.sql
+  template:
+    src: keystone.sql.j2
+    dest: '{{ usr_share_docker }}/keystone/keystone/keystone.sql'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: Create keystone Database
+  shell: mysql < '{{ usr_share_docker }}/keystone/keystone/keystone.sql'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  ignore_errors: yes
+- name: cp /usr/share/docker/keystone/keystone/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0600'
+    backup: yes
+  with_items:
+  - src: keystone.conf.j2
+    dest: '{{ usr_share_docker }}/keystone/keystone/keystone.conf'
+  - src: fernet_key_0.j2
+    dest: /etc/keystone/fernet-keys/0
+  - src: fernet_key_1.j2
+    dest: /etc/keystone/fernet-keys/1
+  - src: credential_key_0.j2
+    dest: /etc/keystone/credential-keys/0
+  - src: credential_key_1.j2
+    dest: /etc/keystone/credential-keys/1
+  - src: open.rc.j2
+    dest: ~/open.rc
+- name: Keystone Bootstrap
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    env: '{{ item.env }}'
+  with_items: '{{docker_bootstrap}}'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Cerate  Keystone Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'
+- name: Wait For Docker Bootstrap Finish  
+  shell: docker ps -a | grep {{ docker_bootstrap.name }}
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create Demo user
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack project create --domain default --description "Service
+    Project" service
+  - source ~/open.rc && openstack project create --domain default --description "Demo
+    Project" demo
+  - source ~/open.rc && openstack user create --domain default --password {{ OPS_DEMO_PASS
+    }} {{ ops_user_demo }}
+  - source ~/open.rc && openstack role create user
+  - source ~/open.rc && openstack role add --project demo --user {{ ops_user_demo
+    }} user
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )

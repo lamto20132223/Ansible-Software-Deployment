@@ -1,0 +1,193 @@
+- block:
+  - name: 1.backup repo
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: mv  /etc/yum.repos.d/local.repo  /etc/yum.repos.d/local.repo.bk
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.refresh repo
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - command: '{{ item }}'
+    with_items:
+    - yum clean all
+    - yum repolist
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.mkdir /u01/docker/docker_graph
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - file:
+      path: '{{ VAR_LIB_DOCKER }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.mkdir /u01/docker/docker_log
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - file:
+      path: '{{ VAR_LOG_DIR }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.copy container-selinux-2.107-3.el7.noarch.rpm
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - copy:
+      src: /root/app/static/ansible/playbooks/roles/docker/files/container-selinux-2.107-3.el7.noarch.rpm
+      dest: /usr/src/container-selinux-2.107-3.el7.noarch.rpm
+      mode: 400
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.yum install container-selinux-2.107-3.el7.noarch.rpm
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - command: yum install -y /usr/src/container-selinux-2.107-3.el7.noarch.rpm
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.yum install container-selinux-2.107-3.el7.noarch.rpm
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - command: yum install -y docker-ce python-docker
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.cp ../docker/daemon.json /etc/docker/
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - template:
+      src: daemon.json.j2
+      dest: /etc/docker/daemon.json
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.systemctl enable docker
+    debug: msg='Starting 9-------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - systemd:
+      name: docker
+      enabled: yes
+      masked: no
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'
+- block:
+  - name: 10.restart docker, in all cases, also issue daemon-reload to pick up config
+      changes
+    debug: msg='Starting 10-------------------------------------------->'
+  - include: extends/before.yml task_index=10
+  - systemd:
+      state: restarted
+      daemon_reload: yes
+      name: docker
+    register: infos
+  - include: extends/after_ok.yml task_index=10 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=10 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '10'
+- block:
+  - name: 11.rollback repo
+    debug: msg='Starting 11-------------------------------------------->'
+  - include: extends/before.yml task_index=11
+  - command: mv /etc/yum.repos.d/local.repo.bk /etc/yum.repos.d/local.repo
+    register: infos
+  - include: extends/after_ok.yml task_index=11 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=11 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '11'
+- block:
+  - name: 12.refresh repo
+    debug: msg='Starting 12-------------------------------------------->'
+  - include: extends/before.yml task_index=12
+  - command: '{{ item }}'
+    with_items:
+    - yum clean all
+    - yum repolist
+    register: infos
+  - include: extends/after_ok.yml task_index=12 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=12 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '12'

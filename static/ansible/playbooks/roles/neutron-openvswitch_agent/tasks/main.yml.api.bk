@@ -1,0 +1,89 @@
+- block:
+  - name: 1.pull '{{ docker_image.neutron }}'
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: docker pull '{{ docker_image.neutron }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/neutron'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/neutron/neutron'
+    - '{{ usr_share_docker }}/neutron/backup'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins/ml2'
+    - '{{VAR_LOG_DIR}}/neutron'
+    - /var/lib/neutron
+    - /run/netns
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.cp /usr/share/docker/neutron/neutron/
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: neutron.conf.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/neutron.conf'
+    - src: dhcp_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/dhcp_agent.ini'
+    - src: metadata_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/metadata_agent.ini'
+    - src: plugins_ml2_ml2_conf.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf.ini'
+    - src: plugins_ml2_openvswitch_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/openvswitch_agent.ini'
+    - src: plugins_ml2_ml2_conf_sriov.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf_sriov.ini'
+    - src: plugins_ml2_sriov_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/sriov_agent.ini'
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Create Neutron Container
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - command: '{{ item }}'
+    with_items:
+    - '{{ containers.ovs_agent }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'

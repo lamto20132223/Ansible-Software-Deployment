@@ -1,0 +1,108 @@
+- name: pull docker-registry:4000/cinder:q
+  command: '{{ item }}'
+  with_items:
+  - docker pull '{{ docker_image.cinder_api }}'
+  - docker pull '{{ docker_image.cinder_scheduler }}'
+- name: mkdir '{{ usr_share_docker }}/cinder'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/cinder/cinder'
+  - '{{ usr_share_docker }}/cinder/backup'
+  - '{{ usr_share_docker }}/cinder/ceph'
+- name: cp cinder.sql
+  template:
+    src: cinder.sql.j2
+    dest: '{{ usr_share_docker }}/cinder/cinder/cinder.sql'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: Create Cinder Database
+  shell: mysql < '{{ usr_share_docker }}/cinder/cinder/cinder.sql'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  ignore_errors: yes
+- name: Create Cinder user
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack user create --domain default --password {{ OPS_CINDER_PASS
+    }} {{ ops_user_cinder }}
+  - source ~/open.rc && openstack role add --project service --user {{ ops_user_cinder
+    }} admin
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create Cinder Service
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack service create --name cinderv2 --description "OpenStack
+    Block Storage" volumev2
+  - source ~/open.rc && openstack service create --name cinderv3 --description "OpenStack
+    Block Storage" volumev3
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev2
+    public http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v2/%\(project_id\)s
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev2
+    admin  http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v2/%\(project_id\)s
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev2
+    internal  http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v2/%\(project_id\)s
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev3
+    public http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v3/%\(project_id\)s
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev3
+    admin  http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v3/%\(project_id\)s
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  volumev3
+    internal  http://{{ CONTROLLER_HOST }}:{{ services_port.cinder_api }}/v3/%\(project_id\)s
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: cp /usr/share/docker/cinder/cinder/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: cinder.conf.j2
+    dest: '{{ usr_share_docker }}/cinder/cinder/cinder.conf'
+- name: cp /usr/share/docker/cinder/ceph/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: ceph.conf.j2
+    dest: '{{ usr_share_docker }}/cinder/ceph/ceph.conf'
+  - src: ceph.client.volumes.keyring.j2
+    dest: '{{ usr_share_docker }}/cinder/ceph/ceph.client.volumes.keyring'
+- name: Cinder Bootstrap
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    env: '{{ item.env }}'
+  with_items: '{{docker_bootstrap}}'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Wait For Docker Bootstrap Finish  
+  shell: docker ps -a | grep {{ docker_bootstrap.name }}
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: .Cerate Cinder Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'

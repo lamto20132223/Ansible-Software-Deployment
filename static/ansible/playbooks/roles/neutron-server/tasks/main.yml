@@ -167,13 +167,15 @@
   - install
   - '8'
 - block:
-  - name: 9.Pause 25 Seconds
+  - name: 9.Wait For Docker Bootstrap Finish
     debug: msg='Starting 9-------------------------------------------->'
   - include: extends/before.yml task_index=9
-  - pause:
-      seconds: 25
-    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  - shell: docker ps -a | grep {{ docker_bootstrap.name }}
     register: infos
+    until: result.stdout.find("Exited") != -1
+    retries: 600
+    delay: 3
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
   - include: extends/after_ok.yml task_index=9 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=9 info={{ infos  }}
@@ -182,7 +184,7 @@
   - install
   - '9'
 - block:
-  - name: 10.Cerate Neutron Container
+  - name: 10..Cerate Neutron Container
     debug: msg='Starting 10-------------------------------------------->'
   - include: extends/before.yml task_index=10
   - docker_container:

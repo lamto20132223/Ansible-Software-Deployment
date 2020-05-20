@@ -1,0 +1,37 @@
+- name: yum install -y haproxy
+  yum:
+    name:
+    - haproxy
+    state: latest
+- name: cp haproxy_keepalive/etc_sysctl.conf.j2 /etc/sysctl.conf
+  template:
+    src: etc_sysctl.conf.j2
+    dest: /etc/sysctl.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+
+- name: sysctl -p for update ip_nonlocal_bind
+  shell: '{{ item }}'
+  with_items:
+  - sysctl -p
+
+- name: cp haproxy_keepalive/haproxy.cfg /etc/haproxy/
+  template:
+    src: haproxy.cfg.j2
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: systemctl enable haproxy
+  systemd:
+    name: haproxy
+    enabled: yes
+    masked: no
+- name: restart haproxy
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: haproxy

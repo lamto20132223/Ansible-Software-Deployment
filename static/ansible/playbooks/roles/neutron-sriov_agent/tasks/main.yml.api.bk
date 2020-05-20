@@ -1,0 +1,111 @@
+- block:
+  - name: 1.echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+
+- block:
+  - name: 2.echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - command: echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+
+- block:
+  - name: 3.pull '{{ docker_image.sriov_agent }}'
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - command: docker pull '{{ docker_image.sriov_agent }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+
+- block:
+  - name: 4.mkdir '{{ usr_share_docker }}/neutron'
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/neutron/neutron'
+    - '{{ usr_share_docker }}/neutron/backup'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins/ml2'
+    - '{{VAR_LOG_DIR}}/neutron'
+    - /var/lib/neutron
+    - /run/netns
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.cp /usr/share/docker/neutron/neutron/
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: plugins_ml2_ml2_conf_sriov.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf_sriov.ini'
+    - src: plugins_ml2_sriov_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/sriov_agent.ini'
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Create Neutron Container Sriov Agent
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - command: '{{ item }}'
+    with_items:
+    - '{{ containers.sriov_agent }}'
+
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'

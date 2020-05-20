@@ -1,0 +1,93 @@
+[2020-05-18 18:20:36.010] [ INFO    ] [_internal:_log:122] 111030  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-18 18:20:36.025] [ INFO    ] [_internal:_log:122] 111030  * Restarting with stat
+[2020-05-18 18:20:37.524] [ WARNING ] [_internal:_log:122] 111132  * Debugger is active!
+[2020-05-18 18:20:37.524] [ INFO    ] [_internal:_log:122] 111132  * Debugger PIN: 507-280-042
+[2020-05-18 18:20:58.301] [ INFO    ] [_internal:_log:122] 111132 127.0.0.1 - - [18/May/2020 18:20:58] "GET /tools HTTP/1.1" 308 -
+[2020-05-18 18:20:58.311] [ INFO    ] [_internal:_log:122] 111132 127.0.0.1 - - [18/May/2020 18:20:58] "GET /tools/ HTTP/1.1" 200 -
+[2020-05-18 18:20:58.335] [ ERROR   ] [_internal:_log:122] 111132 Error on request:
+Traceback (most recent call last):
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 306, in run_wsgi
+    execute(self.server.app)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 297, in execute
+    write(data)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/site-packages/werkzeug/serving.py", line 258, in write
+    self.send_header(key, value)
+  File "/home/vttek/anaconda2/envs/viettel/lib/python2.7/BaseHTTPServer.py", line 412, in send_header
+    self.wfile.write("%s: %s\r\n" % (keyword, value))
+IOError: [Errno 32] Broken pipe
+[2020-05-18 18:21:13.348] [ INFO    ] [_internal:_log:122] 111132  * Detected change in '/home/vttek/lamtv10/Project23022020/controllers/insert_specific_config/routes.py', reloading
+[2020-05-18 18:21:13.488] [ INFO    ] [_internal:_log:122] 111030  * Restarting with stat
+[2020-05-18 18:21:14.849] [ WARNING ] [_internal:_log:122] 111935  * Debugger is active!
+[2020-05-18 18:21:14.850] [ INFO    ] [_internal:_log:122] 111935  * Debugger PIN: 507-280-042
+[2020-05-18 18:21:16.238] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:21:16] "GET /tools/ HTTP/1.1" 200 -
+[2020-05-18 18:21:17.664] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:21:17] "GET /tools/add_ansible_role HTTP/1.1" 200 -
+[2020-05-18 18:22:29.607] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /tools/add_ansible_role HTTP/1.1" 200 -
+[2020-05-18 18:22:29.738] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/css/style.css HTTP/1.1" 200 -
+[2020-05-18 18:22:29.742] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 200 -
+[2020-05-18 18:22:29.750] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 200 -
+[2020-05-18 18:22:29.751] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.762] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.779] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.803] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.808] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.841] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:22:29.842] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/js/main.js HTTP/1.1" 200 -
+[2020-05-18 18:22:29.863] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:22:29.873] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:22:29.964] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-18 18:22:29.978] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff HTTP/1.1" 404 -
+[2020-05-18 18:22:29.993] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:29] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-18 18:22:30.045] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:30] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-18 18:22:30.060] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:30] "GET /static/form/fonts/poppins/poppins-v5-latin-900.ttf HTTP/1.1" 404 -
+[2020-05-18 18:22:30.072] [ INFO    ] [_internal:_log:122] 111935 127.0.0.1 - - [18/May/2020 18:22:30] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-18 18:24:11.241] [ INFO    ] [_internal:_log:122] 115594  * Running on http://0.0.0.0:4321/ (Press CTRL+C to quit)
+[2020-05-18 18:24:11.242] [ INFO    ] [_internal:_log:122] 115594  * Restarting with stat
+[2020-05-18 18:24:12.533] [ WARNING ] [_internal:_log:122] 115634  * Debugger is active!
+[2020-05-18 18:24:12.533] [ INFO    ] [_internal:_log:122] 115634  * Debugger PIN: 507-280-042
+[2020-05-18 18:24:17.543] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /tools/add_ansible_role HTTP/1.1" 200 -
+[2020-05-18 18:24:17.605] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 200 -
+[2020-05-18 18:24:17.637] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-05-18 18:24:17.653] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-05-18 18:24:17.685] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.687] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.700] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.701] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.710] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.717] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-05-18 18:24:17.771] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:24:17.780] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:24:17.790] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:24:17.886] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff HTTP/1.1" 404 -
+[2020-05-18 18:24:17.904] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-18 18:24:17.907] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-18 18:24:17.922] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-900.ttf HTTP/1.1" 404 -
+[2020-05-18 18:24:17.943] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-18 18:24:17.950] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:24:17] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-18 18:25:25.383] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /tools/add_ansible_role HTTP/1.1" 200 -
+[2020-05-18 18:25:25.454] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/material-icon/css/material-design-iconic-font.min.css HTTP/1.1" 304 -
+[2020-05-18 18:25:25.469] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/css/style.css HTTP/1.1" 304 -
+[2020-05-18 18:25:25.483] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/nouislider/nouislider.min.css HTTP/1.1" 304 -
+[2020-05-18 18:25:25.486] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/nouislider/nouislider.min.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.494] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/wnumb/wNumb.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.501] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.507] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/jquery-validation/dist/additional-methods.min.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.508] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/vendor/jquery-validation/dist/jquery.validate.min.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.514] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/js/main.js HTTP/1.1" 304 -
+[2020-05-18 18:25:25.542] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:25:25.554] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:25:25.566] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff2 HTTP/1.1" 404 -
+[2020-05-18 18:25:25.567] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff2 HTTP/1.1" 200 -
+[2020-05-18 18:25:25.696] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-700.woff HTTP/1.1" 404 -
+[2020-05-18 18:25:25.728] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-900.woff HTTP/1.1" 404 -
+[2020-05-18 18:25:25.768] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.woff HTTP/1.1" 404 -
+[2020-05-18 18:25:25.811] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-500.woff HTTP/1.1" 200 -
+[2020-05-18 18:25:25.833] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-900.ttf HTTP/1.1" 404 -
+[2020-05-18 18:25:25.837] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-700.ttf HTTP/1.1" 404 -
+[2020-05-18 18:25:25.861] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-regular.ttf HTTP/1.1" 404 -
+[2020-05-18 18:25:25.871] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:25:25] "GET /static/form/fonts/poppins/poppins-v5-latin-500.ttf HTTP/1.1" 200 -
+[2020-05-18 18:26:30.590] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars HTTP/1.1" 500 -
+[2020-05-18 18:26:30.685] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+[2020-05-18 18:26:30.689] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+[2020-05-18 18:26:30.695] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 -
+[2020-05-18 18:26:30.912] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+[2020-05-18 18:26:30.941] [ INFO    ] [_internal:_log:122] 115634 127.0.0.1 - - [18/May/2020 18:26:30] "GET /tools/list_ansible_group_vars?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -

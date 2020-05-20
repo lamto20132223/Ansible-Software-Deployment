@@ -1,0 +1,97 @@
+- name: pull '{{ docker_image.neutron }}'
+  command: docker pull '{{ docker_image.neutron }}'
+- name: mkdir '{{ usr_share_docker }}/neutron'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/neutron/neutron'
+  - '{{ usr_share_docker }}/neutron/backup'
+  - '{{ usr_share_docker }}/neutron/neutron/plugins'
+  - '{{ usr_share_docker }}/neutron/neutron/plugins/ml2'
+- name: cp neutron.sql
+  template:
+    src: neutron.sql.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/neutron.sql'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: Create Neutron Database
+  shell: mysql < '{{ usr_share_docker }}/neutron/neutron/neutron.sql'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  ignore_errors: yes
+- name: Create Neutron User
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack user create --domain default --password {{OPS_NEUTRON_PASS}}
+    {{ ops_user_neutron }}
+  - source ~/open.rc && openstack role add --project service --user {{ ops_user_neutron
+    }} admin
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create Neutron Service
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack service create --name neutron  --description "OpenStack
+    Networking" network
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+    public http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+    internal  http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+    admin  http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: cp /usr/share/docker/neutron/neutron/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: neutron.conf.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/neutron.conf'
+  - src: dhcp_agent.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/dhcp_agent.ini'
+  - src: metadata_agent.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/metadata_agent.ini'
+  - src: plugins_ml2_ml2_conf.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf.ini'
+  - src: plugins_ml2_openvswitch_agent.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/openvswitch_agent.ini'
+  - src: plugins_ml2_ml2_conf_sriov.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf_sriov.ini'
+  - src: plugins_ml2_sriov_agent.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/sriov_agent.ini'
+- name: Neutron Bootstrap
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    env: '{{ item.env }}'
+  with_items: '{{docker_bootstrap}}'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Wait For Docker Bootstrap Finish  
+  shell: docker ps -a | grep {{ docker_bootstrap.name }}
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: .Cerate Neutron Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'

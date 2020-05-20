@@ -1,0 +1,37 @@
+- name: pull '{{ docker_image.horizon }}'
+  command: docker pull '{{ docker_image.horizon }}'
+- name: mkdir '{{ usr_share_docker }}/horizon'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/horizon/apache2/conf-enabled'
+  - '{{ usr_share_docker }}/horizon/backup'
+  - '{{ usr_share_docker }}/horizon/openstack-dashboard'
+- name: cp /usr/share/docker/horizon/horizon
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: apache2_conf_enabled_openstack_dashboard.conf.j2
+    dest: '{{ usr_share_docker }}/horizon/apache2/conf-enabled/openstack-dashboard.conf'
+  - src: openstack_dashboard_local_setting.py.j2
+    dest: '{{ usr_share_docker }}/horizon/openstack-dashboard/local_settings.py'
+- name: Cerate  Horizon Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'

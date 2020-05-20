@@ -1,0 +1,81 @@
+- block:
+  - name: 1.pull '{{ docker_image.horizon }}'
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: docker pull '{{ docker_image.horizon }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/horizon'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/horizon/apache2/conf-enabled'
+    - '{{ usr_share_docker }}/horizon/backup'
+    - '{{ usr_share_docker }}/horizon/openstack-dashboard'
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.cp /usr/share/docker/horizon/horizon
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: apache2_conf_enabled_openstack_dashboard.conf.j2
+      dest: '{{ usr_share_docker }}/horizon/apache2/conf-enabled/openstack-dashboard.conf'
+    - src: openstack_dashboard_local_setting.py.j2
+      dest: '{{ usr_share_docker }}/horizon/openstack-dashboard/local_settings.py'
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Cerate  Horizon Container
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'

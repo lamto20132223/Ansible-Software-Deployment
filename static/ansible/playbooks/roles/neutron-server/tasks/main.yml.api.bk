@@ -1,0 +1,204 @@
+- block:
+  - name: 1.pull '{{ docker_image.neutron }}'
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: docker pull '{{ docker_image.neutron }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/neutron'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/neutron/neutron'
+    - '{{ usr_share_docker }}/neutron/backup'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins'
+    - '{{ usr_share_docker }}/neutron/neutron/plugins/ml2'
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.cp neutron.sql
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - template:
+      src: neutron.sql.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/neutron.sql'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Create Neutron Database
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - shell: mysql < '{{ usr_share_docker }}/neutron/neutron/neutron.sql'
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.Create Neutron User
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - shell: '{{ item }}'
+    with_items:
+    - source ~/open.rc && openstack user create --domain default --password {{OPS_NEUTRON_PASS}}
+      {{ ops_user_neutron }}
+    - source ~/open.rc && openstack role add --project service --user {{ ops_user_neutron
+      }} admin
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Create Neutron Service
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - shell: '{{ item }}'
+    with_items:
+    - source ~/open.rc && openstack service create --name neutron  --description "OpenStack
+      Networking" network
+    - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+      public http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+    - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+      internal  http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+    - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }} network
+      admin  http://{{ CONTROLLER_HOST }}:{{ services_port.neutron_server }}
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.cp /usr/share/docker/neutron/neutron/
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: neutron.conf.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/neutron.conf'
+    - src: dhcp_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/dhcp_agent.ini'
+    - src: metadata_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/metadata_agent.ini'
+    - src: plugins_ml2_ml2_conf.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf.ini'
+    - src: plugins_ml2_openvswitch_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/openvswitch_agent.ini'
+    - src: plugins_ml2_ml2_conf_sriov.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf_sriov.ini'
+    - src: plugins_ml2_sriov_agent.ini.j2
+      dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/sriov_agent.ini'
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.Neutron Bootstrap
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      env: '{{ item.env }}'
+    with_items: '{{docker_bootstrap}}'
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.Pause 25 Seconds
+    debug: msg='Starting 9-------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - pause:
+      seconds: 25
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'
+- block:
+  - name: 10.Cerate Neutron Container
+    debug: msg='Starting 10-------------------------------------------->'
+  - include: extends/before.yml task_index=10
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
+    register: infos
+  - include: extends/after_ok.yml task_index=10 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=10 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '10'

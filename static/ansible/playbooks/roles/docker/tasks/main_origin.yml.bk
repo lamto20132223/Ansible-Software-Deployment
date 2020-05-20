@@ -1,0 +1,61 @@
+- name: backup repo
+  command: mv  /etc/yum.repos.d/local.repo  /etc/yum.repos.d/local.repo.bk
+  ignore_errors: yes
+- name: refresh repo
+  command: '{{ item }}'
+  with_items:
+  - yum clean all
+  - yum repolist
+- name: mkdir /u01/docker/docker_graph
+  file:
+    path: '{{ VAR_LIB_DOCKER }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+- name: mkdir /u01/docker/docker_log
+  file:
+    path: '{{ VAR_LOG_DIR }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+- name: copy container-selinux-2.107-3.el7.noarch.rpm
+  copy:
+    src: /root/app/static/ansible/playbooks/roles/docker/files/container-selinux-2.107-3.el7.noarch.rpm
+    dest: /usr/src/container-selinux-2.107-3.el7.noarch.rpm
+    mode: 400
+- name: yum install container-selinux-2.107-3.el7.noarch.rpm
+  command: yum install -y /usr/src/container-selinux-2.107-3.el7.noarch.rpm
+  ignore_errors: yes
+- name: yum install container-selinux-2.107-3.el7.noarch.rpm
+  command: yum install -y docker-ce python-docker
+  ignore_errors: yes
+- name: cp ../docker/daemon.json /etc/docker/
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: systemctl enable docker
+  systemd:
+    name: docker
+    enabled: yes
+    masked: no
+- name: .restart docker, in all cases, also issue daemon-reload to pick up config
+    changes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: docker
+- name: .rollback repo
+  command: mv /etc/yum.repos.d/local.repo.bk /etc/yum.repos.d/local.repo
+- name: .refresh repo
+  command: '{{ item }}'
+  with_items:
+  - yum clean all
+  - yum repolist

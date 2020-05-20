@@ -90,8 +90,12 @@
   when: ( "{{ host_name }}" == "{{ first_controller }}" ) 
 
 - name: Pause 25 Seconds
-  pause:
-    seconds: 25
+  shell: docker ps -a | grep ovs-agent
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+
   when: ( "{{ host_name }}" == "{{ first_controller }}" ) 
   
 - name: Cerate Cinder Container 

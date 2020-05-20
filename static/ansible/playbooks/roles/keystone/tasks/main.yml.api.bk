@@ -1,0 +1,185 @@
+- block:
+  - name: 1.pull '{{ docker_image.keystone }}'
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: docker pull '{{ docker_image.keystone }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/keystone'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/keystone/keystone'
+    - '{{ usr_share_docker }}/keystone/backup'
+    - /etc/keystone
+    - /etc/keystone/fernet-keys
+    - /etc/keystone/credential-keys
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.cp keystone.sql
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - template:
+      src: keystone.sql.j2
+      dest: '{{ usr_share_docker }}/keystone/keystone/keystone.sql'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.Create keystone Database
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - shell: mysql < '{{ usr_share_docker }}/keystone/keystone/keystone.sql'
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.cp /usr/share/docker/keystone/keystone/
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0600'
+      backup: yes
+    with_items:
+    - src: keystone.conf.j2
+      dest: '{{ usr_share_docker }}/keystone/keystone/keystone.conf'
+    - src: fernet_key_0.j2
+      dest: /etc/keystone/fernet-keys/0
+    - src: fernet_key_1.j2
+      dest: /etc/keystone/fernet-keys/1
+    - src: credential_key_0.j2
+      dest: /etc/keystone/credential-keys/0
+    - src: credential_key_1.j2
+      dest: /etc/keystone/credential-keys/1
+    - src: open.rc.j2
+      dest: ~/open.rc
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Keystone Bootstrap
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      env: '{{ item.env }}'
+    with_items: '{{docker_bootstrap}}'
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.Cerate  Keystone Container
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.Pause 5 Seconds
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - pause:
+      seconds: 5
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.Create Demo user
+    debug: msg='Starting 9-------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - shell: '{{ item }}'
+    with_items:
+    - source ~/open.rc && openstack project create --domain default --description
+      "Service Project" service
+    - source ~/open.rc && openstack project create --domain default --description
+      "Demo Project" demo
+    - source ~/open.rc && openstack user create --domain default --password {{ OPS_DEMO_PASS
+      }} {{ ops_user_demo }}
+    - source ~/open.rc && openstack role create user
+    - source ~/open.rc && openstack role add --project demo --user {{ ops_user_demo
+      }} user
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'

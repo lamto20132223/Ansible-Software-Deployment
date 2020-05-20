@@ -78,9 +78,7 @@
   - include: extends/before.yml task_index=4
   - command: '{{ item }}'
     with_items:
-
     - '{{ containers.dhcp_agent }}'
-
     register: infos
   - include: extends/after_ok.yml task_index=4 info={{ infos  }}
   rescue:

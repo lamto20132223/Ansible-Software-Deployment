@@ -145,13 +145,15 @@
   - install
   - '7'
 - block:
-  - name: 8.Pause 5 Seconds
+  - name: 8.Wait For Docker Bootstrap Finish
     debug: msg='Starting 8-------------------------------------------->'
   - include: extends/before.yml task_index=8
-  - pause:
-      seconds: 5
-    when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  - shell: docker ps -a | grep {{ docker_bootstrap.name }}
     register: infos
+    until: result.stdout.find("Exited") != -1
+    retries: 600
+    delay: 3
+    when: ( "{{ host_name }}" == "{{ first_controller }}" )
   - include: extends/after_ok.yml task_index=8 info={{ infos  }}
   rescue:
   - include: extends/after_failse.yml task_index=8 info={{ infos  }}

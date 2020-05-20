@@ -146,7 +146,7 @@
   - install
   - '9'
 - block:
-  - name: 10.restart docker, in all cases, also issue daemon-reload to pick up config
+  - name: 10..restart docker, in all cases, also issue daemon-reload to pick up config
       changes
     debug: msg='Starting 10-------------------------------------------->'
   - include: extends/before.yml task_index=10
@@ -163,7 +163,7 @@
   - install
   - '10'
 - block:
-  - name: 11.rollback repo
+  - name: 11..rollback repo
     debug: msg='Starting 11-------------------------------------------->'
   - include: extends/before.yml task_index=11
   - command: mv /etc/yum.repos.d/local.repo.bk /etc/yum.repos.d/local.repo
@@ -176,7 +176,7 @@
   - install
   - '11'
 - block:
-  - name: 12.refresh repo
+  - name: 12..refresh repo
     debug: msg='Starting 12-------------------------------------------->'
   - include: extends/before.yml task_index=12
   - command: '{{ item }}'

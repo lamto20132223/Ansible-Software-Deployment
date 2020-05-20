@@ -1,0 +1,41 @@
+- name: echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
+  shell: echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
+  ignore_errors: yes
+- name: echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
+  shell: echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
+  ignore_errors: yes
+- name: pull '{{ docker_image.sriov_agent }}'
+  shell: docker pull '{{ docker_image.sriov_agent }}'
+- name: mkdir '{{ usr_share_docker }}/neutron'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/neutron/neutron'
+  - '{{ usr_share_docker }}/neutron/backup'
+  - '{{ usr_share_docker }}/neutron/neutron/plugins'
+  - '{{ usr_share_docker }}/neutron/neutron/plugins/ml2'
+  - '{{VAR_LOG_DIR}}/neutron'
+  - /var/lib/neutron
+  - /run/netns
+- name: cp /usr/share/docker/neutron/neutron/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: plugins_ml2_ml2_conf_sriov.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/ml2_conf_sriov.ini'
+  - src: plugins_ml2_sriov_agent.ini.j2
+    dest: '{{ usr_share_docker }}/neutron/neutron/plugins/ml2/sriov_agent.ini'
+- name: Create Neutron Container Sriov Agent
+  command: '{{ item }}'
+  with_items:
+  - '{{ containers.sriov_agent }}'

@@ -1,0 +1,190 @@
+- block:
+  - name: 1.cp selinux.conf.j2 /etc/selinux/config
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - template:
+      src: selinux.conf.j2
+      dest: /etc/selinux/config
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.cp etc_hosts.j2 /etc/hosts
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - template:
+      src: etc_hosts.j2
+      dest: /etc/hosts
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.stop selinux
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - command: '{{ item }}'
+    with_items:
+    - sudo setenforce 0
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.systemctl stop iptables
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - systemd:
+      name: iptables
+      enabled: no
+      masked: no
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.stop service firewalld
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - systemd:
+      name: firewalld
+      state: stopped
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.systemctl stop firewalld
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - systemd:
+      name: firewalld
+      enabled: no
+      masked: no
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'
+- block:
+  - name: 7.cp local.repo.j2 /etc/yum.repos.d/local.repo
+    debug: msg='Starting 7-------------------------------------------->'
+  - include: extends/before.yml task_index=7
+  - template:
+      src: local.repo.j2
+      dest: /etc/yum.repos.d/local.repo
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=7 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=7 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '7'
+- block:
+  - name: 8.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+    debug: msg='Starting 8-------------------------------------------->'
+  - include: extends/before.yml task_index=8
+  - template:
+      src: docker.repo.j2
+      dest: /etc/yum.repos.d/docker.repo
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=8 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=8 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '8'
+- block:
+  - name: 9.refresh repo
+    debug: msg='Starting 9-------------------------------------------->'
+  - include: extends/before.yml task_index=9
+  - command: '{{ item }}'
+    with_items:
+    - yum clean all
+    - yum repolist
+    register: infos
+  - include: extends/after_ok.yml task_index=9 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=9 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '9'
+- block:
+  - name: 10.yum install -y python-openstackclient
+    debug: msg='Starting 10-------------------------------------------->'
+  - include: extends/before.yml task_index=10
+  - yum:
+      name:
+      - python-openstackclient
+      state: latest
+    register: infos
+  - include: extends/after_ok.yml task_index=10 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=10 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '10'
+
+- block:
+  - name: 11. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    debug: msg='Starting 11-------------------------------------------->'
+  - include: extends/before.yml task_index=11
+  - command: '{{ item }}'
+    with_items:
+    - yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=11 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=11 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '11'

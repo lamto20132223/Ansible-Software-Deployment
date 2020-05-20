@@ -1,0 +1,128 @@
+- block:
+  - name: 1.pull docker-registry:4000/cinder_volume:q
+    debug: msg='Starting 1-------------------------------------------->'
+  - include: extends/before.yml task_index=1
+  - command: '{{ item }}'
+    with_items:
+    - docker pull '{{ docker_image.cinder_volume }}'
+    register: infos
+  - include: extends/after_ok.yml task_index=1 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=1 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '1'
+- block:
+  - name: 2.mkdir '{{ usr_share_docker }}/cinder'
+    debug: msg='Starting 2-------------------------------------------->'
+  - include: extends/before.yml task_index=2
+  - file:
+      path: '{{ item }}'
+      state: directory
+      owner: root
+      group: root
+      mode: 509
+      recurse: no
+    with_items:
+    - '{{ usr_share_docker }}/cinder/cinder'
+    - '{{ usr_share_docker }}/cinder/backup'
+    - '{{ usr_share_docker }}/cinder/ceph'
+    when: ( "{{ cinder_re_config }}" == "true" )
+    register: infos
+  - include: extends/after_ok.yml task_index=2 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=2 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '2'
+- block:
+  - name: 3.Create Cinder Volume Group
+    debug: msg='Starting 3-------------------------------------------->'
+  - include: extends/before.yml task_index=3
+  - shell: '{{ item }}'
+    with_items:
+    - yum install lvm2 device-mapper-persistent-data
+    - systemctl enable lvm2-lvmetad.service
+    - systemctl start lvm2-lvmetad.service
+    - pvcreate '{{cinder_volume_disk}}'
+    - vgcreate cinder-volumes '{{cinder_volume_disk}}'
+    when: ( "{{ cinder_backend_lvm }}" == "true" )
+    register: infos
+  - include: extends/after_ok.yml task_index=3 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=3 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '3'
+- block:
+  - name: 4.cp /usr/share/docker/cinder/cinder/
+    debug: msg='Starting 4-------------------------------------------->'
+  - include: extends/before.yml task_index=4
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: cinder.conf.j2
+      dest: '{{ usr_share_docker }}/cinder/cinder/cinder.conf'
+    when: ( "{{ cinder_re_config }}" == "true" )
+    register: infos
+  - include: extends/after_ok.yml task_index=4 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=4 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '4'
+- block:
+  - name: 5.cp /usr/share/docker/cinder/ceph/
+    debug: msg='Starting 5-------------------------------------------->'
+  - include: extends/before.yml task_index=5
+  - template:
+      src: '{{ item.src }}'
+      dest: '{{ item.dest }}'
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
+    with_items:
+    - src: ceph.conf.j2
+      dest: '{{ usr_share_docker }}/cinder/ceph/ceph.conf'
+    - src: ceph.client.images.keyring.j2
+      dest: '{{ usr_share_docker }}/cinder/ceph/ceph.client.images.keyring'
+    when: ( "{{ cinder_re_config }}" == "true" )
+    register: infos
+  - include: extends/after_ok.yml task_index=5 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=5 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '5'
+- block:
+  - name: 6.Cerate Cinder volumes Container
+    debug: msg='Starting 6-------------------------------------------->'
+  - include: extends/before.yml task_index=6
+  - docker_container:
+      name: '{{ item.name }}'
+      image: '{{ item.image }}'
+      network_mode: host
+      user: '{{ item.user }}'
+      volumes: '{{ item.volumes }}'
+      restart_policy: '{{ item.restart_policy }}'
+      env: '{{ item.env }}'
+    with_items: '{{containers}}'
+    register: infos
+  - include: extends/after_ok.yml task_index=6 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=6 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '6'

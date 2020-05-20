@@ -32,7 +32,7 @@ def load_yml_file(file_path):
     return result
 
 
-def convert_file(file_path):
+def convert_file(file_path,file_path2):
     os.system('cp '+ file_path + " " + file_path+".bk")
     list_input_tasks = load_yml_file(file_path)
     list_output_tasks = []
@@ -58,7 +58,7 @@ def convert_file(file_path):
 
 
     print("lamtv10")
-    with open(file_path, 'w') as yaml_file:
+    with open(file_path2, 'w') as yaml_file:
 
         yaml.dump(list_output_tasks, yaml_file)
 
@@ -68,15 +68,15 @@ def conver_folder_roles(path_role):
     list_roles = [o for o in os.listdir(path_role + '/' ) if
                  os.path.isdir(os.path.join(path_role + '/' , o))]
     for role in list_roles:
-        convert_file(path_role +'/'+ role + '/tasks/main.yml')
+        convert_file(path_role +'/'+ role + '/tasks/main_origin.yml',path_role +'/'+ role + '/tasks/main.yml')
     print(list_roles)
 
 if __name__ == "__main__":
     #example_tasks = load_yml_file('./example.yml')[0]
     #print(example_tasks)
 
-    #convert_file('init_repo.yml')
-    conver_folder_roles("../static/ansible/playbooks/roles")
+    convert_file('../static/ansible/playbooks/roles/haproxy/tasks/main_origin.yml', '../static/ansible/playbooks/roles/haproxy/tasks/main.yml')
+    #conver_folder_roles("../static/ansible/playbooks/roles")
 
 
 """

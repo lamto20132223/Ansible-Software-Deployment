@@ -1,0 +1,109 @@
+- name: '{{ docker_image.nova }}'
+  command: docker pull '{{ docker_image.nova }}'
+- name: mkdir '{{ usr_share_docker }}/nova'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/nova/nova'
+  - '{{ usr_share_docker }}/nova/backup'
+  - '{{ usr_share_docker }}/nova/ceph'
+- name: cp nova.sql
+  template:
+    src: nova.sql.j2
+    dest: '{{ usr_share_docker }}/nova/nova/nova.sql'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: Create nova Database
+  shell: mysql < '{{ usr_share_docker }}/nova/nova/nova.sql'
+  ignore_errors: yes
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create Nova service
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc  && openstack user create --domain default --password {{ OPS_NOVA_PASS
+    }} {{ ops_user_nova }}
+  - source ~/open.rc  && openstack role add --project service --user {{ ops_user_nova
+    }} admin
+  - source ~/open.rc  && openstack service create --name nova --description "OpenStack
+    Compute" compute
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+    public http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+    internal  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} compute
+    admin  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_api }}/v2.1
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create placement service
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc  && openstack user create --domain default --password {{ OPS_PLACEMENT_PASS
+    }} {{ ops_user_placement }}
+  - source ~/open.rc  && openstack role add --project service --user {{ ops_user_placement
+    }} admin
+  - source ~/open.rc  && openstack service create --name placement --description "Placement
+    API" placement
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+    public  http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+    internal http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+  - source ~/open.rc  && openstack endpoint create --region {{ REGION_NAME }} placement
+    admin http://{{ CONTROLLER_HOST }}:{{ services_port.nova_placement_api }}
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: cp /usr/share/docker/nova/nova/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: nova.conf.j2
+    dest: '{{ usr_share_docker }}/nova/nova/nova.conf'
+- name: cp /usr/share/docker/nova/ceph/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: ceph.conf.j2
+    dest: '{{ usr_share_docker }}/nova/ceph/ceph.conf'
+  - src: ceph.client.images.keyring.j2
+    dest: '{{ usr_share_docker }}/nova/ceph/ceph.client.images.keyring'
+- name: Nova Bootstrap
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    env: '{{ item.env }}'
+  with_items: '{{docker_bootstrap}}'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Wait For Docker Bootstrap Finish  
+  shell: docker ps -a | grep {{ docker_bootstrap.name }}
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: .Cerate  Nova Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'

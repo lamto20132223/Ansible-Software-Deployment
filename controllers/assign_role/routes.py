@@ -388,7 +388,9 @@ def get_deployment(host_id):
     return custom_response(request, 200, None, None,  models.to_json(node.deployment, 'Deployment', False))
 @mod.route('/deployments', methods=['GET'])
 def get_all_deployments_v2():
-    return redirect('/api/v1/hosts/deployments')
+    deployments = session.query(models.Deployment).all()
+    session.commit()
+    return custom_response(request, 200, None, None, models.to_json(deployments, 'Deployment', True))
 
 
 @mod.route('/hosts/deployments/<string:deployment_id>', methods=['GET'])

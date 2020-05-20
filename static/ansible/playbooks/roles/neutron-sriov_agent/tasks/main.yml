@@ -2,7 +2,7 @@
   - name: 1.echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
     debug: msg='Starting 1-------------------------------------------->'
   - include: extends/before.yml task_index=1
-  - command: echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
+  - shell: echo '8' > /sys/class/net/ens2f0/device/sriov_numvfs
     ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=1 info={{ infos  }}
@@ -12,12 +12,11 @@
   tags:
   - install
   - '1'
-
 - block:
   - name: 2.echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
-  - command: echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
+  - shell: echo '8' > /sys/class/net/ens1f0/device/sriov_numvfs
     ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=2 info={{ infos  }}
@@ -27,12 +26,11 @@
   tags:
   - install
   - '2'
-
 - block:
   - name: 3.pull '{{ docker_image.sriov_agent }}'
     debug: msg='Starting 3-------------------------------------------->'
   - include: extends/before.yml task_index=3
-  - command: docker pull '{{ docker_image.sriov_agent }}'
+  - shell: docker pull '{{ docker_image.sriov_agent }}'
     register: infos
   - include: extends/after_ok.yml task_index=3 info={{ infos  }}
   rescue:
@@ -41,7 +39,6 @@
   tags:
   - install
   - '3'
-
 - block:
   - name: 4.mkdir '{{ usr_share_docker }}/neutron'
     debug: msg='Starting 4-------------------------------------------->'
@@ -100,7 +97,6 @@
   - command: '{{ item }}'
     with_items:
     - '{{ containers.sriov_agent }}'
-
     register: infos
   - include: extends/after_ok.yml task_index=6 info={{ infos  }}
   rescue:

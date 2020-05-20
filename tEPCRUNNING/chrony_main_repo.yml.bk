@@ -1,0 +1,37 @@
+- name: yum install -y chrony
+  yum:
+    name:
+    - chrony
+    state: latest
+- name: cp chrony/server/chrony.conf /etc/
+  template:
+    src: chrony_server.conf.j2
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  when: ( '{{ host_info.name[host_name] }}' == '{{ chrony_server }}' )
+- name: cp chrony/client/chrony.conf /etc/
+  template:
+    src: chrony_client.conf.j2
+    dest: /etc/chrony.conf
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  when: ( '{{ host_info.name[host_name] }}' != '{{ chrony_server }}' )
+- name: systemctl enable chronyd
+  systemd:
+    name: chronyd
+    enabled: yes
+    masked: no
+- name: restart chronyd, in all cases, also issue daemon-reload to pick up config
+    changes
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: chronyd
+- name: test chronyd
+  command: chronyc tracking
+  when: chronyd is defined

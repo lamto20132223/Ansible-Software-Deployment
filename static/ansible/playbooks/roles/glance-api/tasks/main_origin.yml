@@ -1,0 +1,99 @@
+- name: pull '{{ docker_image.glance }}'
+  command: docker pull '{{ docker_image.glance }}'
+- name: mkdir '{{ usr_share_docker }}/glance'
+  file:
+    path: '{{ item }}'
+    state: directory
+    owner: root
+    group: root
+    mode: 509
+    recurse: no
+  with_items:
+  - '{{ usr_share_docker }}/glance/glance'
+  - '{{ usr_share_docker }}/glance/backup'
+  - '{{ usr_share_docker }}/glance/ceph'
+- name: cp glance.sql
+  template:
+    src: glance.sql.j2
+    dest: '{{ usr_share_docker }}/glance/glance/glance.sql'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+- name: Create Glance Database
+  shell: mysql < '{{ usr_share_docker }}/glance/glance/glance.sql'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+  ignore_errors: yes
+- name: Create Glance user
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack user create --domain default --password {{ OPS_GLANCE_PASS
+    }} {{ ops_user_glance }}
+  - source ~/open.rc && openstack role add --project service --user {{ ops_user_glance
+    }} admin
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Create Glance service
+  shell: '{{ item }}'
+  with_items:
+  - source ~/open.rc && openstack service create --name glance --description "OpenStack
+    Image" image
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  image
+    public http://{{ CONTROLLER_HOST }}:{{ services_port.glance_api }}
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  image
+    admin  http://{{ CONTROLLER_HOST }}:{{ services_port.glance_api }}
+  - source ~/open.rc && openstack endpoint create --region {{ REGION_NAME }}  image
+    internal  http://{{ CONTROLLER_HOST }}:{{ services_port.glance_api }}
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: cp /usr/share/docker/glance/glance/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: glance-api.conf.j2
+    dest: '{{ usr_share_docker }}/glance/glance/glance-api.conf'
+  - src: glance-registry.conf.j2
+    dest: '{{ usr_share_docker }}/glance/glance/glance-registry.conf'
+- name: cp /usr/share/docker/glance/ceph/
+  template:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    owner: root
+    group: root
+    mode: '0644'
+    backup: yes
+  with_items:
+  - src: ceph.conf.j2
+    dest: '{{ usr_share_docker }}/glance/ceph/ceph.conf'
+  - src: ceph.client.images.keyring.j2
+    dest: '{{ usr_share_docker }}/glance/ceph/ceph.client.images.keyring'
+- name: Glance Bootstrap
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    env: '{{ item.env }}'
+  with_items: '{{docker_bootstrap}}'
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: Wait For Docker Bootstrap Finish  
+  shell: docker ps -a | grep {{ docker_bootstrap.name }}
+  register: result
+  until: result.stdout.find("Exited") != -1
+  retries: 600
+  delay: 3
+  when: ( "{{ host_name }}" == "{{ first_controller }}" )
+- name: .Cerate  Glance Container
+  docker_container:
+    name: '{{ item.name }}'
+    image: '{{ item.image }}'
+    network_mode: host
+    user: '{{ item.user }}'
+    volumes: '{{ item.volumes }}'
+    restart_policy: '{{ item.restart_policy }}'
+    env: '{{ item.env }}'
+  with_items: '{{containers}}'

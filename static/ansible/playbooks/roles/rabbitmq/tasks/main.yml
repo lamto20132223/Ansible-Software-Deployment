@@ -2,7 +2,7 @@
   - name: 1.remove
     debug: msg='Starting 1-------------------------------------------->'
   - include: extends/before.yml task_index=1
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - rm -rf /usr/share/docker/rabbitmq/rabbitmq/
     - rm -rf /u01/docker/docker_log/rabbitmq/

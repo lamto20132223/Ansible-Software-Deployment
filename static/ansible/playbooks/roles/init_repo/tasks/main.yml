@@ -156,7 +156,7 @@
   - install
   - '9'
 - block:
-  - name: 10.yum install -y python-openstackclient
+  - name: 10..yum install -y python-openstackclient
     debug: msg='Starting 10-------------------------------------------->'
   - include: extends/before.yml task_index=10
   - yum:
@@ -171,9 +171,8 @@
   tags:
   - install
   - '10'
-
 - block:
-  - name: 11. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+  - name: 11.. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
     debug: msg='Starting 11-------------------------------------------->'
   - include: extends/before.yml task_index=11
   - command: '{{ item }}'
