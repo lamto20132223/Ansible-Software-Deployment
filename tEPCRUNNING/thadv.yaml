@@ -1,0 +1,58 @@
+
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: rediscluster
+spec:
+  serviceName: redis-clustera
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis-clustera
+  template:
+    metadata:
+      labels:
+        app: redis-clustera
+    spec:
+      nodeName: <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< SUA LAI THEO BNODE compute03
+      containers:
+      - name: redisfsdf
+        image: docker-registry:4000/redis
+        ports:
+        - containerPort: 6379
+          name: client
+        - containerPort: 16379
+          name: gossip
+#        command: [" bash /root/thodv/update-node.sh"]
+#        args: ["-c", "redis-server  /root/thodv/redis-5.0.8/redis.conf"]
+
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        volumeMounts:
+        - name: conf
+          mountPath: /root/thodv
+          readOnly: false
+        #- name: data
+         # mountPath: /root/thodv
+        #  readOnly: false
+      volumes:
+      - name: conf
+        configMap:
+          name: redis-cluster
+          defaultMode: 0755
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+
+
+
+
+
