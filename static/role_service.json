@@ -90,7 +90,19 @@
 	{"index":1, "service_name":"init_repo"},
 	{"index":2, "service_name":"docker"},
 	{"index":3, "service_name":"openday_light"}
+]},
+"DEMO":{
+	"id":6,
+	"requirement":{
+	"RAM":"20GB", "DISK":"400GB", "NUMBER_CORES":30, "NUMBER_DISK":2, "NUMBER_INTERFACES":3
+	},
+	"list_service" : [
+	{"index":1, "service_name":"demo1"},
+	{"index":2, "service_name":"demo2"}
 ]}
+
+
+
 
 
 }
