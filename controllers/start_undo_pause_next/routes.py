@@ -177,6 +177,16 @@ def run_specific_service_setup():
         method = request.json.get('method') if request.json is not None else request.form.get('method')
         start_at_task_id = request.json.get('start_at_task_id') if request.json is not None else request.form.get('start_at_task_id')
 
+
+    logging.debug("service_setup_id" + str(service_setup_id))
+    logging.debug("deployment_id" + str(deployment_id))
+    logging.debug("setup_index" + str(setup_index))
+    logging.debug("method" + str(method))
+    logging.debug("start_at_task_id" + str(start_at_task_id))
+
+
+
+
     service_setup = None
 
     if service_setup_id is not None:
