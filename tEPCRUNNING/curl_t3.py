@@ -24,7 +24,7 @@ def update_host():
         'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/update_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes.json')
 
 def add_host():
-    for i in range(18)[1:]:
+    for i in range(1,19):
         os.system(
             'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @nodes'+str(i)+'.json')
         time.sleep(1)
@@ -41,7 +41,7 @@ def discover_hosts():
 
 ###*******************************add_host_to_role *******************************************************
 def add_host_to_role():
-    for i in range(18)[1:]:
+    for i in range(1,19):
         os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role'+str(i)+'.json')
         time.sleep(5)
 
@@ -156,12 +156,12 @@ def add_service_setup_to_node( node_id,  service_setup_name):
 
 if __name__ == "__main__":
     # delete_data()
-    add_host()
-    #update_host()
-    discover_hosts()
-    add_host_to_role()
-    insert_test_data()
-    create_ansible_group_var()
+    # add_host()
+    # #update_host()
+    # discover_hosts()
+    # add_host_to_role()
+    # insert_test_data()
+    # create_ansible_group_var()
 
 #    add_service_setup_to_node(2, "openvswitch_dpdk")
 
@@ -176,7 +176,7 @@ if __name__ == "__main__":
     # run_task_id(6)
     # run_task_id(7)
     #
-    #run_service_set_up_start_at_task(1,1,8)
+    run_service_set_up_start_at_task(18,1,1376)
     # run_service_setup(1, 3)
     #run_task_id(8)
     # run_deployment(1,1)

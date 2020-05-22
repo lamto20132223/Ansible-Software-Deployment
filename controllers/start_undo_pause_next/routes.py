@@ -558,4 +558,33 @@ def update_task_info():
 
 
 
+@mod.route('/installation/cleantask', methods=['POST'])
+def clean_specific_task():
+    if  not (request.json or request.form):
+        abort(400)
+    else:
+        task_id = request.json.get('task_id') if request.json is not None else request.form.get('task_id')
+        method = request.json.get('method') if request.json is not None else request.form.get('method')
+
+    task = session.query(models.Task).filter_by(task_id=task_id).first()
+
+    if task is None :
+        return abort(400)
+
+    if method == "Clean":
+        task.finished_at=None;
+        task.log =None;
+        task.result=None;
+        task.status=None;
+
+        task.changes[:] = []
+        session.add(task)
+        session.commit()
+        session.close()
+        flash("Clean data task "+ str(task_id) +" succeed!")
+        return redirect('/tools/installation/run_service_setup')
+    else :
+        return {"res":"INCOMMING"}
+
+
 

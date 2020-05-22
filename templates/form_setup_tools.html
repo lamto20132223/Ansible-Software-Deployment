@@ -58,8 +58,57 @@
                         <input type="submit" value="Submit" class="submit" id="submit_2" name="submit" />
                     </div>
                 </form>
+ <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/cleantask" style="    float: left;
+                    margin: 1%;
+                    box-sizing: border-box;
+                    width: 45%;
+                    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">clean data task_id</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="task_id1" class="required">task_id</label>
+                                <input type="number" name="task_id" id="task_idX" />
+                            </div>
+                            <div class="form-input" style="display: none">
+                                <label for="method1" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Clean' id="methodX" />
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="form-submit" >
+                        <input type="submit" value="Submit" class="submit" id="submit_1" name="submit" />
+                    </div>
+                </form>
+  <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/run_deployment" style="float: right;
+    margin: 1%;
+    box-sizing: border-box;
+    width: 45%;
+    border: 1px solid #d4c6c6;">
+                    <h3 style="color:red">run_deployment</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="form-input">
+                                <label for="deployment_id4" class="required">deployment_id</label>
+                                <input type="number" name="deployment_id" id="deployment_id4" />
+                            </div>
+                            <div class="form-input">
+                                <label for="service_setup_id4" class="required">service_setup_id</label>
+                                <input type="number" name="service_setup_id" id="service_setup_id4" />
+                            </div>
+                            <div class="form-input" style="display: none">
+                                <label for="method" class="required" readonly>method</label>
+                                <input type="text" name="method" value='Install' id="method" />
+                            </div>
 
+                        </div>
+                    </div>
+
+                    <div class="form-submit">
+                        <input type="submit" value="Submit" class="submit" id="submit_4" name="submit" />
+                    </div>
+                </form>
         <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/run_service_setup" style="    float: left;
     margin: 1%;
     box-sizing: border-box;
@@ -95,34 +144,7 @@
                 </form>
 
 
-       <form method="POST" class="register-form" id="register-form1" action="/api/v1/installation/run_deployment" style="float: right;
-    margin: 1%;
-    box-sizing: border-box;
-    width: 45%;
-    border: 1px solid #d4c6c6;">
-                    <h3 style="color:red">run_deployment</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <div class="form-input">
-                                <label for="deployment_id4" class="required">deployment_id</label>
-                                <input type="number" name="deployment_id" id="deployment_id4" />
-                            </div>
-                            <div class="form-input">
-                                <label for="service_setup_id4" class="required">service_setup_id</label>
-                                <input type="number" name="service_setup_id" id="service_setup_id4" />
-                            </div>
-                            <div class="form-input" style="display: none">
-                                <label for="method" class="required" readonly>method</label>
-                                <input type="text" name="method" value='Install' id="method" />
-                            </div>
 
-                        </div>
-                    </div>
-
-                    <div class="form-submit">
-                        <input type="submit" value="Submit" class="submit" id="submit_4" name="submit" />
-                    </div>
-                </form>
 
 
                 <div class="donate-us" style="float:left;width: 100%">

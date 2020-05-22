@@ -26,8 +26,9 @@
     state: started
   when: ( "{{ host_name }}" == "{{ first_controller }}" )
 - name: Create mysql cluster user
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
+  - SQL_ROOT_PASSWD=$(cat /var/log/mysqld.log | grep "A temporary password is generated for" | tail -1 | sed -n 's/.*root@localhost: //p') && mysql -u root -p${SQL_ROOT_PASSWD} -e "SET PASSWORD FOR root@localhost=''"
   - mysql  -e "CREATE USER '{{ wsrep_sst_user }}'@'localhost' IDENTIFIED BY '{{ wsrep_sst_password
     }}'"
   - mysql  -e "GRANT RELOAD, LOCK TABLES, PROCESS, REPLICATION CLIENT ON *.* TO '{{
