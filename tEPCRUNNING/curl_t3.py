@@ -160,7 +160,7 @@ def add_new_node_to_system():
     #         node_name) + '.json')
 
     url1 = 'http://172.16.29.194:4321/api/v1/hosts/add_host'
-    payload1 = {"management_ip":"172.16.29.201", "ssh_user":"root", "ssh_password":"123456@Epc", "node_display_name":"controller02epc"}
+    payload1 = {"management_ip":"172.16.30.82", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute02old"}
     headers1 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
     r1 = requests.post(url1, json=payload1, headers=headers1)
     print(r1.text)
