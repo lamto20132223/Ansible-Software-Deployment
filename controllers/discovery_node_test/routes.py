@@ -118,7 +118,7 @@ def discover_hosts():
 def discover_one_host():
     if request.json.get('host_id') is None:
         return abort(400, "Require host_id in POST body!")
-    node_id = request.args.host_id
+    node_id = request.json.get('host_id')
     nodes = session.query(models.Node).filter_by(node_id=str(node_id)).first()
     if nodes is None:
         return abort(400, "Node Not Found!")

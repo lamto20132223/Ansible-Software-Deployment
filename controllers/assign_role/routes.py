@@ -610,7 +610,7 @@ def get_all_changes(task_id):
 def insert_data_one_node():
     if request.json.get('host_id') is None:
         return abort(400, "Require host_id in POST body!")
-    node_id = request.args.host_id
+    node_id = request.json.get('host_id')
     node = session.query(models.Node).filter_by(node_id=str(node_id)).first()
     if node is None:
         return abort(400, "Node Not Found!")
