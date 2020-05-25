@@ -63,6 +63,23 @@ def get_facts(ansible_inventory_dir, ansible_facts_dir):
 
 
 def get_fact_one_node(ansible_inventory_dir, ansible_facts_dir, node_id):
+    list_nodes = session.query(models.Node).all()
+    os.system(' rm -rf ' + ansible_inventory_dir)
+    file_new_node = open(ansible_inventory_dir, "a")
+    file_new_node.write('[all]')
+    file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write(node.management_ip + " " + "ansible_ssh_user=" + str(
+            node.ssh_user) + " " + "ansible_ssh_pass=" + "\'" + str(node.ssh_password) + "\'")
+        file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write('[' + str(node.node_display_name) + ']')
+        file_new_node.write("\n")
+        file_new_node.write(node.management_ip + " " + "ansible_ssh_user=" + str(
+            node.ssh_user) + " " + "ansible_ssh_pass=" + "\'" + str(node.ssh_password) + "\'")
+        file_new_node.write("\n")
+    file_new_node.close()
+
     node = session.query(models.Node).filter_by(node_id=str(node_id)).first()
 
     os.system('ansible ' + node.node_display_name+' -i '+  ansible_inventory_dir + ' -m setup  --tree ' + ansible_facts_dir)
