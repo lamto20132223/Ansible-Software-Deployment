@@ -112,6 +112,24 @@ def discover_hosts():
     res = load_node_info_to_database(facts_dir)
     return custom_response(request, 200,None, 'Discover host sucessfully. Check Result in /api/v1/hosts',res)
 
+
+
+@mod.route('/hosts/discover_one_host', methods=['POST']) #################################### ERROR #######################
+def discover_one_host():
+    if request.args.get('host_id') is None:
+        return abort(400, "Require host_id in POST body!")
+    node_id = request.args.host_id
+    nodes = session.query(models.Node).filter_by(node_id=str(node_id)).first()
+    if nodes is None:
+        return abort(400, "Node Not Found!")
+
+    inventory_dir = CONST.inventory_dir+'/new_node'
+    facts_dir = CONST.facts_dir
+    get_fact_one_node(inventory_dir, facts_dir, node_id)
+    res = load_one_node_info_to_database(facts_dir,node_id)
+    return custom_response(request, 200,None, 'Discover host '+ node_id+' sucessfully. Check Result in /api/v1/hosts'+'/'+node_id,res)
+
+
 @mod.route('/hosts/host_info', methods=['GET']) ############################### UNDONE ##################
 def get_host_info():
     if request.args.get('host_id') is None:

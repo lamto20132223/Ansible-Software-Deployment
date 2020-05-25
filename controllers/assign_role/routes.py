@@ -192,7 +192,24 @@ def test_code_create_service_setup():
 
 
 @mod.route('/roles/test_create_ansible_inventory_with_role', methods=['POST', 'GET'])
-def test_code_create_ansible_playbook_p1():
+def test_create_ansible_inventory_with_role():
+    ansible_inventory_dir = CONST.inventory_dir + '/new_node'
+    list_nodes = session.query(models.Node).all()
+    os.system(' rm -rf ' + ansible_inventory_dir)
+    file_new_node = open(ansible_inventory_dir,"a")
+    file_new_node.write('[all]')
+    file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
+        file_new_node.write("\n")
+    for node in list_nodes:
+        file_new_node.write('['+str(node.node_display_name)+']' )
+        file_new_node.write("\n")
+        file_new_node.write(node.management_ip+" " + "ansible_ssh_user="+str(node.ssh_user) + " "+ "ansible_ssh_pass="+"\'"+str(node.ssh_password) +"\'")
+        file_new_node.write("\n")
+    file_new_node.close()
+
+    
     with open('static/role_service.json') as role_data_file:
         role_data = json.load(role_data_file)
 
@@ -215,7 +232,7 @@ def test_code_create_ansible_playbook_p1():
 
 
 @mod.route('/roles/test_create_ansible_playbook', methods=['POST', 'GET'])
-def test_code_create_ansible_playbook_p2():
+def test_create_ansible_playbook():
 
     # host_name='host_name'
     # service_name='service_name'
@@ -589,7 +606,64 @@ def get_all_changes(task_id):
 
 
 
+@mod.route('/insert_data_one_node', methods=['POST'])
+def insert_data_one_node():
+    if request.args.get('host_id') is None:
+        return abort(400, "Require host_id in POST body!")
+    node_id = request.args.host_id
+    node = session.query(models.Node).filter_by(node_id=str(node_id)).first()
+    if node is None:
+        return abort(400, "Node Not Found!")
+    if node.deployment is None and node.node_roles > 0:
+        deployment = models.Deployment(created_at=datetime.now(), updated_at=datetime.now(), finished_at=None,
+                                       status="IN QUEUE", name="deployement " + str(node.management_ip))
+        node.deployment = deployment
+    with open('static/role_service.json') as role_data_file:
+        role_data = json.load(role_data_file)
+    deployment = node.deployment
+    if deployment is not None:
+        roles =[role.role_name for role in node.node_roles]
 
+        for role in roles:
+            list_services = role_data[role]['list_service']
+            for service in list_services:
+                service_setup = models.Service_setup(service_type=role, service_name = service['service_name'],enable="ENABLE",  service_lib=None, service_config_folder = None, setup_index = service['index'], is_validated_success=None, validated_status = None)
+                deployment.service_setups.append(service_setup)
+
+    test_create_ansible_inventory_with_role()
+    test_create_ansible_playbook()
+
+    print(node.node_display_name)
+    service_setups = get_service_setups_from_deployment(node.deployment)
+
+    # service = service_setups[0]
+    for service in service_setups:
+
+        list_tasks = load_yml_file(CONST.role_dir + '/' + service.service_name + '/tasks/main.yml')
+
+        list_task_info = []
+        for index, task in enumerate(list_tasks, start=0):
+
+            task_info = {}
+
+            for command in task.get('block'):
+                if command.get('name') is not None:
+                    task_info['name'] = command.get('name')
+                elif command.get('include') is None:
+                    setup_data = str(json.dumps(command))
+                    task_info['setup_data'] = setup_data[:250] + (setup_data[250:] and '..')
+                    task_info['task_type'] = command.keys()
+                    if 'register' in task_info['task_type']: task_info['task_type'].remove('register')
+            list_task_info.append(task_info)
+
+        for index, task in enumerate(list_task_info, start=1):
+            task_data = models.Task(created_at=datetime.now(), task_display_name=task.get('name'),
+                                    setup_data=task.get('setup_data'), task_type=str(task.get('task_type')),
+                                    task_index=index)
+            service.tasks.append(task_data)
+    session.add(node)
+    session.commit()
+    session.close()
 
 
 @mod.route('/clean_data', methods=['GET', 'POST'])

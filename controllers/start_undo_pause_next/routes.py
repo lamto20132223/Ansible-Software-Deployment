@@ -192,13 +192,13 @@ def run_specific_service_setup():
     if service_setup_id is not None:
         service_setup = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
         if service_setup is None:
-            return abort(400, "Cannot Find Service_setup with id: ", service_setup_id)
+            return abort(400, "Cannot Find Service_setup with id: "+ str(service_setup_id))
 
     else:
         if deployment_id is not None and setup_index is not None:
             service_setup = session.query(models.Service_setup).filter_by(setup_index=setup_index, deployment_id=deployment_id).first()
             if service_setup is None:
-                return abort(400, "Cannot Find Service_setup with setup_index: ", setup_index, "deployment_id: ", deployment_id)
+                return abort(400, "Cannot Find Service_setup with setup_index: " + setup_index + " deployment_id: " + deployment_id)
 
 
     if start_at_task_id is not None:
@@ -250,12 +250,12 @@ def run_specific_deployment():
     if service_setup_id is not None:
         service_setup_start = session.query(models.Service_setup).filter_by(service_setup_id=service_setup_id).first()
         if service_setup_start is None:
-            return abort(400, "Cannot Find Service_setup with id: ", service_setup_id)
+            return abort(400, "Cannot Find Service_setup with id: "+ service_setup_id)
 
     if deployment_id is not None:
         deployment = session.query(models.Deployment).filter_by(deployment_id=deployment_id).first()
         if deployment is None:
-            return abort(400, "Cannot Find deployment with id: ", deployment_id)
+            return abort(400, "Cannot Find deployment with id: "+ deployment_id)
 
     if service_setup_start.deployment.deployment_id != deployment.deployment_id:
         return abort(400, "Service Setup Khong thuoc Deployment")

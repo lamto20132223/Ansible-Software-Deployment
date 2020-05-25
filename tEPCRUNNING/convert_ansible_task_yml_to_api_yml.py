@@ -75,11 +75,11 @@ if __name__ == "__main__":
     #example_tasks = load_yml_file('./example.yml')[0]
     #print(example_tasks)
 
-    # convert_file('../static/ansible/playbooks/roles/haproxy/tasks/main_origin.yml', '../static/ansible/playbooks/roles/haproxy/tasks/main.yml')
+    convert_file('../static/ansible/playbooks/roles/init_repo/tasks/main_origin.yml', '../static/ansible/playbooks/roles/init_repo/tasks/main.yml')
     # a = load_yml_file('thadv.yaml')
 
     # print('1234')
-    conver_folder_roles("../static/ansible/playbooks/roles")
+    #conver_folder_roles("../static/ansible/playbooks/roles")
 
 
 """

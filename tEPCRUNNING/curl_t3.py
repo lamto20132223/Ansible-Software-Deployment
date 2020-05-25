@@ -154,7 +154,53 @@ def add_service_setup_to_node( node_id,  service_setup_name):
 
 
 
+def add_new_node_to_system():
+    # os.system(
+    #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @' + str(
+    #         node_name) + '.json')
+
+    url1 = 'http://172.16.29.194:4321/api/v1/hosts/add_host'
+    payload1 = {"management_ip":"172.16.29.201", "ssh_user":"root", "ssh_password":"123456@Epc", "node_display_name":"controller02epc"}
+    headers1 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r1 = requests.post(url1, json=payload1, headers=headers1)
+    print(r1.text)
+
+
+
+
+
+    # os.system(
+    #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_one_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @new_node.json')
+
+
+    url2 = 'http://172.16.29.194:4321/api/v1/hosts/discover_one_host'
+    payload2 = {"host_id":"19"}
+    headers2 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r2 = requests.post(url2, json=payload2, headers=headers2)
+    print(r2.text)
+
+
+
+    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role'+str('_new_node')+'.json')
+    url3 = 'http://172.16.29.194:4321/api/v1/roles/add_host_to_role'
+    payload3 = {"node_id":"19", "roles": ["DEMO"]}
+    headers3 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r3 = requests.post(url3, json=payload3, headers=headers3)
+    print(r3.text)
+
+
+    #
+    # os.system(
+    #     'curl -X POST "http://172.16.29.194:4321/api/v1/roles/insert_data_one_node" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    url4 = 'http://172.16.29.194:4321/api/v1/roles/insert_data_one_node'
+    payload4 = {"host_id":"19"}
+    headers4 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r4 = requests.post(url4, json=payload4, headers=headers4)
+    print(r4.text)
+
 if __name__ == "__main__":
+
+
     # delete_data()
     # add_host()
     # #update_host()
@@ -176,7 +222,9 @@ if __name__ == "__main__":
     # run_task_id(6)
     # run_task_id(7)
     #
-    run_service_set_up_start_at_task(18,1,1376)
+    #run_service_set_up_start_at_task(18,1,1376)
     # run_service_setup(1, 3)
     #run_task_id(8)
     # run_deployment(1,1)
+
+    add_new_node_to_system()

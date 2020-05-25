@@ -18,12 +18,12 @@
   - install
   - '1'
 - block:
-  - name: 2.cp etc_hosts.j2 /etc/hosts
+  - name: 2.cp etc_security_limits_conf.j2 /etc/security/limits.conf
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
   - template:
-      src: etc_hosts.j2
-      dest: /etc/hosts
+      src: etc_security_limits_conf.j2
+      dest: /etc/security/limits.conf
       owner: root
       group: root
       mode: '0644'
@@ -37,13 +37,16 @@
   - install
   - '2'
 - block:
-  - name: 3.stop selinux
+  - name: 3.cp etc_hosts.j2 /etc/hosts
     debug: msg='Starting 3-------------------------------------------->'
   - include: extends/before.yml task_index=3
-  - command: '{{ item }}'
-    with_items:
-    - sudo setenforce 0
-    ignore_errors: yes
+  - template:
+      src: etc_hosts.j2
+      dest: /etc/hosts
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
     register: infos
   - include: extends/after_ok.yml task_index=3 info={{ infos  }}
   rescue:
@@ -53,13 +56,12 @@
   - install
   - '3'
 - block:
-  - name: 4.systemctl stop iptables
+  - name: 4.stop selinux
     debug: msg='Starting 4-------------------------------------------->'
   - include: extends/before.yml task_index=4
-  - systemd:
-      name: iptables
-      enabled: no
-      masked: no
+  - command: '{{ item }}'
+    with_items:
+    - sudo setenforce 0
     ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=4 info={{ infos  }}
@@ -70,12 +72,14 @@
   - install
   - '4'
 - block:
-  - name: 5.stop service firewalld
+  - name: 5.systemctl stop iptables
     debug: msg='Starting 5-------------------------------------------->'
   - include: extends/before.yml task_index=5
   - systemd:
-      name: firewalld
-      state: stopped
+      name: iptables
+      enabled: no
+      masked: no
+    ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=5 info={{ infos  }}
   rescue:
@@ -85,14 +89,12 @@
   - install
   - '5'
 - block:
-  - name: 6.systemctl stop firewalld
+  - name: 6.stop service firewalld
     debug: msg='Starting 6-------------------------------------------->'
   - include: extends/before.yml task_index=6
   - systemd:
       name: firewalld
-      enabled: no
-      masked: no
-    ignore_errors: yes
+      state: stopped
     register: infos
   - include: extends/after_ok.yml task_index=6 info={{ infos  }}
   rescue:
@@ -102,16 +104,14 @@
   - install
   - '6'
 - block:
-  - name: 7.cp local.repo.j2 /etc/yum.repos.d/local.repo
+  - name: 7.systemctl stop firewalld
     debug: msg='Starting 7-------------------------------------------->'
   - include: extends/before.yml task_index=7
-  - template:
-      src: local.repo.j2
-      dest: /etc/yum.repos.d/local.repo
-      owner: root
-      group: root
-      mode: '0644'
-      backup: yes
+  - systemd:
+      name: firewalld
+      enabled: no
+      masked: no
+    ignore_errors: yes
     register: infos
   - include: extends/after_ok.yml task_index=7 info={{ infos  }}
   rescue:
@@ -121,12 +121,12 @@
   - install
   - '7'
 - block:
-  - name: 8.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
+  - name: 8.cp local.repo.j2 /etc/yum.repos.d/local.repo
     debug: msg='Starting 8-------------------------------------------->'
   - include: extends/before.yml task_index=8
   - template:
-      src: docker.repo.j2
-      dest: /etc/yum.repos.d/docker.repo
+      src: local.repo.j2
+      dest: /etc/yum.repos.d/local.repo
       owner: root
       group: root
       mode: '0644'
@@ -140,13 +140,16 @@
   - install
   - '8'
 - block:
-  - name: 9.refresh repo
+  - name: 9.cp docker.repo.j2 /etc/yum.repos.d/docker.repo
     debug: msg='Starting 9-------------------------------------------->'
   - include: extends/before.yml task_index=9
-  - command: '{{ item }}'
-    with_items:
-    - yum clean all
-    - yum repolist
+  - template:
+      src: docker.repo.j2
+      dest: /etc/yum.repos.d/docker.repo
+      owner: root
+      group: root
+      mode: '0644'
+      backup: yes
     register: infos
   - include: extends/after_ok.yml task_index=9 info={{ infos  }}
   rescue:
@@ -156,13 +159,13 @@
   - install
   - '9'
 - block:
-  - name: 10..yum install -y python-openstackclient
+  - name: 10.refresh repo
     debug: msg='Starting 10-------------------------------------------->'
   - include: extends/before.yml task_index=10
-  - yum:
-      name:
-      - python-openstackclient
-      state: latest
+  - command: '{{ item }}'
+    with_items:
+    - yum clean all
+    - yum repolist
     register: infos
   - include: extends/after_ok.yml task_index=10 info={{ infos  }}
   rescue:
@@ -172,13 +175,13 @@
   - install
   - '10'
 - block:
-  - name: 11.. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+  - name: 11..yum install -y python-openstackclient
     debug: msg='Starting 11-------------------------------------------->'
   - include: extends/before.yml task_index=11
-  - command: '{{ item }}'
-    with_items:
-    - yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
-    ignore_errors: yes
+  - yum:
+      name:
+      - python-openstackclient
+      state: latest
     register: infos
   - include: extends/after_ok.yml task_index=11 info={{ infos  }}
   rescue:
@@ -187,3 +190,19 @@
   tags:
   - install
   - '11'
+- block:
+  - name: 12.. yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    debug: msg='Starting 12-------------------------------------------->'
+  - include: extends/before.yml task_index=12
+  - command: '{{ item }}'
+    with_items:
+    - yum remove  -y mariadb-libs-5.5.64-1.el7.x86_64
+    ignore_errors: yes
+    register: infos
+  - include: extends/after_ok.yml task_index=12 info={{ infos  }}
+  rescue:
+  - include: extends/after_failse.yml task_index=12 info={{ infos  }}
+  - fail: msg={{ infos  }}
+  tags:
+  - install
+  - '12'
