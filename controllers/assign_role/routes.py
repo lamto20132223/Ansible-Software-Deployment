@@ -664,7 +664,7 @@ def insert_data_one_node():
     session.add(node)
     session.commit()
     session.close()
-
+    return custom_response(request, 200, None, "Setupdata thanh cong",None, False)
 
 @mod.route('/clean_data', methods=['GET', 'POST'])
 def clean_all_data():

@@ -2,7 +2,7 @@
   - name: 1.demo2 task1
     debug: msg='Starting 1-------------------------------------------->'
   - include: extends/before.yml task_index=1
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task1" > /home/lamtv10/file1.txt
@@ -19,7 +19,7 @@
   - name: 2.demo2 task2
     debug: msg='Starting 2-------------------------------------------->'
   - include: extends/before.yml task_index=2
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task2" > /home/lamtv10/file2.txt
@@ -36,7 +36,7 @@
   - name: 3.demo2 task3
     debug: msg='Starting 3-------------------------------------------->'
   - include: extends/before.yml task_index=3
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task3" > /home/lamtv10/file3.txt
@@ -53,7 +53,7 @@
   - name: 4.demo2 task4
     debug: msg='Starting 4-------------------------------------------->'
   - include: extends/before.yml task_index=4
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task4" > /home/lamtv10/file4.txt
@@ -70,7 +70,7 @@
   - name: 5.demo2 task5
     debug: msg='Starting 5-------------------------------------------->'
   - include: extends/before.yml task_index=5
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task5" > /home/lamtv10/file5.txt
@@ -87,7 +87,7 @@
   - name: 6.demo2 task6
     debug: msg='Starting 6-------------------------------------------->'
   - include: extends/before.yml task_index=6
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task6" > /home/lamtv10/file6.txt
@@ -104,7 +104,7 @@
   - name: 7.demo2 task7
     debug: msg='Starting 7-------------------------------------------->'
   - include: extends/before.yml task_index=7
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task7" > /home/lamtv10/file7.txt
@@ -121,7 +121,7 @@
   - name: 8.demo2 task8
     debug: msg='Starting 8-------------------------------------------->'
   - include: extends/before.yml task_index=8
-  - command: '{{ item }}'
+  - shell: '{{ item }}'
     with_items:
     - mkdir -p /home/lamtv10
     - echo "demo2 task8" > /home/lamtv10/file8.txt

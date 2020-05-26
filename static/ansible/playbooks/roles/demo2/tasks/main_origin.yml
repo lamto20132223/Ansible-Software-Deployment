@@ -1,5 +1,5 @@
 - name: demo2 task1
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task1" > /home/lamtv10/file1.txt
@@ -7,7 +7,7 @@
 
 
 - name: demo2 task2
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task2" > /home/lamtv10/file2.txt
@@ -15,7 +15,7 @@
 
 
 - name: demo2 task3
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task3" > /home/lamtv10/file3.txt
@@ -23,7 +23,7 @@
 
 
 - name: demo2 task4
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task4" > /home/lamtv10/file4.txt
@@ -31,7 +31,7 @@
 
 
 - name: demo2 task5
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task5" > /home/lamtv10/file5.txt
@@ -39,7 +39,7 @@
 
 
 - name: demo2 task6
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task6" > /home/lamtv10/file6.txt
@@ -47,7 +47,7 @@
 
 
 - name: demo2 task7
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task7" > /home/lamtv10/file7.txt
@@ -55,7 +55,7 @@
 
 
 - name: demo2 task8
-  command: '{{ item }}'
+  shell: '{{ item }}'
   with_items:
   - mkdir -p /home/lamtv10
   - echo "demo2 task8" > /home/lamtv10/file8.txt
