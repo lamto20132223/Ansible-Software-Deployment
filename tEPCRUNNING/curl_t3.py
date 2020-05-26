@@ -159,29 +159,29 @@ def add_new_node_to_system():
     #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/add_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @' + str(
     #         node_name) + '.json')
 
-    url1 = 'http://172.16.29.194:4321/api/v1/hosts/add_host'
-    payload1 = {"management_ip":"172.16.30.82", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute02old"}
-    headers1 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
-    r1 = requests.post(url1, json=payload1, headers=headers1)
-    print(r1.text)
-
-
-
-
-
-    # os.system(
-    #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_one_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @new_node.json')
-
-
-    url2 = 'http://127.0.0.1:4321/api/v1/hosts/discover_one_host'
-    payload2 = {"host_id":"19"}
-    headers2 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
-    r2 = requests.post(url2, json=payload2, headers=headers2)
-    print(r2.text)
-
-
-
-    # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role'+str('_new_node')+'.json')
+    # url1 = 'http://172.16.29.194:4321/api/v1/hosts/add_host'
+    # payload1 = {"management_ip":"172.16.30.82", "ssh_user":"root", "ssh_password":"Vttek@123", "node_display_name":"compute02old"}
+    # headers1 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    # r1 = requests.post(url1, json=payload1, headers=headers1)
+    # print(r1.text)
+    #
+    #
+    #
+    #
+    #
+    # # os.system(
+    # #     'curl -X POST "http://172.16.29.194:4321/api/v1/hosts/discover_one_host" -H  "accept: application/json" -H  "Content-Type: application/json" --data @new_node.json')
+    #
+    #
+    # url2 = 'http://172.16.29.194:4321/api/v1/hosts/discover_one_host'
+    # payload2 = {"host_id":"19"}
+    # headers2 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    # r2 = requests.post(url2, json=payload2, headers=headers2)
+    # print(r2.text)
+    #
+    #
+    #
+    # # os.system('curl -X POST "http://172.16.29.194:4321/api/v1/roles/add_host_to_role" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role'+str('_new_node')+'.json')
     # url3 = 'http://172.16.29.194:4321/api/v1/roles/add_host_to_role'
     # payload3 = {"node_id":"19", "roles": ["DEMO"]}
     # headers3 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
@@ -190,13 +190,13 @@ def add_new_node_to_system():
     #
     #
     # #
-    # # os.system(
-    # #     'curl -X POST "http://172.16.29.194:4321/api/v1/roles/insert_data_one_node" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
-    # url4 = 'http://172.16.29.194:4321/api/v1/roles/insert_data_one_node'
-    # payload4 = {"host_id":"19"}
-    # headers4 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
-    # r4 = requests.post(url4, json=payload4, headers=headers4)
-    # print(r4.text)
+    # os.system(
+    #     'curl -X POST "http://172.16.29.194:4321/api/v1/roles/insert_data_one_node" -H  "accept: application/json" -H  "Content-Type: application/json" --data @node_role.json')
+    url4 = 'http://172.16.29.194:4321/api/v1/insert_data_one_node'
+    payload4 = {"host_id":"19"}
+    headers4 = {'content-type': 'application/json', 'Accept-Charset': 'UTF-8'}
+    r4 = requests.post(url4, json=payload4, headers=headers4)
+    print(r4.text)
 
 if __name__ == "__main__":
 
